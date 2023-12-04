@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +13,6 @@ import '../components/main_components/app_drawer.dart';
 import '../components/settings_components/settings_components.dart';
 import '../controllers/settings_controller.dart';
 
-@RoutePage(name: 'SettingsRoute')
 class SettingsPage extends CoreView<SettingsController> {
   const SettingsPage({Key? key}) : super(key: key);
 

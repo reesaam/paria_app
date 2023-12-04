@@ -1,4 +1,5 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:base_flutter_clean_getx_app/data/info/app_developer_info.dart';
+import 'package:base_flutter_clean_getx_app/data/resources/app_spaces.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +13,6 @@ import '../components/main_components/app_bottom_navigation_bar.dart';
 import '../components/main_components/app_drawer.dart';
 import '../controllers/homepage_controller.dart';
 
-@RoutePage(name: 'HomeRoute')
 class HomePage extends CoreView<HomePageController> {
   const HomePage({Key? key}) : super(key: key);
 
@@ -34,9 +34,15 @@ class HomePage extends CoreView<HomePageController> {
   Widget get body => Column();
 
   Widget widgetTopBar() => Container(
+      alignment: Alignment.center,
       padding: AppPaddings.homepageTopBar,
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-        Image.asset(AppLogos.appLogo, width: AppSizes.homepageLogo),
-        Text(AppInfo.appName),
-      ]));
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(AppLogos.appLogo, width: AppSizes.homepageLogo),
+            AppSpaces.h40,
+            Text(AppInfo.appName),
+            Text('by ${AppDeveloperInfo.fullName}'),
+          ]));
 }

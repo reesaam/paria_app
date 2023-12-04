@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/app_router/routing.dart';
+import '../../../core/app_routing/routing.dart';
 import '../../../data/resources/app_colors.dart';
 import 'app_bottom_navigation_bar_data.dart';
 
