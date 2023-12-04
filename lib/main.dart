@@ -1,3 +1,5 @@
+import 'package:base_flutter_clean_getx_app/core/app_router/app_router.dart';
+import 'package:base_flutter_clean_getx_app/data/info/app_info.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,12 +8,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      title: AppInfo.appName,
+      routerConfig: AppRouter().config(),
     );
   }
-} I
+}
