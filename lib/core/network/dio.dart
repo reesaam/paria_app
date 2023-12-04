@@ -1,15 +1,12 @@
-import 'package:injectable/injectable.dart';
 import 'package:dio/dio.dart';
 
 import '../../data/info/app_urls.dart';
 import '../../data/resources/app_texts.dart';
 
-@module
 abstract class DioCore {
 
   int get _defaultTimeOut => 15;
 
-  @singleton
   Dio get dio => _getDio();
 
   _getDio() {

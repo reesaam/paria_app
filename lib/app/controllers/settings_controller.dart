@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:base_flutter_clean_getx_app/data/info/app_info.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
@@ -9,7 +10,6 @@ import '../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../data/storage/app_local_storage.dart';
 import '../../core/app_extensions/data_models_extensions/extension_settings.dart';
 import '../../core/core_functions.dart';
-import '../../core/dependency_injection/di.dart';
 import '../../core/elements/core_controller.dart';
 import '../../data/data_models/core_data_models/app_data/app_data.dart';
 import '../../data/data_models/core_data_models/app_settings_data/app_setting_data.dart';
@@ -21,7 +21,6 @@ import '../components/update_components/app_check_update.dart';
 
 class SettingsController extends CoreController {
 
-  var storage = diCore<AppLocalStorage>();
   Rx<AppSettingData> appSettings = const AppSettingData().obs;
 
   Rx<bool> darkMode = false.obs;
@@ -33,7 +32,7 @@ class SettingsController extends CoreController {
   @override
   void dataInit() {
     appSettings = const AppSettingData().loadFromStorage.obs;
-    functionCheckUpdateAvailableVersion();
+    AppInfo.checkUpdate ? functionCheckUpdateAvailableVersion() : null;
   }
 
   @override
@@ -73,7 +72,7 @@ class SettingsController extends CoreController {
   functionBackup() {
     function() async {
       popPage();
-      AppData appdata = storage.exportData();
+      AppData appdata = AppLocalStorage.to.exportData();
       var jsonData = jsonEncode(appdata);
       Uint8List data = jsonData.toString().toUInt8List;
       SaveFileDialogParams saveParams = SaveFileDialogParams(
@@ -103,7 +102,7 @@ class SettingsController extends CoreController {
       var jsonData = jsonDecode(stringData) as Map<String, dynamic>;
       AppData appData = AppData.fromJson(jsonData);
       clearAppData();
-      storage.importData(appData);
+      AppLocalStorage.to.importData(appData);
       appDebugPrint('** Data Imported **');
     }
 

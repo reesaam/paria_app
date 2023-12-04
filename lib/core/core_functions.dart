@@ -9,10 +9,7 @@ import '../data/data_models/core_data_models/app_page_detail/app_page_detail.dar
 import '../data/resources/app_texts.dart';
 import '../data/storage/app_local_storage.dart';
 import '../data/storage/app_shared_preferences.dart';
-import 'dependency_injection/di.dart';
 
-var _storage = diCore<AppLocalStorage>();
-var _prefs = diCore<AppSharedPreferences>();
 
 bool get isRelease => false;
 
@@ -27,16 +24,16 @@ void popPage() {
 }
 
 void saveAppData() {
-  _prefs.saveData();
+  AppSharedPreferences.to.saveData();
 }
 
 void loadAppData() {
-  _prefs.loadData();
+  AppSharedPreferences.to.loadData();
 }
 
 void clearAppData() {
-  _storage.clearStorage();
-  _prefs.clearData();
+  AppLocalStorage.to.clearStorage();
+  AppSharedPreferences.to.clearData();
   appDebugPrint('** All App Data Cleared **');
 }
 
@@ -53,7 +50,7 @@ void appExitDialog() => AppDialogs.appAlertDialogWithOkCancel(
 
 void appExit() {
   appDebugPrint('** App Exit Triggered **');
-  _prefs.saveData();
+  AppSharedPreferences.to.saveData();
   appDebugPrint('** All App Data Saved **');
   exit(0);
 }
