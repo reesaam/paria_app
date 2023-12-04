@@ -34,7 +34,7 @@ class AppDrawer extends Drawer {
       padding: AppPaddings.drawerHeader,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         Image.asset(AppLogos.appLogo, width: AppSizes.drawerHeaderIconWidth),
-        Text(AppInfo.appName),
+        Text(AppInfo.appNameInitials),
       ]));
 
   Widget body() => Column(children: [

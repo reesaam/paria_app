@@ -24,7 +24,7 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
       case 1 : goToHomePage();
       case 2 : goToHomePage();
       case 3 : goToHomePage();
-      case 4 : goToHomePage();
+      case 4 : goToSettingsPage();
       default: break;
     }
     Get.reload();
