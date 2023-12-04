@@ -11,4 +11,6 @@ class AppInfo {
   static String get baseUrl => 'resam-t.ir';
   static String get subDomain => 'basefluttercleangetxapp';
   static String get fileName => 'download file name';
+
+  static bool get checkUpdate => false;
 }

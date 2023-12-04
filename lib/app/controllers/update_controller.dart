@@ -45,7 +45,7 @@ class UpdateController extends CoreController {
 
   @override
   void onReadyFunction() async {
-    await checkUpdate();
+    AppInfo.checkUpdate ? await checkUpdate() : null;
   }
 
   checkUpdate() async {

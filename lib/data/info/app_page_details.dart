@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 
 import '../../core/app_routing/app_routes.dart';
 import '../data_models/core_data_models/app_page_detail/app_page_detail.dart';
@@ -39,7 +40,7 @@ class AppPageDetails {
   static AppPageDetail settings = AppPageDetail(
     pageName: AppTexts.pageSettings,
     pageRoute: AppRoutes.settings,
-    bottomBarItemNumber: 4,
+    bottomBarItemNumber: 1,
   );
 
   static AppPageDetail about = AppPageDetail(
