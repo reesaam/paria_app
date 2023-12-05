@@ -39,5 +39,5 @@ flutter build web --web-renderer canvaskit --release
 - first change the file in assets : <<assets/logos/paria_logo.png>> (Please replace the file)
 - then run:
 ```
-flutter pub run flutter_launcher_icons -f flutter_launcher_icons.yaml
+dart run flutter_launcher_icons -f flutter_launcher_icons.yaml
 ```
