@@ -18,6 +18,7 @@ dependencies:
   permission_handler: ^10.2.0
   dartz: ^0.10.1
   html: ^0.15.0
+  #http: ^0.13.5
   dio: ^5.3.2
   open_file_plus: ^3.4.1
   flutter_file_dialog: ^3.0.2

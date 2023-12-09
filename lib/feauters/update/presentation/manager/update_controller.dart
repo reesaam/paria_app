@@ -1,21 +1,16 @@
-import 'dart:async';
 import 'dart:io';
 import 'package:base_flutter_clean_getx_app/feauters/update/domain/use_cases/update_download_address_usecase.dart';
 import 'package:base_flutter_clean_getx_app/feauters/update/domain/use_cases/update_download_usecase.dart';
-import 'package:dartz/dartz.dart';
 
 import 'package:base_flutter_clean_getx_app/feauters/update/data/repositories/update_repository.dart';
-import 'package:base_flutter_clean_getx_app/feauters/update/domain/use_cases/update_version_usecase.dart';
 import 'package:get/get.dart';
 import 'package:open_file_plus/open_file_plus.dart' as file_plus;
 import 'package:path_provider/path_provider.dart';
-import 'package:http/http.dart' as http;
 
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../data/info/app_page_details.dart';
-import '../../../../data/info/app_urls.dart';
 import '../../../../data/resources/app_texts.dart';
 import '../../../../app/components/general_widgets/app_progress_indicator.dart';
 import '../../../../app/components/general_widgets/app_snack_bars.dart';
