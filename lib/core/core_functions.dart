@@ -9,7 +9,8 @@ import '../data/data_models/core_data_models/app_page_detail/app_page_detail.dar
 import '../data/resources/app_texts.dart';
 import '../data/storage/app_local_storage.dart';
 import '../data/storage/app_shared_preferences.dart';
-
+import '../feauters/update/data/repositories/update_repository.dart';
+import '../feauters/update/domain/use_cases/update_version_usecase.dart';
 
 bool get isRelease => false;
 
@@ -44,6 +45,11 @@ Future<bool> onBackButtonPressed(AppPageDetail pageDetail) async {
       : {appExitDialog(), response = false};
   return response;
 }
+
+Future<String> checkAvailableVersion() async => await UpdateVersionUseCase(
+        updateRepository: UpdateRepository.to)
+    .call()
+    .then((value) => value.fold((l) => AppTexts.generalNotAvailable, (r) => r));
 
 void appExitDialog() => AppDialogs.appAlertDialogWithOkCancel(
     AppTexts.appExit, AppTexts.areYouSure, appExit, true);
