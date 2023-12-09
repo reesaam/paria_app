@@ -6,16 +6,16 @@ import 'package:open_file_plus/open_file_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:http/http.dart' as http;
 
-import '../../core/core_functions.dart';
-import '../../core/elements/core_controller.dart';
-import '../../data/info/app_info.dart';
-import '../../data/info/app_page_details.dart';
-import '../../data/info/app_urls.dart';
-import '../../data/resources/app_texts.dart';
-import '../components/general_components/app_progress_indicator.dart';
-import '../components/general_components/app_snack_bars.dart';
-import '../components/main_components/app_dialogs.dart';
-import '../components/update_components/app_check_update.dart';
+import '../../../../core/core_functions.dart';
+import '../../../../core/elements/core_controller.dart';
+import '../../../../data/info/app_info.dart';
+import '../../../../data/info/app_page_details.dart';
+import '../../../../data/info/app_urls.dart';
+import '../../../../data/resources/app_texts.dart';
+import '../../../../app/components/general_widgets/app_progress_indicator.dart';
+import '../../../../app/components/general_widgets/app_snack_bars.dart';
+import '../../../../app/components/main_components/app_dialogs.dart';
+import 'app_check_update.dart';
 
 class UpdateController extends CoreController {
 

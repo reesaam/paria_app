@@ -3,15 +3,15 @@ import 'package:base_flutter_clean_getx_app/data/resources/app_spaces.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../core/elements/core_view.dart';
-import '../../data/info/app_info.dart';
-import '../../data/resources/app_logos.dart';
-import '../../data/resources/app_paddings.dart';
-import '../../data/resources/app_sizes.dart';
-import '../components/main_components/app_bar.dart';
-import '../components/main_components/app_bottom_navigation_bar.dart';
-import '../components/main_components/app_drawer.dart';
-import '../controllers/homepage_controller.dart';
+import '../../../../core/elements/core_view.dart';
+import '../../../../data/info/app_info.dart';
+import '../../../../data/resources/app_logos.dart';
+import '../../../../data/resources/app_paddings.dart';
+import '../../../../data/resources/app_sizes.dart';
+import '../../../../app/components/main_components/app_bar.dart';
+import '../../../../app/components/main_components/app_bottom_navigation_bar.dart';
+import '../../../../app/components/main_components/app_drawer.dart';
+import '../manager/homepage_controller.dart';
 
 class HomePage extends CoreView<HomePageController> {
   const HomePage({Key? key}) : super(key: key);

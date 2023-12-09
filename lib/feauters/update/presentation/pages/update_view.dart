@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../core/elements/core_view.dart';
-import '../../data/info/app_info.dart';
-import '../../data/resources/app_paddings.dart';
-import '../../data/resources/app_spaces.dart';
-import '../../data/resources/app_texts.dart';
-import '../components/buttons/app_general_button.dart';
-import '../components/main_components/app_bar.dart';
-import '../controllers/update_controller.dart';
+import '../../../../core/elements/core_view.dart';
+import '../../../../data/info/app_info.dart';
+import '../../../../data/resources/app_paddings.dart';
+import '../../../../data/resources/app_spaces.dart';
+import '../../../../data/resources/app_texts.dart';
+import '../../../../app/components/buttons/app_general_button.dart';
+import '../../../../app/components/main_components/app_bar.dart';
+import '../manager/update_controller.dart';
 
 class UpdatePage extends CoreView<UpdateController> {
   const UpdatePage({Key? key}) : super(key: key);

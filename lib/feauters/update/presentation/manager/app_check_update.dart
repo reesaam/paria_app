@@ -2,9 +2,9 @@ import 'package:base_flutter_clean_getx_app/core/network/network_exception.dart'
 import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 
-import '../../../core/core_functions.dart';
-import '../../../data/info/app_urls.dart';
-import '../../../data/resources/app_texts.dart';
+import '../../../../core/core_functions.dart';
+import '../../../../data/info/app_urls.dart';
+import '../../../../data/resources/app_texts.dart';
 
 class AppCheckUpdate {
   Future<String> checkVersion() async {

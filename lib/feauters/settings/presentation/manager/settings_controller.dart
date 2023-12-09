@@ -6,18 +6,18 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
 
-import '../../core/app_extensions/data_types_extensions/extension_string.dart';
-import '../../data/storage/app_local_storage.dart';
-import '../../core/app_extensions/data_models_extensions/extension_settings.dart';
-import '../../core/core_functions.dart';
-import '../../core/elements/core_controller.dart';
-import '../../data/data_models/core_data_models/app_data/app_data.dart';
-import '../../data/data_models/core_data_models/app_settings_data/app_setting_data.dart';
-import '../../data/info/app_page_details.dart';
-import '../../data/resources/app_enums.dart';
-import '../../data/resources/app_texts.dart';
-import '../components/main_components/app_dialogs.dart';
-import '../components/update_components/app_check_update.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
+import '../../../../data/storage/app_local_storage.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_settings.dart';
+import '../../../../core/core_functions.dart';
+import '../../../../core/elements/core_controller.dart';
+import '../../../../data/data_models/core_data_models/app_data/app_data.dart';
+import '../../../../data/data_models/core_data_models/app_settings_data/app_setting_data.dart';
+import '../../../../data/info/app_page_details.dart';
+import '../../../../data/resources/app_enums.dart';
+import '../../../../data/resources/app_texts.dart';
+import '../../../../app/components/main_components/app_dialogs.dart';
+import '../../../update/presentation/manager/app_check_update.dart';
 
 class SettingsController extends CoreController {
 

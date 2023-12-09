@@ -41,3 +41,14 @@ flutter build web --web-renderer canvaskit --release
 ```
 dart run flutter_launcher_icons -f flutter_launcher_icons.yaml
 ```
+
+# How to start
+
+### lib/admin
+Everything that you need for Administration that mostly would be separated from the App, 
+
+### lib/app
+
+### lib/core
+
+### lib/data

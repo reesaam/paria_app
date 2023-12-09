@@ -10,7 +10,7 @@ import '../../../data/resources/app_spaces.dart';
 import '../../../data/resources/app_text_styles.dart';
 import '../../../data/resources/app_texts.dart';
 import '../buttons/app_general_button.dart';
-import '../general_components/app_dividers.dart';
+import '../general_widgets/app_dividers.dart';
 
 class AppDialogs {
   static _onTapCancel() => popPage();

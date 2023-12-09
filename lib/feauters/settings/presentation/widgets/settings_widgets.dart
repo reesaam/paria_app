@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/core_widgets.dart';
-import '../../../data/resources/app_paddings.dart';
-import '../../../data/resources/app_text_styles.dart';
-import '../general_components/app_dividers.dart';
+import '../../../../core/core_widgets.dart';
+import '../../../../data/resources/app_paddings.dart';
+import '../../../../data/resources/app_text_styles.dart';
+import '../../../../app/components/general_widgets/app_dividers.dart';
 
-class SettingsComponents {
+class SettingsWidgets {
   static Widget widgetSettingSection(Widget title, List<Widget> widgets) =>
       Padding(
           padding: AppPaddings.settingsSection,

@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 
-import '../../app/controllers/about_controller.dart';
-import '../../app/controllers/homepage_controller.dart';
-import '../../app/controllers/settings_controller.dart';
-import '../../app/controllers/splash_screen_controller.dart';
-import '../../app/controllers/update_controller.dart';
+import '../../feauters/about/presentation/manager/about_controller.dart';
+import '../../feauters/homepage/presentation/manager/homepage_controller.dart';
+import '../../feauters/settings/presentation/manager/settings_controller.dart';
+import '../../feauters/splash_screen/presentation/manager/splash_screen_controller.dart';
+import '../../feauters/update/presentation/manager/update_controller.dart';
 
 
 class AppBindings extends Bindings {
