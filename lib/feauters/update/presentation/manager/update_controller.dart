@@ -1,8 +1,13 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:base_flutter_clean_getx_app/feauters/update/domain/use_cases/update_download_address_usecase.dart';
+import 'package:base_flutter_clean_getx_app/feauters/update/domain/use_cases/update_download_usecase.dart';
+import 'package:dartz/dartz.dart';
 
+import 'package:base_flutter_clean_getx_app/feauters/update/data/repositories/update_repository.dart';
+import 'package:base_flutter_clean_getx_app/feauters/update/domain/use_cases/update_version_usecase.dart';
 import 'package:get/get.dart';
-import 'package:open_file_plus/open_file_plus.dart';
+import 'package:open_file_plus/open_file_plus.dart' as file_plus;
 import 'package:path_provider/path_provider.dart';
 import 'package:http/http.dart' as http;
 
@@ -15,10 +20,8 @@ import '../../../../data/resources/app_texts.dart';
 import '../../../../app/components/general_widgets/app_progress_indicator.dart';
 import '../../../../app/components/general_widgets/app_snack_bars.dart';
 import '../../../../app/components/main_components/app_dialogs.dart';
-import 'app_check_update.dart';
 
 class UpdateController extends CoreController {
-
   Rx<String> availableVersion = AppTexts.generalNotAvailable.obs;
 
   File? dlFile;
@@ -52,17 +55,17 @@ class UpdateController extends CoreController {
     AppDialogs.appBottomDialogWithoutButton(AppTexts.updateCheckingUpdate,
         AppProgressIndicator.linearDefault(), false);
 
-    String version = await AppCheckUpdate().checkVersion();
-    await Future.delayed(const Duration(seconds: 2));
-    appDebugPrint('Current Version: ${AppInfo.appCurrentVersion}');
-    appDebugPrint('Available Version: $version');
+    String version = await checkAvailableVersion();
     popPage();
-    version == AppInfo.appCurrentVersion
-        ? AppSnackBar.show(AppTexts.updateNoUpdateFound)
-        : {
-      availableVersion.value = version,
-      AppSnackBar.show(AppTexts.updateUpdateFound)
-    };
+
+    if (version == AppInfo.appCurrentVersion) {
+      appDebugPrint('No New Version Available');
+      AppSnackBar.show(AppTexts.updateNoUpdateFound);
+    } else {
+      appDebugPrint('Available Version: $version');
+      availableVersion.value = version;
+      AppSnackBar.show(AppTexts.updateUpdateFound);
+    }
   }
 
   downloadUpdate() async {
@@ -74,30 +77,34 @@ class UpdateController extends CoreController {
     dlDir == null
         ? alertDirectoryOrFileNotFound(true)
         : {
-      dlFile = File('${dlDir!.path}/${AppTexts.updateAppFilename}'),
-      dlFile == null
-          ? alertDirectoryOrFileNotFound(false)
-          : {
-        dlFile!.existsSync() ? dlFile!.deleteSync() : null,
-        downloadAction(),
-      }
-    };
+            dlFile = File('${dlDir!.path}/${AppTexts.updateAppFilename}'),
+            dlFile == null
+                ? alertDirectoryOrFileNotFound(false)
+                : {
+                    dlFile!.existsSync() ? dlFile!.deleteSync() : null,
+                    downloadAction(),
+                  }
+          };
   }
 
   downloadAction() async {
     downloaded.value = false;
-    var responseAddress =
-    await http.get(Uri.parse(AppURLs.appUrlResamHostAddress));
-    String downloadAddress = responseAddress.body;
+    String downloadAddress = '';
+    final resultAddress = await UpdateDownloadAddressUseCase(
+            updateRepository: UpdateRepository.to)
+        .call();
+    resultAddress.fold((l) => null, (r) => downloadAddress = r);
 
-    var responseData = await http.get(Uri.parse(downloadAddress));
-
-    if (responseData.statusCode == 200) {
-      await dlFile!.writeAsBytes(responseData.bodyBytes);
+    if (downloadAddress.isNotEmpty) {
+      final result =
+          await UpdateDownloadUseCase(updateRepository: UpdateRepository.to)
+              .call();
+      result.fold((l) => null, (r) {
+        dlFile = r;
+        downloaded.value = true;
+        appDebugPrint(dlFile?.length());
+      });
     }
-    downloaded.value = true;
-    appDebugPrint('Download Path: ${dlFile!.path}');
-    appDebugPrint('Content Length: ${responseData.contentLength ?? 0}');
 
     AppSnackBar.show(AppTexts.updateDownloaded);
 
@@ -105,7 +112,7 @@ class UpdateController extends CoreController {
         AppTexts.updateInstallationContent, installUpdate, true);
   }
 
-  void installUpdate() => OpenFile.open(dlFile!.path);
+  void installUpdate() => file_plus.OpenFile.open(dlFile!.path);
 
   alertDirectoryOrFileNotFound(bool directoryError) =>
       AppDialogs.appAlertDialogWithOk(
@@ -120,5 +127,5 @@ class UpdateController extends CoreController {
 
   checkAvailableUpdate() =>
       availableVersion.value == AppInfo.appCurrentVersion ||
-          availableVersion.value == AppTexts.generalNotAvailable;
+      availableVersion.value == AppTexts.generalNotAvailable;
 }

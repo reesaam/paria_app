@@ -17,10 +17,10 @@ import '../../../../data/info/app_page_details.dart';
 import '../../../../data/resources/app_enums.dart';
 import '../../../../data/resources/app_texts.dart';
 import '../../../../app/components/main_components/app_dialogs.dart';
-import '../../../update/presentation/manager/app_check_update.dart';
+import '../../../update/data/repositories/update_repository.dart';
+import '../../../update/domain/use_cases/update_version_usecase.dart';
 
 class SettingsController extends CoreController {
-
   Rx<AppSettingData> appSettings = const AppSettingData().obs;
 
   Rx<bool> darkMode = false.obs;
@@ -63,7 +63,7 @@ class SettingsController extends CoreController {
   }
 
   functionCheckUpdateAvailableVersion() async {
-    updateAvailableVersion.value = await AppCheckUpdate().checkVersion();
+    updateAvailableVersion.value = await checkAvailableVersion();
     appDebugPrint('Checked Update Version: ${updateAvailableVersion.value}');
   }
 
@@ -92,8 +92,9 @@ class SettingsController extends CoreController {
     function() async {
       popPage();
       OpenFileDialogParams openFileParams =
-      const OpenFileDialogParams(dialogType: OpenFileDialogType.document);
-      String? importFilePath = await FlutterFileDialog.pickFile(params: openFileParams);
+          const OpenFileDialogParams(dialogType: OpenFileDialogType.document);
+      String? importFilePath =
+          await FlutterFileDialog.pickFile(params: openFileParams);
       appDebugPrint('** Backup File Selected **');
       appDebugPrint('File Path: $importFilePath');
 
