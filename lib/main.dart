@@ -1,4 +1,5 @@
 import 'core/app_bindings/core_bindings.dart';
+import 'core/app_localization/app_localization_dependencies.dart';
 import 'core/app_routing/app_pages.dart';
 import 'core/app_routing/app_routes.dart';
 import 'data/info/app_info.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.pages,
       initialRoute: AppRoutes.startPage,
       theme: AppThemes.mainTheme,
-      supportedLocales: const [Locale('en')],
+      supportedLocales: AppLocalizationDependencies.languages,
+      localizationsDelegates: AppLocalizationDependencies.localizationDelegates,
     );
   }
 }
