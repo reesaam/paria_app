@@ -1,8 +1,9 @@
-import 'package:base_flutter_clean_getx_app/core/app_bindings/core_bindings.dart';
-import 'package:base_flutter_clean_getx_app/core/app_routing/app_pages.dart';
-import 'package:base_flutter_clean_getx_app/core/app_routing/app_routes.dart';
-import 'package:base_flutter_clean_getx_app/data/info/app_info.dart';
-import 'package:base_flutter_clean_getx_app/data/resources/app_themes.dart';
+import 'core/app_bindings/core_bindings.dart';
+import 'core/app_localization/app_localization_dependencies.dart';
+import 'core/app_routing/app_pages.dart';
+import 'core/app_routing/app_routes.dart';
+import 'data/info/app_info.dart';
+import 'data/resources/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.pages,
       initialRoute: AppRoutes.startPage,
       theme: AppThemes.mainTheme,
-      supportedLocales: const [Locale('en')],
+      supportedLocales: AppLocalizationDependencies.languages,
+      localizationsDelegates: AppLocalizationDependencies.localizationDelegates,
     );
   }
 }

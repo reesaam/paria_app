@@ -7,8 +7,8 @@ import 'storage_bindings.dart';
 class CoreBindings implements Bindings {
   @override
   void dependencies() {
-    AppStorageBindings().dependencies();
-    AppBindings().dependencies();
-    AdminBindings().dependencies();
+    AppStorageBindings().dependencies(); //Storage
+    AppBindings().dependencies(); // Pages
+    AdminBindings().dependencies(); // Admin related
   }
 }
