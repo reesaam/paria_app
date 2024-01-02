@@ -9,12 +9,13 @@ import '../data/data_models/core_data_models/app_page_detail/app_page_detail.dar
 import '../data/resources/app_texts.dart';
 import '../data/storage/app_local_storage.dart';
 import '../data/storage/app_shared_preferences.dart';
-import '../feauters/update/data/repositories/update_repository.dart';
-import '../feauters/update/domain/use_cases/update_version_usecase.dart';
+import '../features/update/data/repositories/update_repository.dart';
+import '../features/update/domain/use_cases/update_version_usecase.dart';
 
 bool get isRelease => false;
 
 void appDebugPrint(message) => isRelease ? null : debugPrint('$message');
+void appLogPrint(message) => debugPrint('[LOG] ** $message **');
 
 void goToPage(AppPageDetail page) => page.bottomBarItemNumber == -1
     ? Get.toNamed(page.pageRoute!)

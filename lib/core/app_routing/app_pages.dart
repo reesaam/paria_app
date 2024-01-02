@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 
-import '../../feauters/about/presentation/pages/about_view.dart';
-import '../../feauters/homepage/presentation/pages/homepage_view.dart';
-import '../../feauters/settings/presentation/pages/settings_view.dart';
-import '../../feauters/splash_screen/presentation/pages/splash_screen_view.dart';
-import '../../feauters/update/presentation/pages/update_view.dart';
+import '../../features/about/presentation/pages/about_view.dart';
+import '../../features/homepage/presentation/pages/homepage_view.dart';
+import '../../features/settings/presentation/pages/settings_view.dart';
+import '../../features/splash_screen/presentation/pages/splash_screen_view.dart';
+import '../../features/update/presentation/pages/update_view.dart';
 import 'app_routes.dart';
 
 class AppPages {
