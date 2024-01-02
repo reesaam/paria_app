@@ -9,8 +9,8 @@ class CoreBindings implements Bindings {
   @override
   void dependencies() {
     AppStorageBindings().dependencies(); //Storage
-    AppBindings().dependencies(); // Pages
     AppLocalizationBindings().dependencies(); //AppLocalization
+    AppBindings().dependencies(); // Pages
     AdminBindings().dependencies(); // Admin related
   }
 }
