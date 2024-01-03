@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/core_widgets.dart';
 import '../../../../data/resources/app_paddings.dart';
 import '../../../../data/resources/app_text_styles.dart';
 import '../../../../app/components/general_widgets/app_dividers.dart';
