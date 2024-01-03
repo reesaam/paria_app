@@ -40,5 +40,6 @@ class AppLocalization {
 }
 
 class Texts {
+  Texts._();
   static S get to => S.of(Get.context!);
 }
