@@ -101,10 +101,10 @@ class SettingsController extends CoreController {
       SaveFileDialogParams saveParams = SaveFileDialogParams(
           data: data, fileName: AppTexts.settingBackupFilename);
       String? filePath = await FlutterFileDialog.saveFile(params: saveParams);
-      appDebugPrint('** Backup File Saved **');
+      appLogPrint('Backup File Saved');
       appDebugPrint('Filename: ${saveParams.fileName}');
       appDebugPrint('Path: ${saveParams.sourceFilePath}');
-      appDebugPrint('File Path: $filePath');
+      appLogPrint('File Path: $filePath');
     }
 
     AppDialogs.appAlertDialogWithOkCancel(
@@ -118,8 +118,8 @@ class SettingsController extends CoreController {
           const OpenFileDialogParams(dialogType: OpenFileDialogType.document);
       String? importFilePath =
           await FlutterFileDialog.pickFile(params: openFileParams);
-      appDebugPrint('** Backup File Selected **');
-      appDebugPrint('File Path: $importFilePath');
+      appLogPrint('Backup File Selected');
+      appLogPrint('File Path: $importFilePath');
 
       File importFile = File(importFilePath!);
       String stringData = String.fromCharCodes(importFile.readAsBytesSync());
@@ -127,7 +127,7 @@ class SettingsController extends CoreController {
       AppData appData = AppData.fromJson(jsonData);
       clearAppData();
       AppLocalStorage.to.importData(appData);
-      appDebugPrint('** Data Imported **');
+      appLogPrint('Data Imported');
     }
 
     AppDialogs.appAlertDialogWithOkCancel(
@@ -147,12 +147,12 @@ class SettingsController extends CoreController {
 
   saveSettings() {
     appSettings.saveOnStorage;
-    appDebugPrint('Settings Saved');
+    appLogPrint('Settings Saved');
   }
 
   resetAllSettings() {
     appSettings.value = const AppSettingData().clearData;
     saveSettings();
-    appDebugPrint('Reset Settings Data performed');
+    appLogPrint('Reset Settings Data performed');
   }
 }
