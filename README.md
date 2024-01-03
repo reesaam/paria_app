@@ -1,5 +1,15 @@
 # Base Flutter Clean GetX App
 
+A Flutter Base Project using:
+ - Clean Architecture
+ - GetX State Manager
+ - freezed
+ - Dependency Injection
+ - Dio
+ - Intl App Localization
+ - Shared Preferences
+ - Get Storage
+
 ## Getting Started
 
 - Download and Clone the Repository
