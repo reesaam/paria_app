@@ -65,7 +65,7 @@ class SettingsController extends CoreController {
   functionLanguageModal() => AppDialogs.appBottomDialogWithCancel(
         Texts.to.setting_language_modal,
         SettingsLanguageWidgets()
-            .widgetSelectLanguageForm(functionLanguageSelectionOnTap),
+            .selectLanguageModalForm(functionLanguageSelectionOnTap),
         true,
       );
 

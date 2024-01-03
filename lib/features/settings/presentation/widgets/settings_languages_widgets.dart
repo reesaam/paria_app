@@ -5,7 +5,7 @@ import '../../../../core/app_localization.dart';
 import '../../../../data/resources/app_paddings.dart';
 
 class SettingsLanguageWidgets {
-  Widget widgetSelectLanguageForm(Function function) => Column(
+  Widget selectLanguageModalForm(Function function) => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: List.generate(
           AppLocalization.languages.length,

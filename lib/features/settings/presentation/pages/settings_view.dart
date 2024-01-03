@@ -10,6 +10,7 @@ import '../../../../app/components/general_widgets/app_switch.dart';
 import '../../../../app/components/main_components/app_bar.dart';
 import '../../../../app/components/main_components/app_bottom_navigation_bar.dart';
 import '../../../../app/components/main_components/app_drawer.dart';
+import '../widgets/settings_sections_items_widgets.dart';
 import '../widgets/settings_sections_widgets.dart';
 import '../manager/settings_controller.dart';
 
@@ -45,81 +46,65 @@ class SettingsPage extends CoreView<SettingsController> {
       ]);
 
   Widget _widgetGeneral() {
-    Widget widgetLanguages() => Obx(() =>
+    Widget leadingGeneral() => Obx(() =>
         Text(controller.selectedLanguage.value.name.capitalizeFirst ?? ''));
-    
+
     ///TODO: Calendar Types Implementation
-    Widget widgetCalendar() => Obx(() =>
+    Widget leadingCalendar() => Obx(() =>
         Text(controller.selectedCalendar.value.name.capitalizeFirst ?? ''));
 
-    Widget widgetDarkMode() => Obx(() => AppSwitch(
+    Widget leadingDarkMode() => Obx(() => AppSwitch(
         value: controller.darkMode.value,
         onChanged: (value) => controller.functionDarkModeOnChange(value),
         enabled: false));
 
-    return SettingsSectionsWidgets().widgetSettingSection(
-        SettingsSectionsWidgets()
-            .widgetSectionTitle(AppTexts.settingSectionTitleGeneral),
-        [
-          SettingsSectionsWidgets().widgetSettingItem(
-              AppTexts.settingSectionTitleGeneralLanguage,
-              widgetLanguages(),
-              controller.functionLanguageModal),
-          SettingsSectionsWidgets().widgetSettingItem(
-              AppTexts.settingSectionTitleGeneralCalendar,
-              widgetCalendar(),
-              null),
-          SettingsSectionsWidgets().widgetSettingItem(
-              AppTexts.settingSectionGeneralItemDarkMode,
-              widgetDarkMode(),
-              null),
+    return SettingsSectionsWidgets(
+        title: AppTexts.settingSectionTitleGeneral,
+        widgets: [
+          SettingsSectionItemsWidget(
+              text: AppTexts.settingSectionTitleGeneralLanguage,
+              leading: leadingGeneral(),
+              wholeItemFunction: controller.functionLanguageModal),
+          SettingsSectionItemsWidget(
+              text: AppTexts.settingSectionTitleGeneralCalendar,
+              leading: leadingCalendar()),
+          SettingsSectionItemsWidget(
+              text: AppTexts.settingSectionGeneralItemDarkMode,
+              leading: leadingDarkMode()),
         ]);
   }
 
-  Widget _widgetUpdate() {
-    return SettingsSectionsWidgets().widgetSettingSection(
-        SettingsSectionsWidgets()
-            .widgetSectionTitle(AppTexts.settingSectionTitleUpdate),
-        [
-          SettingsSectionsWidgets().widgetSettingItem(
-              AppTexts.settingSectionTitleUpdateCurrentVersion,
-              Text(AppInfo.appCurrentVersion),
-              null),
-          SettingsSectionsWidgets().widgetSettingItem(
-              AppTexts.settingSectionTitleUpdateAvailableVersion,
-              Text(controller.updateAvailableVersion.value ==
-                      AppInfo.appCurrentVersion
-                  ? AppTexts.generalNotAvailable
-                  : controller.updateAvailableVersion.value),
-              controller.functionGoToUpdatePage),
-        ]);
-  }
+  Widget _widgetUpdate() => SettingsSectionsWidgets(
+          title: AppTexts.settingSectionTitleUpdate,
+          widgets: [
+            SettingsSectionItemsWidget(
+                text: AppTexts.settingSectionTitleUpdateCurrentVersion,
+                leading: Text(AppInfo.appCurrentVersion)),
+            SettingsSectionItemsWidget(
+                text: AppTexts.settingSectionTitleUpdateAvailableVersion,
+                leading: Text(controller.updateAvailableVersion.value ==
+                        AppInfo.appCurrentVersion
+                    ? AppTexts.generalNotAvailable
+                    : controller.updateAvailableVersion.value),
+                wholeItemFunction: controller.functionGoToUpdatePage),
+          ]);
 
-  Widget _widgetBackup() {
-    return SettingsSectionsWidgets().widgetSettingSection(
-        SettingsSectionsWidgets()
-            .widgetSectionTitle(AppTexts.settingSectionTitleBackup),
-        [
-          SettingsSectionsWidgets().widgetSettingItem(
-              AppTexts.settingSectionBackupBackup,
-              null,
-              controller.functionBackup),
-          SettingsSectionsWidgets().widgetSettingItem(
-              AppTexts.settingSectionBackupRestore,
-              null,
-              controller.functionRestore),
-        ]);
-  }
+  Widget _widgetBackup() => SettingsSectionsWidgets(
+          title: AppTexts.settingSectionTitleBackup,
+          widgets: [
+            SettingsSectionItemsWidget(
+                text: AppTexts.settingSectionBackupBackup,
+                wholeItemFunction: controller.functionBackup),
+            SettingsSectionItemsWidget(
+                text: AppTexts.settingSectionBackupRestore,
+                wholeItemFunction: controller.functionRestore),
+          ]);
 
-  Widget _widgetStorage() {
-    return SettingsSectionsWidgets().widgetSettingSection(
-        SettingsSectionsWidgets()
-            .widgetSectionTitle(AppTexts.settingSectionTitleStorage),
-        [
-          SettingsSectionsWidgets().widgetSettingItem(
-              AppTexts.settingSectionStorageItemEraseAllData,
-              null,
-              controller.functionClearAllData),
-        ]);
-  }
+  Widget _widgetStorage() => SettingsSectionsWidgets(
+          title: AppTexts.settingSectionTitleStorage,
+          widgets: [
+            SettingsSectionItemsWidget(
+                text: AppTexts.settingSectionStorageItemEraseAllData,
+                wholeItemFunction: controller.functionClearAllData)
+          ]);
 }
