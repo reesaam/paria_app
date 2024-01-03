@@ -1,3 +1,4 @@
+import 'package:base_flutter_clean_getx_app/features/about/presentation/widgets/about_items_widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/elements/core_view.dart';
@@ -12,5 +13,10 @@ class AboutPage extends CoreView<AboutController> {
       AppAppBar(pageDetail: controller.pageDetail);
 
   @override
-  Widget get body => Column();
+  Widget get body => Column(
+      children: List<Widget>.generate(
+          controller.listItems.length,
+          (index) => AboutSectionWidget(
+              titleText: controller.listTitles[index],
+              itemText: controller.listItems[index])));
 }
