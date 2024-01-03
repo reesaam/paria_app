@@ -1,10 +1,10 @@
-import 'package:base_flutter_clean_getx_app/core/app_extensions/data_types_extensions/extension_locale.dart';
-import 'package:base_flutter_clean_getx_app/core/core_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
 import '../generated/l10n.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
+import '../../../../core/core_functions.dart';
 
 class AppLocalization {
   static AppLocalization get to => Get.find();

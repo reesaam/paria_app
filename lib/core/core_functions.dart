@@ -36,7 +36,7 @@ void loadAppData() {
 void clearAppData() {
   AppLocalStorage.to.clearStorage();
   AppSharedPreferences.to.clearData();
-  appDebugPrint('** All App Data Cleared **');
+  appLogPrint('All App Data Cleared');
 }
 
 Future<bool> onBackButtonPressed(AppPageDetail pageDetail) async {
@@ -56,8 +56,8 @@ void appExitDialog() => AppDialogs.appAlertDialogWithOkCancel(
     AppTexts.appExit, AppTexts.areYouSure, appExit, true);
 
 void appExit() {
-  appDebugPrint('** App Exit Triggered **');
+  appLogPrint('App Exit Triggered');
   AppSharedPreferences.to.saveData();
-  appDebugPrint('** All App Data Saved **');
+  appLogPrint('All App Data Saved');
   exit(0);
 }

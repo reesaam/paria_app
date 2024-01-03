@@ -1,11 +1,11 @@
-import 'package:base_flutter_clean_getx_app/core/app_extensions/data_types_extensions/extension_locale.dart';
-import 'package:base_flutter_clean_getx_app/core/app_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/core_widgets.dart';
 import '../../../../data/resources/app_paddings.dart';
 import '../../../../data/resources/app_text_styles.dart';
 import '../../../../app/components/general_widgets/app_dividers.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
+import '../../../../core/app_localization.dart';
 
 class SettingsWidgets {
   Widget widgetSettingSection(Widget title, List<Widget> widgets) => Padding(

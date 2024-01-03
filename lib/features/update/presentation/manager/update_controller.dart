@@ -1,12 +1,12 @@
 import 'dart:io';
-import 'package:base_flutter_clean_getx_app/features/update/domain/use_cases/update_download_address_usecase.dart';
-import 'package:base_flutter_clean_getx_app/features/update/domain/use_cases/update_download_usecase.dart';
 
-import 'package:base_flutter_clean_getx_app/features/update/data/repositories/update_repository.dart';
 import 'package:get/get.dart';
 import 'package:open_file_plus/open_file_plus.dart' as file_plus;
 import 'package:path_provider/path_provider.dart';
 
+import '../../../../features/update/domain/use_cases/update_download_address_usecase.dart';
+import '../../../../features/update/domain/use_cases/update_download_usecase.dart';
+import '../../../../features/update/data/repositories/update_repository.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_info.dart';

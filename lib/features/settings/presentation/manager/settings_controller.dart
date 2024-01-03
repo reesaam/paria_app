@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:base_flutter_clean_getx_app/core/app_extensions/data_types_extensions/extension_locale.dart';
-import 'package:base_flutter_clean_getx_app/data/info/app_info.dart';
-import 'package:base_flutter_clean_getx_app/features/settings/presentation/widgets/settings_widgets.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
+import '../../../../data/info/app_info.dart';
+import '../../../../features/settings/presentation/widgets/settings_widgets.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../data/storage/app_local_storage.dart';
@@ -21,8 +21,6 @@ import '../../../../data/info/app_page_details.dart';
 import '../../../../data/resources/app_enums.dart';
 import '../../../../data/resources/app_texts.dart';
 import '../../../../app/components/main_components/app_dialogs.dart';
-import '../../../update/data/repositories/update_repository.dart';
-import '../../../update/domain/use_cases/update_version_usecase.dart';
 
 class SettingsController extends CoreController {
   Rx<AppSettingData> appSettings = const AppSettingData().obs;

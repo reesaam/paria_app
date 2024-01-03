@@ -1,5 +1,3 @@
-import 'package:base_flutter_clean_getx_app/app/components/main_components/app_dialogs.dart';
-import 'package:base_flutter_clean_getx_app/core/app_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

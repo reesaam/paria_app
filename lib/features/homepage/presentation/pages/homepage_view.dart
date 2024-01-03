@@ -1,8 +1,7 @@
-import 'package:base_flutter_clean_getx_app/data/info/app_developer_info.dart';
-import 'package:base_flutter_clean_getx_app/data/resources/app_spaces.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
+import '../../../../data/info/app_developer_info.dart';
+import '../../../../data/resources/app_spaces.dart';
 import '../../../../core/elements/core_view.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../data/resources/app_logos.dart';
