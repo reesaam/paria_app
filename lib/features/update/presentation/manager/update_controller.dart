@@ -54,10 +54,10 @@ class UpdateController extends CoreController {
     popPage();
 
     if (version == AppInfo.appCurrentVersion) {
-      appDebugPrint('No New Version Available');
+      appLogPrint('No New Version Available');
       AppSnackBar.show(AppTexts.updateNoUpdateFound);
     } else {
-      appDebugPrint('Available Version: $version');
+      appLogPrint('Available Version: $version');
       availableVersion.value = version;
       AppSnackBar.show(AppTexts.updateUpdateFound);
     }

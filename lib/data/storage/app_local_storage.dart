@@ -42,7 +42,7 @@ class AppLocalStorage {
   }
 
   void printData() {
-    appDebugPrint('Settings / Dark Mode: ${loadSettings().darkMode}');
+    appLogPrint('Settings / Dark Mode: ${loadSettings().darkMode}');
   }
 
   ///Settings

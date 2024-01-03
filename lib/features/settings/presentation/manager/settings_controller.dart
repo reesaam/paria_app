@@ -85,7 +85,7 @@ class SettingsController extends CoreController {
 
   functionCheckUpdateAvailableVersion() async {
     updateAvailableVersion.value = await checkAvailableVersion();
-    appDebugPrint('Checked Update Version: ${updateAvailableVersion.value}');
+    appLogPrint('Checked Update Version: ${updateAvailableVersion.value}');
   }
 
   functionGoToUpdatePage() => goToPage(AppPageDetails.update);
@@ -136,7 +136,7 @@ class SettingsController extends CoreController {
     function() {
       clearAppData();
       popPage();
-      appDebugPrint('');
+      appLogPrint('Clear All Data Modal Closed');
     }
 
     AppDialogs.appAlertDialogWithOkCancel(

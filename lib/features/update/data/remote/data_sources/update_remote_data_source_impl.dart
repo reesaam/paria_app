@@ -16,29 +16,6 @@ class UpdateRemoteDataSourceImpl implements UpdateRemoteDataSource {
   UpdateRemoteDataSourceImpl(this.dio);
 
   @override
-  Future<Either<NetworkException, String>> getAvailableVersion() async {
-    String version = AppTexts.generalNotAvailableInitials;
-    final Response response;
-    try {
-      response = await Dio().get(AppURLs.appUrlUpdateVersion);
-      if (response.statusCode == 200) {
-        appDebugPrint('Getting Available Version...');
-        appDebugPrint('Data body: ${response.data}');
-        appDebugPrint('Status Code: ${response.statusCode}');
-        version = response.data;
-        return Right(version);
-      }
-      return Left(NetworkException.handleResponse(response));
-    } on DioException catch (ex) {
-      appDebugPrint(ex);
-      return Left(NetworkException.handleResponse(ex.response));
-    } catch (ex) {
-      appDebugPrint(ex);
-      return Left(NetworkException.parsingDataException());
-    }
-  }
-
-  @override
   Future<Either<NetworkException, String>> getDownloadAddress() async{
     String address = AppTexts.generalNotAvailableInitials;
     final Response response;
@@ -62,6 +39,29 @@ class UpdateRemoteDataSourceImpl implements UpdateRemoteDataSource {
   }
 
   @override
+  Future<Either<NetworkException, String>> getAvailableVersion() async {
+    String version = AppTexts.generalNotAvailableInitials;
+    final Response response;
+    try {
+      response = await Dio().get(AppURLs.appUrlUpdateVersion);
+      if (response.statusCode == 200) {
+        appDebugPrint('Getting Available Version...');
+        appDebugPrint('Data body: ${response.data}');
+        appDebugPrint('Status Code: ${response.statusCode}');
+        version = response.data;
+        return Right(version);
+      }
+      return Left(NetworkException.handleResponse(response));
+    } on DioException catch (ex) {
+      appDebugPrint(ex);
+      return Left(NetworkException.handleResponse(ex.response));
+    } catch (ex) {
+      appDebugPrint(ex);
+      return Left(NetworkException.parsingDataException());
+    }
+  }
+
+  @override
   Future<Either<NetworkException, File?>> updateDownload() async {
     final Response response;
     File? file;
@@ -69,7 +69,7 @@ class UpdateRemoteDataSourceImpl implements UpdateRemoteDataSource {
     try {
       response = await dio.get(AppURLs.appUrlUpdateAPKDownload);
       if (response.statusCode == 200) {
-        appDebugPrint('Downloading App...');
+        appLogPrint('Downloading App...');
         appDebugPrint('Data body: ${response.data}');
         appDebugPrint('Status Code: ${response.statusCode}');
         await file!.writeAsBytes(response.data);

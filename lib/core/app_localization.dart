@@ -32,7 +32,7 @@ class AppLocalization {
   setLanguage(Locale locale) {
     appDebugPrint('Prev Language: $currentLanguage');
     currentLanguage = locale;
-    appLogPrint('Language change to: ${currentLanguage.getLanguageName}');
+    appLogPrint('Language changed to: ${currentLanguage.getLanguageName}');
   }
 
   getTextDirection() =>
