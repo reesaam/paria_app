@@ -3,12 +3,10 @@ enum AppBottomNavigationPages {
   settings,
 }
 
-enum AppRegions {
-  en_us,
-}
-
 enum AppLanguages {
   english,
+  deutsch,
+  persian,
 }
 
 enum AppCalendarTypes {

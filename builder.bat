@@ -1,20 +1,10 @@
 @ECHO off
-color 01
-echo :::::::::::::::::::::::::::::::::::::::
-echo ::::::::::  FLUTTER CLEAN  ::::::::::::
-echo :::::::::::::::::::::::::::::::::::::::
+echo =====> FLUTTER CLEAN
 call flutter clean
-color 0A
-echo :::::::::::::::::::::::::::::::::::::::
-echo :::::::::  FLUTTER PUB GET  :::::::::::
-echo :::::::::::::::::::::::::::::::::::::::
-color 03
+echo =====> FLUTTER PUB GET
 call  flutter pub get
-echo :::::::::::::::::::::::::::::::::::::::
-echo :::::::::  FLUTTER BUILD  :::::::::::::
-echo :::::::::::::::::::::::::::::::::::::::
+echo =====> FLUTTER BUILD
  call dart run build_runner build --delete-conflicting-outputs
- color 0A
 pause
 
 

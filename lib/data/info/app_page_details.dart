@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/app_localization.dart';
 import '../../core/app_routing/app_routes.dart';
 import '../data_models/core_data_models/app_page_detail/app_page_detail.dart';
 import '../resources/app_texts.dart';
@@ -32,25 +33,25 @@ class AppPageDetails {
   );
 
   static AppPageDetail homepage = AppPageDetail(
-    pageName: AppTexts.pageHomepage,
+    pageName: Texts.to.pageHomepage,
     pageRoute: AppRoutes.homePage,
     bottomBarItemNumber: 0,
   );
 
   static AppPageDetail settings = AppPageDetail(
-    pageName: AppTexts.pageSettings,
+    pageName: Texts.to.pageSettings,
     pageRoute: AppRoutes.settings,
     bottomBarItemNumber: 1,
   );
 
   static AppPageDetail about = AppPageDetail(
-    pageName: AppTexts.pageAbout,
+    pageName: Texts.to.pageAbout,
     pageRoute: AppRoutes.about,
     bottomBarItemNumber: -1,
   );
 
   static AppPageDetail update = AppPageDetail(
-    pageName: AppTexts.pageUpdate,
+    pageName: Texts.to.pageUpdate,
     pageRoute: AppRoutes.update,
     bottomBarItemNumber: -1,
   );

@@ -1,12 +1,15 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+
+import 'core/app_localization.dart';
 import 'core/app_bindings/core_bindings.dart';
-import 'core/app_localization/app_localization_dependencies.dart';
 import 'core/app_routing/app_pages.dart';
 import 'core/app_routing/app_routes.dart';
 import 'data/info/app_info.dart';
 import 'data/resources/app_themes.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
+
+import 'generated/l10n.dart';
 
 void main() => initProject();
 
@@ -28,8 +31,10 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.pages,
       initialRoute: AppRoutes.startPage,
       theme: AppThemes.mainTheme,
-      supportedLocales: AppLocalizationDependencies.languages,
-      localizationsDelegates: AppLocalizationDependencies.localizationDelegates,
+      supportedLocales: AppLocalization.to.supportedLocales,
+      localizationsDelegates: AppLocalization.to.localizationDelegates,
+      locale: AppLocalization.to.currentLanguage,
+      textDirection: AppLocalization.to.getTextDirection(),
     );
   }
 }

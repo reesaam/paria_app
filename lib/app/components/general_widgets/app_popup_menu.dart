@@ -1,3 +1,4 @@
+import 'package:base_flutter_clean_getx_app/data/resources/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/app_extensions/data_types_extensions/extension_icon.dart';
@@ -8,23 +9,25 @@ import 'app_popup_menu_item.dart';
 
 class AppPopupMenu extends StatelessWidget {
   const AppPopupMenu(
-      {super.key, required this.listItems, this.icon, this.lightIcon});
+      {super.key, required this.listItems, this.icon, this.text, this.lightColor});
 
   final List<AppPopupMenuItem> listItems;
   final Icon? icon;
-  final bool? lightIcon;
+  final String? text;
+  final bool? lightColor;
 
   @override
   Widget build(BuildContext context) => PopupMenuButton(
       padding: AppPaddings.zero,
       shape: AppElements.defaultBorderShape,
       icon: icon == null
-          ? lightIcon == true
+          ? lightColor == true
               ? AppIcons.threeDots.withAppAppBackgroundColor
-              : AppIcons.threeDots.withAppDefaultColor
-          : lightIcon == true
+              : AppIcons.threeDots.withColor(AppColors.textNormalDark)
+          : lightColor == true
               ? icon!.withAppAppBackgroundColor
-              : icon!.withAppDefaultColor,
+              : icon!.withColor(AppColors.textNormalDark),
+      child: text == null ? null : Text(text!),
       itemBuilder: (context) => List<AppPopupMenuItem>.generate(
           listItems.length,
           (index) => AppPopupMenuItem(
