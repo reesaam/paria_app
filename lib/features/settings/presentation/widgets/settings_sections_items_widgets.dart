@@ -10,7 +10,7 @@ class SettingsSectionItemsWidget extends StatelessWidget {
   final Widget? leading;
   final Function? wholeItemFunction;
 
-  SettingsSectionItemsWidget(
+  const SettingsSectionItemsWidget(
       {super.key, required this.text, this.leading, this.wholeItemFunction});
 
   @override
