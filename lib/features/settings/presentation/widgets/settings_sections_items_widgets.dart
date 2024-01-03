@@ -9,8 +9,9 @@ class SettingsSectionItemsWidget extends StatelessWidget {
   final String text;
   final Widget? leading;
   final Function? wholeItemFunction;
+
   SettingsSectionItemsWidget(
-      {super.key, required this.text, this.leading, this.wholeItemFunction})
+      {super.key, required this.text, this.leading, this.wholeItemFunction});
 
   @override
   Widget build(BuildContext context) => InkWell(
@@ -24,5 +25,4 @@ class SettingsSectionItemsWidget extends StatelessWidget {
                 Text(text, style: AppTextStyles.settingsSectionItem),
                 leading ?? shrinkSizedBox,
               ])));
-
 }
