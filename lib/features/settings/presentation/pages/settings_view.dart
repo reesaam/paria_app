@@ -10,7 +10,7 @@ import '../../../../app/components/general_widgets/app_switch.dart';
 import '../../../../app/components/main_components/app_bar.dart';
 import '../../../../app/components/main_components/app_bottom_navigation_bar.dart';
 import '../../../../app/components/main_components/app_drawer.dart';
-import '../widgets/settings_widgets.dart';
+import '../widgets/settings_sections_widgets.dart';
 import '../manager/settings_controller.dart';
 
 class SettingsPage extends CoreView<SettingsController> {
@@ -57,19 +57,19 @@ class SettingsPage extends CoreView<SettingsController> {
         onChanged: (value) => controller.functionDarkModeOnChange(value),
         enabled: false));
 
-    return SettingsWidgets().widgetSettingSection(
-        SettingsWidgets()
+    return SettingsSectionsWidgets().widgetSettingSection(
+        SettingsSectionsWidgets()
             .widgetSectionTitle(AppTexts.settingSectionTitleGeneral),
         [
-          SettingsWidgets().widgetSettingItem(
+          SettingsSectionsWidgets().widgetSettingItem(
               AppTexts.settingSectionTitleGeneralLanguage,
               widgetLanguages(),
               controller.functionLanguageModal),
-          SettingsWidgets().widgetSettingItem(
+          SettingsSectionsWidgets().widgetSettingItem(
               AppTexts.settingSectionTitleGeneralCalendar,
               widgetCalendar(),
               null),
-          SettingsWidgets().widgetSettingItem(
+          SettingsSectionsWidgets().widgetSettingItem(
               AppTexts.settingSectionGeneralItemDarkMode,
               widgetDarkMode(),
               null),
@@ -77,15 +77,15 @@ class SettingsPage extends CoreView<SettingsController> {
   }
 
   Widget _widgetUpdate() {
-    return SettingsWidgets().widgetSettingSection(
-        SettingsWidgets()
+    return SettingsSectionsWidgets().widgetSettingSection(
+        SettingsSectionsWidgets()
             .widgetSectionTitle(AppTexts.settingSectionTitleUpdate),
         [
-          SettingsWidgets().widgetSettingItem(
+          SettingsSectionsWidgets().widgetSettingItem(
               AppTexts.settingSectionTitleUpdateCurrentVersion,
               Text(AppInfo.appCurrentVersion),
               null),
-          SettingsWidgets().widgetSettingItem(
+          SettingsSectionsWidgets().widgetSettingItem(
               AppTexts.settingSectionTitleUpdateAvailableVersion,
               Text(controller.updateAvailableVersion.value ==
                       AppInfo.appCurrentVersion
@@ -96,15 +96,15 @@ class SettingsPage extends CoreView<SettingsController> {
   }
 
   Widget _widgetBackup() {
-    return SettingsWidgets().widgetSettingSection(
-        SettingsWidgets()
+    return SettingsSectionsWidgets().widgetSettingSection(
+        SettingsSectionsWidgets()
             .widgetSectionTitle(AppTexts.settingSectionTitleBackup),
         [
-          SettingsWidgets().widgetSettingItem(
+          SettingsSectionsWidgets().widgetSettingItem(
               AppTexts.settingSectionBackupBackup,
               null,
               controller.functionBackup),
-          SettingsWidgets().widgetSettingItem(
+          SettingsSectionsWidgets().widgetSettingItem(
               AppTexts.settingSectionBackupRestore,
               null,
               controller.functionRestore),
@@ -112,11 +112,11 @@ class SettingsPage extends CoreView<SettingsController> {
   }
 
   Widget _widgetStorage() {
-    return SettingsWidgets().widgetSettingSection(
-        SettingsWidgets()
+    return SettingsSectionsWidgets().widgetSettingSection(
+        SettingsSectionsWidgets()
             .widgetSectionTitle(AppTexts.settingSectionTitleStorage),
         [
-          SettingsWidgets().widgetSettingItem(
+          SettingsSectionsWidgets().widgetSettingItem(
               AppTexts.settingSectionStorageItemEraseAllData,
               null,
               controller.functionClearAllData),

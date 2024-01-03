@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 
 import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
 import '../../../../data/info/app_info.dart';
-import '../../../../features/settings/presentation/widgets/settings_widgets.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../data/storage/app_local_storage.dart';
@@ -21,6 +20,7 @@ import '../../../../data/info/app_page_details.dart';
 import '../../../../data/resources/app_enums.dart';
 import '../../../../data/resources/app_texts.dart';
 import '../../../../app/components/main_components/app_dialogs.dart';
+import '../widgets/settings_languages_widgets.dart';
 
 class SettingsController extends CoreController {
   Rx<AppSettingData> appSettings = const AppSettingData().obs;
@@ -64,7 +64,7 @@ class SettingsController extends CoreController {
 
   functionLanguageModal() => AppDialogs.appBottomDialogWithCancel(
         Texts.to.setting_language_modal,
-        SettingsWidgets()
+        SettingsLanguageWidgets()
             .widgetSelectLanguageForm(functionLanguageSelectionOnTap),
         true,
       );
