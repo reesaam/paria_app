@@ -3,8 +3,7 @@ class AppInfo {
   static String get appNameInitials => 'BFCGA';
   static String get website => '';
   static List<String> get versions => [
-        '0.0.1', //First Initializations
-        '0.0.2', //First Implementation Completion
+        '0.0.1', //Initialization
       ];
   static String get appCurrentVersion => versions.last;
   static int get appVersionsCounter => versions.length;
