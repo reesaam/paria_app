@@ -4,10 +4,10 @@ import '../../../../data/resources/app_paddings.dart';
 import '../../../../data/resources/app_text_styles.dart';
 import '../../../../app/components/general_widgets/app_dividers.dart';
 
-class SettingsSectionsWidgets extends StatelessWidget {
+class SettingsSectionWidget extends StatelessWidget {
   final String title;
   final List<Widget> widgets;
-  const SettingsSectionsWidgets(
+  const SettingsSectionWidget(
       {super.key, required this.title, required this.widgets});
 
   Widget _title(String text) =>

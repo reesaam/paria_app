@@ -58,29 +58,29 @@ class SettingsPage extends CoreView<SettingsController> {
         onChanged: (value) => controller.functionDarkModeOnChange(value),
         enabled: false));
 
-    return SettingsSectionsWidgets(
+    return SettingsSectionWidget(
         title: AppTexts.settingSectionTitleGeneral,
         widgets: [
-          SettingsSectionItemsWidget(
+          SettingsSectionItemWidget(
               text: AppTexts.settingSectionTitleGeneralLanguage,
               leading: leadingGeneral(),
               wholeItemFunction: controller.functionLanguageModal),
-          SettingsSectionItemsWidget(
+          SettingsSectionItemWidget(
               text: AppTexts.settingSectionTitleGeneralCalendar,
               leading: leadingCalendar()),
-          SettingsSectionItemsWidget(
+          SettingsSectionItemWidget(
               text: AppTexts.settingSectionGeneralItemDarkMode,
               leading: leadingDarkMode()),
         ]);
   }
 
-  Widget _widgetUpdate() => SettingsSectionsWidgets(
+  Widget _widgetUpdate() => SettingsSectionWidget(
           title: AppTexts.settingSectionTitleUpdate,
           widgets: [
-            SettingsSectionItemsWidget(
+            SettingsSectionItemWidget(
                 text: AppTexts.settingSectionTitleUpdateCurrentVersion,
                 leading: Text(AppInfo.appCurrentVersion)),
-            SettingsSectionItemsWidget(
+            SettingsSectionItemWidget(
                 text: AppTexts.settingSectionTitleUpdateAvailableVersion,
                 leading: Text(controller.updateAvailableVersion.value ==
                         AppInfo.appCurrentVersion
@@ -89,21 +89,21 @@ class SettingsPage extends CoreView<SettingsController> {
                 wholeItemFunction: controller.functionGoToUpdatePage),
           ]);
 
-  Widget _widgetBackup() => SettingsSectionsWidgets(
+  Widget _widgetBackup() => SettingsSectionWidget(
           title: AppTexts.settingSectionTitleBackup,
           widgets: [
-            SettingsSectionItemsWidget(
+            SettingsSectionItemWidget(
                 text: AppTexts.settingSectionBackupBackup,
                 wholeItemFunction: controller.functionBackup),
-            SettingsSectionItemsWidget(
+            SettingsSectionItemWidget(
                 text: AppTexts.settingSectionBackupRestore,
                 wholeItemFunction: controller.functionRestore),
           ]);
 
-  Widget _widgetStorage() => SettingsSectionsWidgets(
+  Widget _widgetStorage() => SettingsSectionWidget(
           title: AppTexts.settingSectionTitleStorage,
           widgets: [
-            SettingsSectionItemsWidget(
+            SettingsSectionItemWidget(
                 text: AppTexts.settingSectionStorageItemEraseAllData,
                 wholeItemFunction: controller.functionClearAllData)
           ]);

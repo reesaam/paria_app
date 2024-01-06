@@ -52,7 +52,7 @@ Future<String> checkAvailableVersion() async => await UpdateVersionUseCase(
     .call()
     .then((value) => value.fold((l) => AppTexts.generalNotAvailable, (r) => r));
 
-void appExitDialog() => AppDialogs.appAlertDialogWithOkCancel(
+void appExitDialog() => AppDialogs().appAlertDialogWithOkCancel(
     AppTexts.appExit, AppTexts.areYouSure, appExit, true);
 
 void appExit() {

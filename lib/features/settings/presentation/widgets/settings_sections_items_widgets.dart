@@ -5,12 +5,12 @@ import '../../../../core/core_widgets.dart';
 import '../../../../data/resources/app_paddings.dart';
 import '../../../../data/resources/app_text_styles.dart';
 
-class SettingsSectionItemsWidget extends StatelessWidget {
+class SettingsSectionItemWidget extends StatelessWidget {
   final String text;
   final Widget? leading;
   final Function? wholeItemFunction;
 
-  const SettingsSectionItemsWidget(
+  const SettingsSectionItemWidget(
       {super.key, required this.text, this.leading, this.wholeItemFunction});
 
   @override

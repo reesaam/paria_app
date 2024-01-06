@@ -13,14 +13,15 @@ import '../buttons/app_general_button.dart';
 import '../general_widgets/app_dividers.dart';
 
 class AppDialogs {
-  static _onTapCancel() => popPage();
+  _onTapCancel() => popPage();
 
-  static appBottomDialogWithoutButton(String title, Widget form, bool? dismissible) async {
+  appBottomDialogWithoutButton(
+      String title, Widget form, bool? dismissible) async {
     List<Widget> buttons = [];
     await _appBottomDialogGeneral(title, form, buttons, dismissible);
   }
 
-  static appBottomDialogWithOk(
+  appBottomDialogWithOk(
       String title, Widget form, Function onTapOk, bool? dismissible) async {
     List<Widget> buttons = [
       AppGeneralButton(text: AppTexts.generalOK, onTap: onTapOk)
@@ -28,14 +29,15 @@ class AppDialogs {
     await _appBottomDialogGeneral(title, form, buttons, dismissible);
   }
 
-  static appBottomDialogWithCancel(String title, Widget form, bool? dismissible) async {
+  appBottomDialogWithCancel(
+      String title, Widget form, bool? dismissible) async {
     List<Widget> buttons = [
       AppGeneralButton(text: AppTexts.generalCancel, onTap: _onTapCancel)
     ];
     await _appBottomDialogGeneral(title, form, buttons, dismissible);
   }
 
-  static appBottomDialogWithOkCancel(
+  appBottomDialogWithOkCancel(
       String title, Widget form, Function onTapOk, bool? dismissible) async {
     List<Widget> buttons = [
       AppGeneralButton(text: AppTexts.generalOK, onTap: onTapOk),
@@ -44,7 +46,7 @@ class AppDialogs {
     await _appBottomDialogGeneral(title, form, buttons, dismissible);
   }
 
-  static appAlertDialogWithOkCancel(
+  appAlertDialogWithOkCancel(
       String title, String text, Function onTapOk, bool? dismissible) async {
     List<Widget> buttons = [
       AppGeneralButton(text: AppTexts.generalOK, onTap: onTapOk),
@@ -53,7 +55,7 @@ class AppDialogs {
     await _appAlertDialog(title, text, buttons, dismissible);
   }
 
-  static appAlertDialogWithOk(
+  appAlertDialogWithOk(
       String title, String text, Function onTapOk, bool? dismissible) async {
     List<Widget> buttons = [
       AppGeneralButton(text: AppTexts.generalOK, onTap: onTapOk),
@@ -61,8 +63,8 @@ class AppDialogs {
     await _appAlertDialog(title, text, buttons, dismissible);
   }
 
-  static _appBottomDialogGeneral(
-          String title, Widget form, List<Widget> buttons, bool? dismissible) async =>
+  _appBottomDialogGeneral(String title, Widget form,
+          List<Widget> buttons, bool? dismissible) async =>
       await showModalBottomSheet(
           context: Get.context!,
           useSafeArea: true,
@@ -104,7 +106,7 @@ class AppDialogs {
                 ]),
               ));
 
-  static Widget _renderButtonsBottomDialog(List<Widget> buttons) {
+  Widget _renderButtonsBottomDialog(List<Widget> buttons) {
     List<Widget> list = List.empty(growable: true);
     int length = buttons.length;
     for (int i = 0; i < length; i++) {
@@ -116,8 +118,8 @@ class AppDialogs {
         mainAxisAlignment: MainAxisAlignment.spaceBetween, children: list);
   }
 
-  static _appAlertDialog(
-          String title, String text, List<Widget> buttons, bool? dismissible) async =>
+  _appAlertDialog(String title, String text, List<Widget> buttons,
+          bool? dismissible) async =>
       await showDialog(
           context: Get.context!,
           useSafeArea: true,
@@ -133,19 +135,19 @@ class AppDialogs {
                     AppDividers.generalDividerWithAppDefaultColor,
                   ]),
                   content: Text(text,
-                      style: AppTextStyles.dialogAlertText,
-                      softWrap: true),
+                      style: AppTextStyles.dialogAlertText, softWrap: true),
                   actions: [_renderButtonsAlertDialog(buttons)],
                   actionsAlignment: MainAxisAlignment.center,
                 ),
               ));
 
-  static Widget _renderButtonsAlertDialog(List<Widget> buttons) {
+  Widget _renderButtonsAlertDialog(List<Widget> buttons) {
     List<Widget> list = List.empty(growable: true);
     int length = buttons.length;
     for (int i = 0; i < length; i++) {
       list.addIf(i == 0, shrinkOneExpanded);
-      list.add(Expanded(flex: length > 1 ? (10 ~/ length) : 1, child: buttons[i]));
+      list.add(
+          Expanded(flex: length > 1 ? (10 ~/ length) : 1, child: buttons[i]));
       list.add(shrinkOneExpanded);
     }
     return Row(

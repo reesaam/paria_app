@@ -8,8 +8,13 @@ import '../../../data/resources/app_paddings.dart';
 import 'app_popup_menu_item.dart';
 
 class AppPopupMenu extends StatelessWidget {
-  const AppPopupMenu(
-      {super.key, required this.listItems, this.icon, this.text, this.lightColor});
+  const AppPopupMenu({
+    super.key,
+    required this.listItems,
+    this.icon,
+    this.text,
+    this.lightColor,
+  });
 
   final List<AppPopupMenuItem> listItems;
   final Icon? icon;

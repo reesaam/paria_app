@@ -62,12 +62,10 @@ class SettingsController extends CoreController {
     appSettingDataListener = appSettings.listen((data) => _fillData());
   }
 
-  functionLanguageModal() => AppDialogs.appBottomDialogWithCancel(
-        Texts.to.setting_language_modal,
-        SettingsLanguageWidgets()
-            .selectLanguageModalForm(functionLanguageSelectionOnTap),
-        true,
-      );
+  functionLanguageModal() => AppDialogs().appBottomDialogWithCancel(
+      Texts.to.setting_language_modal,
+      SettingsLanguageWidget(function: functionLanguageSelectionOnTap),
+      true);
 
   functionLanguageSelectionOnTap(int index) {
     AppLocalization.to.setLanguage(AppLocalization.languages[index]);
@@ -105,7 +103,7 @@ class SettingsController extends CoreController {
       appLogPrint('File Path: $filePath');
     }
 
-    AppDialogs.appAlertDialogWithOkCancel(
+    AppDialogs().appAlertDialogWithOkCancel(
         AppTexts.warning, AppTexts.areYouSureDataExport, function, true);
   }
 
@@ -128,7 +126,7 @@ class SettingsController extends CoreController {
       appLogPrint('Data Imported');
     }
 
-    AppDialogs.appAlertDialogWithOkCancel(
+    AppDialogs().appAlertDialogWithOkCancel(
         AppTexts.warning, AppTexts.areYouSureDataMayLost, function, true);
   }
 
@@ -139,7 +137,7 @@ class SettingsController extends CoreController {
       appLogPrint('Clear All Data Modal Closed');
     }
 
-    AppDialogs.appAlertDialogWithOkCancel(
+    AppDialogs().appAlertDialogWithOkCancel(
         AppTexts.warning, AppTexts.areYouSureDataWillLost, function, true);
   }
 
