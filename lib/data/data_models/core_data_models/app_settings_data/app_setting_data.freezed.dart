@@ -111,7 +111,7 @@ class _$AppSettingDataImpl implements _AppSettingData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppSettingDataImpl &&
@@ -260,7 +260,7 @@ class _$AppSettingsDataListImpl implements _AppSettingsDataList {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppSettingsDataListImpl &&

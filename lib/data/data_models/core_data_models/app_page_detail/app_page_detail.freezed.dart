@@ -138,7 +138,7 @@ class _$AppPageDetailImpl implements _AppPageDetail {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppPageDetailImpl &&
@@ -295,7 +295,7 @@ class _$AppPageDetailsListImpl implements _AppPageDetailsList {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppPageDetailsListImpl &&
