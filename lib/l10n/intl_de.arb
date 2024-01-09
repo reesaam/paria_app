@@ -1,9 +1,15 @@
 {
     "@@locale": "de",
     "app_name": "Base Flutter Clean GetX App",
+
     "pageHomepage": "Home",
+
     "pageSplashScreen": "Splash Screen",
+
     "pageSettings": "Settings",
+    "setting_language_modal": "Select Language",
+
     "pageUpdate": "Update",
+
     "pageAbout": "About"
 }

@@ -1,9 +1,15 @@
 {
     "@@locale": "fa",
     "app_name": "اپلیکیشن پایه فلاتر",
+
     "pageHomepage": "خانه",
+
     "pageSplashScreen": "صفحه آغازین",
+
     "pageSettings": "تنظیمات",
+    "setting_language_modal": "انتخاب زبان",
+
     "pageUpdate": "بروزرسانی",
+
     "pageAbout": "درباره"
 }
