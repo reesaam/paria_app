@@ -1,6 +1,7 @@
-import 'package:base_flutter_clean_getx_app/data/resources/app_enums.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../data/resources/app_enums.dart';
 
 extension LanguageName on Locale {
   String get getLanguageName => getLanguage.name.capitalizeFirst!;

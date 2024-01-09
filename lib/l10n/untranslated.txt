@@ -1,0 +1,9 @@
+{
+  "de": [
+    "setting_language_modal"
+  ],
+
+  "fa": [
+    "setting_language_modal"
+  ]
+}

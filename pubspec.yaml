@@ -1,5 +1,5 @@
-name: base_flutter_clean_getx_app
-description: Base Flutter Clean GetX App
+name: flutter_base_clean_getx_app
+description: Flutter Base App with Clean GetX
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
@@ -99,6 +99,9 @@ dev_dependencies:
 flutter:
   generate: true
 
+flutter_intl:
+  enabled: true
+
   uses-material-design: true
 
   assets:
@@ -116,5 +119,3 @@ flutter:
     - family: Rubik
       fonts:
         - asset: assets/fonts/Rubik/Rubik-SemiBold.ttf
-flutter_intl:
-  enabled: true

@@ -1,4 +1,5 @@
-import 'package:base_flutter_clean_getx_app/data/info/app_info.dart';
+
+import '../info/app_info.dart';
 
 class AppTexts {
   ///App Pages

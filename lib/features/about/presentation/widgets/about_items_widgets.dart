@@ -1,5 +1,6 @@
-import 'package:base_flutter_clean_getx_app/data/resources/app_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../data/resources/app_colors.dart';
 
 class AboutSectionWidget extends StatelessWidget {
   final String titleText;

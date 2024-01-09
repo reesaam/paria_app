@@ -1,5 +1,3 @@
-import 'package:base_flutter_clean_getx_app/data/info/app_developer_info.dart';
-
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_page_details.dart';
 
@@ -19,12 +17,5 @@ class AboutController extends CoreController {
     pageDetail = AppPageDetails.about;
   }
 
-  _fillData() {
-    listTitles = [
-      'Developer Name'
-    ];
-    listItems = [
-      AppDeveloperInfo.fullName,
-    ];
-  }
+  _fillData() {}
 }
