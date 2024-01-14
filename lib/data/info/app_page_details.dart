@@ -38,7 +38,7 @@ class AppPageDetails {
   );
 
   static AppPageDetail settings = AppPageDetail(
-    pageName: Texts.to.homePageName,
+    pageName: Texts.to.settingsPageName,
     pageRoute: AppRoutes.settings,
     bottomBarItemNumber: 1,
   );

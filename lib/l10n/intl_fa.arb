@@ -1,5 +1,6 @@
 {
     "@@locale": "fa",
+    "languageName": "فارسی",
     "app_name": "Base Flutter Clean GetX App",
 
     "homePageName": "خانه",

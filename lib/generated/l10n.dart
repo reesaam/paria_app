@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `English`
+  String get languageName {
+    return Intl.message(
+      'English',
+      name: 'languageName',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Base Flutter Clean GetX App`
   String get app_name {
     return Intl.message(

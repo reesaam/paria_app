@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extension_locale.dart';
+import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extenstion_app_languages.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/app_localization.dart';
@@ -42,12 +44,13 @@ class SettingsPage extends CoreView<SettingsController> {
 
   List<AppPopupMenuItem> get _listAppbarThreeDotsButton => List.of([
         AppPopupMenuItem(
-            text: Texts.to.settingsAppbarMenuResetSettings, onTapFunction: () {})
+            text: Texts.to.settingsAppbarMenuResetSettings,
+            onTapFunction: () => controller.resetAllSettings())
       ]);
 
   Widget _widgetGeneral() {
-    Widget leadingGeneral() => Obx(() =>
-        Text(controller.selectedLanguage.value.name.capitalizeFirst ?? ''));
+    Widget leadingLanguage() => Obx(() => Text(
+        controller.selectedLanguage.value.getLocale.getLanguageName ?? ''));
 
     ///TODO: Calendar Types Implementation
     Widget leadingCalendar() => Obx(() =>
@@ -63,7 +66,7 @@ class SettingsPage extends CoreView<SettingsController> {
         widgets: [
           SettingsSectionItemWidget(
               text: Texts.to.settingsSectionTitleGeneralLanguage,
-              leading: leadingGeneral(),
+              leading: leadingLanguage(),
               wholeItemFunction: controller.functionLanguageModal),
           SettingsSectionItemWidget(
               text: Texts.to.settingsSectionTitleGeneralCalendar,

@@ -7,7 +7,6 @@ import '../resources/app_enums.dart';
 import 'local_storage_service.dart';
 
 class AppLocalStorage {
-
   final String _keyLocalStorage = 'Local Storage';
   final _storage = LocalStorageService();
 
@@ -52,7 +51,7 @@ class AppLocalStorage {
   AppSettingData loadSettings() {
     var data = _loadFunction(_keySettings);
     return data == null
-        ? const AppSettingData()
+        ? const AppSettingData(darkMode: false, language: AppLanguages.english)
         : AppSettingData.fromJson(data);
   }
 }

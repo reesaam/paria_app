@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "homePageName": MessageLookupByLibrary.simpleMessage("Home"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "information": MessageLookupByLibrary.simpleMessage("Information"),
+        "languageName": MessageLookupByLibrary.simpleMessage("Deutsch"),
         "notAvailable": MessageLookupByLibrary.simpleMessage("Not Available"),
         "notAvailableInitials": MessageLookupByLibrary.simpleMessage("N/A"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),

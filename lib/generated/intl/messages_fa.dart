@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "homePageName": MessageLookupByLibrary.simpleMessage("خانه"),
         "info": MessageLookupByLibrary.simpleMessage("اطلاعات"),
         "information": MessageLookupByLibrary.simpleMessage("اطلاعات"),
+        "languageName": MessageLookupByLibrary.simpleMessage("فارسی"),
         "notAvailable": MessageLookupByLibrary.simpleMessage("ناموجود"),
         "notAvailableInitials": MessageLookupByLibrary.simpleMessage("ناموجود"),
         "ok": MessageLookupByLibrary.simpleMessage("باشه"),

@@ -7,7 +7,7 @@ class AppTexts {
   ///App Admin Pages
 
   ///General
-
+  static String get languageNamePersian => 'فارسی';
 
   ///Settings
   static String get settingBackupFilename => '${AppInfo.appNameInitials}_Backup.json';

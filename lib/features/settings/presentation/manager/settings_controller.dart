@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extenstion_app_languages.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
 
@@ -68,15 +69,17 @@ class SettingsController extends CoreController {
       true);
 
   functionLanguageSelectionOnTap(int index) {
-    AppLocalization.to.setLanguage(AppLocalization.languages[index]);
-    selectedLanguage.value = AppLocalization.to.currentLanguage.getLanguage;
+    selectedLanguage.value = AppLocalization.languages[index].getLanguage;
+    saveSettings();
     popPage();
-    Get.updateLocale(AppLocalization.to.currentLanguage);
+    Get.updateLocale(selectedLanguage.value.getLocale);
+    update();
     refresh();
   }
 
   functionDarkModeOnChange(bool value) {
     darkMode.value = value;
+    saveSettings();
     appLogPrint('DarkMode Changed to ${darkMode.value}');
     refresh();
   }
@@ -142,6 +145,10 @@ class SettingsController extends CoreController {
   }
 
   saveSettings() {
+    appSettings.value = appSettings.value.copyWith(
+      darkMode: darkMode.value,
+      language: selectedLanguage.value,
+    );
     appSettings.saveOnStorage;
     appLogPrint('Settings Saved');
   }
