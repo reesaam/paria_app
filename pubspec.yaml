@@ -96,11 +96,11 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
 
-flutter:
-  generate: true
-
 flutter_intl:
   enabled: true
+
+flutter:
+  generate: true
 
   uses-material-design: true
 
