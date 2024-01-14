@@ -9,13 +9,21 @@ part of 'app_setting_data.dart';
 _$AppSettingDataImpl _$$AppSettingDataImplFromJson(Map<String, dynamic> json) =>
     _$AppSettingDataImpl(
       darkMode: json['darkMode'] as bool?,
+      language: $enumDecodeNullable(_$AppLanguagesEnumMap, json['language']),
     );
 
 Map<String, dynamic> _$$AppSettingDataImplToJson(
         _$AppSettingDataImpl instance) =>
     <String, dynamic>{
       'darkMode': instance.darkMode,
+      'language': _$AppLanguagesEnumMap[instance.language],
     };
+
+const _$AppLanguagesEnumMap = {
+  AppLanguages.english: 'english',
+  AppLanguages.deutsch: 'deutsch',
+  AppLanguages.persian: 'persian',
+};
 
 _$AppSettingsDataListImpl _$$AppSettingsDataListImplFromJson(
         Map<String, dynamic> json) =>
