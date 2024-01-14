@@ -22,104 +22,105 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "aboutPageName": MessageLookupByLibrary.simpleMessage("About"),
+        "aboutPageName": MessageLookupByLibrary.simpleMessage("درباره"),
         "adminStartPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin Start Page"),
         "adminTestPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin Pages Test Page"),
         "adminUITestPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin UI Test Page"),
-        "alert": MessageLookupByLibrary.simpleMessage("Alert"),
-        "appExit": MessageLookupByLibrary.simpleMessage("App Exit"),
+        "alert": MessageLookupByLibrary.simpleMessage("هشدار"),
+        "appExit": MessageLookupByLibrary.simpleMessage("خروج"),
         "app_name":
             MessageLookupByLibrary.simpleMessage("Base Flutter Clean GetX App"),
-        "areYouSure": MessageLookupByLibrary.simpleMessage(""),
+        "areYouSure":
+            MessageLookupByLibrary.simpleMessage("آیا اطمینان دارید؟"),
         "areYouSureDataExport": MessageLookupByLibrary.simpleMessage(
-            "Are you sure?\nData will be exported and exposed."),
+            "آیا اطمینان دارید؟\nاطلاعات خارج خواهند شد"),
         "areYouSureDataImport": MessageLookupByLibrary.simpleMessage(
-            "Are you sure?\nData will be imported and exposed."),
+            "آیا اطمینان دارید؟\nاطلاعات وارد خواهند شد"),
         "areYouSureDataMayLost": MessageLookupByLibrary.simpleMessage(
-            "Are you sure?\nData may be lost with this Function."),
+            "آیا اطمینان دارید؟\nاطلاعات شما ممکن است از بین بروند"),
         "areYouSureDataWillLost": MessageLookupByLibrary.simpleMessage(
-            "Are you sure?\nData will be lost with this Function."),
-        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+            "آیا اطمینان دارید؟\nاطلاعات شما از بین خواهد رفت"),
+        "cancel": MessageLookupByLibrary.simpleMessage("لغو"),
         "empty": MessageLookupByLibrary.simpleMessage(""),
-        "from": MessageLookupByLibrary.simpleMessage("From"),
-        "homePageName": MessageLookupByLibrary.simpleMessage("Home"),
-        "info": MessageLookupByLibrary.simpleMessage("Info"),
-        "information": MessageLookupByLibrary.simpleMessage("Information"),
-        "notAvailable": MessageLookupByLibrary.simpleMessage("Not Available"),
-        "notAvailableInitials": MessageLookupByLibrary.simpleMessage("N/A"),
-        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "from": MessageLookupByLibrary.simpleMessage("از"),
+        "homePageName": MessageLookupByLibrary.simpleMessage("خانه"),
+        "info": MessageLookupByLibrary.simpleMessage("اطلاعات"),
+        "information": MessageLookupByLibrary.simpleMessage("اطلاعات"),
+        "notAvailable": MessageLookupByLibrary.simpleMessage("ناموجود"),
+        "notAvailableInitials": MessageLookupByLibrary.simpleMessage("ناموجود"),
+        "ok": MessageLookupByLibrary.simpleMessage("باشه"),
         "settingsAppbarMenuResetSettings":
-            MessageLookupByLibrary.simpleMessage("Reset All Settings"),
+            MessageLookupByLibrary.simpleMessage("بازنشانی همه تنظیمات"),
         "settingsLanguageModalSelectLanguage":
-            MessageLookupByLibrary.simpleMessage("Select Language"),
-        "settingsPageName": MessageLookupByLibrary.simpleMessage("Settings"),
+            MessageLookupByLibrary.simpleMessage("انتخاب زبان"),
+        "settingsPageName": MessageLookupByLibrary.simpleMessage("تنظیمات"),
         "settingsSectionBackupBackup":
-            MessageLookupByLibrary.simpleMessage("Backup Data"),
+            MessageLookupByLibrary.simpleMessage("اطلاعات پشتیبان"),
         "settingsSectionBackupRestore":
-            MessageLookupByLibrary.simpleMessage("Restore Data"),
+            MessageLookupByLibrary.simpleMessage("اطلاعات بازیابی"),
         "settingsSectionGeneralItemDarkMode":
-            MessageLookupByLibrary.simpleMessage("Dark Mode"),
+            MessageLookupByLibrary.simpleMessage("حالت تاریک"),
         "settingsSectionStorageItemEraseAllData":
-            MessageLookupByLibrary.simpleMessage("Erase All Data"),
+            MessageLookupByLibrary.simpleMessage("پاک کردن تمام اطلاعات"),
         "settingsSectionTitleBackup":
-            MessageLookupByLibrary.simpleMessage("Backup"),
+            MessageLookupByLibrary.simpleMessage("پشتیبان"),
         "settingsSectionTitleGeneral":
-            MessageLookupByLibrary.simpleMessage("General"),
+            MessageLookupByLibrary.simpleMessage("عمومی"),
         "settingsSectionTitleGeneralCalendar":
-            MessageLookupByLibrary.simpleMessage("Calendar Type"),
+            MessageLookupByLibrary.simpleMessage("تقویم"),
         "settingsSectionTitleGeneralLanguage":
-            MessageLookupByLibrary.simpleMessage("Language"),
+            MessageLookupByLibrary.simpleMessage("زبان"),
         "settingsSectionTitleStorage":
-            MessageLookupByLibrary.simpleMessage("Storage"),
+            MessageLookupByLibrary.simpleMessage("حافظه"),
         "settingsSectionTitleUpdate":
-            MessageLookupByLibrary.simpleMessage("Update"),
+            MessageLookupByLibrary.simpleMessage("بروزرسانی"),
         "settingsSectionTitleUpdateAvailableVersion":
-            MessageLookupByLibrary.simpleMessage("Available Version:"),
+            MessageLookupByLibrary.simpleMessage("نسخه در دسترس:"),
         "settingsSectionTitleUpdateCurrentVersion":
-            MessageLookupByLibrary.simpleMessage("Current Version:"),
+            MessageLookupByLibrary.simpleMessage("نسخه فعلی:"),
         "splashScreenPageName":
-            MessageLookupByLibrary.simpleMessage("Splash Screen"),
-        "to": MessageLookupByLibrary.simpleMessage("To"),
-        "total": MessageLookupByLibrary.simpleMessage("Total"),
+            MessageLookupByLibrary.simpleMessage("صفحه شروع"),
+        "to": MessageLookupByLibrary.simpleMessage("تا"),
+        "total": MessageLookupByLibrary.simpleMessage("جمع"),
         "updateApprove": MessageLookupByLibrary.simpleMessage(
-            "Do you want to download the New Version?"),
+            "آیا میخواهید نسخه جدید را دانلود کنید؟"),
         "updateAvailableVersion":
-            MessageLookupByLibrary.simpleMessage("New Available Version:"),
+            MessageLookupByLibrary.simpleMessage("نسخه جدید در دسترس:"),
         "updateCheckUpdate":
-            MessageLookupByLibrary.simpleMessage("Check Update"),
-        "updateCheckingUpdate": MessageLookupByLibrary.simpleMessage(
-            "Checking for any Available Update ..."),
+            MessageLookupByLibrary.simpleMessage("بررسی بروزرسانی"),
+        "updateCheckingUpdate":
+            MessageLookupByLibrary.simpleMessage("بررسی برای نسخه جدید..."),
         "updateCurrentVersion":
-            MessageLookupByLibrary.simpleMessage("Current Version:"),
+            MessageLookupByLibrary.simpleMessage("نسخه فعلی:"),
         "updateDirectoryNotFoundContent": MessageLookupByLibrary.simpleMessage(
-            "There is not any Directory available to store Data"),
+            "هیچ دایرکتوری برای ذخیره اطلاعات موجود نیست"),
         "updateDirectoryNotFoundTitle":
-            MessageLookupByLibrary.simpleMessage("Directory Error!"),
+            MessageLookupByLibrary.simpleMessage("خطای دایرکتوری"),
         "updateDownloadUpdate":
-            MessageLookupByLibrary.simpleMessage("Download Update"),
+            MessageLookupByLibrary.simpleMessage("دانلود بروزرسانی"),
         "updateDownloaded":
-            MessageLookupByLibrary.simpleMessage("Update Downloaded!"),
+            MessageLookupByLibrary.simpleMessage("بروزرسانی دانلود شد"),
         "updateDownloading":
-            MessageLookupByLibrary.simpleMessage("Downloading ..."),
+            MessageLookupByLibrary.simpleMessage("در حال دانلود..."),
         "updateFileNotFoundContent":
-            MessageLookupByLibrary.simpleMessage("File not found"),
+            MessageLookupByLibrary.simpleMessage("فایل پیدا نشد"),
         "updateFileNotFoundTitle":
-            MessageLookupByLibrary.simpleMessage("File Error!"),
+            MessageLookupByLibrary.simpleMessage("خطای فایل!"),
         "updateInstallationContent": MessageLookupByLibrary.simpleMessage(
-            "Do you want to install the Update?\n\nWarning: Application will close!"),
+            "آیا میخواهید بروزرسانی را دانلود کنید؟\n\nتوجه: اپلیکیشن ممکن است بسته شود"),
         "updateInstallationTitle":
-            MessageLookupByLibrary.simpleMessage("Update Installation"),
+            MessageLookupByLibrary.simpleMessage("در حال نصب بروزرسانی..."),
         "updateNewVersion":
-            MessageLookupByLibrary.simpleMessage("New Version Found"),
-        "updateNoUpdateFound": MessageLookupByLibrary.simpleMessage(
-            "There is not any Update Available!"),
-        "updatePageName": MessageLookupByLibrary.simpleMessage("Update"),
+            MessageLookupByLibrary.simpleMessage("نسخه جدید پیدا شد"),
+        "updateNoUpdateFound":
+            MessageLookupByLibrary.simpleMessage("نسخه جدیدی موجود نیست!"),
+        "updatePageName": MessageLookupByLibrary.simpleMessage("بروزرسانی"),
         "updateUpdateFound":
-            MessageLookupByLibrary.simpleMessage("New Update is Available!"),
-        "version": MessageLookupByLibrary.simpleMessage("Version"),
-        "warning": MessageLookupByLibrary.simpleMessage("Warning")
+            MessageLookupByLibrary.simpleMessage("نسخه جدید در موجود است!"),
+        "version": MessageLookupByLibrary.simpleMessage("نسخه"),
+        "warning": MessageLookupByLibrary.simpleMessage("توجه")
       };
 }

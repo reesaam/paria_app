@@ -240,10 +240,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `Are you sure ?`
   String get areYouSure {
     return Intl.message(
-      '',
+      'Are you sure ?',
       name: 'areYouSure',
       desc: '',
       args: [],
