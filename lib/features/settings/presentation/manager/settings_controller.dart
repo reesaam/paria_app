@@ -29,7 +29,7 @@ class SettingsController extends CoreController {
   Rx<AppLanguages> selectedLanguage = AppLanguages.english.obs;
   Rx<AppCalendarTypes> selectedCalendar = AppCalendarTypes.georgian.obs;
 
-  Rx<String> updateAvailableVersion = AppTexts.generalNotAvailable.obs;
+  Rx<String> updateAvailableVersion = Texts.to.notAvailable.obs;
 
   //Listeners
   late StreamSubscription<AppSettingData> appSettingDataListener;
@@ -63,7 +63,7 @@ class SettingsController extends CoreController {
   }
 
   functionLanguageModal() => AppDialogs().appBottomDialogWithCancel(
-      Texts.to.setting_language_modal,
+      Texts.to.settingsLanguageModalSelectLanguage,
       SettingsLanguageWidget(function: functionLanguageSelectionOnTap),
       true);
 
@@ -104,7 +104,7 @@ class SettingsController extends CoreController {
     }
 
     AppDialogs().appAlertDialogWithOkCancel(
-        AppTexts.warning, AppTexts.areYouSureDataExport, function, true);
+        Texts.to.warning, Texts.to.areYouSureDataExport, function, true);
   }
 
   functionRestore() {
@@ -127,7 +127,7 @@ class SettingsController extends CoreController {
     }
 
     AppDialogs().appAlertDialogWithOkCancel(
-        AppTexts.warning, AppTexts.areYouSureDataMayLost, function, true);
+        Texts.to.warning, Texts.to.areYouSureDataMayLost, function, true);
   }
 
   functionClearAllData() {
@@ -138,7 +138,7 @@ class SettingsController extends CoreController {
     }
 
     AppDialogs().appAlertDialogWithOkCancel(
-        AppTexts.warning, AppTexts.areYouSureDataWillLost, function, true);
+        Texts.to.warning, Texts.to.areYouSureDataWillLost, function, true);
   }
 
   saveSettings() {

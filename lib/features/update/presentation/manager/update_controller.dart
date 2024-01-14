@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:open_file_plus/open_file_plus.dart' as file_plus;
 import 'package:path_provider/path_provider.dart';
 
+import '../../../../core/app_localization.dart';
 import '../../../../features/update/domain/use_cases/update_download_address_usecase.dart';
 import '../../../../features/update/domain/use_cases/update_download_usecase.dart';
 import '../../../../features/update/data/repositories/update_repository.dart';
@@ -17,7 +18,7 @@ import '../../../../app/components/general_widgets/app_snack_bars.dart';
 import '../../../../app/components/main_components/app_dialogs.dart';
 
 class UpdateController extends CoreController {
-  Rx<String> availableVersion = AppTexts.generalNotAvailable.obs;
+  Rx<String> availableVersion = Texts.to.notAvailable.obs;
 
   File? dlFile;
   Directory? dlDir;
@@ -47,7 +48,7 @@ class UpdateController extends CoreController {
   }
 
   checkUpdate() async {
-    AppDialogs().appBottomDialogWithoutButton(AppTexts.updateCheckingUpdate,
+    AppDialogs().appBottomDialogWithoutButton(Texts.to.updateCheckingUpdate,
         AppProgressIndicator.linear(), false);
 
     String version = await checkAvailableVersion();
@@ -55,16 +56,16 @@ class UpdateController extends CoreController {
 
     if (version == AppInfo.appCurrentVersion) {
       appLogPrint('No New Version Available');
-      AppSnackBar.show(AppTexts.updateNoUpdateFound);
+      AppSnackBar.show(Texts.to.updateNoUpdateFound);
     } else {
       appLogPrint('Available Version: $version');
       availableVersion.value = version;
-      AppSnackBar.show(AppTexts.updateUpdateFound);
+      AppSnackBar.show(Texts.to.updateUpdateFound);
     }
   }
 
   downloadUpdate() async {
-    AppDialogs().appBottomDialogWithoutButton(AppTexts.updateDownloading,
+    AppDialogs().appBottomDialogWithoutButton(Texts.to.updateDownloading,
         AppProgressIndicator.linear(), false);
 
     dlDir = await getExternalStorageDirectory();
@@ -101,10 +102,10 @@ class UpdateController extends CoreController {
       });
     }
 
-    AppSnackBar.show(AppTexts.updateDownloaded);
+    AppSnackBar.show(Texts.to.updateDownloaded);
 
-    AppDialogs().appAlertDialogWithOkCancel(AppTexts.updateInstallationTitle,
-        AppTexts.updateInstallationContent, installUpdate, true);
+    AppDialogs().appAlertDialogWithOkCancel(Texts.to.updateInstallationTitle,
+        Texts.to.updateInstallationContent, installUpdate, true);
   }
 
   void installUpdate() => file_plus.OpenFile.open(dlFile!.path);
@@ -112,15 +113,15 @@ class UpdateController extends CoreController {
   alertDirectoryOrFileNotFound(bool directoryError) =>
       AppDialogs().appAlertDialogWithOk(
           directoryError
-              ? AppTexts.updateDirectoryNotFoundTitle
-              : AppTexts.updateFileNotFoundTitle,
+              ? Texts.to.updateDirectoryNotFoundTitle
+              : Texts.to.updateFileNotFoundTitle,
           directoryError
-              ? AppTexts.updateDirectoryNotFoundContent
-              : AppTexts.updateFileNotFoundContent,
+              ? Texts.to.updateDirectoryNotFoundContent
+              : Texts.to.updateFileNotFoundContent,
           Get.back,
           true);
 
   checkAvailableUpdate() =>
       availableVersion.value == AppInfo.appCurrentVersion ||
-      availableVersion.value == AppTexts.generalNotAvailable;
+      availableVersion.value == Texts.to.notAvailable;
 }

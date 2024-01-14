@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../core/app_localization.dart';
 import '../../../core/core_functions.dart';
 import '../../../data/data_models/core_data_models/app_page_detail/app_page_detail.dart';
 import '../../../data/info/app_info.dart';
@@ -57,6 +58,6 @@ class AppDrawer extends Drawer {
         InkWell(
           onTap: () => goToPage(AppPageDetails.update),
             child: Text(
-                '${AppTexts.generalVersion}: ${AppInfo.appCurrentVersion}')),
+                '${Texts.to.version}: ${AppInfo.appCurrentVersion}')),
       ]));
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/app_localization.dart';
 import '../../../../core/elements/core_view.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../data/resources/app_paddings.dart';
@@ -27,12 +28,12 @@ class UpdatePage extends CoreView<UpdateController> {
 
   Widget widgetVersions() => Obx(() => Card(
           child: Column(children: [
-        widgetVersion(AppTexts.updateCurrentVersion, AppInfo.appCurrentVersion),
+        widgetVersion(Texts.to.updateCurrentVersion, AppInfo.appCurrentVersion),
         AppSpaces.h10,
         widgetVersion(
-            AppTexts.updateAvailableVersion,
+            Texts.to.updateAvailableVersion,
             controller.availableVersion.value == AppInfo.appCurrentVersion
-                ? AppTexts.generalNotAvailable
+                ? Texts.to.notAvailable
                 : controller.availableVersion.value),
       ])));
 
@@ -44,9 +45,9 @@ class UpdatePage extends CoreView<UpdateController> {
       padding: AppPaddings.updateButtons,
       child: Column(children: [
         AppGeneralButton(
-            text: AppTexts.updateCheckUpdate, onTap: controller.checkUpdate),
+            text: Texts.to.updateCheckUpdate, onTap: controller.checkUpdate),
         AppGeneralButton(
-            text: AppTexts.updateDownloadUpdate,
+            text: Texts.to.updateDownloadUpdate,
             onTap: controller.downloadUpdate,
             disabled: controller.checkAvailableUpdate()),
       ])));

@@ -4,6 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../../core/app_localization.dart';
 import '../../../../../core/core_functions.dart';
 import '../../../../../data/info/app_urls.dart';
 import '../../../../../data/resources/app_texts.dart';
@@ -17,7 +18,7 @@ class UpdateRemoteDataSourceImpl implements UpdateRemoteDataSource {
 
   @override
   Future<Either<NetworkException, String>> getDownloadAddress() async{
-    String address = AppTexts.generalNotAvailableInitials;
+    String address = Texts.to.notAvailableInitials;
     final Response response;
     try {
       response = await Dio().get(AppURLs.appUrlUpdateAddress);
@@ -40,7 +41,7 @@ class UpdateRemoteDataSourceImpl implements UpdateRemoteDataSource {
 
   @override
   Future<Either<NetworkException, String>> getAvailableVersion() async {
-    String version = AppTexts.generalNotAvailableInitials;
+    String version = Texts.to.notAvailableInitials;
     final Response response;
     try {
       response = await Dio().get(AppURLs.appUrlUpdateVersion);

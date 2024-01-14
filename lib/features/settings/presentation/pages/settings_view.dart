@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/app_localization.dart';
 import '../../../../core/elements/core_view.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../data/resources/app_texts.dart';
@@ -42,7 +43,7 @@ class SettingsPage extends CoreView<SettingsController> {
 
   List<AppPopupMenuItem> get _listAppbarThreeDotsButton => List.of([
         AppPopupMenuItem(
-            text: AppTexts.settingAppbarMenuResetSettings, onTapFunction: () {})
+            text: Texts.to.settingsAppbarMenuResetSettings, onTapFunction: () {})
       ]);
 
   Widget _widgetGeneral() {
@@ -59,52 +60,52 @@ class SettingsPage extends CoreView<SettingsController> {
         enabled: false));
 
     return SettingsSectionWidget(
-        title: AppTexts.settingSectionTitleGeneral,
+        title: Texts.to.settingsSectionTitleGeneral,
         widgets: [
           SettingsSectionItemWidget(
-              text: AppTexts.settingSectionTitleGeneralLanguage,
+              text: Texts.to.settingsSectionTitleGeneralLanguage,
               leading: leadingGeneral(),
               wholeItemFunction: controller.functionLanguageModal),
           SettingsSectionItemWidget(
-              text: AppTexts.settingSectionTitleGeneralCalendar,
+              text: Texts.to.settingsSectionTitleGeneralCalendar,
               leading: leadingCalendar()),
           SettingsSectionItemWidget(
-              text: AppTexts.settingSectionGeneralItemDarkMode,
+              text: Texts.to.settingsSectionGeneralItemDarkMode,
               leading: leadingDarkMode()),
         ]);
   }
 
   Widget _widgetUpdate() => SettingsSectionWidget(
-          title: AppTexts.settingSectionTitleUpdate,
+          title: Texts.to.settingsSectionTitleUpdate,
           widgets: [
             SettingsSectionItemWidget(
-                text: AppTexts.settingSectionTitleUpdateCurrentVersion,
+                text: Texts.to.settingsSectionTitleUpdateCurrentVersion,
                 leading: Text(AppInfo.appCurrentVersion)),
             SettingsSectionItemWidget(
-                text: AppTexts.settingSectionTitleUpdateAvailableVersion,
+                text: Texts.to.settingsSectionTitleUpdateAvailableVersion,
                 leading: Text(controller.updateAvailableVersion.value ==
                         AppInfo.appCurrentVersion
-                    ? AppTexts.generalNotAvailable
+                    ? Texts.to.notAvailable
                     : controller.updateAvailableVersion.value),
                 wholeItemFunction: controller.functionGoToUpdatePage),
           ]);
 
   Widget _widgetBackup() => SettingsSectionWidget(
-          title: AppTexts.settingSectionTitleBackup,
+          title: Texts.to.settingsSectionTitleBackup,
           widgets: [
             SettingsSectionItemWidget(
-                text: AppTexts.settingSectionBackupBackup,
+                text: Texts.to.settingsSectionBackupBackup,
                 wholeItemFunction: controller.functionBackup),
             SettingsSectionItemWidget(
-                text: AppTexts.settingSectionBackupRestore,
+                text: Texts.to.settingsSectionBackupRestore,
                 wholeItemFunction: controller.functionRestore),
           ]);
 
   Widget _widgetStorage() => SettingsSectionWidget(
-          title: AppTexts.settingSectionTitleStorage,
+          title: Texts.to.settingsSectionTitleStorage,
           widgets: [
             SettingsSectionItemWidget(
-                text: AppTexts.settingSectionStorageItemEraseAllData,
+                text: Texts.to.settingsSectionStorageItemEraseAllData,
                 wholeItemFunction: controller.functionClearAllData)
           ]);
 }

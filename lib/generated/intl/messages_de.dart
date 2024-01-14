@@ -23,12 +23,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_name":
-            MessageLookupByLibrary.simpleMessage("Base Flutter Clean GetX App"),
-        "pageAbout": MessageLookupByLibrary.simpleMessage("About"),
-        "pageHomepage": MessageLookupByLibrary.simpleMessage("Home"),
-        "pageSettings": MessageLookupByLibrary.simpleMessage("Settings"),
-        "pageSplashScreen":
-            MessageLookupByLibrary.simpleMessage("Splash Screen"),
-        "pageUpdate": MessageLookupByLibrary.simpleMessage("Update")
+            MessageLookupByLibrary.simpleMessage("Base Flutter Clean GetX App")
       };
 }

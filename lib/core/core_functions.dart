@@ -11,6 +11,7 @@ import '../data/storage/app_local_storage.dart';
 import '../data/storage/app_shared_preferences.dart';
 import '../features/update/data/repositories/update_repository.dart';
 import '../features/update/domain/use_cases/update_version_usecase.dart';
+import 'app_localization.dart';
 
 bool get isRelease => false;
 
@@ -50,10 +51,10 @@ Future<bool> onBackButtonPressed(AppPageDetail pageDetail) async {
 Future<String> checkAvailableVersion() async => await UpdateVersionUseCase(
         updateRepository: UpdateRepository.to)
     .call()
-    .then((value) => value.fold((l) => AppTexts.generalNotAvailable, (r) => r));
+    .then((value) => value.fold((l) => Texts.to.notAvailable, (r) => r));
 
 void appExitDialog() => AppDialogs().appAlertDialogWithOkCancel(
-    AppTexts.appExit, AppTexts.areYouSure, appExit, true);
+    Texts.to.appExit, Texts.to.areYouSure, appExit, true);
 
 void appExit() {
   appLogPrint('App Exit Triggered');

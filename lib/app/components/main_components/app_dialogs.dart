@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../core/app_localization.dart';
 import '../../../core/core_functions.dart';
 import '../../../core/core_widgets.dart';
 import '../../../data/resources/app_colors.dart';
@@ -8,7 +9,6 @@ import '../../../data/resources/app_elements.dart';
 import '../../../data/resources/app_paddings.dart';
 import '../../../data/resources/app_spaces.dart';
 import '../../../data/resources/app_text_styles.dart';
-import '../../../data/resources/app_texts.dart';
 import '../buttons/app_general_button.dart';
 import '../general_widgets/app_dividers.dart';
 
@@ -24,7 +24,7 @@ class AppDialogs {
   appBottomDialogWithOk(
       String title, Widget form, Function onTapOk, bool? dismissible) async {
     List<Widget> buttons = [
-      AppGeneralButton(text: AppTexts.generalOK, onTap: onTapOk)
+      AppGeneralButton(text: Texts.to.ok, onTap: onTapOk)
     ];
     await _appBottomDialogGeneral(title, form, buttons, dismissible);
   }
@@ -32,7 +32,7 @@ class AppDialogs {
   appBottomDialogWithCancel(
       String title, Widget form, bool? dismissible) async {
     List<Widget> buttons = [
-      AppGeneralButton(text: AppTexts.generalCancel, onTap: _onTapCancel)
+      AppGeneralButton(text: Texts.to.cancel, onTap: _onTapCancel)
     ];
     await _appBottomDialogGeneral(title, form, buttons, dismissible);
   }
@@ -40,8 +40,8 @@ class AppDialogs {
   appBottomDialogWithOkCancel(
       String title, Widget form, Function onTapOk, bool? dismissible) async {
     List<Widget> buttons = [
-      AppGeneralButton(text: AppTexts.generalOK, onTap: onTapOk),
-      AppGeneralButton(text: AppTexts.generalCancel, onTap: _onTapCancel),
+      AppGeneralButton(text: Texts.to.ok, onTap: onTapOk),
+      AppGeneralButton(text: Texts.to.cancel, onTap: _onTapCancel),
     ];
     await _appBottomDialogGeneral(title, form, buttons, dismissible);
   }
@@ -49,8 +49,8 @@ class AppDialogs {
   appAlertDialogWithOkCancel(
       String title, String text, Function onTapOk, bool? dismissible) async {
     List<Widget> buttons = [
-      AppGeneralButton(text: AppTexts.generalOK, onTap: onTapOk),
-      AppGeneralButton(text: AppTexts.generalCancel, onTap: _onTapCancel),
+      AppGeneralButton(text: Texts.to.ok, onTap: onTapOk),
+      AppGeneralButton(text: Texts.to.cancel, onTap: _onTapCancel),
     ];
     await _appAlertDialog(title, text, buttons, dismissible);
   }
@@ -58,7 +58,7 @@ class AppDialogs {
   appAlertDialogWithOk(
       String title, String text, Function onTapOk, bool? dismissible) async {
     List<Widget> buttons = [
-      AppGeneralButton(text: AppTexts.generalOK, onTap: onTapOk),
+      AppGeneralButton(text: Texts.to.ok, onTap: onTapOk),
     ];
     await _appAlertDialog(title, text, buttons, dismissible);
   }
