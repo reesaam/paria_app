@@ -7,7 +7,6 @@ import 'package:injectable/injectable.dart';
 import '../../../../../core/app_localization.dart';
 import '../../../../../core/core_functions.dart';
 import '../../../../../data/info/app_urls.dart';
-import '../../../../../data/resources/app_texts.dart';
 import 'update_remote_data_source.dart';
 import '../../../../../core/network/network_exception.dart';
 

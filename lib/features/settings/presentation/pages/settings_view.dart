@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../core/elements/core_view.dart';
 import '../../../../data/info/app_info.dart';
-import '../../../../data/resources/app_texts.dart';
 import '../../../../app/components/general_widgets/app_popup_menu.dart';
 import '../../../../app/components/general_widgets/app_popup_menu_item.dart';
 import '../../../../app/components/general_widgets/app_switch.dart';

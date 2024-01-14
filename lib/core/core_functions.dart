@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 import '../app/components/main_components/app_dialogs.dart';
 import '../data/data_models/core_data_models/app_page_detail/app_page_detail.dart';
-import '../data/resources/app_texts.dart';
 import '../data/storage/app_local_storage.dart';
 import '../data/storage/app_shared_preferences.dart';
 import '../features/update/data/repositories/update_repository.dart';

@@ -11,7 +11,6 @@ import '../../../data/resources/app_logos.dart';
 import '../../../data/resources/app_paddings.dart';
 import '../../../data/resources/app_sizes.dart';
 import '../../../data/resources/app_spaces.dart';
-import '../../../data/resources/app_texts.dart';
 import '../general_widgets/app_dividers.dart';
 
 class AppDrawer extends Drawer {

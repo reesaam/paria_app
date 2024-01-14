@@ -6,7 +6,6 @@ import '../../../../core/elements/core_view.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../data/resources/app_paddings.dart';
 import '../../../../data/resources/app_spaces.dart';
-import '../../../../data/resources/app_texts.dart';
 import '../../../../app/components/buttons/app_general_button.dart';
 import '../../../../app/components/main_components/app_bar.dart';
 import '../manager/update_controller.dart';
