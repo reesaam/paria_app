@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extenstion_app_languages.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
@@ -28,7 +28,7 @@ class SettingsController extends CoreController {
 
   Rx<bool> darkMode = false.obs;
   Rx<AppLanguages> selectedLanguage = AppLanguages.english.obs;
-  Rx<AppCalendarTypes> selectedCalendar = AppCalendarTypes.georgian.obs;
+  Rx<AppCalendarTypes> selectedCalendar = AppCalendarTypes.christian.obs;
 
   Rx<String> updateAvailableVersion = Texts.to.notAvailable.obs;
 
@@ -145,10 +145,8 @@ class SettingsController extends CoreController {
   }
 
   saveSettings() {
-    appSettings.value = appSettings.value.copyWith(
-      darkMode: darkMode.value,
-      language: selectedLanguage.value,
-    );
+    appSettings.value = appSettings.value
+        .copyWith(darkMode: darkMode.value, language: selectedLanguage.value);
     appSettings.saveOnStorage;
     appLogPrint('Settings Saved');
   }

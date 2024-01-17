@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extension_locale.dart';
-import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extenstion_app_languages.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../core/elements/core_view.dart';
 import '../../../../data/info/app_info.dart';
@@ -54,11 +54,11 @@ class SettingsPage extends CoreView<SettingsController> {
 
     ///TODO: Calendar Types Implementation
     Widget leadingCalendar() => Obx(() =>
-        Text(controller.selectedCalendar.value.name.capitalizeFirst ?? ''));
+        Text(controller.selectedCalendar.value.calendarName ?? ''));
 
     Widget leadingDarkMode() => Obx(() => AppSwitch(
         value: controller.darkMode.value,
-        onChanged: (value) => controller.functionDarkModeOnChange(value),
+        onChanged: (bool value) => controller.functionDarkModeOnChange(value),
         enabled: false));
 
     return SettingsSectionWidget(

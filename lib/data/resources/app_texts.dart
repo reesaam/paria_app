@@ -1,4 +1,3 @@
-
 import '../info/app_info.dart';
 
 class AppTexts {

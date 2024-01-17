@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extenstion_app_languages.dart';
-import 'package:flutter_base_clean_getx_app/data/resources/app_enums.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
 import '../data/storage/app_local_storage.dart';
 import '../generated/l10n.dart';
-import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
-import '../../../../core/core_functions.dart';
 
 class AppLocalization {
   static AppLocalization get to => Get.find();
@@ -30,7 +27,7 @@ class AppLocalization {
 
   TextDirection defaultTextDirection = TextDirection.ltr;
 
-  getLocale() => AppLocalStorage.to.loadSettings().language!.getLocale;
+  getDefaultLocale() => AppLocalStorage.to.loadSettings().language!.getLocale;
 
   getTextDirection() =>
       AppLocalStorage.to.loadSettings().language!.getLocale == persian

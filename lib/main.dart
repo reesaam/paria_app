@@ -33,7 +33,7 @@ class MainApp extends StatelessWidget {
       theme: AppThemes.mainTheme,
       supportedLocales: AppLocalization.to.supportedLocales,
       localizationsDelegates: AppLocalization.to.localizationDelegates,
-      locale: AppLocalization.to.getLocale(),
+      locale: AppLocalization.to.getDefaultLocale(),
       textDirection: AppLocalization.to.getTextDirection(),
     );
   }
