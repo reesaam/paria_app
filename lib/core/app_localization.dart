@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
+import '../data/storage/app_local_storage.dart';
 import '../generated/l10n.dart';
-import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
-import '../../../../core/core_functions.dart';
 
 class AppLocalization {
   static AppLocalization get to => Get.find();
@@ -24,19 +24,15 @@ class AppLocalization {
 
   ///Variables
   Locale defaultLanguage = english;
-  Locale currentLanguage = english;
 
   TextDirection defaultTextDirection = TextDirection.ltr;
 
-  ///Functions
-  setLanguage(Locale locale) {
-    appDebugPrint('Prev Language: $currentLanguage');
-    currentLanguage = locale;
-    appLogPrint('Language change to: ${currentLanguage.getLanguageName}');
-  }
+  getDefaultLocale() => AppLocalStorage.to.loadSettings().language!.getLocale;
 
   getTextDirection() =>
-      currentLanguage == persian ? TextDirection.rtl : defaultTextDirection;
+      AppLocalStorage.to.loadSettings().language!.getLocale == persian
+          ? TextDirection.rtl
+          : defaultTextDirection;
 }
 
 class Texts {

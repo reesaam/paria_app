@@ -17,11 +17,11 @@ void initProject() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   CoreBindings().dependencies();
-  runApp(const MyApp());
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: AppThemes.mainTheme,
       supportedLocales: AppLocalization.to.supportedLocales,
       localizationsDelegates: AppLocalization.to.localizationDelegates,
-      locale: AppLocalization.to.currentLanguage,
+      locale: AppLocalization.to.getDefaultLocale(),
       textDirection: AppLocalization.to.getTextDirection(),
     );
   }

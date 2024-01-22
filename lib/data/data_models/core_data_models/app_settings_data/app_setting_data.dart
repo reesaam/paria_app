@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../resources/app_enums.dart';
+
 part 'app_setting_data.freezed.dart';
 part 'app_setting_data.g.dart';
 
@@ -7,6 +9,7 @@ part 'app_setting_data.g.dart';
 class AppSettingData with _$AppSettingData {
   const factory AppSettingData({
     final bool? darkMode,
+    final AppLanguages? language,
   }) = _AppSettingData;
 
   factory AppSettingData.fromJson(Map<String, dynamic> json) =>

@@ -21,6 +21,7 @@ AppSettingData _$AppSettingDataFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppSettingData {
   bool? get darkMode => throw _privateConstructorUsedError;
+  AppLanguages? get language => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +35,7 @@ abstract class $AppSettingDataCopyWith<$Res> {
           AppSettingData value, $Res Function(AppSettingData) then) =
       _$AppSettingDataCopyWithImpl<$Res, AppSettingData>;
   @useResult
-  $Res call({bool? darkMode});
+  $Res call({bool? darkMode, AppLanguages? language});
 }
 
 /// @nodoc
@@ -51,12 +52,17 @@ class _$AppSettingDataCopyWithImpl<$Res, $Val extends AppSettingData>
   @override
   $Res call({
     Object? darkMode = freezed,
+    Object? language = freezed,
   }) {
     return _then(_value.copyWith(
       darkMode: freezed == darkMode
           ? _value.darkMode
           : darkMode // ignore: cast_nullable_to_non_nullable
               as bool?,
+      language: freezed == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as AppLanguages?,
     ) as $Val);
   }
 }
@@ -69,7 +75,7 @@ abstract class _$$AppSettingDataImplCopyWith<$Res>
       __$$AppSettingDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool? darkMode});
+  $Res call({bool? darkMode, AppLanguages? language});
 }
 
 /// @nodoc
@@ -84,12 +90,17 @@ class __$$AppSettingDataImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? darkMode = freezed,
+    Object? language = freezed,
   }) {
     return _then(_$AppSettingDataImpl(
       darkMode: freezed == darkMode
           ? _value.darkMode
           : darkMode // ignore: cast_nullable_to_non_nullable
               as bool?,
+      language: freezed == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as AppLanguages?,
     ));
   }
 }
@@ -97,31 +108,35 @@ class __$$AppSettingDataImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AppSettingDataImpl implements _AppSettingData {
-  const _$AppSettingDataImpl({this.darkMode});
+  const _$AppSettingDataImpl({this.darkMode, this.language});
 
   factory _$AppSettingDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppSettingDataImplFromJson(json);
 
   @override
   final bool? darkMode;
+  @override
+  final AppLanguages? language;
 
   @override
   String toString() {
-    return 'AppSettingData(darkMode: $darkMode)';
+    return 'AppSettingData(darkMode: $darkMode, language: $language)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppSettingDataImpl &&
             (identical(other.darkMode, darkMode) ||
-                other.darkMode == darkMode));
+                other.darkMode == darkMode) &&
+            (identical(other.language, language) ||
+                other.language == language));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, darkMode);
+  int get hashCode => Object.hash(runtimeType, darkMode, language);
 
   @JsonKey(ignore: true)
   @override
@@ -139,13 +154,17 @@ class _$AppSettingDataImpl implements _AppSettingData {
 }
 
 abstract class _AppSettingData implements AppSettingData {
-  const factory _AppSettingData({final bool? darkMode}) = _$AppSettingDataImpl;
+  const factory _AppSettingData(
+      {final bool? darkMode,
+      final AppLanguages? language}) = _$AppSettingDataImpl;
 
   factory _AppSettingData.fromJson(Map<String, dynamic> json) =
       _$AppSettingDataImpl.fromJson;
 
   @override
   bool? get darkMode;
+  @override
+  AppLanguages? get language;
   @override
   @JsonKey(ignore: true)
   _$$AppSettingDataImplCopyWith<_$AppSettingDataImpl> get copyWith =>
@@ -260,7 +279,7 @@ class _$AppSettingsDataListImpl implements _AppSettingsDataList {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppSettingsDataListImpl &&

@@ -6,9 +6,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
 import '../../../../data/info/app_info.dart';
-import '../../../../features/settings/presentation/widgets/settings_widgets.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../data/storage/app_local_storage.dart';
@@ -21,15 +21,16 @@ import '../../../../data/info/app_page_details.dart';
 import '../../../../data/resources/app_enums.dart';
 import '../../../../data/resources/app_texts.dart';
 import '../../../../app/components/main_components/app_dialogs.dart';
+import '../widgets/settings_languages_widgets.dart';
 
 class SettingsController extends CoreController {
   Rx<AppSettingData> appSettings = const AppSettingData().obs;
 
   Rx<bool> darkMode = false.obs;
   Rx<AppLanguages> selectedLanguage = AppLanguages.english.obs;
-  Rx<AppCalendarTypes> selectedCalendar = AppCalendarTypes.georgian.obs;
+  Rx<AppCalendarTypes> selectedCalendar = AppCalendarTypes.christian.obs;
 
-  Rx<String> updateAvailableVersion = AppTexts.generalNotAvailable.obs;
+  Rx<String> updateAvailableVersion = Texts.to.notAvailable.obs;
 
   //Listeners
   late StreamSubscription<AppSettingData> appSettingDataListener;
@@ -62,30 +63,30 @@ class SettingsController extends CoreController {
     appSettingDataListener = appSettings.listen((data) => _fillData());
   }
 
-  functionLanguageModal() => AppDialogs.appBottomDialogWithCancel(
-        Texts.to.setting_language_modal,
-        SettingsWidgets()
-            .widgetSelectLanguageForm(functionLanguageSelectionOnTap),
-        true,
-      );
+  functionLanguageModal() => AppDialogs().appBottomDialogWithCancel(
+      Texts.to.settingsLanguageModalSelectLanguage,
+      SettingsLanguageWidget(function: functionLanguageSelectionOnTap),
+      true);
 
   functionLanguageSelectionOnTap(int index) {
-    AppLocalization.to.setLanguage(AppLocalization.languages[index]);
-    selectedLanguage.value = AppLocalization.to.currentLanguage.getLanguage;
+    selectedLanguage.value = AppLocalization.languages[index].getLanguage;
+    saveSettings();
     popPage();
-    Get.updateLocale(AppLocalization.to.currentLanguage);
+    Get.updateLocale(selectedLanguage.value.getLocale);
+    update();
     refresh();
   }
 
   functionDarkModeOnChange(bool value) {
     darkMode.value = value;
+    saveSettings();
     appLogPrint('DarkMode Changed to ${darkMode.value}');
     refresh();
   }
 
   functionCheckUpdateAvailableVersion() async {
     updateAvailableVersion.value = await checkAvailableVersion();
-    appDebugPrint('Checked Update Version: ${updateAvailableVersion.value}');
+    appLogPrint('Checked Update Version: ${updateAvailableVersion.value}');
   }
 
   functionGoToUpdatePage() => goToPage(AppPageDetails.update);
@@ -105,8 +106,8 @@ class SettingsController extends CoreController {
       appLogPrint('File Path: $filePath');
     }
 
-    AppDialogs.appAlertDialogWithOkCancel(
-        AppTexts.warning, AppTexts.areYouSureDataExport, function, true);
+    AppDialogs().appAlertDialogWithOkCancel(
+        Texts.to.warning, Texts.to.areYouSureDataExport, function, true);
   }
 
   functionRestore() {
@@ -128,22 +129,24 @@ class SettingsController extends CoreController {
       appLogPrint('Data Imported');
     }
 
-    AppDialogs.appAlertDialogWithOkCancel(
-        AppTexts.warning, AppTexts.areYouSureDataMayLost, function, true);
+    AppDialogs().appAlertDialogWithOkCancel(
+        Texts.to.warning, Texts.to.areYouSureDataMayLost, function, true);
   }
 
   functionClearAllData() {
     function() {
       clearAppData();
       popPage();
-      appDebugPrint('');
+      appLogPrint('Clear All Data Modal Closed');
     }
 
-    AppDialogs.appAlertDialogWithOkCancel(
-        AppTexts.warning, AppTexts.areYouSureDataWillLost, function, true);
+    AppDialogs().appAlertDialogWithOkCancel(
+        Texts.to.warning, Texts.to.areYouSureDataWillLost, function, true);
   }
 
   saveSettings() {
+    appSettings.value = appSettings.value
+        .copyWith(darkMode: darkMode.value, language: selectedLanguage.value);
     appSettings.saveOnStorage;
     appLogPrint('Settings Saved');
   }

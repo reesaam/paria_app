@@ -1,15 +1,20 @@
-import 'package:base_flutter_clean_getx_app/data/resources/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/app_extensions/data_types_extensions/extension_icon.dart';
+import '../../../data/resources/app_colors.dart';
 import '../../../data/resources/app_elements.dart';
 import '../../../data/resources/app_icons.dart';
 import '../../../data/resources/app_paddings.dart';
 import 'app_popup_menu_item.dart';
 
 class AppPopupMenu extends StatelessWidget {
-  const AppPopupMenu(
-      {super.key, required this.listItems, this.icon, this.text, this.lightColor});
+  const AppPopupMenu({
+    super.key,
+    required this.listItems,
+    this.icon,
+    this.text,
+    this.lightColor,
+  });
 
   final List<AppPopupMenuItem> listItems;
   final Icon? icon;

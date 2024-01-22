@@ -22,15 +22,105 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aboutPageName": MessageLookupByLibrary.simpleMessage("About"),
+        "adminStartPagePageName":
+            MessageLookupByLibrary.simpleMessage("Admin Start Page"),
+        "adminTestPagePageName":
+            MessageLookupByLibrary.simpleMessage("Admin Pages Test Page"),
+        "adminUITestPagePageName":
+            MessageLookupByLibrary.simpleMessage("Admin UI Test Page"),
+        "alert": MessageLookupByLibrary.simpleMessage("Alert"),
+        "appExit": MessageLookupByLibrary.simpleMessage("App Exit"),
         "app_name":
             MessageLookupByLibrary.simpleMessage("Base Flutter Clean GetX App"),
-        "pageAbout": MessageLookupByLibrary.simpleMessage("About"),
-        "pageHomepage": MessageLookupByLibrary.simpleMessage("Home"),
-        "pageSettings": MessageLookupByLibrary.simpleMessage("Settings"),
-        "pageSplashScreen":
+        "areYouSure": MessageLookupByLibrary.simpleMessage("Are you sure ?"),
+        "areYouSureDataExport": MessageLookupByLibrary.simpleMessage(
+            "Are you sure?\nData will be exported and exposed."),
+        "areYouSureDataImport": MessageLookupByLibrary.simpleMessage(
+            "Are you sure?\nData will be imported and exposed."),
+        "areYouSureDataMayLost": MessageLookupByLibrary.simpleMessage(
+            "Are you sure?\nData may be lost with this Function."),
+        "areYouSureDataWillLost": MessageLookupByLibrary.simpleMessage(
+            "Are you sure?\nData will be lost with this Function."),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "empty": MessageLookupByLibrary.simpleMessage(""),
+        "from": MessageLookupByLibrary.simpleMessage("From"),
+        "homePageName": MessageLookupByLibrary.simpleMessage("Home"),
+        "info": MessageLookupByLibrary.simpleMessage("Info"),
+        "information": MessageLookupByLibrary.simpleMessage("Information"),
+        "languageName": MessageLookupByLibrary.simpleMessage("English"),
+        "notAvailable": MessageLookupByLibrary.simpleMessage("Not Available"),
+        "notAvailableInitials": MessageLookupByLibrary.simpleMessage("N/A"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "settingsAppbarMenuResetSettings":
+            MessageLookupByLibrary.simpleMessage("Reset All Settings"),
+        "settingsLanguageModalSelectLanguage":
+            MessageLookupByLibrary.simpleMessage("Select Language"),
+        "settingsPageName": MessageLookupByLibrary.simpleMessage("Settings"),
+        "settingsSectionBackupBackup":
+            MessageLookupByLibrary.simpleMessage("Backup Data"),
+        "settingsSectionBackupRestore":
+            MessageLookupByLibrary.simpleMessage("Restore Data"),
+        "settingsSectionGeneralItemDarkMode":
+            MessageLookupByLibrary.simpleMessage("Dark Mode"),
+        "settingsSectionStorageItemEraseAllData":
+            MessageLookupByLibrary.simpleMessage("Erase All Data"),
+        "settingsSectionTitleBackup":
+            MessageLookupByLibrary.simpleMessage("Backup"),
+        "settingsSectionTitleGeneral":
+            MessageLookupByLibrary.simpleMessage("General"),
+        "settingsSectionTitleGeneralCalendar":
+            MessageLookupByLibrary.simpleMessage("Calendar Type"),
+        "settingsSectionTitleGeneralLanguage":
+            MessageLookupByLibrary.simpleMessage("Language"),
+        "settingsSectionTitleStorage":
+            MessageLookupByLibrary.simpleMessage("Storage"),
+        "settingsSectionTitleUpdate":
+            MessageLookupByLibrary.simpleMessage("Update"),
+        "settingsSectionTitleUpdateAvailableVersion":
+            MessageLookupByLibrary.simpleMessage("Available Version:"),
+        "settingsSectionTitleUpdateCurrentVersion":
+            MessageLookupByLibrary.simpleMessage("Current Version:"),
+        "splashScreenPageName":
             MessageLookupByLibrary.simpleMessage("Splash Screen"),
-        "pageUpdate": MessageLookupByLibrary.simpleMessage("Update"),
-        "setting_language_modal":
-            MessageLookupByLibrary.simpleMessage("Select Language")
+        "to": MessageLookupByLibrary.simpleMessage("To"),
+        "total": MessageLookupByLibrary.simpleMessage("Total"),
+        "updateApprove": MessageLookupByLibrary.simpleMessage(
+            "Do you want to download the New Version?"),
+        "updateAvailableVersion":
+            MessageLookupByLibrary.simpleMessage("New Available Version:"),
+        "updateCheckUpdate":
+            MessageLookupByLibrary.simpleMessage("Check Update"),
+        "updateCheckingUpdate": MessageLookupByLibrary.simpleMessage(
+            "Checking for any Available Update ..."),
+        "updateCurrentVersion":
+            MessageLookupByLibrary.simpleMessage("Current Version:"),
+        "updateDirectoryNotFoundContent": MessageLookupByLibrary.simpleMessage(
+            "There is not any Directory available to store Data"),
+        "updateDirectoryNotFoundTitle":
+            MessageLookupByLibrary.simpleMessage("Directory Error!"),
+        "updateDownloadUpdate":
+            MessageLookupByLibrary.simpleMessage("Download Update"),
+        "updateDownloaded":
+            MessageLookupByLibrary.simpleMessage("Update Downloaded!"),
+        "updateDownloading":
+            MessageLookupByLibrary.simpleMessage("Downloading ..."),
+        "updateFileNotFoundContent":
+            MessageLookupByLibrary.simpleMessage("File not found"),
+        "updateFileNotFoundTitle":
+            MessageLookupByLibrary.simpleMessage("File Error!"),
+        "updateInstallationContent": MessageLookupByLibrary.simpleMessage(
+            "Do you want to install the Update?\n\nWarning: Application will close!"),
+        "updateInstallationTitle":
+            MessageLookupByLibrary.simpleMessage("Update Installation"),
+        "updateNewVersion":
+            MessageLookupByLibrary.simpleMessage("New Version Found"),
+        "updateNoUpdateFound": MessageLookupByLibrary.simpleMessage(
+            "There is not any Update Available!"),
+        "updatePageName": MessageLookupByLibrary.simpleMessage("Update"),
+        "updateUpdateFound":
+            MessageLookupByLibrary.simpleMessage("New Update is Available!"),
+        "version": MessageLookupByLibrary.simpleMessage("Version"),
+        "warning": MessageLookupByLibrary.simpleMessage("Warning")
       };
 }

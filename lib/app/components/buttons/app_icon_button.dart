@@ -9,23 +9,22 @@ class AppIconButton extends MaterialButton {
       {super.key,
       required this.icon,
       required super.onPressed,
-      this.brightIcon});
+      this.lightColor});
 
   final IconData icon;
-  final bool? brightIcon;
+  final bool? lightColor;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppSizes.iconButtonSize,
-      width: AppSizes.iconButtonSize,
-      child: IconButton(
-          padding: AppPaddings.zero,
-          iconSize: AppSizes.iconButtonIconSize,
-          onPressed: onPressed,
-          icon: brightIcon == true
-              ? Icon(icon).withAppAppBackgroundColor
-              : Icon(icon).withAppDefaultColor),
-    );
+        height: AppSizes.iconButtonSize,
+        width: AppSizes.iconButtonSize,
+        child: IconButton(
+            padding: AppPaddings.zero,
+            iconSize: AppSizes.iconButtonIconSize,
+            onPressed: onPressed,
+            icon: lightColor == true
+                ? Icon(icon).withAppAppBackgroundColor
+                : Icon(icon).withAppDefaultColor));
   }
 }
