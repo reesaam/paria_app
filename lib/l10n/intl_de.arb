@@ -31,6 +31,9 @@
 
     "appExit": "App Exit",
 
+    "connectionInternetNotAvailableTitle": "Internet Connection",
+    "connectionInternetNotAvailableText": "Internet Connection is not Available!",
+
     "settingsLanguageModalSelectLanguage": "Select Language",
     "settingsAppbarMenuResetSettings": "Reset All Settings",
     "settingsSectionTitleGeneral": "General",
