@@ -10,7 +10,7 @@ class ConnectionChecker {
 
   Future<bool> checkInternet() async => await InternetConnection()
       .hasInternetAccess
-      .timeout(defaultConnectionTimeOut);
+      .timeout(appDefaultConnectionTimeOut);
 
   Future<InternetStatus> checkInternetStatus() async =>
       await InternetConnection().internetStatus;
