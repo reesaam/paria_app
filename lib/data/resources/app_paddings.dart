@@ -27,6 +27,9 @@ class AppPaddings {
   ///ListPage
   static EdgeInsets get listPageSearchBox => const EdgeInsets.only(bottom: 10);
 
+  ///SplashScreen
+  static EdgeInsets get splashScreenProgressIndicator => const EdgeInsets.only(top: 200);
+
   ///Settings
   static EdgeInsets get settingsSection => const EdgeInsets.fromLTRB(0, 20, 0, 10);
   static EdgeInsets get settingsItem => const EdgeInsets.symmetric(horizontal: 15, vertical: 10);
