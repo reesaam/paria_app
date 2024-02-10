@@ -6,8 +6,8 @@ part 'app_page_detail.g.dart';
 @freezed
 class AppPageDetail with _$AppPageDetail {
   const factory AppPageDetail({
-    final String? pageName,
-    final String? pageRoute,
+    required final String pageName,
+    required final String pageRoute,
     final int? bottomBarItemNumber,
   }) = _AppPageDetail;
 

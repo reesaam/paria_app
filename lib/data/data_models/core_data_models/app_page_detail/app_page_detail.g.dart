@@ -8,8 +8,8 @@ part of 'app_page_detail.dart';
 
 _$AppPageDetailImpl _$$AppPageDetailImplFromJson(Map<String, dynamic> json) =>
     _$AppPageDetailImpl(
-      pageName: json['pageName'] as String?,
-      pageRoute: json['pageRoute'] as String?,
+      pageName: json['pageName'] as String,
+      pageRoute: json['pageRoute'] as String,
       bottomBarItemNumber: json['bottomBarItemNumber'] as int?,
     );
 

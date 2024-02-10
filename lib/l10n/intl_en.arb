@@ -3,8 +3,10 @@
     "languageName": "English",
     "app_name": "Paria Assistant App",
 
-    "homePageName": "Home",
     "splashScreenPageName": "Splash Screen",
+    "homePageName": "Home",
+    "contactsPageName": "Contacts",
+    "accountsPageName": "Accounts",
     "settingsPageName": "Settings",
     "updatePageName": "Update",
     "aboutPageName": "About",

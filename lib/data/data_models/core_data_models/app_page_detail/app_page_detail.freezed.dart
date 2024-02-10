@@ -20,8 +20,8 @@ AppPageDetail _$AppPageDetailFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppPageDetail {
-  String? get pageName => throw _privateConstructorUsedError;
-  String? get pageRoute => throw _privateConstructorUsedError;
+  String get pageName => throw _privateConstructorUsedError;
+  String get pageRoute => throw _privateConstructorUsedError;
   int? get bottomBarItemNumber => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $AppPageDetailCopyWith<$Res> {
           AppPageDetail value, $Res Function(AppPageDetail) then) =
       _$AppPageDetailCopyWithImpl<$Res, AppPageDetail>;
   @useResult
-  $Res call({String? pageName, String? pageRoute, int? bottomBarItemNumber});
+  $Res call({String pageName, String pageRoute, int? bottomBarItemNumber});
 }
 
 /// @nodoc
@@ -52,19 +52,19 @@ class _$AppPageDetailCopyWithImpl<$Res, $Val extends AppPageDetail>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? pageName = freezed,
-    Object? pageRoute = freezed,
+    Object? pageName = null,
+    Object? pageRoute = null,
     Object? bottomBarItemNumber = freezed,
   }) {
     return _then(_value.copyWith(
-      pageName: freezed == pageName
+      pageName: null == pageName
           ? _value.pageName
           : pageName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pageRoute: freezed == pageRoute
+              as String,
+      pageRoute: null == pageRoute
           ? _value.pageRoute
           : pageRoute // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       bottomBarItemNumber: freezed == bottomBarItemNumber
           ? _value.bottomBarItemNumber
           : bottomBarItemNumber // ignore: cast_nullable_to_non_nullable
@@ -81,7 +81,7 @@ abstract class _$$AppPageDetailImplCopyWith<$Res>
       __$$AppPageDetailImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? pageName, String? pageRoute, int? bottomBarItemNumber});
+  $Res call({String pageName, String pageRoute, int? bottomBarItemNumber});
 }
 
 /// @nodoc
@@ -95,19 +95,19 @@ class __$$AppPageDetailImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? pageName = freezed,
-    Object? pageRoute = freezed,
+    Object? pageName = null,
+    Object? pageRoute = null,
     Object? bottomBarItemNumber = freezed,
   }) {
     return _then(_$AppPageDetailImpl(
-      pageName: freezed == pageName
+      pageName: null == pageName
           ? _value.pageName
           : pageName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pageRoute: freezed == pageRoute
+              as String,
+      pageRoute: null == pageRoute
           ? _value.pageRoute
           : pageRoute // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       bottomBarItemNumber: freezed == bottomBarItemNumber
           ? _value.bottomBarItemNumber
           : bottomBarItemNumber // ignore: cast_nullable_to_non_nullable
@@ -120,15 +120,17 @@ class __$$AppPageDetailImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppPageDetailImpl implements _AppPageDetail {
   const _$AppPageDetailImpl(
-      {this.pageName, this.pageRoute, this.bottomBarItemNumber});
+      {required this.pageName,
+      required this.pageRoute,
+      this.bottomBarItemNumber});
 
   factory _$AppPageDetailImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppPageDetailImplFromJson(json);
 
   @override
-  final String? pageName;
+  final String pageName;
   @override
-  final String? pageRoute;
+  final String pageRoute;
   @override
   final int? bottomBarItemNumber;
 
@@ -171,17 +173,17 @@ class _$AppPageDetailImpl implements _AppPageDetail {
 
 abstract class _AppPageDetail implements AppPageDetail {
   const factory _AppPageDetail(
-      {final String? pageName,
-      final String? pageRoute,
+      {required final String pageName,
+      required final String pageRoute,
       final int? bottomBarItemNumber}) = _$AppPageDetailImpl;
 
   factory _AppPageDetail.fromJson(Map<String, dynamic> json) =
       _$AppPageDetailImpl.fromJson;
 
   @override
-  String? get pageName;
+  String get pageName;
   @override
-  String? get pageRoute;
+  String get pageRoute;
   @override
   int? get bottomBarItemNumber;
   @override
