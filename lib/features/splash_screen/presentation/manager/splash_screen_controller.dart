@@ -1,7 +1,6 @@
-import 'package:flutter_base_clean_getx_app/app/components/main_components/app_dialogs.dart';
-import 'package:flutter_base_clean_getx_app/core/app_localization.dart';
-
+import '../../../../app/components/main_components/app_dialogs.dart';
 import '../../../../app/functional_components/connectivity/connectivity.dart';
+import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_page_details.dart';
