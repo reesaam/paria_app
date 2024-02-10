@@ -63,8 +63,8 @@ class AppDialogs {
     await _appAlertDialog(title, text, buttons, dismissible);
   }
 
-  _appBottomDialogGeneral(String title, Widget form,
-          List<Widget> buttons, bool? dismissible) async =>
+  _appBottomDialogGeneral(String title, Widget form, List<Widget> buttons,
+          bool? dismissible) async =>
       await showModalBottomSheet(
           context: Get.context!,
           useSafeArea: true,
@@ -147,7 +147,7 @@ class AppDialogs {
     for (int i = 0; i < length; i++) {
       list.addIf(i == 0, shrinkOneExpanded);
       list.add(
-          Expanded(flex: length > 1 ? (10 ~/ length) : 1, child: buttons[i]));
+          Expanded(flex: length > 1 ? (10 ~/ length) : 10, child: buttons[i]));
       list.add(shrinkOneExpanded);
     }
     return Row(
