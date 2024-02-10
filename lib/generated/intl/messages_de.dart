@@ -43,6 +43,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "areYouSureDataWillLost": MessageLookupByLibrary.simpleMessage(
             "Are you sure?\nData will be lost with this Function."),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "connectionInternetNotAvailableText":
+            MessageLookupByLibrary.simpleMessage(
+                "Internet Connection is not Available!"),
+        "connectionInternetNotAvailableTitle":
+            MessageLookupByLibrary.simpleMessage("Internet Connection"),
         "empty": MessageLookupByLibrary.simpleMessage(""),
         "from": MessageLookupByLibrary.simpleMessage("From"),
         "homePageName": MessageLookupByLibrary.simpleMessage("Home"),

@@ -31,6 +31,9 @@
 
     "appExit": "خروج",
 
+    "connectionInternetNotAvailableTitle": "اینترنت",
+    "connectionInternetNotAvailableText": "اتصال به اینترنت وجود ندارد",
+
     "settingsLanguageModalSelectLanguage": "انتخاب زبان",
     "settingsAppbarMenuResetSettings": "بازنشانی همه تنظیمات",
     "settingsSectionTitleGeneral": "عمومی",

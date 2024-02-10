@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../info/app_defaults.dart';
 import 'app_colors.dart';
-import 'app_fonts.dart';
 
 class AppTextStyles {
-  static get defaultSize => AppFonts.defaultFontSize;
+  static get defaultSize => appDefaultFontSize;
   static get smallSize => defaultSize - 2;
   static get normalSize => defaultSize;
   static get bigSize => defaultSize + 3;

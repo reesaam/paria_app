@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../info/app_defaults.dart';
 import 'app_colors.dart';
 import 'app_elements.dart';
-import 'app_fonts.dart';
 
 class AppThemes {
   static get mainTheme => ThemeData(
@@ -32,7 +32,7 @@ class AppThemes {
       );
 
   static get defaultTextStyle => TextStyle(
-      color: AppColors.appDefaultColor, fontSize: AppFonts.defaultFontSize);
+      color: AppColors.appDefaultColor, fontSize: appDefaultFontSize);
 
   static get textTheme => TextTheme(
         bodyLarge: defaultTextStyle,

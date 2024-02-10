@@ -44,6 +44,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "areYouSureDataWillLost": MessageLookupByLibrary.simpleMessage(
             "آیا اطمینان دارید؟\nاطلاعات شما از بین خواهد رفت"),
         "cancel": MessageLookupByLibrary.simpleMessage("لغو"),
+        "connectionInternetNotAvailableText":
+            MessageLookupByLibrary.simpleMessage("اتصال به اینترنت وجود ندارد"),
+        "connectionInternetNotAvailableTitle":
+            MessageLookupByLibrary.simpleMessage("اینترنت"),
         "empty": MessageLookupByLibrary.simpleMessage(""),
         "from": MessageLookupByLibrary.simpleMessage("از"),
         "homePageName": MessageLookupByLibrary.simpleMessage("خانه"),

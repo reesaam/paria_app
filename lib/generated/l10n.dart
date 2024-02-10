@@ -310,6 +310,26 @@ class S {
     );
   }
 
+  /// `Internet Connection`
+  String get connectionInternetNotAvailableTitle {
+    return Intl.message(
+      'Internet Connection',
+      name: 'connectionInternetNotAvailableTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Internet Connection is not Available!`
+  String get connectionInternetNotAvailableText {
+    return Intl.message(
+      'Internet Connection is not Available!',
+      name: 'connectionInternetNotAvailableText',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Select Language`
   String get settingsLanguageModalSelectLanguage {
     return Intl.message(
