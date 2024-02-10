@@ -9,7 +9,7 @@ import 'core_controller.dart';
 
 abstract class CoreView<Controller extends CoreController>
     extends GetView<Controller> {
-  const CoreView({final Key? key}) : super(key: key);
+  const CoreView({super.key});
 
   Future<bool> onWillPop() async => onBackButtonPressed(controller.pageDetail);
 

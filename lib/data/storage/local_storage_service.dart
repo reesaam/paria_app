@@ -1,9 +1,6 @@
 import 'dart:convert' as convert;
-import 'package:injectable/injectable.dart';
-
 import 'package:get_storage/get_storage.dart';
 
-@injectable
 class LocalStorageService {
   LocalStorageService() {
     _init();

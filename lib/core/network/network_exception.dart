@@ -1,7 +1,5 @@
-import 'package:injectable/injectable.dart';
 import 'package:dio/dio.dart' as dio;
 
-@injectable
 class NetworkException implements Exception {
   final String message;
 
