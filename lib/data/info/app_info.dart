@@ -3,7 +3,7 @@ class AppInfo {
   static String get appNameInitials => 'PAA';
   static String get website => '';
   static List<String> get versions => [
-        '0.1.0', //Initialization
+        '0.1.0', //Initialization with new structure
       ];
   static String get appCurrentVersion => versions.last;
   static int get appVersionsCounter => versions.length;

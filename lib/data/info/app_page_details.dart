@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import '../../core/app_localization.dart';
 import '../../core/app_routing/app_routes.dart';
 import '../data_models/core_data_models/app_page_detail/app_page_detail.dart';
