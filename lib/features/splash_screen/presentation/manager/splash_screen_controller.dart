@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../app/components/main_components/app_dialogs.dart';
@@ -26,6 +27,9 @@ class SplashScreenController extends CoreController {
     // loadAppData();
     availableUpdate = await checkAvailableVersion();
     permissionsStatus = await AppPermissions.to.checkAllPermissions();
+    appDebugPrint(availableUpdate);
+    appDebugPrint(permissionsStatus);
+    appDebugPrint('SplashScreen DataInit Finish');
   }
 
   @override
@@ -42,25 +46,23 @@ class SplashScreenController extends CoreController {
     internetStatus = await ConnectionChecker.to.checkInternet();
     internetStatus
         ? null
-        : await AppDialogs().appAlertDialogWithOk(
+        : AppDialogs().appAlertDialogWithOk(
             Texts.to.connectionInternetNotAvailableTitle,
             Texts.to.connectionInternetNotAvailableText,
             popPage,
             false);
-    super.onReadyFunction();
+    goToNextPage();
   }
 
   void goToNextPage() async {
     await Future.delayed(const Duration(seconds: 4));
     availableUpdate == AppInfo.appCurrentVersion
-        ? showUpdateDialog()
-        : goToHomepage();
+        ? goToHomepage()
+        : showUpdateDialog();
   }
 
-  showUpdateDialog() {
-    AppDialogs().appAlertDialogWithOkCancel(Texts.to.updateNewVersion,
-        Texts.to.updateApprove, goToUpdatePage, false);
-  }
+  showUpdateDialog() => AppDialogs().appAlertDialogWithOkCancel(Texts.to.updateNewVersion,
+      Texts.to.updateApprove, goToUpdatePage, false);
 
   goToHomepage() => Get.offAndToNamed(AppRoutes.homePage);
   goToUpdatePage() => Get.offAndToNamed(AppRoutes.homePage)

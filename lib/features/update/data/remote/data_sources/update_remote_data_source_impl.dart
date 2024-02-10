@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:injectable/injectable.dart';
 
 import '../../../../../core/app_localization.dart';
 import '../../../../../core/core_functions.dart';
@@ -10,7 +9,6 @@ import '../../../../../data/info/app_urls.dart';
 import 'update_remote_data_source.dart';
 import '../../../../../core/network/network_exception.dart';
 
-@Injectable(as: UpdateRemoteDataSource)
 class UpdateRemoteDataSourceImpl implements UpdateRemoteDataSource {
   final Dio dio;
   UpdateRemoteDataSourceImpl(this.dio);

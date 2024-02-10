@@ -18,6 +18,7 @@ import '../../../../app/components/general_widgets/app_snack_bars.dart';
 import '../../../../app/components/main_components/app_dialogs.dart';
 
 class UpdateController extends CoreController {
+
   Rx<String> availableVersion = Texts.to.notAvailable.obs;
 
   File? dlFile;
