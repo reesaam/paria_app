@@ -12,19 +12,18 @@ import '../../../../data/info/app_info.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../data/storage/app_local_storage.dart';
-import '../../../../core/app_extensions/data_models_extensions/extension_settings.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
-import '../../../../data/data_models/core_data_models/app_data/app_data.dart';
-import '../../../../data/data_models/core_data_models/app_settings_data/app_setting_data.dart';
+import '../../../../data/data_models/core_data_models/app_data/app_data_entity.dart';
 import '../../../../data/info/app_page_details.dart';
 import '../../../../data/resources/app_enums.dart';
 import '../../../../data/resources/app_texts.dart';
 import '../../../../app/components/main_components/app_dialogs.dart';
+import '../../domain/entites/app_settings_data_entity/app_setting_data_entity.dart';
 import '../widgets/settings_languages_widgets.dart';
 
 class SettingsController extends CoreController {
-  Rx<AppSettingData> appSettings = const AppSettingData().obs;
+  Rx<AppSettingDataEntity> appSettings = const AppSettingDataEntity().obs;
 
   Rx<bool> darkMode = false.obs;
   Rx<AppLanguages> selectedLanguage = AppLanguages.english.obs;
@@ -33,11 +32,11 @@ class SettingsController extends CoreController {
   Rx<String> updateAvailableVersion = Texts.to.notAvailable.obs;
 
   //Listeners
-  late StreamSubscription<AppSettingData> appSettingDataListener;
+  late StreamSubscription<AppSettingDataEntity> appSettingDataListener;
 
   @override
   void dataInit() {
-    appSettings = const AppSettingData().loadFromStorage.obs;
+    appSettings = const AppSettingDataEntity().loadFromStorage.obs;
     AppInfo.checkUpdate ? functionCheckUpdateAvailableVersion() : null;
   }
 
@@ -152,7 +151,7 @@ class SettingsController extends CoreController {
   }
 
   resetAllSettings() {
-    appSettings.value = const AppSettingData().clearData;
+    appSettings.value = const AppSettingDataEntity().clearData;
     saveSettings();
     appLogPrint('Reset Settings Data performed');
   }

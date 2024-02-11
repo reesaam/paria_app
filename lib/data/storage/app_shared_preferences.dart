@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../core/app_extensions/data_models_extensions/extension_settings.dart';
-import '../data_models/core_data_models/app_settings_data/app_setting_data.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_settings.dart';
+import '../../features/settings/domain/entites/app_settings_data_entity/app_setting_data_entity.dart';
 import '../resources/app_enums.dart';
 
 class AppSharedPreferences {
@@ -15,7 +15,7 @@ class AppSharedPreferences {
   void saveData() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
 
-    AppSettingData storageSettings = const AppSettingData().loadFromStorage;
+    AppSettingDataEntity storageSettings = const AppSettingDataEntity().loadFromStorage;
     String jsonSettings = json.encode(storageSettings);
     sp.setString(_keySettings, jsonSettings);
   }
@@ -24,9 +24,9 @@ class AppSharedPreferences {
     SharedPreferences sp = await SharedPreferences.getInstance();
 
     String? dataSettings = sp.getString(_keySettings);
-    AppSettingData settingsData = dataSettings == null
-        ? const AppSettingData()
-        : AppSettingData.fromJson(json.decode(dataSettings));
+    AppSettingDataEntity settingsData = dataSettings == null
+        ? const AppSettingDataEntity()
+        : AppSettingDataEntity.fromJson(json.decode(dataSettings));
     settingsData.saveOnStorage;
   }
 

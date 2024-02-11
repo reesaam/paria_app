@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
-import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
-import 'package:paria_app/features/contacts/domain/entities/contact_entity/contact_entity.dart';
 
 import '../../core/core_functions.dart';
-import '../data_models/core_data_models/app_data/app_data.dart';
-import '../data_models/core_data_models/app_settings_data/app_setting_data.dart';
+import '../../features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
+import '../../features/contacts/domain/entities/contact_entity/contact_entity.dart';
+import '../../features/settings/domain/entites/app_settings_data_entity/app_setting_data_entity.dart';
+import '../data_entities/core_data_entities/app_data_entity/app_data_entity.dart';
 import '../resources/app_enums.dart';
 import 'local_storage_service.dart';
 
@@ -37,15 +37,17 @@ class AppLocalStorage {
   }
 
   ///Manage Data
-  AppData exportData() {
-    AppSettingData setting = loadSettings();
-    return AppData(
-      setting: setting,
+  AppDataEntity exportData() {
+    AppSettingDataEntity setting = loadSettings();
+    return AppDataEntity(
+      settings: setting,
     );
   }
 
-  void importData(AppData appData) async {
-    appData.setting == null ? null : await saveSettings(appData.setting!);
+  void importData(AppDataEntity appDataEntity) async {
+    appDataEntity.settings == null
+        ? null
+        : await saveSettings(appDataEntity.settings!);
   }
 
   void printData() {
@@ -76,13 +78,14 @@ class AppLocalStorage {
   }
 
   ///Settings
-  Future<void> saveSettings(AppSettingData settings) async =>
+  Future<void> saveSettings(AppSettingDataEntity settings) async =>
       await _saveFunction(settings, _keySettings);
 
-  AppSettingData loadSettings() {
+  AppSettingDataEntity loadSettings() {
     var data = _loadFunction(_keySettings);
     return data == null
-        ? const AppSettingData(darkMode: false, language: AppLanguages.english)
-        : AppSettingData.fromJson(data);
+        ? const AppSettingDataEntity(
+            darkMode: false, language: AppLanguages.english)
+        : AppSettingDataEntity.fromJson(data);
   }
 }
