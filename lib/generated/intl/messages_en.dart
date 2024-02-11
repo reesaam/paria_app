@@ -52,6 +52,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "empty": MessageLookupByLibrary.simpleMessage(""),
         "from": MessageLookupByLibrary.simpleMessage("From"),
         "homePageName": MessageLookupByLibrary.simpleMessage("Home"),
+        "homepageDateTimeTitle": MessageLookupByLibrary.simpleMessage("Today"),
+        "homepageSummaryTitle":
+            MessageLookupByLibrary.simpleMessage("App Summary"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "information": MessageLookupByLibrary.simpleMessage("Information"),
         "languageName": MessageLookupByLibrary.simpleMessage("English"),
@@ -91,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Splash Screen"),
         "to": MessageLookupByLibrary.simpleMessage("To"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
+        "totalBalance": MessageLookupByLibrary.simpleMessage("Total Balance"),
         "updateApprove": MessageLookupByLibrary.simpleMessage(
             "Do you want to download the New Version?"),
         "updateAvailableVersion":

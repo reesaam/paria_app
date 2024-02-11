@@ -1,11 +1,17 @@
 {
   "de": [
     "contactsPageName",
-    "accountsPageName"
+    "accountsPageName",
+    "totalBalance",
+    "homepageDateTimeTitle",
+    "homepageSummaryTitle"
   ],
 
   "fa": [
     "contactsPageName",
-    "accountsPageName"
+    "accountsPageName",
+    "totalBalance",
+    "homepageDateTimeTitle",
+    "homepageSummaryTitle"
   ]
 }

@@ -75,6 +75,9 @@ dependencies:
   #Sharing
   share_plus: ^7.2.1
 
+  #Other
+  uuid: ^4.3.3
+
   cupertino_icons: ^1.0.2
 
 dev_dependencies:

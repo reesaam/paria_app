@@ -25,5 +25,7 @@ enum AppCalendarTypes {
 }
 
 enum AppStorageKeys {
-  keySettings,
+  keyContacts,
+  keyAccountRecords,
+  keySettings
 }

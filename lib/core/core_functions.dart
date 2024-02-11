@@ -47,11 +47,6 @@ Future<bool> onBackButtonPressed(AppPageDetail pageDetail) async {
   return response;
 }
 
-Future<String> checkAvailableVersion() async =>
-    await UpdateVersionUseCase(updateRepository: UpdateRepository.to)
-        .call()
-        .then((value) => value.fold((l) => Texts.to.notAvailable, (r) => r));
-
 // Future<String> checkAvailableVersion() async => await UpdateVersionUseCase(
 //         updateRepository: UpdateRepository.to)
 //     .call()

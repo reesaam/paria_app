@@ -24,6 +24,7 @@
     "alert": "Alert",
     "information": "Information",
     "info": "Info",
+    "totalBalance": "Total Balance",
 
     "areYouSure": "Are you sure ?",
     "areYouSureDataWillLost": "Are you sure?\nData will be lost with this Function.",
@@ -35,6 +36,9 @@
 
     "connectionInternetNotAvailableTitle": "Internet Connection",
     "connectionInternetNotAvailableText": "Internet Connection is not Available!",
+
+    "homepageDateTimeTitle": "Today",
+    "homepageSummaryTitle": "App Summary",
 
     "settingsLanguageModalSelectLanguage": "Select Language",
     "settingsAppbarMenuResetSettings": "Reset All Settings",

@@ -270,6 +270,16 @@ class S {
     );
   }
 
+  /// `Total Balance`
+  String get totalBalance {
+    return Intl.message(
+      'Total Balance',
+      name: 'totalBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Are you sure ?`
   String get areYouSure {
     return Intl.message(
@@ -345,6 +355,26 @@ class S {
     return Intl.message(
       'Internet Connection is not Available!',
       name: 'connectionInternetNotAvailableText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get homepageDateTimeTitle {
+    return Intl.message(
+      'Today',
+      name: 'homepageDateTimeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App Summary`
+  String get homepageSummaryTitle {
+    return Intl.message(
+      'App Summary',
+      name: 'homepageSummaryTitle',
       desc: '',
       args: [],
     );
