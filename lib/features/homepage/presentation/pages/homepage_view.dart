@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:paria_app/core/app_extensions/data_types_extensions/extension_icon.dart';
 
-import '../../../../data/info/app_developer_info.dart';
+import '../../../../core/app_localization.dart';
+import '../../../../data/resources/app_icons.dart';
 import '../../../../data/resources/app_spaces.dart';
 import '../../../../core/elements/core_view.dart';
-import '../../../../data/info/app_info.dart';
-import '../../../../data/resources/app_logos.dart';
 import '../../../../data/resources/app_paddings.dart';
 import '../../../../data/resources/app_sizes.dart';
 import '../../../../app/components/main_components/app_bar.dart';
 import '../../../../app/components/main_components/app_bottom_navigation_bar.dart';
 import '../../../../app/components/main_components/app_drawer.dart';
+import '../../../../data/resources/app_text_styles.dart';
 import '../manager/homepage_controller.dart';
 
 class HomePage extends CoreView<HomePageController> {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   PreferredSizeWidget? get appBar =>
@@ -23,25 +25,71 @@ class HomePage extends CoreView<HomePageController> {
   Widget? get drawer => const AppDrawer();
 
   @override
-  Widget? get topBar => widgetTopBar();
-
-  @override
   Widget? get bottomNavigationBar => AppBottomNavigationBar(
       selectedIndex: controller.pageDetail.bottomBarItemNumber);
 
   @override
-  Widget get body => Column();
+  Widget get body => Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [_widgetDateTime(), _widgetSummery()]);
 
-  Widget widgetTopBar() => Container(
-      alignment: Alignment.center,
-      padding: AppPaddings.homepageTopBar,
-      child: Column(
+  Widget _widgetDateTime() => Card(
+          child: Stack(children: [
+        Padding(
+            padding: AppPaddings.homepageDateTimeCard,
+            child: Column(children: [
+              Text(Texts.to.homepageDateTimeTitle,
+                  style: AppTextStyles.cardTitle),
+              AppSpaces.h20,
+              Obx(() => _widgetDateTimeItem()),
+            ])),
+
+        ///TODO: Implement DateTime Setting Page
+        InkWell(
+            onTap: () {},
+            child: Container(
+                alignment: Alignment.topRight,
+                padding: AppPaddings.homepageDateTimeCardSettingIcon,
+                child: AppIcons.settings.withAppDefaultColor
+                    .withSize(AppSizes.homepageSettingIcon))),
+      ]));
+
+  Widget _widgetDateTimeItem() => Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(AppLogos.appLogo, width: AppSizes.homepageLogo),
-            AppSpaces.h40,
-            Text(AppInfo.appName),
-            Text('by ${AppDeveloperInfo.fullName}'),
-          ]));
+            Text(controller.mainTime.value),
+            Text(controller.mainDate.value),
+          ]);
+
+  ///TODO: Implement Summery
+  Widget _widgetSummery() => Card(
+          child: Padding(
+        padding: AppPaddings.homepageSummeryCard,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+          Text(Texts.to.homepageSummaryTitle, style: AppTextStyles.cardTitle),
+          AppSpaces.h20,
+          Padding(
+              padding: AppPaddings.homepageSummeryCardData,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(Texts.to.contactsPageName),
+                          Text(Texts.to.accountsPageName),
+                          Text(Texts.to.totalBalance),
+                        ]),
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(controller.summaryContactsCount.toString()),
+                          Text(controller.summaryRecordsCount.toString()),
+                          // Text(controller.summaryBalanceCount.value.balance.toCurrency),
+                        ]),
+                  ])),
+        ]),
+      ));
 }
