@@ -9,6 +9,7 @@ import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../data/info/app_page_details.dart';
+import '../../../../data/resources/app_logos.dart';
 
 class SplashScreenController extends CoreController {
   late bool internetStatus;
@@ -23,7 +24,8 @@ class SplashScreenController extends CoreController {
   void dataInit() async {
     // clearAppData();
     // loadAppData();
-    availableUpdate = await checkAvailableVersion();
+    // availableUpdate = await checkAvailableVersion();
+    availableUpdate = AppInfo.appCurrentVersion;
     permissionsStatus = await AppPermissions.to.checkAllPermissions();
     appDebugPrint(availableUpdate);
     appDebugPrint(permissionsStatus);
@@ -33,6 +35,10 @@ class SplashScreenController extends CoreController {
   @override
   void pageInit() {
     pageDetail = AppPageDetails.splashScreen;
+
+    logoSource = AppLogos.appLogo;
+    appName = AppInfo.appName;
+    appVersion = '${Texts.to.version}: ${AppInfo.appCurrentVersion}';
   }
 
   @override
@@ -45,7 +51,7 @@ class SplashScreenController extends CoreController {
             Texts.to.connectionInternetNotAvailableText,
             popPage,
             false);
-    super.onReadyFunction();
+    goToNextPage();
   }
 
   void goToNextPage() async {
