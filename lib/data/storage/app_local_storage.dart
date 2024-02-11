@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
+import 'package:paria_app/features/contacts/domain/entities/contact_entity/contact_entity.dart';
 
 import '../../core/core_functions.dart';
 import '../data_models/core_data_models/app_data/app_data.dart';
@@ -13,9 +15,15 @@ class AppLocalStorage {
   static AppLocalStorage get to => Get.find();
 
   ///Keys
+  final _keyContacts = AppStorageKeys.keyContacts.name;
+  final _keyAccountsRecords = AppStorageKeys.keyAccountRecords.name;
   final _keySettings = AppStorageKeys.keySettings.name;
 
-  void clearStorage() => _storage.remove(_keySettings);
+  void clearStorage() {
+    _storage.remove(_keyContacts);
+    _storage.remove(_keyAccountsRecords);
+    _storage.remove(_keySettings);
+  }
 
   void clearSpecificKey(AppStorageKeys key) => _storage.remove(key.name);
 
@@ -42,6 +50,29 @@ class AppLocalStorage {
 
   void printData() {
     appLogPrint('Settings / Dark Mode: ${loadSettings().darkMode}');
+  }
+
+  ///Contacts
+  Future<void> saveContacts(AppContactEntitiesList contacts) async =>
+      await _saveFunction(contacts, _keyContacts);
+
+  AppContactEntitiesList loadContacts() {
+    var data = _loadFunction(_keyContacts);
+    return data == null
+        ? AppContactEntitiesList()
+        : AppContactEntitiesList.fromJson(data);
+  }
+
+  ///Accounts
+  Future<void> saveAccountRecords(
+          AppAccountRecordEntitiesList accountRecords) async =>
+      await _saveFunction(accountRecords, _keyAccountsRecords);
+
+  AppAccountRecordEntitiesList loadAccountRecords() {
+    var data = _loadFunction(_keyAccountsRecords);
+    return data == null
+        ? AppAccountRecordEntitiesList()
+        : AppAccountRecordEntitiesList.fromJson(data);
   }
 
   ///Settings
