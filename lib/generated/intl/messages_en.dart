@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutPageName": MessageLookupByLibrary.simpleMessage("About"),
+        "accountsPageName": MessageLookupByLibrary.simpleMessage("Accounts"),
         "adminStartPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin Start Page"),
         "adminTestPagePageName":
@@ -31,8 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Admin UI Test Page"),
         "alert": MessageLookupByLibrary.simpleMessage("Alert"),
         "appExit": MessageLookupByLibrary.simpleMessage("App Exit"),
-        "app_name":
-            MessageLookupByLibrary.simpleMessage("Base Flutter Clean GetX App"),
+        "app_name": MessageLookupByLibrary.simpleMessage("Paria Assistant App"),
         "areYouSure": MessageLookupByLibrary.simpleMessage("Are you sure ?"),
         "areYouSureDataExport": MessageLookupByLibrary.simpleMessage(
             "Are you sure?\nData will be exported and exposed."),
@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Internet Connection is not Available!"),
         "connectionInternetNotAvailableTitle":
             MessageLookupByLibrary.simpleMessage("Internet Connection"),
+        "contactsPageName": MessageLookupByLibrary.simpleMessage("Contacts"),
         "empty": MessageLookupByLibrary.simpleMessage(""),
         "from": MessageLookupByLibrary.simpleMessage("From"),
         "homePageName": MessageLookupByLibrary.simpleMessage("Home"),

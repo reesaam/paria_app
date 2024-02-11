@@ -32,7 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "alert": MessageLookupByLibrary.simpleMessage("هشدار"),
         "appExit": MessageLookupByLibrary.simpleMessage("خروج"),
         "app_name":
-            MessageLookupByLibrary.simpleMessage("Base Flutter Clean GetX App"),
+            MessageLookupByLibrary.simpleMessage("اپلیکیشن دستیار پریا"),
         "areYouSure":
             MessageLookupByLibrary.simpleMessage("آیا اطمینان دارید؟"),
         "areYouSureDataExport": MessageLookupByLibrary.simpleMessage(

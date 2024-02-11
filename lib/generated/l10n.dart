@@ -60,11 +60,21 @@ class S {
     );
   }
 
-  /// `Base Flutter Clean GetX App`
+  /// `Paria Assistant App`
   String get app_name {
     return Intl.message(
-      'Base Flutter Clean GetX App',
+      'Paria Assistant App',
       name: 'app_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Splash Screen`
+  String get splashScreenPageName {
+    return Intl.message(
+      'Splash Screen',
+      name: 'splashScreenPageName',
       desc: '',
       args: [],
     );
@@ -80,11 +90,21 @@ class S {
     );
   }
 
-  /// `Splash Screen`
-  String get splashScreenPageName {
+  /// `Contacts`
+  String get contactsPageName {
     return Intl.message(
-      'Splash Screen',
-      name: 'splashScreenPageName',
+      'Contacts',
+      name: 'contactsPageName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accounts`
+  String get accountsPageName {
+    return Intl.message(
+      'Accounts',
+      name: 'accountsPageName',
       desc: '',
       args: [],
     );
