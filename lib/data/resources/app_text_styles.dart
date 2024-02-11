@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../info/app_defaults.dart';
 import 'app_colors.dart';
+import 'app_sizes.dart';
 
 class AppTextStyles {
   static get defaultSize => appDefaultFontSize;
@@ -31,6 +32,9 @@ class AppTextStyles {
   ///Dialogs
   static TextStyle get dialogAlertTitle => TextStyle(fontSize: titleSize);
   static TextStyle get dialogAlertText => TextStyle(fontSize: normalSize, color: AppColors.textNormalDark);
+
+  ///SplashScreen
+  static TextStyle get splashScreenAppName => TextStyle(fontSize: AppSizes.splashScreenAppName);
 
   ///Settings
   static TextStyle get settingsSectionTitle => TextStyle(fontSize: bigSize, color: AppColors.settingTitle);
