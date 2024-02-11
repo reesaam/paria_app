@@ -5,7 +5,7 @@ import '../../../../contacts/domain/entities/contact_entity/contact_entity.dart'
 part 'accounts_filter_entity.freezed.dart';
 part 'accounts_filter_entity.g.dart';
 
-@unfreezed
+@freezed
 class AppAccountsFilterEntity with _$AppAccountsFilterEntity {
   const factory AppAccountsFilterEntity({
     final AppContactEntity? contact,
@@ -20,7 +20,7 @@ class AppAccountsFilterEntity with _$AppAccountsFilterEntity {
       _$AppAccountsFilterEntityFromJson(json);
 }
 
-@unfreezed
+@freezed
 class AppAccountsFilterEntitiesList with _$AppAccountsFilterEntitiesList {
   factory AppAccountsFilterEntitiesList({
     @Default(<AppAccountsFilterEntity>[]) List<AppAccountsFilterEntity> filtersList

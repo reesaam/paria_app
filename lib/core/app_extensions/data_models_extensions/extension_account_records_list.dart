@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 
-import '../../../../core/app_extensions/data_models_extensions/extension_contact.dart';
 import '../../../data/storage/app_local_storage.dart';
 import '../../../features/accounts/domain/entities/account_balance_entity/account_balance_entity.dart';
 import '../../../features/accounts/domain/entities/account_record_entity/account_record_entity.dart';

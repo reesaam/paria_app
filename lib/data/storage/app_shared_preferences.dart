@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/app_extensions/data_models_extensions/extension_settings.dart';
-import '../../features/settings/domain/entites/app_settings_data_entity/app_setting_data_entity.dart';
+import '../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
 import '../resources/app_enums.dart';
 
 class AppSharedPreferences {

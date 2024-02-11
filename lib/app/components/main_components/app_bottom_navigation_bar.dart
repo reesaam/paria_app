@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../core/app_extensions/data_types_extensions/extension_icon.dart';
 import '../../../core/app_routing/app_routes.dart';
 import '../../../core/core_functions.dart';
-import '../../../data/data_models/core_data_models/app_page_detail/app_page_detail.dart';
+import '../../../data/data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
 import '../../../data/info/app_page_details.dart';
 import '../../../data/resources/app_colors.dart';
 import '../../../data/resources/app_icons.dart';

@@ -5,7 +5,7 @@ import '../../../../contacts/domain/entities/contact_entity/contact_entity.dart'
 part 'account_balance_entity.freezed.dart';
 part 'account_balance_entity.g.dart';
 
-@unfreezed
+@freezed
 class AppAccountBalanceEntity with _$AppAccountBalanceEntity {
   const factory AppAccountBalanceEntity({
     final AppContactEntity? contact,
@@ -17,7 +17,7 @@ class AppAccountBalanceEntity with _$AppAccountBalanceEntity {
       _$AppAccountBalanceEntityFromJson(json);
 }
 
-@unfreezed
+@freezed
 class AppAccountBalanceEntitiesList with _$AppAccountBalanceEntitiesList {
   factory AppAccountBalanceEntitiesList({
     @Default(<AppAccountBalanceEntity>[]) List<AppAccountBalanceEntity> balancesList

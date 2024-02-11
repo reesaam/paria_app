@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'contact_entity.freezed.dart';
 part 'contact_entity.g.dart';
 
-@unfreezed
+@freezed
 class AppContactEntity with _$AppContactEntity {
   const factory AppContactEntity({
     final String? id,
@@ -22,7 +22,7 @@ class AppContactEntity with _$AppContactEntity {
       _$AppContactEntityFromJson(json);
 }
 
-@unfreezed
+@freezed
 class AppContactEntitiesList with _$AppContactEntitiesList {
   factory AppContactEntitiesList({
     @Default(<AppContactEntity>[]) List<AppContactEntity> contactsList,

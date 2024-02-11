@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../core/core_functions.dart';
 import '../../features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
 import '../../features/contacts/domain/entities/contact_entity/contact_entity.dart';
-import '../../features/settings/domain/entites/app_settings_data_entity/app_setting_data_entity.dart';
+import '../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
 import '../data_entities/core_data_entities/app_data_entity/app_data_entity.dart';
 import '../resources/app_enums.dart';
 import 'local_storage_service.dart';
@@ -40,14 +40,14 @@ class AppLocalStorage {
   AppDataEntity exportData() {
     AppSettingDataEntity setting = loadSettings();
     return AppDataEntity(
-      settings: setting,
+      appSettings: setting,
     );
   }
 
   void importData(AppDataEntity appDataEntity) async {
-    appDataEntity.settings == null
+    appDataEntity.appSettings == null
         ? null
-        : await saveSettings(appDataEntity.settings!);
+        : await saveSettings(appDataEntity.appSettings!);
   }
 
   void printData() {

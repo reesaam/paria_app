@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../app/components/main_components/app_dialogs.dart';
-import '../data/data_models/core_data_models/app_page_detail/app_page_detail.dart';
+import '../data/data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
 import '../data/storage/app_local_storage.dart';
 import '../data/storage/app_shared_preferences.dart';
 import '../features/update/data/repositories/update_repository.dart';

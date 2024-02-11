@@ -6,11 +6,11 @@ part 'app_setting_data_entity.freezed.dart';
 part 'app_setting_data_entity.g.dart';
 
 @freezed
-class AppSettingDataEntity with _$AppSettingData {
+class AppSettingDataEntity with _$AppSettingDataEntity {
   const factory AppSettingDataEntity({
     final bool? darkMode,
     final AppLanguages? language,
-  }) = AppSettingDataEntity;
+  }) = _AppSettingDataEntity;
 
   factory AppSettingDataEntity.fromJson(Map<String, dynamic> json) =>
       _$AppSettingDataEntityFromJson(json);

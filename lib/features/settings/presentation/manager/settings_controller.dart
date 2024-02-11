@@ -5,21 +5,22 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_settings.dart';
 
 import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
+import '../../../../data/data_entities/core_data_entities/app_data_entity/app_data_entity.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../data/storage/app_local_storage.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
-import '../../../../data/data_models/core_data_models/app_data/app_data_entity.dart';
 import '../../../../data/info/app_page_details.dart';
 import '../../../../data/resources/app_enums.dart';
 import '../../../../data/resources/app_texts.dart';
 import '../../../../app/components/main_components/app_dialogs.dart';
-import '../../domain/entites/app_settings_data_entity/app_setting_data_entity.dart';
+import '../../domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
 import '../widgets/settings_languages_widgets.dart';
 
 class SettingsController extends CoreController {
@@ -93,7 +94,7 @@ class SettingsController extends CoreController {
   functionBackup() {
     function() async {
       popPage();
-      AppData appdata = AppLocalStorage.to.exportData();
+      AppDataEntity appdata = AppLocalStorage.to.exportData();
       var jsonData = jsonEncode(appdata);
       Uint8List data = jsonData.toString().toUInt8List;
       SaveFileDialogParams saveParams = SaveFileDialogParams(
@@ -122,7 +123,7 @@ class SettingsController extends CoreController {
       File importFile = File(importFilePath!);
       String stringData = String.fromCharCodes(importFile.readAsBytesSync());
       var jsonData = jsonDecode(stringData) as Map<String, dynamic>;
-      AppData appData = AppData.fromJson(jsonData);
+      AppDataEntity appData = AppDataEntity.fromJson(jsonData);
       clearAppData();
       AppLocalStorage.to.importData(appData);
       appLogPrint('Data Imported');

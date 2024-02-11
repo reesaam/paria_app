@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_icon.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_icon.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_int.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../data/resources/app_icons.dart';
 import '../../../../data/resources/app_spaces.dart';
@@ -87,7 +88,7 @@ class HomePage extends CoreView<HomePageController> {
                         children: [
                           Text(controller.summaryContactsCount.toString()),
                           Text(controller.summaryRecordsCount.toString()),
-                          // Text(controller.summaryBalanceCount.value.balance.toCurrency),
+                          Text(controller.summaryBalanceCount.value.balance.toCurrency),
                         ]),
                   ])),
         ]),

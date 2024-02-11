@@ -5,7 +5,7 @@ import '../../../../contacts/domain/entities/contact_entity/contact_entity.dart'
 part 'account_record_entity.freezed.dart';
 part 'account_record_entity.g.dart';
 
-@unfreezed
+@freezed
 class AppAccountRecordEntity with _$AppAccountRecordEntity {
   const factory AppAccountRecordEntity({
     final String? id,
@@ -20,7 +20,7 @@ class AppAccountRecordEntity with _$AppAccountRecordEntity {
       _$AppAccountRecordEntityFromJson(json);
 }
 
-@unfreezed
+@freezed
 class AppAccountRecordEntitiesList with _$AppAccountRecordEntitiesList {
   factory AppAccountRecordEntitiesList({
     @Default(<AppAccountRecordEntity>[]) List<AppAccountRecordEntity> recordsList

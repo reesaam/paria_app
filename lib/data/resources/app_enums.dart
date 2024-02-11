@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 enum AppBottomNavigationPages {
   homepage,
+  contacts,
+  accounts,
   settings,
 }
 
@@ -20,7 +22,6 @@ enum AppCalendarTypes {
   jalali('Jalali');
 
   final String calendarName;
-
   const AppCalendarTypes(this.calendarName);
 }
 

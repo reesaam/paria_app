@@ -1,6 +1,6 @@
 import '../../core/app_localization.dart';
 import '../../core/app_routing/app_routes.dart';
-import '../data_models/core_data_models/app_page_detail/app_page_detail.dart';
+import '../data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
 
 class AppPageDetails {
   ///Admin Pages
