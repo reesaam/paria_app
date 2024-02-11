@@ -1,0 +1,31 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../../contacts/domain/entities/contact_entity/contact_entity.dart';
+
+part 'account_record_entity.freezed.dart';
+part 'account_record_entity.g.dart';
+
+@unfreezed
+class AppAccountRecordEntity with _$AppAccountRecordEntity {
+  const factory AppAccountRecordEntity({
+    final String? id,
+    final AppContactEntity? contact,
+    final int? amount,
+    final String? title,
+    final DateTime? dateTime,
+    final bool? cleared,
+  }) = _AppAccountRecordEntity;
+
+  factory AppAccountRecordEntity.fromJson(Map<String, dynamic> json) =>
+      _$AppAccountRecordEntityFromJson(json);
+}
+
+@unfreezed
+class AppAccountRecordEntitiesList with _$AppAccountRecordEntitiesList {
+  factory AppAccountRecordEntitiesList({
+    @Default(<AppAccountRecordEntity>[]) List<AppAccountRecordEntity> recordsList
+  }) = _AppAccountRecordEntitiesList;
+
+  factory AppAccountRecordEntitiesList.fromJson(Map<String, dynamic> json) =>
+      _$AppAccountRecordEntitiesListFromJson(json);
+}
