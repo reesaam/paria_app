@@ -52,6 +52,16 @@ Future<String> checkAvailableVersion() async =>
         .call()
         .then((value) => value.fold((l) => Texts.to.notAvailable, (r) => r));
 
+// Future<String> checkAvailableVersion() async => await UpdateVersionUseCase(
+//         updateRepository: UpdateRepository.to)
+//     .call()
+//     .then((value) => value.fold((l) => Texts.to.notAvailable, (r) => r));
+
+Future<String> checkAvailableVersion() async {
+  var result = await UpdateRepository.to.getAvailableVersion();
+  return result.fold((l) => Texts.to.notAvailable, (r) => r);
+}
+
 void appExitDialog() => AppDialogs().appAlertDialogWithOkCancel(
     Texts.to.appExit, Texts.to.areYouSure, appExit, true);
 

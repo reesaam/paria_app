@@ -31,12 +31,34 @@ class SplashScreenController extends CoreController {
     appDebugPrint(permissionsStatus);
     appDebugPrint('SplashScreen DataInit Finish');
   }
+  late String availableUpdate;
+  late String permissionsStatus;
+
+  late String logoSource;
+  late String appName;
+  late String appVersion;
+
+  @override
+  void dataInit() async {
+    // clearAppData();
+    // loadAppData();
+    // availableUpdate = await checkAvailableVersion();
+    availableUpdate = AppInfo.appCurrentVersion;
+    permissionsStatus = await AppPermissions.to.checkAllPermissions();
+    appDebugPrint(availableUpdate);
+    appDebugPrint(permissionsStatus);
+    appDebugPrint('SplashScreen DataInit Finish');
+  }
 
   @override
   void pageInit() {
     pageDetail = AppPageDetails.splashScreen;
 
     logoSource = AppLogos.appAnimatedLogo;
+    appName = AppInfo.appName;
+    appVersion = '${Texts.to.version}: ${AppInfo.appCurrentVersion}';
+
+    logoSource = AppLogos.appLogo;
     appName = AppInfo.appName;
     appVersion = '${Texts.to.version}: ${AppInfo.appCurrentVersion}';
   }
@@ -46,7 +68,7 @@ class SplashScreenController extends CoreController {
     internetStatus = await ConnectionChecker.to.checkInternet();
     internetStatus
         ? null
-        : AppDialogs().appAlertDialogWithOk(
+        : await AppDialogs().appAlertDialogWithOk(
             Texts.to.connectionInternetNotAvailableTitle,
             Texts.to.connectionInternetNotAvailableText,
             popPage,
@@ -65,6 +87,21 @@ class SplashScreenController extends CoreController {
       Texts.to.updateApprove, goToUpdatePage, false);
 
   goToHomepage() => Get.offAndToNamed(AppRoutes.homePage);
+  goToUpdatePage() => Get.offAndToNamed(AppRoutes.homePage)
+      ?.then((value) => Get.toNamed(AppRoutes.update));
+
+  void goToNextPage() async {
+    await Future.delayed(const Duration(seconds: 4));
+    availableUpdate == AppInfo.appCurrentVersion
+        ? goToHomepage()
+        : showUpdateDialog();
+  }
+
+  showUpdateDialog() => AppDialogs().appAlertDialogWithOkCancel(
+      Texts.to.updateNewVersion, Texts.to.updateApprove, goToUpdatePage, false);
+
+  goToHomepage() => Get.offAndToNamed(AppRoutes.homePage);
+
   goToUpdatePage() => Get.offAndToNamed(AppRoutes.homePage)
       ?.then((value) => Get.toNamed(AppRoutes.update));
 }

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:paria_app/app/functional_components/persmissions/permissions.dart';
 
 import '../../app/functional_components/connectivity/connectivity.dart';
+import '../../app/functional_components/permissions/permissions.dart';
 
 
 class AppComponentsBindings extends Bindings {
