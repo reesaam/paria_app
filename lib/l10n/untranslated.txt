@@ -12,7 +12,15 @@
     "contactsShowContactItemWebLink",
     "contactsShowContactTitleAccount",
     "contactsShowContactTitleBalance",
-    "contactsShowContactTitleRecords"
+    "contactsShowContactTitleRecords",
+    "contactsAddContactTitle",
+    "contactsEditContactTitle",
+    "contactsAddContactFirstNameTitle",
+    "contactsAddContactLastNameTitle",
+    "contactsAddContactMobileTitle",
+    "contactsAddContactPhoneTitle",
+    "contactsAddContactEmailTitle",
+    "contactsAddContactWebLinkTitle"
   ],
 
   "fa": [
@@ -28,6 +36,14 @@
     "contactsShowContactItemWebLink",
     "contactsShowContactTitleAccount",
     "contactsShowContactTitleBalance",
-    "contactsShowContactTitleRecords"
+    "contactsShowContactTitleRecords",
+    "contactsAddContactTitle",
+    "contactsEditContactTitle",
+    "contactsAddContactFirstNameTitle",
+    "contactsAddContactLastNameTitle",
+    "contactsAddContactMobileTitle",
+    "contactsAddContactPhoneTitle",
+    "contactsAddContactEmailTitle",
+    "contactsAddContactWebLinkTitle"
   ]
 }

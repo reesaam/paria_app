@@ -49,6 +49,19 @@
     "contactsShowContactTitleBalance": "Balance",
     "contactsShowContactTitleRecords": "Records Count",
 
+    "contactsAddContactTitle": "Add New Contact",
+    "contactsEditContactTitle": "Edit Contact",
+
+    "contactsAddContactFirstNameTitle": "First Name",
+    "contactsAddContactLastNameTitle": "Last Name",
+    "contactsAddContactMobileTitle": "Mobile",
+    "contactsAddContactPhoneTitle": "Phone",
+    "contactsAddContactEmailTitle": "Email",
+    "contactsAddContactWebLinkTitle": "Web Link",
+
+    "contactsAddEditModalErrorFirstname": "Firstname or Lastname should be entered.",
+    "contactsAddEditModalErrorMobile": "Mobile field can't be Blank",
+
     "settingsLanguageModalSelectLanguage": "Select Language",
     "settingsAppbarMenuResetSettings": "Reset All Settings",
     "settingsSectionTitleGeneral": "General",

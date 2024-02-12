@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_list.dart';
+import 'package:paria_app/features/contacts/presentation/manager/contact_functions.dart';
 
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
@@ -39,5 +40,7 @@ class ContactsController extends CoreController {
     listContacts.close();
   }
 
-  addContact() {}
+  addContact() => ContactFunctions().addContact();
+
+  editContact() {}
 }

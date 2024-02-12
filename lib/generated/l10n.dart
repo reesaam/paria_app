@@ -460,6 +460,106 @@ class S {
     );
   }
 
+  /// `Add New Contact`
+  String get contactsAddContactTitle {
+    return Intl.message(
+      'Add New Contact',
+      name: 'contactsAddContactTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Contact`
+  String get contactsEditContactTitle {
+    return Intl.message(
+      'Edit Contact',
+      name: 'contactsEditContactTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First Name`
+  String get contactsAddContactFirstNameTitle {
+    return Intl.message(
+      'First Name',
+      name: 'contactsAddContactFirstNameTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Name`
+  String get contactsAddContactLastNameTitle {
+    return Intl.message(
+      'Last Name',
+      name: 'contactsAddContactLastNameTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile`
+  String get contactsAddContactMobileTitle {
+    return Intl.message(
+      'Mobile',
+      name: 'contactsAddContactMobileTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get contactsAddContactPhoneTitle {
+    return Intl.message(
+      'Phone',
+      name: 'contactsAddContactPhoneTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get contactsAddContactEmailTitle {
+    return Intl.message(
+      'Email',
+      name: 'contactsAddContactEmailTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Web Link`
+  String get contactsAddContactWebLinkTitle {
+    return Intl.message(
+      'Web Link',
+      name: 'contactsAddContactWebLinkTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Firstname or Lastname should be entered.`
+  String get contactsAddEditModalErrorFirstname {
+    return Intl.message(
+      'Firstname or Lastname should be entered.',
+      name: 'contactsAddEditModalErrorFirstname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile field can't be Blank`
+  String get contactsAddEditModalErrorMobile {
+    return Intl.message(
+      'Mobile field can\'t be Blank',
+      name: 'contactsAddEditModalErrorMobile',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Select Language`
   String get settingsLanguageModalSelectLanguage {
     return Intl.message(

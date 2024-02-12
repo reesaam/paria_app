@@ -48,6 +48,27 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Internet Connection is not Available!"),
         "connectionInternetNotAvailableTitle":
             MessageLookupByLibrary.simpleMessage("Internet Connection"),
+        "contactsAddContactEmailTitle":
+            MessageLookupByLibrary.simpleMessage("Email"),
+        "contactsAddContactFirstNameTitle":
+            MessageLookupByLibrary.simpleMessage("First Name"),
+        "contactsAddContactLastNameTitle":
+            MessageLookupByLibrary.simpleMessage("Last Name"),
+        "contactsAddContactMobileTitle":
+            MessageLookupByLibrary.simpleMessage("Mobile"),
+        "contactsAddContactPhoneTitle":
+            MessageLookupByLibrary.simpleMessage("Phone"),
+        "contactsAddContactTitle":
+            MessageLookupByLibrary.simpleMessage("Add New Contact"),
+        "contactsAddContactWebLinkTitle":
+            MessageLookupByLibrary.simpleMessage("Web Link"),
+        "contactsAddEditModalErrorFirstname":
+            MessageLookupByLibrary.simpleMessage(
+                "Firstname or Lastname should be entered."),
+        "contactsAddEditModalErrorMobile": MessageLookupByLibrary.simpleMessage(
+            "Mobile field can\'t be Blank"),
+        "contactsEditContactTitle":
+            MessageLookupByLibrary.simpleMessage("Edit Contact"),
         "contactsPageName": MessageLookupByLibrary.simpleMessage("Contacts"),
         "contactsShowContactItemEmail":
             MessageLookupByLibrary.simpleMessage("Email"),
