@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/core/app_extensions/data_types_extensions/extension_locale.dart';
 
 import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
 import '../data/storage/app_local_storage.dart';
@@ -27,10 +28,11 @@ class AppLocalization {
 
   TextDirection defaultTextDirection = TextDirection.ltr;
 
-  getDefaultLocale() => AppLocalStorage.to.loadSettings().language!.getLocale;
+  getDefaultLocale() =>
+      AppLocalStorage.to.loadSettings().language?.getLocale;
 
   getTextDirection() =>
-      AppLocalStorage.to.loadSettings().language!.getLocale == persian
+      AppLocalStorage.to.loadSettings().language?.getLocale == persian
           ? TextDirection.rtl
           : defaultTextDirection;
 }
