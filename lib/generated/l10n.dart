@@ -480,6 +480,46 @@ class S {
     );
   }
 
+  /// `No Contacts`
+  String get contactsNoContacts {
+    return Intl.message(
+      'No Contacts',
+      name: 'contactsNoContacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Contact`
+  String get contactsOptionShow {
+    return Intl.message(
+      'Show Contact',
+      name: 'contactsOptionShow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Contact`
+  String get contactsOptionEdit {
+    return Intl.message(
+      'Edit Contact',
+      name: 'contactsOptionEdit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove Contact`
+  String get contactsOptionRemove {
+    return Intl.message(
+      'Remove Contact',
+      name: 'contactsOptionRemove',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `First Name`
   String get contactsAddContactFirstNameTitle {
     return Intl.message(

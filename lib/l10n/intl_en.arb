@@ -52,6 +52,11 @@
     "contactsAddContactTitle": "Add New Contact",
     "contactsEditContactTitle": "Edit Contact",
 
+    "contactsNoContacts": "No Contacts",
+    "contactsOptionShow": "Show Contact",
+    "contactsOptionEdit": "Edit Contact",
+    "contactsOptionRemove": "Remove Contact",
+
     "contactsAddContactFirstNameTitle": "First Name",
     "contactsAddContactLastNameTitle": "Last Name",
     "contactsAddContactMobileTitle": "Mobile",

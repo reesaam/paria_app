@@ -15,12 +15,18 @@
     "contactsShowContactTitleRecords",
     "contactsAddContactTitle",
     "contactsEditContactTitle",
+    "contactsNoContacts",
+    "contactsOptionShow",
+    "contactsOptionEdit",
+    "contactsOptionRemove",
     "contactsAddContactFirstNameTitle",
     "contactsAddContactLastNameTitle",
     "contactsAddContactMobileTitle",
     "contactsAddContactPhoneTitle",
     "contactsAddContactEmailTitle",
-    "contactsAddContactWebLinkTitle"
+    "contactsAddContactWebLinkTitle",
+    "contactsAddEditModalErrorFirstname",
+    "contactsAddEditModalErrorMobile"
   ],
 
   "fa": [
@@ -39,11 +45,17 @@
     "contactsShowContactTitleRecords",
     "contactsAddContactTitle",
     "contactsEditContactTitle",
+    "contactsNoContacts",
+    "contactsOptionShow",
+    "contactsOptionEdit",
+    "contactsOptionRemove",
     "contactsAddContactFirstNameTitle",
     "contactsAddContactLastNameTitle",
     "contactsAddContactMobileTitle",
     "contactsAddContactPhoneTitle",
     "contactsAddContactEmailTitle",
-    "contactsAddContactWebLinkTitle"
+    "contactsAddContactWebLinkTitle",
+    "contactsAddEditModalErrorFirstname",
+    "contactsAddEditModalErrorMobile"
   ]
 }

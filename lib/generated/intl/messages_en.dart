@@ -69,6 +69,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "Mobile field can\'t be Blank"),
         "contactsEditContactTitle":
             MessageLookupByLibrary.simpleMessage("Edit Contact"),
+        "contactsNoContacts":
+            MessageLookupByLibrary.simpleMessage("No Contacts"),
+        "contactsOptionEdit":
+            MessageLookupByLibrary.simpleMessage("Edit Contact"),
+        "contactsOptionRemove":
+            MessageLookupByLibrary.simpleMessage("Remove Contact"),
+        "contactsOptionShow":
+            MessageLookupByLibrary.simpleMessage("Show Contact"),
         "contactsPageName": MessageLookupByLibrary.simpleMessage("Contacts"),
         "contactsShowContactItemEmail":
             MessageLookupByLibrary.simpleMessage("Email"),

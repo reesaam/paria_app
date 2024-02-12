@@ -119,7 +119,7 @@ class UpdateController extends CoreController {
           directoryError
               ? Texts.to.updateDirectoryNotFoundContent
               : Texts.to.updateFileNotFoundContent,
-          Get.back,
+          popPage,
           true);
 
   checkAvailableUpdate() =>
