@@ -48,13 +48,19 @@ class HomePage extends CoreView<HomePageController> {
             ])),
 
         ///TODO: Implement DateTime Setting Page
-        InkWell(
-            onTap: () {},
-            child: Container(
-                alignment: Alignment.topRight,
-                padding: AppPaddings.homepageDateTimeCardSettingIcon,
-                child: AppIcons.settings.withAppDefaultColor
-                    .withSize(AppSizes.homepageSettingIcon))),
+        Align(
+          alignment: Alignment.topRight,
+          child: Container(
+            alignment: Alignment.center,
+            width: Get.width / 12,
+            padding: AppPaddings.homepageDateTimeCardSettingIcon,
+            child: InkWell(
+              onTap: () {},
+              child: AppIcons.settings.withAppDefaultColor
+                      .withSize(AppSizes.homepageSettingIcon),
+            ),
+          ),
+        ),
       ]));
 
   Widget _widgetDateTimeItem() => Row(

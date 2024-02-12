@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/data/resources/app_colors.dart';
+import 'package:paria_app/features/contacts/presentation/widgets/contact_avatar_widget.dart';
 
 import '../../../core/app_localization.dart';
 import '../../../core/core_functions.dart';
@@ -34,17 +36,19 @@ class AppDrawer extends Drawer {
       padding: AppPaddings.drawerHeader,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         Image.asset(AppLogos.appLogo, width: AppSizes.drawerHeaderIconWidth),
-        Text(AppInfo.appNameInitials),
+        Text(AppInfo.appName),
       ]));
 
   Widget body() => Column(children: [
         _bodyItem(AppPageDetails.homepage, AppIcons.home),
+        _bodyItem(AppPageDetails.contacts, AppIcons.contacts),
+        _bodyItem(AppPageDetails.accounts, AppIcons.accounts),
         _bodyItem(AppPageDetails.settings, AppIcons.settings),
         _bodyItem(AppPageDetails.about, AppIcons.about),
       ]);
 
   Widget _bodyItem(AppPageDetail page, Icon icon) => ListTile(
-        title: Text(page.pageName!),
+        title: Text(page.pageName),
         leading: icon,
         onTap: () => {popPage(), goToPage(page)},
       );
@@ -55,8 +59,7 @@ class AppDrawer extends Drawer {
         AppIcons.version,
         AppSpaces.w20,
         InkWell(
-          onTap: () => goToPage(AppPageDetails.update),
-            child: Text(
-                '${Texts.to.version}: ${AppInfo.appCurrentVersion}')),
+            onTap: () => goToPage(AppPageDetails.update),
+            child: Text('${Texts.to.version}: ${AppInfo.appCurrentVersion}')),
       ]));
 }

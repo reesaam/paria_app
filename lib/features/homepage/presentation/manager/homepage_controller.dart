@@ -28,6 +28,8 @@ class HomePageController extends CoreController {
   @override
   void dataInit() {
     // clearAppData();
+    listContacts.value = AppContactEntitiesList().loadFromStorage;
+    listRecords.value = AppAccountRecordEntitiesList().loadFromStorage;
   }
 
   @override
@@ -39,6 +41,7 @@ class HomePageController extends CoreController {
     summaryContactsCount.value = listContacts.count;
     summaryRecordsCount.value = listRecords.count;
     summaryBalanceCount.value = listRecords.calculateSum(false);
+    appDebugPrint('HomePage Init Function Done');
   }
 
   @override

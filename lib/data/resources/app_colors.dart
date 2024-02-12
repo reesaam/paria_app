@@ -6,7 +6,7 @@ class AppColors {
   static Color get transparent => Colors.transparent;
   static Color get appBackground => _white;
   static Color get appDefaultColor => _grey;
-  static Color get appDefaultColorSecond => _persianOrange;
+  static Color get appDefaultColorSecond => _coral;
   static Color get appDefaultDisabledColor => _grey.withOpacity(0.5);
 
   ///Colors
@@ -25,7 +25,7 @@ class AppColors {
   static Color get noError => Colors.green;
 
   ///Text
-  static Color get textNormalDark => _black;
+  static Color get textNormalDark => _black.withOpacity(0.6);
   static Color get textNormalLight => _white;
   static Color get textDisabled => appDefaultDisabledColor;
 

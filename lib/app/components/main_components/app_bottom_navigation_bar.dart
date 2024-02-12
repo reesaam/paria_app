@@ -52,11 +52,11 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
           AppPageDetail pageDetail) =>
       BottomNavigationBarItem(
           activeIcon: CircleAvatar(
-              backgroundColor: AppColors.textNormalDark,
-              foregroundColor: AppColors.textNormalDark,
-              child: _createIcon(pageDetail.pageRoute!)
+              backgroundColor: AppColors.appDefaultColorSecond,
+              foregroundColor: AppColors.appDefaultColor,
+              child: _createIcon(pageDetail.pageRoute)
                   .withColor(AppColors.textNormalLight)),
-          icon: _createIcon(pageDetail.pageRoute!),
+          icon: _createIcon(pageDetail.pageRoute),
           label: _createLabel(pageDetail.pageName));
 
   Icon _createIcon(String pageName) {

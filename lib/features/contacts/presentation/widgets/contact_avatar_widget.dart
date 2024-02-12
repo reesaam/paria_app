@@ -13,7 +13,7 @@ class ContactAvatar extends CircleAvatar {
   double? get maxRadius => size ?? 10;
 
   @override
-  Color? get backgroundColor => AppColors.appDefaultColor;
+  Color? get backgroundColor => AppColors.appDefaultColorSecond;
 
   @override
   Color? get foregroundColor => AppColors.buttonTextNormal;
