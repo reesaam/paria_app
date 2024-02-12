@@ -19,4 +19,7 @@ class AppSizes {
   ///Homepage
   static double get homepageLogo => 60;
   static double get homepageSettingIcon => 15;
+
+  ///Contacts
+  static double get contactsShowContactIcon => 15;
 }

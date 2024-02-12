@@ -21,6 +21,9 @@ class AppPaddings {
   static EdgeInsets get generalAlertDialog => const EdgeInsets.all(20);
   static EdgeInsets get modalItems => const EdgeInsets.symmetric(vertical: 15);
 
+  ///SplashScreen
+  static EdgeInsets get splashScreenProgressIndicator => const EdgeInsets.only(top: 200);
+
   ///Homepage
   static EdgeInsets get homepageTopBar => const EdgeInsets.symmetric(horizontal: 30, vertical: 20);
   static EdgeInsets get homepageDateTimeCard => const EdgeInsets.fromLTRB(0, 20, 0, 20);
@@ -29,11 +32,20 @@ class AppPaddings {
   static EdgeInsets get homepageDateTimeCardSettingIcon => const EdgeInsets.fromLTRB(0, 10, 10, 0);
   static EdgeInsets get homepageButtons => const EdgeInsets.fromLTRB(50, 40, 50, 0);
 
+  ///Contacts
+  static EdgeInsets get contactsNoContacts => const EdgeInsets.all(50);
+  static EdgeInsets get contactsItem => const EdgeInsets.only(left: 20);
+  static EdgeInsets get contactsShowContactItems => const EdgeInsets.fromLTRB(20, 50, 40, 20);
+  static EdgeInsets get contactsShowContactItem => const EdgeInsets.fromLTRB(0, 5, 0, 5);
+
+  ///Accounts
+  static EdgeInsets get accountsTopBar => const EdgeInsets.all(10);
+  static EdgeInsets get accountsSummaryCard => const EdgeInsets.fromLTRB(20, 10, 20, 10);
+  static EdgeInsets get accountsNoRecordText => const EdgeInsets.all(40);
+  static EdgeInsets get accountsSelectContactList => const EdgeInsets.fromLTRB(10, 10, 10, 10);
+
   ///ListPage
   static EdgeInsets get listPageSearchBox => const EdgeInsets.only(bottom: 10);
-
-  ///SplashScreen
-  static EdgeInsets get splashScreenProgressIndicator => const EdgeInsets.only(top: 200);
 
   ///Settings
   static EdgeInsets get settingsSection => const EdgeInsets.fromLTRB(0, 20, 0, 10);

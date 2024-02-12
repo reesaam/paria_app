@@ -53,6 +53,10 @@ class AppElements {
   static RoundedRectangleBorder get defaultModalBorderShape => RoundedRectangleBorder(borderRadius: topBorderWithRadius);
   static RoundedRectangleBorder get defaultAlertBorderShape => RoundedRectangleBorder(borderRadius: defaultBorderWithRadius);
 
+  ///Avatars
+  static double get contactsListAvatarMaxRadius => 15;
+  static double get contactsContactAvatarMaxRadius => 20;
+
   ///Panel
   // static BoxBorder get defaultPanelBorder => Border.all(color: AppColors.panelBorder);
   // static BoxDecoration get defaultPanel => BoxDecoration(border: defaultPanelBorder, borderRadius: defaultBorderWithRadius);

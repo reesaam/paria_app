@@ -36,6 +36,18 @@ class AppTextStyles {
   ///SplashScreen
   static TextStyle get splashScreenAppName => TextStyle(fontSize: AppSizes.splashScreenAppName);
 
+  ///Contacts
+  static TextStyle get contactsNoContacts => TextStyle(fontSize: titleSize, color: AppColors.appDefaultColor);
+  static TextStyle get contactsListItem => TextStyle(color: AppColors.textDisabled, fontSize: bigSize);
+
+  static TextStyle get contactsChooseContact => TextStyle(fontSize: titleSize, color: AppColors.textDisabled);
+
+  ///Show Contact
+  static TextStyle get contactsShowContactSectionTitle => const TextStyle(fontWeight: FontWeight.bold);
+  static TextStyle get contactsShowContactFullName => TextStyle(fontSize: bigTitleSize, color: AppColors.textDisabled);
+  static TextStyle get contactsShowContactInfoTitle => TextStyle(color: AppColors.textDisabled, fontWeight: FontWeight.bold);
+  static TextStyle get contactsShowContactInfoItem => TextStyle(color: AppColors.textDisabled);
+
   ///Settings
   static TextStyle get settingsSectionTitle => TextStyle(fontSize: bigSize, color: AppColors.settingTitle);
   static TextStyle get settingsSectionItem => TextStyle(color: AppColors.settingItem);

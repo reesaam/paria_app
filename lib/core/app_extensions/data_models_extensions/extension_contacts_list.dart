@@ -28,7 +28,7 @@ extension RxContactFunctions on Rx<AppContactEntitiesList> {
       {value.removeContact(contact), refresh()};
 }
 
-extension ContactFunctions on AppContactEntitiesList {
+extension ContactFunction on AppContactEntitiesList {
   addContact(AppContactEntity contact) {
     List<AppContactEntity> contacts = List<AppContactEntity>.empty(growable: true);
     contacts.addAll(membersList);

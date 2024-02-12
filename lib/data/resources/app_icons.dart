@@ -11,6 +11,10 @@ class AppIcons {
   static Icon get version => const Icon(Icons.info_outline_rounded);
   static Icon get threeDots => const Icon(Icons.more_vert);
   static Icon get add => const Icon(Icons.add);
+  static Icon get list => const Icon(Icons.list);
+  static Icon get filter => const Icon(Icons.filter_alt);
+  static Icon get noFilter => const Icon(Icons.filter_alt_off);
+  static Icon get removeFilter => const Icon(Icons.highlight_remove_sharp);
 
   ///Icons
   static Icon get home => const Icon(Icons.home_rounded);
@@ -19,6 +23,12 @@ class AppIcons {
   static Icon get settings => const Icon(Icons.settings_rounded);
   static Icon get about => const Icon(Icons.info_outline_rounded);
   static Icon get profile => const Icon(Icons.account_circle_rounded);
+
+  ///Contacts
+  static Icon get mobile => const Icon(Icons.phone_android);
+  static Icon get phone => const Icon(Icons.phone);
+  static Icon get email => const Icon(Icons.email);
+  static Icon get web => const Icon(Icons.language);
 
   ///BottomNavigationBar Icons
   static Icon get bottomNavigationHomepage => home;
