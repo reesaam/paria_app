@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uuid/uuid.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
-import 'package:paria_app/features/contacts/domain/entities/contact_entity/contact_entity.dart';
+import 'package:uuid/v1.dart';
 
 import '../../../../app/components/general_widgets/app_snack_bars.dart';
 import '../../../../app/components/general_widgets/app_text_field.dart';
@@ -10,12 +11,9 @@ import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../data/resources/app_icons.dart';
 import '../../../../data/resources/app_spaces.dart';
+import '../../domain/entities/contact_entity/contact_entity.dart';
 
 class AppContactsAddEditContactComponent {
-  final AppContactEntity? contact;
-  final String? title;
-  AppContactsAddEditContactComponent({this.contact, this.title});
-
   AppContactEntity _providedContact = const AppContactEntity();
 
   //TextEditing Controllers
@@ -71,52 +69,55 @@ class AppContactsAddEditContactComponent {
   _provideContact() async {
     if (_controllerFirstName.text.isEmpty && _controllerLastName.text.isEmpty) {
       AppSnackBar.show(Texts.to.contactsAddEditModalErrorFirstname);
-    }
-    else if (_controllerMobile.text.isEmpty) {
+    } else if (_controllerMobile.text.isEmpty) {
       AppSnackBar.show(Texts.to.contactsAddEditModalErrorMobile);
-    }
-    else {
+    } else {
       _providedContact = AppContactEntity(
+          id: const Uuid().v1(),
           firstName: _controllerFirstName.text,
           lastName: _controllerLastName.text ?? '',
           mobile: _controllerMobile.text,
           phone: _controllerPhone.text ?? '',
           email: _controllerEmail.text ?? '',
           webLink: _controllerWebLink.text ?? '');
-      Get.back();
+      popPage();
     }
   }
 
   addContact() async {
-    await _raiseModal();
-    appDebugPrint(_providedContact.isEmpty
-        ? 'Add Contact Canceled'
-        : {'Contact: $_providedContact', appDebugPrint('Add Contact Modal Closed')});
-    saveAppData();
+    await _raiseModal(Texts.to.contactsAddContactTitle);
+    _providedContact.isEmpty
+        ? appDebugPrint('Add Contact Canceled')
+        : {
+            appDebugPrint('Contact: $_providedContact'),
+            appDebugPrint('Add Contact Modal Closed')
+          };
     return _providedContact.isEmpty ? null : _providedContact;
   }
 
-  editContact(AppContactEntity prevContact) async {
-
+  editContact(AppContactEntity contact) async {
     ///Controllers
-    _controllerFirstName.text = prevContact.firstName ?? '';
-    _controllerLastName.text = prevContact.lastName ?? '';
-    _controllerMobile.text = prevContact.mobile ?? '';
-    _controllerPhone.text = prevContact.phone ?? '';
-    _controllerEmail.text = prevContact.email ?? '';
-    _controllerWebLink.text = prevContact.webLink ?? '';
+    _controllerFirstName.text = contact.firstName ?? '';
+    _controllerLastName.text = contact.lastName ?? '';
+    _controllerMobile.text = contact.mobile ?? '';
+    _controllerPhone.text = contact.phone ?? '';
+    _controllerEmail.text = contact.email ?? '';
+    _controllerWebLink.text = contact.webLink ?? '';
 
-    await _raiseModal();
-    _provideContact();
+    await _raiseModal(Texts.to.contactsEditContactTitle);
 
-    appDebugPrint(_providedContact!.equalTo(prevContact)
+    appDebugPrint(_providedContact.equalTo(contact)
         ? 'Edit Contact Canceled'
-        : {'Contact: $_providedContact', appDebugPrint('Edit Contact Modal Closed')});
+        : {
+            'Contact: $_providedContact',
+            appDebugPrint('Edit Contact Modal Closed')
+          });
 
     saveAppData();
-    return _providedContact.equalTo(prevContact) ? null : _providedContact;
+    return _providedContact.equalTo(contact) ? null : _providedContact;
   }
 
-  _raiseModal() async => await AppDialogs().appBottomDialogWithOkCancel(
-      title ?? '', _widgetAddOrEditContactDialog(), _provideContact, true);
+  _raiseModal(String title) async =>
+      await AppDialogs().appBottomDialogWithOkCancel(
+          title, _widgetAddOrEditContactDialog(), _provideContact, true);
 }
