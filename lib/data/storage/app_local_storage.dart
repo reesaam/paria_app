@@ -17,12 +17,12 @@ class AppLocalStorage {
 
   ///Keys
   final _keyContacts = AppStorageKeys.keyContacts.name;
-  final _keyAccountsRecords = AppStorageKeys.keyAccountRecords.name;
+  final _keyAccounts = AppStorageKeys.keyAccounts.name;
   final _keySettings = AppStorageKeys.keySettings.name;
 
   void clearStorage() {
     _storage.remove(_keyContacts);
-    _storage.remove(_keyAccountsRecords);
+    _storage.remove(_keyAccounts);
     _storage.remove(_keySettings);
   }
 
@@ -69,10 +69,10 @@ class AppLocalStorage {
   ///Accounts
   Future<void> saveAccountRecords(
           AppAccountRecordEntitiesList accountRecords) async =>
-      await _saveFunction(accountRecords, _keyAccountsRecords);
+      await _saveFunction(accountRecords, _keyAccounts);
 
   AppAccountRecordEntitiesList loadAccountRecords() {
-    var data = _loadFunction(_keyAccountsRecords);
+    var data = _loadFunction(_keyAccounts);
     return data == null
         ? AppAccountRecordEntitiesList()
         : AppAccountRecordEntitiesList.fromJson(data);
