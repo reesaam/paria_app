@@ -18,8 +18,8 @@ void appDebugPrint(message) => isRelease ? null : debugPrint('$message');
 void appLogPrint(message) => debugPrint('[LOG] ** $message **');
 
 void goToPage(AppPageDetail page) => page.bottomBarItemNumber == -1
-    ? Get.toNamed(page.pageRoute!)
-    : Get.offAllNamed(page.pageRoute!);
+    ? Get.toNamed(page.pageRoute)
+    : Get.offAllNamed(page.pageRoute);
 
 void popPage() {
   Get.back();

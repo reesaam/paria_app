@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:paria_app/core/app_localization.dart';
 
 import '../../core/core_functions.dart';
 import '../../features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
