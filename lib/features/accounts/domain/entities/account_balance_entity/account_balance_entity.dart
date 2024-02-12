@@ -17,7 +17,7 @@ class AppAccountBalanceEntity with _$AppAccountBalanceEntity {
       _$AppAccountBalanceEntityFromJson(json);
 }
 
-@freezed
+@unfreezed
 class AppAccountBalanceEntitiesList with _$AppAccountBalanceEntitiesList {
   factory AppAccountBalanceEntitiesList({
     @Default(<AppAccountBalanceEntity>[]) List<AppAccountBalanceEntity> balancesList

@@ -16,7 +16,7 @@ class AppSettingDataEntity with _$AppSettingDataEntity {
       _$AppSettingDataEntityFromJson(json);
 }
 
-@freezed
+@unfreezed
 class AppSettingDataEntitiesList with _$AppSettingDataEntitiesList {
   factory AppSettingDataEntitiesList({
     @Default(<AppSettingDataEntity>[]) List<AppSettingDataEntity> appSettingsDataList

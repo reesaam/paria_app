@@ -20,7 +20,7 @@ class AppAccountsFilterEntity with _$AppAccountsFilterEntity {
       _$AppAccountsFilterEntityFromJson(json);
 }
 
-@freezed
+@unfreezed
 class AppAccountsFilterEntitiesList with _$AppAccountsFilterEntitiesList {
   factory AppAccountsFilterEntitiesList({
     @Default(<AppAccountsFilterEntity>[]) List<AppAccountsFilterEntity> filtersList

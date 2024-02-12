@@ -20,7 +20,7 @@ class AppAccountRecordEntity with _$AppAccountRecordEntity {
       _$AppAccountRecordEntityFromJson(json);
 }
 
-@freezed
+@unfreezed
 class AppAccountRecordEntitiesList with _$AppAccountRecordEntitiesList {
   factory AppAccountRecordEntitiesList({
     @Default(<AppAccountRecordEntity>[]) List<AppAccountRecordEntity> recordsList

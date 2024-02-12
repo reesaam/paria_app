@@ -22,7 +22,7 @@ class AppContactEntity with _$AppContactEntity {
       _$AppContactEntityFromJson(json);
 }
 
-@freezed
+@unfreezed
 class AppContactEntitiesList with _$AppContactEntitiesList {
   factory AppContactEntitiesList({
     @Default(<AppContactEntity>[]) List<AppContactEntity> contactsList,
