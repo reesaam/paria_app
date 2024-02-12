@@ -22,6 +22,8 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
 
   List<AppPageDetail> pages = <AppPageDetail>[
     AppPageDetails.homepage,
+    AppPageDetails.contacts,
+    AppPageDetails.accounts,
     AppPageDetails.settings,
   ];
 
@@ -62,6 +64,12 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
     switch (pageName) {
       case (AppRoutes.homePage):
         icon = AppIcons.bottomNavigationHomepage;
+        break;
+      case (AppRoutes.contacts):
+        icon = AppIcons.bottomNavigationContacts;
+        break;
+      case (AppRoutes.accounts):
+        icon = AppIcons.bottomNavigationAccounts;
         break;
       case (AppRoutes.settings):
         icon = AppIcons.bottomNavigationSettings;

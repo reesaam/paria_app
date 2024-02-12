@@ -14,12 +14,16 @@ class AppIcons {
 
   ///Icons
   static Icon get home => const Icon(Icons.home_rounded);
+  static Icon get contacts => const Icon(Icons.person_rounded);
+  static Icon get accounts => const Icon(Icons.attach_money_rounded);
   static Icon get settings => const Icon(Icons.settings_rounded);
   static Icon get about => const Icon(Icons.info_outline_rounded);
   static Icon get profile => const Icon(Icons.account_circle_rounded);
 
   ///BottomNavigationBar Icons
   static Icon get bottomNavigationHomepage => home;
+  static Icon get bottomNavigationContacts => contacts;
+  static Icon get bottomNavigationAccounts => accounts;
   static Icon get bottomNavigationSettings => settings;
 
   ///List
