@@ -7,7 +7,6 @@ import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_page_details.dart';
 
 class AccountsController extends CoreController {
-
   @override
   void dataInit() {
     // clearAppData();
@@ -19,8 +18,7 @@ class AccountsController extends CoreController {
   }
 
   @override
-  void onInitFunction() {
-  }
+  void onInitFunction() {}
 
   @override
   void onCloseFunction() {
