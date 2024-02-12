@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/core/app_extensions/data_types_extensions/extension_string.dart';
 
 import '../../../../core/app_extensions/data_types_extensions/extension_icon.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_int.dart';
@@ -79,9 +80,9 @@ class HomePage extends CoreView<HomePageController> {
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text(Texts.to.contactsPageName),
-                          Text(Texts.to.accountsPageName),
-                          Text(Texts.to.totalBalance),
+                          Text(Texts.to.contactsPageName.withDoubleDots),
+                          Text(Texts.to.accountsPageName.withDoubleDots),
+                          Text(Texts.to.totalBalance.withDoubleDots),
                         ]),
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

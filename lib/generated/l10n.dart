@@ -380,6 +380,86 @@ class S {
     );
   }
 
+  /// `Personal Info`
+  String get contactsShowContactTitleInfo {
+    return Intl.message(
+      'Personal Info',
+      name: 'contactsShowContactTitleInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile`
+  String get contactsShowContactItemMobile {
+    return Intl.message(
+      'Mobile',
+      name: 'contactsShowContactItemMobile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get contactsShowContactItemPhone {
+    return Intl.message(
+      'Phone',
+      name: 'contactsShowContactItemPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get contactsShowContactItemEmail {
+    return Intl.message(
+      'Email',
+      name: 'contactsShowContactItemEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Web Link`
+  String get contactsShowContactItemWebLink {
+    return Intl.message(
+      'Web Link',
+      name: 'contactsShowContactItemWebLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account Info`
+  String get contactsShowContactTitleAccount {
+    return Intl.message(
+      'Account Info',
+      name: 'contactsShowContactTitleAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Balance`
+  String get contactsShowContactTitleBalance {
+    return Intl.message(
+      'Balance',
+      name: 'contactsShowContactTitleBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Records Count`
+  String get contactsShowContactTitleRecords {
+    return Intl.message(
+      'Records Count',
+      name: 'contactsShowContactTitleRecords',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Select Language`
   String get settingsLanguageModalSelectLanguage {
     return Intl.message(

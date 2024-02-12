@@ -49,6 +49,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "connectionInternetNotAvailableTitle":
             MessageLookupByLibrary.simpleMessage("Internet Connection"),
         "contactsPageName": MessageLookupByLibrary.simpleMessage("Contacts"),
+        "contactsShowContactItemEmail":
+            MessageLookupByLibrary.simpleMessage("Email"),
+        "contactsShowContactItemMobile":
+            MessageLookupByLibrary.simpleMessage("Mobile"),
+        "contactsShowContactItemPhone":
+            MessageLookupByLibrary.simpleMessage("Phone"),
+        "contactsShowContactItemWebLink":
+            MessageLookupByLibrary.simpleMessage("Web Link"),
+        "contactsShowContactTitleAccount":
+            MessageLookupByLibrary.simpleMessage("Account Info"),
+        "contactsShowContactTitleBalance":
+            MessageLookupByLibrary.simpleMessage("Balance"),
+        "contactsShowContactTitleInfo":
+            MessageLookupByLibrary.simpleMessage("Personal Info"),
+        "contactsShowContactTitleRecords":
+            MessageLookupByLibrary.simpleMessage("Records Count"),
         "empty": MessageLookupByLibrary.simpleMessage(""),
         "from": MessageLookupByLibrary.simpleMessage("From"),
         "homePageName": MessageLookupByLibrary.simpleMessage("Home"),

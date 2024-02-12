@@ -4,7 +4,15 @@
     "accountsPageName",
     "totalBalance",
     "homepageDateTimeTitle",
-    "homepageSummaryTitle"
+    "homepageSummaryTitle",
+    "contactsShowContactTitleInfo",
+    "contactsShowContactItemMobile",
+    "contactsShowContactItemPhone",
+    "contactsShowContactItemEmail",
+    "contactsShowContactItemWebLink",
+    "contactsShowContactTitleAccount",
+    "contactsShowContactTitleBalance",
+    "contactsShowContactTitleRecords"
   ],
 
   "fa": [
@@ -12,6 +20,14 @@
     "accountsPageName",
     "totalBalance",
     "homepageDateTimeTitle",
-    "homepageSummaryTitle"
+    "homepageSummaryTitle",
+    "contactsShowContactTitleInfo",
+    "contactsShowContactItemMobile",
+    "contactsShowContactItemPhone",
+    "contactsShowContactItemEmail",
+    "contactsShowContactItemWebLink",
+    "contactsShowContactTitleAccount",
+    "contactsShowContactTitleBalance",
+    "contactsShowContactTitleRecords"
   ]
 }

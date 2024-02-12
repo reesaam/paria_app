@@ -40,6 +40,15 @@
     "homepageDateTimeTitle": "Today",
     "homepageSummaryTitle": "App Summary",
 
+    "contactsShowContactTitleInfo": "Personal Info",
+    "contactsShowContactItemMobile": "Mobile",
+    "contactsShowContactItemPhone": "Phone",
+    "contactsShowContactItemEmail": "Email",
+    "contactsShowContactItemWebLink": "Web Link",
+    "contactsShowContactTitleAccount": "Account Info",
+    "contactsShowContactTitleBalance": "Balance",
+    "contactsShowContactTitleRecords": "Records Count",
+
     "settingsLanguageModalSelectLanguage": "Select Language",
     "settingsAppbarMenuResetSettings": "Reset All Settings",
     "settingsSectionTitleGeneral": "General",
