@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_settings.dart';
+import 'package:paria_app/core/app_routing/routing.dart';
 
 import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
@@ -89,7 +90,7 @@ class SettingsController extends CoreController {
     appLogPrint('Checked Update Version: ${updateAvailableVersion.value}');
   }
 
-  functionGoToUpdatePage() => goToPage(AppPageDetails.update);
+  functionGoToUpdatePage() => goToUpdatePage();
 
   functionBackup() {
     function() async {

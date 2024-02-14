@@ -1,61 +1,60 @@
-import '../../core/app_localization.dart';
-import '../../core/app_routing/app_routes.dart';
 import '../data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
+import '../resources/app_enums.dart';
 
 class AppPageDetails {
   ///Admin Pages
-  static AppPageDetail adminStartPage = AppPageDetail(
-    pageName: Texts.to.adminStartPagePageName,
+  static AppPageDetail adminStartPage = const AppPageDetail(
     pageRoute: AppRoutes.adminStartPage,
   );
 
-  static AppPageDetail adminPagesTestPage = AppPageDetail(
-    pageName: Texts.to.adminTestPagePageName,
-    pageRoute: AppRoutes.adminPagesTestPage,
+  static AppPageDetail adminPagesTestPage = const AppPageDetail(
+    pageRoute: AppRoutes.adminTestPage,
   );
 
-  static AppPageDetail adminUITestPage = AppPageDetail(
-    pageName: Texts.to.adminUITestPagePageName,
+  static AppPageDetail adminUITestPage = const AppPageDetail(
     pageRoute: AppRoutes.adminUITestPage,
   );
 
   ///Main Pages
-  static AppPageDetail splashScreen = AppPageDetail(
-    pageName: Texts.to.splashScreenPageName,
+  static AppPageDetail splashScreen = const AppPageDetail(
     pageRoute: AppRoutes.splashScreen,
   );
 
-  static AppPageDetail homepage = AppPageDetail(
-    pageName: Texts.to.homePageName,
-    pageRoute: AppRoutes.homePage,
+  static AppPageDetail homepage = const AppPageDetail(
+    pageRoute: AppRoutes.homepage,
     bottomBarItemNumber: 0,
+    drawerPresence: true,
   );
 
   static AppPageDetail contacts = const AppPageDetail(
-    pageName: 'Contacts',
     pageRoute: AppRoutes.contacts,
     bottomBarItemNumber: 1,
+    drawerPresence: true,
+  );
+
+  static AppPageDetail contactsBalance = const AppPageDetail(
+    pageRoute: AppRoutes.contactsBalance,
   );
 
   static AppPageDetail accounts = const AppPageDetail(
-    pageName: 'Accounts',
     pageRoute: AppRoutes.accounts,
     bottomBarItemNumber: 2,
+    drawerPresence: true,
   );
 
-  static AppPageDetail settings = AppPageDetail(
-    pageName: Texts.to.settingsPageName,
+  static AppPageDetail settings = const AppPageDetail(
     pageRoute: AppRoutes.settings,
     bottomBarItemNumber: 3,
+    drawerPresence: true,
   );
 
-  static AppPageDetail about = AppPageDetail(
-    pageName: Texts.to.aboutPageName,
+  static AppPageDetail about = const AppPageDetail(
     pageRoute: AppRoutes.about,
+    drawerPresence: true,
   );
 
-  static AppPageDetail update = AppPageDetail(
-    pageName: Texts.to.updatePageName,
+  static AppPageDetail update = const AppPageDetail(
     pageRoute: AppRoutes.update,
+    drawerPresence: true,
   );
 }

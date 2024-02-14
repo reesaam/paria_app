@@ -5,7 +5,7 @@ import '../../../../app/components/main_components/app_dialogs.dart';
 import '../../../../app/functional_components/connectivity/connectivity.dart';
 import '../../../../app/functional_components/permissions/permissions.dart';
 import '../../../../core/app_localization.dart';
-import '../../../../core/app_routing/app_routes.dart';
+import '../../../../core/app_routing/routing.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_info.dart';
@@ -58,14 +58,15 @@ class SplashScreenController extends CoreController {
   void goToNextPage() async {
     await Future.delayed(const Duration(seconds: 4));
     availableUpdate == AppInfo.appCurrentVersion
-        ? goToHomepage()
+        ? goToHomePage()
         : showUpdateDialog();
   }
 
   showUpdateDialog() => AppDialogs().appAlertDialogWithOkCancel(
-      Texts.to.updateNewVersion, Texts.to.updateApprove, goToUpdatePage, false);
+      Texts.to.updateNewVersion, Texts.to.updateApprove, updatePageRedirection, false);
 
-  goToHomepage() => Get.offAndToNamed(AppRoutes.homePage);
-  goToUpdatePage() => Get.offAndToNamed(AppRoutes.homePage)
-      ?.then((value) => Get.toNamed(AppRoutes.update));
+  updatePageRedirection() {
+    goToHomePage();
+    goToUpdatePage();
+  }
 }

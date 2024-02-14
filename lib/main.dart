@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:paria_app/core/app_extensions/extension_app_routes.dart';
 
 import 'core/app_localization.dart';
 import 'core/app_bindings/core_bindings.dart';
 import 'core/app_routing/app_pages.dart';
-import 'core/app_routing/app_routes.dart';
 import 'data/info/app_info.dart';
+import 'data/resources/app_enums.dart';
 import 'data/resources/app_themes.dart';
 
 import 'generated/l10n.dart';
@@ -29,7 +30,7 @@ class MainApp extends StatelessWidget {
       title: AppInfo.appName,
       initialBinding: CoreBindings(),
       getPages: AppPages.pages,
-      initialRoute: AppRoutes.startPage,
+      initialRoute: AppRoutes.splashScreen.route,
       theme: AppThemes.mainTheme,
       supportedLocales: AppLocalization.to.supportedLocales,
       localizationsDelegates: AppLocalization.to.localizationDelegates,

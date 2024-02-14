@@ -17,7 +17,7 @@ import '../widgets/settings_sections_widgets.dart';
 import '../manager/settings_controller.dart';
 
 class SettingsPage extends CoreView<SettingsController> {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   PreferredSizeWidget? get appBar => AppAppBar(
@@ -54,7 +54,7 @@ class SettingsPage extends CoreView<SettingsController> {
 
     ///TODO: Calendar Types Implementation
     Widget leadingCalendar() => Obx(() =>
-        Text(controller.selectedCalendar.value.calendarName ?? ''));
+        Text(controller.selectedCalendar.value.name.capitalizeFirst ?? ''));
 
     Widget leadingDarkMode() => Obx(() => AppSwitch(
         value: controller.darkMode.value,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/core/app_routing/routing.dart';
 import 'package:paria_app/data/resources/app_colors.dart';
 import 'package:paria_app/features/contacts/presentation/widgets/contact_avatar_widget.dart';
 
@@ -48,9 +49,9 @@ class AppDrawer extends Drawer {
       ]);
 
   Widget _bodyItem(AppPageDetail page, Icon icon) => ListTile(
-        title: Text(page.pageName),
+        title: Text(page.pageRoute.pageLabel),
         leading: icon,
-        onTap: () => {popPage(), goToPage(page)},
+        onTap: () => {popPage(), goToPage(page.pageRoute)},
       );
 
   Widget footer() => Container(
@@ -59,7 +60,7 @@ class AppDrawer extends Drawer {
         AppIcons.version,
         AppSpaces.w20,
         InkWell(
-            onTap: () => goToPage(AppPageDetails.update),
+            onTap: () => goToPage(AppPageDetails.update.pageRoute),
             child: Text('${Texts.to.version}: ${AppInfo.appCurrentVersion}')),
       ]));
 }
