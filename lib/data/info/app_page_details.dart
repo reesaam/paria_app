@@ -44,10 +44,24 @@ class AppPageDetails {
     drawerPresence: true,
   );
 
+  static AppPageDetail contacts = AppPageDetail(
+    pageRoute: AppRoutes.contacts,
+    iconCode: AppIcons.contacts.icon!.codePoint,
+    bottomBarItemNumber: 1,
+    drawerPresence: true,
+  );
+
+  static AppPageDetail accounts = AppPageDetail(
+    pageRoute: AppRoutes.accounts,
+    iconCode: AppIcons.accounts.icon!.codePoint,
+    bottomBarItemNumber: 2,
+    drawerPresence: true,
+  );
+
   static AppPageDetail settings = AppPageDetail(
     pageRoute: AppRoutes.settings,
     iconCode: AppIcons.settings.icon!.codePoint,
-    bottomBarItemNumber: 1,
+    bottomBarItemNumber: 3,
     drawerPresence: true,
   );
 

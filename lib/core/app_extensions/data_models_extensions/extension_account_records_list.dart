@@ -14,7 +14,7 @@ extension RxStorage on Rx<AppAccountRecordEntitiesList> {
 
 extension Storage on AppAccountRecordEntitiesList {
   void saveOnStorage() async =>
-      await AppLocalStorage.to.saveAccountRecords(this);
+      await AppLocalStorage.to.saveAccountRecords(accountRecords: this);
   AppAccountRecordEntitiesList get loadFromStorage =>
       AppLocalStorage.to.loadAccountRecords();
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:paria_app/core/app_routing/routing.dart';
 
+import '../../../../core/app_routing/routing.dart';
 import '../../../../app/components/buttons/app_icon_button.dart';
 import '../../../../data/resources/app_icons.dart';
 import '../../../../data/resources/app_paddings.dart';
@@ -14,5 +13,5 @@ class AccountsAppBarActionWidget extends StatelessWidget {
       padding: AppPaddings.appBarActions,
       child: AppIconButton(
           icon: AppIcons.list.icon!,
-          onPressed: () => goToContactsBalancePage()));
+          onPressed: () => goToContactsBalance()));
 }

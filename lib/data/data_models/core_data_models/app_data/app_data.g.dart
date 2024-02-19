@@ -9,8 +9,9 @@ part of 'app_data.dart';
 _$AppDataImpl _$$AppDataImplFromJson(Map<String, dynamic> json) =>
     _$AppDataImpl(
       setting: json['setting'] == null
-          ? const AppSettingData()
-          : AppSettingData.fromJson(json['setting'] as Map<String, dynamic>),
+          ? const AppSettingDataEntity()
+          : AppSettingDataEntity.fromJson(
+              json['setting'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppDataImplToJson(_$AppDataImpl instance) =>

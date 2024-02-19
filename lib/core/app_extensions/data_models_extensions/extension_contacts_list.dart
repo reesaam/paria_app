@@ -13,7 +13,7 @@ extension RxStorage on Rx<AppContactEntitiesList> {
 }
 
 extension Storage on AppContactEntitiesList {
-  void saveOnStorage() async => await AppLocalStorage.to.saveContacts(this);
+  void saveOnStorage() async => await AppLocalStorage.to.saveContacts(contacts: this);
   AppContactEntitiesList get loadFromStorage =>
       AppLocalStorage.to.loadContacts();
 }

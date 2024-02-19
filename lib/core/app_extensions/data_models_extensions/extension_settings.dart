@@ -1,23 +1,23 @@
 import 'package:get/get.dart';
 
-import '../../../data/data_models/core_data_models/app_settings_data/app_setting_data.dart';
 import '../../../data/storage/app_local_storage.dart';
+import '../../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
 
 
-extension RxStorage on Rx<AppSettingData> {
+extension RxStorage on Rx<AppSettingDataEntity> {
   void get saveOnStorage async => await AppLocalStorage.to.saveSettings(settings: value);
-  Rx<AppSettingData> get loadFromStorage => AppLocalStorage.to.loadSettings().obs;
+  Rx<AppSettingDataEntity> get loadFromStorage => AppLocalStorage.to.loadSettings().obs;
 }
 
-extension Storage on AppSettingData {
+extension Storage on AppSettingDataEntity {
   void get saveOnStorage async => await AppLocalStorage.to.saveSettings(settings: this);
-  AppSettingData get loadFromStorage => AppLocalStorage.to.loadSettings();
+  AppSettingDataEntity get loadFromStorage => AppLocalStorage.to.loadSettings();
 }
 
-extension RxClear on Rx<AppSettingData> {
-  Rx<AppSettingData> get clearData => const AppSettingData(darkMode: false).obs;
+extension RxClear on Rx<AppSettingDataEntity> {
+  Rx<AppSettingDataEntity> get clearData => const AppSettingDataEntity(darkMode: false).obs;
 }
 
-extension Clear on AppSettingData {
-  AppSettingData get clearData => const AppSettingData(darkMode: false);
+extension Clear on AppSettingDataEntity {
+  AppSettingDataEntity get clearData => const AppSettingDataEntity(darkMode: false);
 }

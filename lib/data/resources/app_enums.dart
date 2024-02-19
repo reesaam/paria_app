@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 enum AppRoutes {
   splashScreen('Splash Screen'),
   homepage('HomePage'),
+  contacts('Contacts'),
+  contactsBalance('Contacts Balance'),
+  accounts('Accounts'),
   settings('Settings'),
   update('Update'),
   about('About'),
@@ -17,6 +20,8 @@ enum AppRoutes {
 
 enum AppBottomNavigationPages {
   homepage(AppRoutes.homepage),
+  contacts(AppRoutes.contacts),
+  accounts(AppRoutes.accounts),
   settings(AppRoutes.settings);
 
   final AppRoutes appRoute;

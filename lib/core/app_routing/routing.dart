@@ -5,6 +5,9 @@ import '../../data/resources/app_enums.dart';
 
 goToSplashScreenPage() => goToPage(AppRoutes.splashScreen);
 goToHomePage() => goToPage(AppRoutes.homepage);
+goToContacts() => goToPage(AppRoutes.contacts);
+goToContactsBalance() => goToPage(AppRoutes.contactsBalance);
+goToAccounts() => goToPage(AppRoutes.accounts);
 goToSettingsPage() => goToPage(AppRoutes.settings);
 goToUpdatePage() => goToPage(AppRoutes.update);
 goToAboutPage() => goToPage(AppRoutes.about);
