@@ -42,12 +42,11 @@ class AppDrawer extends Drawer {
   Widget body() => Column(
       children: List.generate(
           AppPageDetails().listPages.length,
-          (index) => _bodyItem(AppPageDetails().listPages[index],
-              AppPageDetails().listPages[index].iconCode.toIcon)));
+          (index) => _bodyItem(AppPageDetails().listPages[index])));
 
-  Widget _bodyItem(AppPageDetail page, Icon icon) => ListTile(
+  Widget _bodyItem(AppPageDetail page) => ListTile(
         title: Text(page.pageRoute.pageLabel),
-        leading: icon,
+        leading: page.iconCode.toIcon,
         onTap: () => {popPage(), goToPage(page.pageRoute)},
       );
 
