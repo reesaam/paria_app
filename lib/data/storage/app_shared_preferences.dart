@@ -1,13 +1,11 @@
 import 'dart:convert';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_list.dart';
-import 'package:paria_app/core/core_functions.dart';
-import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
-import 'package:paria_app/features/contacts/domain/entities/contact_entity/contact_entity.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../../core/app_extensions/data_models_extensions/extension_settings.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_account_records_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_contacts_list.dart';
+import '../../features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
+import '../../features/contacts/domain/entities/contact_entity/contact_entity.dart';
 import '../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
 import '../resources/app_enums.dart';
 

@@ -1,7 +1,7 @@
-import 'package:flutter_base_clean_getx_app/data/resources/app_icons.dart';
 
-import '../data_models/core_data_models/app_page_detail/app_page_detail.dart';
+import '../data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
 import '../resources/app_enums.dart';
+import '../resources/app_icons.dart';
 
 class AppPageDetails {
 

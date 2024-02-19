@@ -1,17 +1,17 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_base_clean_getx_app/core/app_extensions/data_models_extensions/extension_settings.dart';
-import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extension_string.dart';
-import 'package:flutter_base_clean_getx_app/data/storage/app_shared_preferences.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/app_extensions/data_models_extensions/extension_settings.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../app/functional_components/file_functions/file_functions.dart';
 import '../../core/core_functions.dart';
 import '../data_models/core_data_models/app_data/app_data.dart';
 import '../data_models/core_data_models/app_settings_data/app_setting_data.dart';
 import '../resources/app_enums.dart';
 import '../resources/app_texts.dart';
+import 'app_shared_preferences.dart';
 import 'local_storage_service.dart';
 
 class AppLocalStorage {
