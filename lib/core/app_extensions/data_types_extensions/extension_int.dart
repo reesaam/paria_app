@@ -1,14 +1,8 @@
-import 'package:intl/intl.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_locale.dart';
-import 'package:paria_app/core/app_localization.dart';
-import 'package:paria_app/data/resources/app_enums.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_base_clean_getx_app/data/resources/app_icons.dart';
 
-extension CurrencyNull on int? {
-  String get toCurrency => this == null ? '' : (this as int).toCurrency;
-}
-
-extension Currency on int {
-  String get toCurrency =>
-      NumberFormat.decimalPattern(AppLocalization.english.toString())
-          .format(this);
+extension IconFunction on int? {
+  Icon get toIcon => this == null
+      ? AppIcons.none
+      : Icon(IconData(this!, fontFamily: 'MaterialIcons'));
 }

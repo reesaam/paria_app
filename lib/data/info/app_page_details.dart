@@ -1,7 +1,24 @@
-import '../data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
+import 'package:flutter_base_clean_getx_app/data/resources/app_icons.dart';
+
+import '../data_models/core_data_models/app_page_detail/app_page_detail.dart';
 import '../resources/app_enums.dart';
 
 class AppPageDetails {
+
+  List<AppPageDetail> get listPages => [
+    splashScreen,
+    homepage,
+    settings,
+    about,
+    update,
+  ];
+
+  List<AppPageDetail> get listAdminPages => [
+    adminStartPage,
+    adminPagesTestPage,
+    adminUITestPage,
+  ];
+
   ///Admin Pages
   static AppPageDetail adminStartPage = const AppPageDetail(
     pageRoute: AppRoutes.adminStartPage,
@@ -20,36 +37,23 @@ class AppPageDetails {
     pageRoute: AppRoutes.splashScreen,
   );
 
-  static AppPageDetail homepage = const AppPageDetail(
+  static AppPageDetail homepage = AppPageDetail(
     pageRoute: AppRoutes.homepage,
+    iconCode: AppIcons.home.icon!.codePoint,
     bottomBarItemNumber: 0,
     drawerPresence: true,
   );
 
-  static AppPageDetail contacts = const AppPageDetail(
-    pageRoute: AppRoutes.contacts,
+  static AppPageDetail settings = AppPageDetail(
+    pageRoute: AppRoutes.settings,
+    iconCode: AppIcons.settings.icon!.codePoint,
     bottomBarItemNumber: 1,
     drawerPresence: true,
   );
 
-  static AppPageDetail contactsBalance = const AppPageDetail(
-    pageRoute: AppRoutes.contactsBalance,
-  );
-
-  static AppPageDetail accounts = const AppPageDetail(
-    pageRoute: AppRoutes.accounts,
-    bottomBarItemNumber: 2,
-    drawerPresence: true,
-  );
-
-  static AppPageDetail settings = const AppPageDetail(
-    pageRoute: AppRoutes.settings,
-    bottomBarItemNumber: 3,
-    drawerPresence: true,
-  );
-
-  static AppPageDetail about = const AppPageDetail(
+  static AppPageDetail about = AppPageDetail(
     pageRoute: AppRoutes.about,
+    iconCode: AppIcons.about.icon!.codePoint,
     drawerPresence: true,
   );
 

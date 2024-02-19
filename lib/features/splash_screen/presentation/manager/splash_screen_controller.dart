@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../app/components/main_components/app_dialogs.dart';
 import '../../../../app/functional_components/connectivity/connectivity.dart';
 import '../../../../app/functional_components/permissions/permissions.dart';
 import '../../../../core/app_localization.dart';
-import '../../../../core/app_routing/routing.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_info.dart';
@@ -37,7 +35,7 @@ class SplashScreenController extends CoreController {
   void pageInit() {
     pageDetail = AppPageDetails.splashScreen;
 
-    logoSource = AppLogos.appAnimatedLogo;
+    logoSource = AppLogos.appLogo;
     appName = AppInfo.appName;
     appVersion = '${Texts.to.version}: ${AppInfo.appCurrentVersion}';
   }
@@ -58,15 +56,17 @@ class SplashScreenController extends CoreController {
   void goToNextPage() async {
     await Future.delayed(const Duration(seconds: 4));
     availableUpdate == AppInfo.appCurrentVersion
-        ? goToHomePage()
+        ? goToHomepage()
         : showUpdateDialog();
   }
 
   showUpdateDialog() => AppDialogs().appAlertDialogWithOkCancel(
-      Texts.to.updateNewVersion, Texts.to.updateApprove, updatePageRedirection, false);
+      Texts.to.updateNewVersion, Texts.to.updateApprove, goToUpdatePage, false);
 
-  updatePageRedirection() {
-    goToHomePage();
+  goToHomepage() => goToHomepage();
+
+  goToUpdatePage() {
+    goToHomepage();
     goToUpdatePage();
   }
 }

@@ -11,7 +11,7 @@ class LocalStorageService {
 
   Map<String, dynamic> get changes => _storage.changes;
 
-  getKeys() {}
+  getKeys() => _storage.getKeys();
 
   bool hasData(String key) => _storage.hasData(key);
 
@@ -20,8 +20,11 @@ class LocalStorageService {
     return data == null ? null : convert.jsonDecode(data.toString());
   }
 
-  Future<void> write(String key, value) async =>
-      await _storage.write(key, convert.jsonEncode(value));
+  Future<void> write(String key, value) async => await _storage
+      .write(key, convert.jsonEncode(value))
+      .then((value) => saveOnStorage());
 
-  void remove(String key) => _storage.remove(key);
+  remove(String key) => _storage.remove(key);
+
+  saveOnStorage() => _storage.save();
 }

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/extension_app_routes.dart';
 
 import '../../../core/app_extensions/data_types_extensions/extension_icon.dart';
 import '../../../core/app_routing/routing.dart';
-import '../../../data/data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
-import '../../../data/info/app_page_details.dart';
 import '../../../data/resources/app_colors.dart';
 import '../../../data/resources/app_enums.dart';
 import '../../../data/resources/app_icons.dart';
@@ -40,7 +37,7 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
         unselectedItemColor: AppColors.bottomBarUnselected,
         items: List<BottomNavigationBarItem>.generate(
             AppBottomNavigationPages.values.length,
-            (index) => _generateBottomNavigationBarItem(
+                (index) => _generateBottomNavigationBarItem(
                 AppBottomNavigationPages.values[index].appRoute)));
   }
 
@@ -58,12 +55,6 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
     switch (route) {
       case (AppRoutes.homepage):
         icon = AppIcons.bottomNavigationHomepage;
-        break;
-      case (AppRoutes.contacts):
-        icon = AppIcons.bottomNavigationContacts;
-        break;
-      case (AppRoutes.accounts):
-        icon = AppIcons.bottomNavigationAccounts;
         break;
       case (AppRoutes.settings):
         icon = AppIcons.bottomNavigationSettings;

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extension_int.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_routing/routing.dart';
-import 'package:paria_app/data/resources/app_colors.dart';
-import 'package:paria_app/features/contacts/presentation/widgets/contact_avatar_widget.dart';
 
 import '../../../core/app_localization.dart';
+import '../../../core/app_routing/routing.dart';
 import '../../../core/core_functions.dart';
-import '../../../data/data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
+import '../../../data/data_models/core_data_models/app_page_detail/app_page_detail.dart';
 import '../../../data/info/app_info.dart';
 import '../../../data/info/app_page_details.dart';
 import '../../../data/resources/app_icons.dart';
@@ -40,17 +39,14 @@ class AppDrawer extends Drawer {
         Text(AppInfo.appName),
       ]));
 
-  Widget body() => Column(children: [
-        _bodyItem(AppPageDetails.homepage, AppIcons.home),
-        _bodyItem(AppPageDetails.contacts, AppIcons.contacts),
-        _bodyItem(AppPageDetails.accounts, AppIcons.accounts),
-        _bodyItem(AppPageDetails.settings, AppIcons.settings),
-        _bodyItem(AppPageDetails.about, AppIcons.about),
-      ]);
+  Widget body() => Column(
+      children: List.generate(
+          AppPageDetails().listPages.length,
+          (index) => _bodyItem(AppPageDetails().listPages[index])));
 
-  Widget _bodyItem(AppPageDetail page, Icon icon) => ListTile(
+  Widget _bodyItem(AppPageDetail page) => ListTile(
         title: Text(page.pageRoute.pageLabel),
-        leading: icon,
+        leading: page.iconCode.toIcon,
         onTap: () => {popPage(), goToPage(page.pageRoute)},
       );
 
@@ -60,7 +56,7 @@ class AppDrawer extends Drawer {
         AppIcons.version,
         AppSpaces.w20,
         InkWell(
-            onTap: () => goToPage(AppPageDetails.update.pageRoute),
+            onTap: () => goToUpdatePage(),
             child: Text('${Texts.to.version}: ${AppInfo.appCurrentVersion}')),
       ]));
 }
