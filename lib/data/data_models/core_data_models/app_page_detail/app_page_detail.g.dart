@@ -8,17 +8,31 @@ part of 'app_page_detail.dart';
 
 _$AppPageDetailImpl _$$AppPageDetailImplFromJson(Map<String, dynamic> json) =>
     _$AppPageDetailImpl(
-      pageName: json['pageName'] as String?,
-      pageRoute: json['pageRoute'] as String?,
+      pageRoute: $enumDecode(_$AppRoutesEnumMap, json['pageRoute']),
       bottomBarItemNumber: json['bottomBarItemNumber'] as int?,
+      drawerPresence: json['drawerPresence'] as bool?,
+      iconCode: json['iconCode'] as int?,
     );
 
 Map<String, dynamic> _$$AppPageDetailImplToJson(_$AppPageDetailImpl instance) =>
     <String, dynamic>{
-      'pageName': instance.pageName,
-      'pageRoute': instance.pageRoute,
+      'pageRoute': _$AppRoutesEnumMap[instance.pageRoute]!,
       'bottomBarItemNumber': instance.bottomBarItemNumber,
+      'drawerPresence': instance.drawerPresence,
+      'iconCode': instance.iconCode,
     };
+
+const _$AppRoutesEnumMap = {
+  AppRoutes.splashScreen: 'splashScreen',
+  AppRoutes.homepage: 'homepage',
+  AppRoutes.settings: 'settings',
+  AppRoutes.update: 'update',
+  AppRoutes.about: 'about',
+  AppRoutes.notFound: 'notFound',
+  AppRoutes.adminStartPage: 'adminStartPage',
+  AppRoutes.adminTestPage: 'adminTestPage',
+  AppRoutes.adminUITestPage: 'adminUITestPage',
+};
 
 _$AppPageDetailsListImpl _$$AppPageDetailsListImplFromJson(
         Map<String, dynamic> json) =>
