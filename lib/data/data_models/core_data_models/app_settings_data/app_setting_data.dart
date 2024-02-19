@@ -8,8 +8,8 @@ part 'app_setting_data.g.dart';
 @freezed
 class AppSettingData with _$AppSettingData {
   const factory AppSettingData({
-    final bool? darkMode,
-    final AppLanguages? language,
+    @Default(false) bool darkMode,
+    @Default(AppLanguages.english) AppLanguages? language,
   }) = _AppSettingData;
 
   factory AppSettingData.fromJson(Map<String, dynamic> json) =>
@@ -18,9 +18,9 @@ class AppSettingData with _$AppSettingData {
 
 @freezed
 class AppSettingsDataList with _$AppSettingsDataList {
-  factory AppSettingsDataList({
-    @Default(<AppSettingData>[]) List<AppSettingData> appSettingsDataList
-  }) = _AppSettingsDataList;
+  factory AppSettingsDataList(
+      {@Default(<AppSettingData>[])
+      List<AppSettingData> appSettingsDataList}) = _AppSettingsDataList;
 
   factory AppSettingsDataList.fromJson(Map<String, dynamic> json) =>
       _$AppSettingsDataListFromJson(json);

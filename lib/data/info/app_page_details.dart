@@ -1,51 +1,64 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_base_clean_getx_app/data/resources/app_icons.dart';
 
-import '../../core/app_localization.dart';
-import '../../core/app_routing/app_routes.dart';
 import '../data_models/core_data_models/app_page_detail/app_page_detail.dart';
+import '../resources/app_enums.dart';
 
 class AppPageDetails {
+
+  List<AppPageDetail> get listPages => [
+    splashScreen,
+    homepage,
+    settings,
+    about,
+    update,
+  ];
+
+  List<AppPageDetail> get listAdminPages => [
+    adminStartPage,
+    adminPagesTestPage,
+    adminUITestPage,
+  ];
+
   ///Admin Pages
-  static AppPageDetail adminStartPage = AppPageDetail(
-    pageName: Texts.to.adminStartPagePageName,
+  static AppPageDetail adminStartPage = const AppPageDetail(
     pageRoute: AppRoutes.adminStartPage,
   );
 
-  static AppPageDetail adminPagesTestPage = AppPageDetail(
-    pageName: Texts.to.adminTestPagePageName,
-    pageRoute: AppRoutes.adminPagesTestPage,
+  static AppPageDetail adminPagesTestPage = const AppPageDetail(
+    pageRoute: AppRoutes.adminTestPage,
   );
 
-  static AppPageDetail adminUITestPage = AppPageDetail(
-    pageName: Texts.to.adminUITestPagePageName,
+  static AppPageDetail adminUITestPage = const AppPageDetail(
     pageRoute: AppRoutes.adminUITestPage,
   );
 
   ///Main Pages
-  static AppPageDetail splashScreen = AppPageDetail(
-    pageName: Texts.to.splashScreenPageName,
+  static AppPageDetail splashScreen = const AppPageDetail(
     pageRoute: AppRoutes.splashScreen,
   );
 
   static AppPageDetail homepage = AppPageDetail(
-    pageName: Texts.to.homePageName,
-    pageRoute: AppRoutes.homePage,
+    pageRoute: AppRoutes.homepage,
+    iconCode: AppIcons.home.icon!.codePoint,
     bottomBarItemNumber: 0,
+    drawerPresence: true,
   );
 
   static AppPageDetail settings = AppPageDetail(
-    pageName: Texts.to.settingsPageName,
     pageRoute: AppRoutes.settings,
+    iconCode: AppIcons.settings.icon!.codePoint,
     bottomBarItemNumber: 1,
+    drawerPresence: true,
   );
 
   static AppPageDetail about = AppPageDetail(
-    pageName: Texts.to.aboutPageName,
     pageRoute: AppRoutes.about,
+    iconCode: AppIcons.about.icon!.codePoint,
+    drawerPresence: true,
   );
 
-  static AppPageDetail update = AppPageDetail(
-    pageName: Texts.to.updatePageName,
+  static AppPageDetail update = const AppPageDetail(
     pageRoute: AppRoutes.update,
+    drawerPresence: true,
   );
 }

@@ -8,7 +8,7 @@ part 'app_data.g.dart';
 @freezed
 class AppData with _$AppData {
   const factory AppData({
-    final AppSettingData? setting,
+    @Default(AppSettingData()) AppSettingData setting,
   }) = _AppData;
 
   factory AppData.fromJson(Map<String, dynamic> json) =>

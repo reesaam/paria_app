@@ -1,4 +1,9 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../resources/app_enums.dart';
 
 part 'app_page_detail.freezed.dart';
 part 'app_page_detail.g.dart';
@@ -6,9 +11,10 @@ part 'app_page_detail.g.dart';
 @freezed
 class AppPageDetail with _$AppPageDetail {
   const factory AppPageDetail({
-    final String? pageName,
-    final String? pageRoute,
+    required final AppRoutes pageRoute,
     final int? bottomBarItemNumber,
+    final bool? drawerPresence,
+    final int? iconCode,
   }) = _AppPageDetail;
 
   factory AppPageDetail.fromJson(Map<String, dynamic> json) =>
