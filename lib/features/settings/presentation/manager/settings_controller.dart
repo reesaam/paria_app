@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 
 import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
+import '../../../../core/app_routing/routing.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../../../core/app_localization.dart';
@@ -89,7 +90,7 @@ class SettingsController extends CoreController {
     appLogPrint('Checked Update Version: ${updateAvailableVersion.value}');
   }
 
-  functionGoToUpdatePage() => goToPage(AppPageDetails.update);
+  functionGoToUpdatePage() => goToUpdatePage();
 
   functionBackup() {
     function() async {

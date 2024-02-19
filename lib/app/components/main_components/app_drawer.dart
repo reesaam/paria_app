@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base_clean_getx_app/core/app_extensions/data_types_extensions/extension_int.dart';
 import 'package:get/get.dart';
 
 import '../../../core/app_localization.dart';
+import '../../../core/app_routing/routing.dart';
 import '../../../core/core_functions.dart';
 import '../../../data/data_models/core_data_models/app_page_detail/app_page_detail.dart';
 import '../../../data/info/app_info.dart';
@@ -34,19 +36,19 @@ class AppDrawer extends Drawer {
       padding: AppPaddings.drawerHeader,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         Image.asset(AppLogos.appLogo, width: AppSizes.drawerHeaderIconWidth),
-        Text(AppInfo.appNameInitials),
+        Text(AppInfo.appName),
       ]));
 
-  Widget body() => Column(children: [
-        _bodyItem(AppPageDetails.homepage, AppIcons.home),
-        _bodyItem(AppPageDetails.settings, AppIcons.settings),
-        _bodyItem(AppPageDetails.about, AppIcons.about),
-      ]);
+  Widget body() => Column(
+      children: List.generate(
+          AppPageDetails().listPages.length,
+          (index) => _bodyItem(AppPageDetails().listPages[index],
+              AppPageDetails().listPages[index].iconCode.toIcon)));
 
   Widget _bodyItem(AppPageDetail page, Icon icon) => ListTile(
-        title: Text(page.pageName!),
+        title: Text(page.pageRoute.pageLabel),
         leading: icon,
-        onTap: () => {popPage(), goToPage(page)},
+        onTap: () => {popPage(), goToPage(page.pageRoute)},
       );
 
   Widget footer() => Container(
@@ -55,8 +57,7 @@ class AppDrawer extends Drawer {
         AppIcons.version,
         AppSpaces.w20,
         InkWell(
-          onTap: () => goToPage(AppPageDetails.update),
-            child: Text(
-                '${Texts.to.version}: ${AppInfo.appCurrentVersion}')),
+            onTap: () => goToUpdatePage(),
+            child: Text('${Texts.to.version}: ${AppInfo.appCurrentVersion}')),
       ]));
 }

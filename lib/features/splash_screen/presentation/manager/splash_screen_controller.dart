@@ -1,10 +1,9 @@
-import 'package:flutter_base_clean_getx_app/app/components/main_components/app_dialogs.dart';
-import 'package:flutter_base_clean_getx_app/core/app_localization.dart';
 import 'package:get/get.dart';
 
+import '../../../../app/components/main_components/app_dialogs.dart';
 import '../../../../app/functional_components/connectivity/connectivity.dart';
 import '../../../../app/functional_components/permissions/permissions.dart';
-import '../../../../core/app_routing/app_routes.dart';
+import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_info.dart';
@@ -64,8 +63,10 @@ class SplashScreenController extends CoreController {
   showUpdateDialog() => AppDialogs().appAlertDialogWithOkCancel(
       Texts.to.updateNewVersion, Texts.to.updateApprove, goToUpdatePage, false);
 
-  goToHomepage() => Get.offAndToNamed(AppRoutes.homePage);
+  goToHomepage() => goToHomepage();
 
-  goToUpdatePage() => Get.offAndToNamed(AppRoutes.homePage)
-      ?.then((value) => Get.toNamed(AppRoutes.update));
+  goToUpdatePage() {
+    goToHomepage();
+    goToUpdatePage();
+  }
 }
