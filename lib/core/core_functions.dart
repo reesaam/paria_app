@@ -7,9 +7,7 @@ import 'package:get/get.dart';
 import '../app/components/main_components/app_dialogs.dart';
 import '../data/data_models/core_data_models/app_page_detail/app_page_detail.dart';
 import '../data/storage/app_local_storage.dart';
-import '../data/storage/app_shared_preferences.dart';
 import '../features/update/data/repositories/update_repository.dart';
-import '../features/update/domain/use_cases/update_version_usecase.dart';
 import 'app_localization.dart';
 
 bool get isRelease => false;
@@ -21,19 +19,11 @@ void popPage() {
   Get.back();
 }
 
-void saveAppData() {
-  AppSharedPreferences.to.saveData();
-}
+void saveAppData() => AppLocalStorage.to.saveAllData();
 
-void loadAppData() {
-  AppSharedPreferences.to.loadData();
-}
+void loadAppData() => AppLocalStorage.to.loadAllData();
 
-void clearAppData() {
-  AppLocalStorage.to.clearStorage();
-  AppSharedPreferences.to.clearData();
-  appLogPrint('All App Data Cleared');
-}
+void clearAppData() => AppLocalStorage.to.clearStorage();
 
 Future<bool> onBackButtonPressed(AppPageDetail pageDetail) async {
   bool response = true;
@@ -58,7 +48,7 @@ void appExitDialog() => AppDialogs().appAlertDialogWithOkCancel(
 
 void appExit() {
   appLogPrint('App Exit Triggered');
-  saveAppData();
+  AppLocalStorage.to.saveAllData();
   appLogPrint('All App Data Saved');
   exit(0);
 }

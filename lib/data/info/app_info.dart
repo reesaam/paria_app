@@ -10,7 +10,7 @@ class AppInfo {
 
   static String get baseUrl => 'resam-t.ir';
   static String get subDomain => 'basefluttercleangetxapp';
-  static String get fileName => 'download file name';
+  static String get fileName => '${AppInfo.appNameInitials}_Backup.json';
 
   static bool get checkUpdate => false;
 }

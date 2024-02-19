@@ -5,12 +5,12 @@ import '../../../data/storage/app_local_storage.dart';
 
 
 extension RxStorage on Rx<AppSettingData> {
-  void get saveOnStorage async => await AppLocalStorage.to.saveSettings(value);
+  void get saveOnStorage async => await AppLocalStorage.to.saveSettings(settings: value);
   Rx<AppSettingData> get loadFromStorage => AppLocalStorage.to.loadSettings().obs;
 }
 
 extension Storage on AppSettingData {
-  void get saveOnStorage async => await AppLocalStorage.to.saveSettings(this);
+  void get saveOnStorage async => await AppLocalStorage.to.saveSettings(settings: this);
   AppSettingData get loadFromStorage => AppLocalStorage.to.loadSettings();
 }
 

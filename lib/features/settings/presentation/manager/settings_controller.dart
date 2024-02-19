@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter_base_clean_getx_app/app/functional_components/file_functions/file_functions.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
 
@@ -95,16 +96,7 @@ class SettingsController extends CoreController {
   functionBackup() {
     function() async {
       popPage();
-      AppData appdata = AppLocalStorage.to.exportData();
-      var jsonData = jsonEncode(appdata);
-      Uint8List data = jsonData.toString().toUInt8List;
-      SaveFileDialogParams saveParams = SaveFileDialogParams(
-          data: data, fileName: AppTexts.settingBackupFilename);
-      String? filePath = await FlutterFileDialog.saveFile(params: saveParams);
-      appLogPrint('Backup File Saved');
-      appDebugPrint('Filename: ${saveParams.fileName}');
-      appDebugPrint('Path: ${saveParams.sourceFilePath}');
-      appLogPrint('File Path: $filePath');
+      await AppLocalStorage().exportData();
     }
 
     AppDialogs().appAlertDialogWithOkCancel(
@@ -114,20 +106,7 @@ class SettingsController extends CoreController {
   functionRestore() {
     function() async {
       popPage();
-      OpenFileDialogParams openFileParams =
-          const OpenFileDialogParams(dialogType: OpenFileDialogType.document);
-      String? importFilePath =
-          await FlutterFileDialog.pickFile(params: openFileParams);
-      appLogPrint('Backup File Selected');
-      appLogPrint('File Path: $importFilePath');
-
-      File importFile = File(importFilePath!);
-      String stringData = String.fromCharCodes(importFile.readAsBytesSync());
-      var jsonData = jsonDecode(stringData) as Map<String, dynamic>;
-      AppData appData = AppData.fromJson(jsonData);
-      clearAppData();
-      AppLocalStorage.to.importData(appData);
-      appLogPrint('Data Imported');
+      await AppLocalStorage.to.importData();
     }
 
     AppDialogs().appAlertDialogWithOkCancel(
@@ -136,25 +115,15 @@ class SettingsController extends CoreController {
 
   functionClearAllData() {
     function() {
-      clearAppData();
       popPage();
-      appLogPrint('Clear All Data Modal Closed');
+      clearAppData();
     }
 
     AppDialogs().appAlertDialogWithOkCancel(
         Texts.to.warning, Texts.to.areYouSureDataWillLost, function, true);
   }
 
-  saveSettings() {
-    appSettings.value = appSettings.value
-        .copyWith(darkMode: darkMode.value, language: selectedLanguage.value);
-    appSettings.saveOnStorage;
-    appLogPrint('Settings Saved');
-  }
+  saveSettings() => saveAppData();
 
-  resetAllSettings() {
-    appSettings.value = const AppSettingData().clearData;
-    saveSettings();
-    appLogPrint('Reset Settings Data performed');
-  }
+  resetAllSettings() => clearAppData();
 }
