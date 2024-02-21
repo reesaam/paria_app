@@ -58,7 +58,8 @@ extension ContactFunction on AppContactEntitiesList {
     removeContact(prevContact);
     addContact(contact);
     _editRecords(prevContact, contact);
-    appDebugPrint(" List($count):$membersList");
+    appLogPrint('Contact Edited');
+    appLogPrint('List($count):$membersList');
     defaultSortFunction;
     saveOnStorage();
   }

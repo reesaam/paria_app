@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:paria_app/features/contacts/presentation/manager/contacts_controller.dart';
 
 import '../../../../app/components/general_widgets/app_popup_menu.dart';
@@ -48,7 +51,8 @@ class ContactsTable extends StatelessWidget {
       List<AppPopupMenuItem>.from([
         AppPopupMenuItem(
             text: Texts.to.contactsOptionShow,
-            onTapFunction: () => ContactsController.to.showContactModal(contact)),
+            onTapFunction: () =>
+                ContactsController.to.showContactModal(contact)),
         AppPopupMenuItem(
             text: Texts.to.contactsOptionEdit,
             onTapFunction: () => ContactsController.to.editContact(contact)),

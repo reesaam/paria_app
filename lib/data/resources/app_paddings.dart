@@ -34,7 +34,7 @@ class AppPaddings {
 
   ///Contacts
   static EdgeInsets get contactsNoContacts => const EdgeInsets.all(50);
-  static EdgeInsets get contactsItem => const EdgeInsets.only(left: 20);
+  static EdgeInsets get contactsItem => const EdgeInsets.fromLTRB(20, 5, 0, 5);
   static EdgeInsets get contactsShowContactItems => const EdgeInsets.fromLTRB(20, 50, 40, 20);
   static EdgeInsets get contactsShowContactItem => const EdgeInsets.symmetric(vertical: 5);
 

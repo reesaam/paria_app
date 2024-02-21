@@ -54,8 +54,8 @@ class AppElements {
   static RoundedRectangleBorder get defaultAlertBorderShape => RoundedRectangleBorder(borderRadius: defaultBorderWithRadius);
 
   ///Avatars
-  static double get contactsListAvatarMaxRadius => 15;
-  static double get contactsContactAvatarMaxRadius => 20;
+  static double get contactsListAvatarMaxRadius => 18;
+  static double get contactsContactAvatarMaxRadius => 30;
 
   ///Panel
   // static BoxBorder get defaultPanelBorder => Border.all(color: AppColors.panelBorder);

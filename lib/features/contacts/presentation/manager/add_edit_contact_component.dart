@@ -66,14 +66,42 @@ class AppContactsAddEditContactComponent {
 
   _hintGenerator(String text) => 'Enter $text';
 
-  _provideContact() async {
+  Future<AppContactEntity?> call(
+      {required bool isEdit, AppContactEntity? contact}) async {
+    String title = isEdit
+        ? Texts.to.contactsAddContactTitle
+        : Texts.to.contactsEditContactTitle;
+
+    if (isEdit) {
+      if (contact == null) {
+      } else {
+        _controllerFirstName.text = contact.firstName ?? '';
+        _controllerLastName.text = contact.lastName ?? '';
+        _controllerMobile.text = contact.mobile ?? '';
+        _controllerPhone.text = contact.phone ?? '';
+        _controllerEmail.text = contact.email ?? '';
+        _controllerWebLink.text = contact.webLink ?? '';
+      }
+    }
+
+    await AppDialogs().appBottomDialogWithOkCancel(
+        title: title,
+        form: _widgetAddOrEditContactDialog(),
+        onTapOk: _provideContact,
+        dismissible: true);
+
+    _providedContact =
+        _providedContact.copyWith(id: isEdit ? contact?.id : const Uuid().v1());
+    return _providedContact;
+  }
+
+  _provideContact() {
     if (_controllerFirstName.text.isEmpty && _controllerLastName.text.isEmpty) {
       AppSnackBar.show(Texts.to.contactsAddEditModalErrorFirstname);
     } else if (_controllerMobile.text.isEmpty) {
       AppSnackBar.show(Texts.to.contactsAddEditModalErrorMobile);
     } else {
       _providedContact = AppContactEntity(
-          id: const Uuid().v1(),
           firstName: _controllerFirstName.text,
           lastName: _controllerLastName.text ?? '',
           mobile: _controllerMobile.text,
@@ -81,46 +109,7 @@ class AppContactsAddEditContactComponent {
           email: _controllerEmail.text ?? '',
           webLink: _controllerWebLink.text ?? '');
       popPage();
+      appDebugPrint('AddOrEdit Contact Modal Closed');
     }
   }
-
-  addContact() async {
-    await _raiseModal(Texts.to.contactsAddContactTitle);
-    _providedContact.isEmpty
-        ? appDebugPrint('Add Contact Canceled')
-        : {
-            appDebugPrint('Contact: $_providedContact'),
-            appDebugPrint('Add Contact Modal Closed')
-          };
-    return _providedContact.isEmpty ? null : _providedContact;
-  }
-
-  editContact(AppContactEntity contact) async {
-    ///Controllers
-    _controllerFirstName.text = contact.firstName ?? '';
-    _controllerLastName.text = contact.lastName ?? '';
-    _controllerMobile.text = contact.mobile ?? '';
-    _controllerPhone.text = contact.phone ?? '';
-    _controllerEmail.text = contact.email ?? '';
-    _controllerWebLink.text = contact.webLink ?? '';
-
-    await _raiseModal(Texts.to.contactsEditContactTitle);
-
-    appDebugPrint(_providedContact.equalTo(contact)
-        ? 'Edit Contact Canceled'
-        : {
-            'Contact: $_providedContact',
-            appDebugPrint('Edit Contact Modal Closed')
-          });
-
-    saveAppData();
-    return _providedContact.equalTo(contact) ? null : _providedContact;
-  }
-
-  _raiseModal(String title) async =>
-      await AppDialogs().appBottomDialogWithOkCancel(
-          title: title,
-          form: _widgetAddOrEditContactDialog(),
-          onTapOk: _provideContact,
-          dismissible: true);
 }

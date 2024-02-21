@@ -20,5 +20,8 @@ class ContactAvatar extends CircleAvatar {
 
   @override
   Widget? get child =>
-      Text(contact.getContactInitials, style: TextStyle(fontSize: size));
+      Padding(
+        padding: EdgeInsets.all(maxRadius! / 4),
+        child: Text(contact.getContactInitials, style: TextStyle(fontSize: size)),
+      );
 }

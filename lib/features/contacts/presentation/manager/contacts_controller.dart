@@ -31,13 +31,7 @@ class ContactsController extends CoreController {
   @override
   void pageInit() {
     pageDetail = AppPageDetails.contacts;
-  }
-
-  @override
-  void onInitFunction() {
     listContacts.defaultSortFunction;
-    listContacts.listen((data) => onInitFunction());
-    refresh();
   }
 
   @override
@@ -52,19 +46,22 @@ class ContactsController extends CoreController {
 
   addContact() async {
     AppContactEntity? contact =
-        await AppContactsAddEditContactComponent().addContact();
-    contact.isEmpty ? null : listContacts.addContact(contact!);
+        await AppContactsAddEditContactComponent().call(isEdit: false);
+    appLogPrint('Contact : $contact');
+
+    if(contact.isNotEmpty) {
+      listContacts.addContact(contact!);
+    }
+    refresh();
   }
 
   editContact(AppContactEntity contact) async {
-    AppContactEntity editedContact =
-        await AppContactsAddEditContactComponent().editContact(contact);
-    editedContact.isEmpty
-        ? appDebugPrint('Contact is Empty: ${editedContact.isEmpty}')
-        : {
-            listContacts.editContact(contact, editedContact),
-            appDebugPrint('Contact Edited: $contact')
-          };
+    AppContactEntity? editedContact = await AppContactsAddEditContactComponent()
+        .call(isEdit: true, contact: contact);
+    appLogPrint('New Contact : $editedContact');
+    if (editedContact.isNotEmpty) {
+      listContacts.editContact(contact, editedContact!);
+    }
     refresh();
   }
 
