@@ -40,8 +40,9 @@ class AppGeneralButton extends ElevatedButton {
 
   @override
   ButtonStyle? get style => ButtonStyle(
-      backgroundColor:
-          MaterialStateProperty.all(AppColors.buttonBackgroundNormal),
+      backgroundColor: disabled == true
+          ? MaterialStateProperty.all(AppColors.appBackground)
+          : MaterialStateProperty.all(AppColors.buttonBackgroundNormal),
       foregroundColor: disabled == true
           ? MaterialStateProperty.all(AppColors.buttonTextDisabled)
           : MaterialStateProperty.all(AppColors.buttonTextNormal),
