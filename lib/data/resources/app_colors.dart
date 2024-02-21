@@ -46,7 +46,7 @@ class AppColors {
   static Color get cardText => appDefaultColor;
 
   ///Button
-  static Color get  buttonBackgroundNormal => appBackground;
+  static Color get  buttonBackgroundNormal => appDefaultColorSecond;
   static Color get  buttonBackgroundDisabled => appDefaultDisabledColor;
   static Color get  buttonTextNormal => textNormalDark;
   static Color get  buttonTextDisabled => textDisabled;

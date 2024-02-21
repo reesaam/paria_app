@@ -27,7 +27,7 @@ void clearAppData() => AppLocalStorage.to.clearStorage();
 
 Future<bool> onBackButtonPressed(AppPageDetail pageDetail) async {
   bool response = true;
-  pageDetail.bottomBarItemNumber == -1
+  pageDetail.bottomBarItemNumber == null
       ? null
       : {appExitDialog(), response = false};
   return response;
