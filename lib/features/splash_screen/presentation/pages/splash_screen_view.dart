@@ -12,16 +12,15 @@ class SplashScreenPage extends CoreView<SplashScreenController> {
 
   @override
   Widget get body => Container(
-    alignment: Alignment.center,
-    width: Get.width,
-    height: Get.height - 100,
-    child: Stack(children: [
-      _widgetLogo(),
-      _widgetAppName(),
-      _widgetLoadingIndicator(),
-      _widgetVersion(),
-    ]),
-  );
+      alignment: Alignment.center,
+      width: Get.width,
+      height: Get.height - 100,
+      child: Stack(children: [
+        _widgetLogo(),
+        _widgetAppName(),
+        _widgetLoadingIndicator(),
+        _widgetVersion(),
+      ]));
 
   Widget _widgetLogo() => Container(
       alignment: Alignment.topCenter,
@@ -29,10 +28,8 @@ class SplashScreenPage extends CoreView<SplashScreenController> {
 
   Widget _widgetAppName() => Container(
       alignment: Alignment.center,
-      child: Text(
-        controller.appName,
-        style: AppTextStyles.splashScreenAppName,
-      ));
+      child:
+          Text(controller.appName, style: AppTextStyles.splashScreenAppName));
 
   Widget _widgetLoadingIndicator() => Container(
       alignment: Alignment.center,

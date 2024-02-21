@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:paria_app/core/app_routing/routing.dart';
 
 import '../../../../app/components/main_components/app_dialogs.dart';
 import '../../../../app/functional_components/connectivity/connectivity.dart';
@@ -35,7 +36,7 @@ class SplashScreenController extends CoreController {
   void pageInit() {
     pageDetail = AppPageDetails.splashScreen;
 
-    logoSource = AppLogos.appLogo;
+    logoSource = AppLogos.appAnimatedLogo;
     appName = AppInfo.appName;
     appVersion = '${Texts.to.version}: ${AppInfo.appCurrentVersion}';
   }
@@ -56,17 +57,16 @@ class SplashScreenController extends CoreController {
   void goToNextPage() async {
     await Future.delayed(const Duration(seconds: 4));
     availableUpdate == AppInfo.appCurrentVersion
-        ? goToHomepage()
+        ? goToHomePage()
         : showUpdateDialog();
   }
 
   showUpdateDialog() => AppDialogs().appAlertDialogWithOkCancel(
-      Texts.to.updateNewVersion, Texts.to.updateApprove, goToUpdatePage, false);
+      Texts.to.updateNewVersion, Texts.to.updateApprove, goToUpdate, false);
 
-  goToHomepage() => goToHomepage();
 
-  goToUpdatePage() {
-    goToHomepage();
+  goToUpdate() {
+    goToHomePage();
     goToUpdatePage();
   }
 }

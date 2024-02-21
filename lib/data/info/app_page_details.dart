@@ -5,15 +5,17 @@ import '../resources/app_icons.dart';
 
 class AppPageDetails {
 
-  List<AppPageDetail> get listPages => [
+  static List<AppPageDetail> get listPages => [
     splashScreen,
     homepage,
+    contacts,
+    accounts,
     settings,
     about,
     update,
   ];
 
-  List<AppPageDetail> get listAdminPages => [
+  static List<AppPageDetail> get listAdminPages => [
     adminStartPage,
     adminPagesTestPage,
     adminUITestPage,
@@ -71,8 +73,9 @@ class AppPageDetails {
     drawerPresence: true,
   );
 
-  static AppPageDetail update = const AppPageDetail(
+  static AppPageDetail update = AppPageDetail(
     pageRoute: AppRoutes.update,
+    iconCode: AppIcons.update.icon!.codePoint,
     drawerPresence: true,
   );
 }

@@ -39,10 +39,14 @@ class AppDrawer extends Drawer {
         Text(AppInfo.appName),
       ]));
 
-  Widget body() => Column(
-      children: List.generate(
-          AppPageDetails().listPages.length,
-          (index) => _bodyItem(AppPageDetails().listPages[index])));
+  Widget body() {
+    List<AppPageDetail> drawerList = AppPageDetails.listPages
+        .where((element) => element.drawerPresence == true)
+        .toList();
+    return Column(
+        children: List.generate(
+            drawerList.length, (index) => _bodyItem(drawerList[index])));
+  }
 
   Widget _bodyItem(AppPageDetail page) => ListTile(
         title: Text(page.pageRoute.pageLabel),

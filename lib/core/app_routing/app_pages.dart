@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import '../../../../core/app_extensions/extension_app_routes.dart';
 import '../../data/resources/app_enums.dart';
 import '../../features/about/presentation/pages/about_view.dart';
+import '../../features/accounts/presentation/pages/accounts_view.dart';
+import '../../features/contacts/presentation/pages/contacts_view.dart';
 import '../../features/homepage/presentation/pages/homepage_view.dart';
 import '../../features/settings/presentation/pages/settings_view.dart';
 import '../../features/splash_screen/presentation/pages/splash_screen_view.dart';
@@ -18,6 +20,8 @@ class AppPages {
     ///Main App Pages
     GetPage(name: AppRoutes.splashScreen.route, page: SplashScreenPage.new),
     GetPage(name: AppRoutes.homepage.route, page: HomePage.new),
+    GetPage(name: AppRoutes.contacts.route, page: ContactsPage.new),
+    GetPage(name: AppRoutes.accounts.route, page: AccountsPage.new),
     GetPage(name: AppRoutes.settings.route, page: SettingsPage.new),
     GetPage(name: AppRoutes.update.route, page: UpdatePage.new),
     GetPage(name: AppRoutes.about.route, page: AboutPage.new),

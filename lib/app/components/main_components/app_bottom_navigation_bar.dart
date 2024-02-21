@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
+import 'package:paria_app/data/info/app_page_details.dart';
 
 import '../../../core/app_extensions/data_types_extensions/extension_icon.dart';
 import '../../../core/app_routing/routing.dart';
@@ -37,7 +39,7 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
         unselectedItemColor: AppColors.bottomBarUnselected,
         items: List<BottomNavigationBarItem>.generate(
             AppBottomNavigationPages.values.length,
-                (index) => _generateBottomNavigationBarItem(
+            (index) => _generateBottomNavigationBarItem(
                 AppBottomNavigationPages.values[index].appRoute)));
   }
 
@@ -50,20 +52,10 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
           icon: _createIcon(route),
           label: _createLabel(route));
 
-  Icon _createIcon(AppRoutes route) {
-    Icon icon = const Icon(Icons.not_interested);
-    switch (route) {
-      case (AppRoutes.homepage):
-        icon = AppIcons.bottomNavigationHomepage;
-        break;
-      case (AppRoutes.settings):
-        icon = AppIcons.bottomNavigationSettings;
-        break;
-      default:
-        break;
-    }
-    return icon;
-  }
+  Icon _createIcon(AppRoutes route) => AppPageDetails.listPages
+      .firstWhere((element) => element.pageRoute == route)
+      .iconCode
+      .toIcon;
 
   String _createLabel(AppRoutes route) => route.pageLabel;
 }

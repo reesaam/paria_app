@@ -22,6 +22,7 @@ class AppIcons {
   static Icon get accounts => const Icon(Icons.attach_money_rounded);
   static Icon get settings => const Icon(Icons.settings_rounded);
   static Icon get about => const Icon(Icons.info_outline_rounded);
+  static Icon get update => const Icon(Icons.update_rounded);
   static Icon get profile => const Icon(Icons.account_circle_rounded);
 
   ///Contacts
@@ -29,12 +30,6 @@ class AppIcons {
   static Icon get phone => const Icon(Icons.phone);
   static Icon get email => const Icon(Icons.email);
   static Icon get web => const Icon(Icons.language);
-
-  ///BottomNavigationBar Icons
-  static Icon get bottomNavigationHomepage => home;
-  static Icon get bottomNavigationContacts => contacts;
-  static Icon get bottomNavigationAccounts => accounts;
-  static Icon get bottomNavigationSettings => settings;
 
   ///List
   static Icon get listSearch => const Icon(Icons.search_rounded);
