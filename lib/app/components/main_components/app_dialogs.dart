@@ -25,7 +25,7 @@ class AppDialogs {
   appBottomDialogWithOk(
       {String? title,
       required Widget form,
-      required Function onTapOk,
+      required Function() onTapOk,
       bool? dismissible}) async {
     List<Widget> buttons = [
       AppGeneralButton(text: Texts.to.ok, onTap: onTapOk)
@@ -46,7 +46,7 @@ class AppDialogs {
   appBottomDialogWithOkCancel(
       {String? title,
       required Widget form,
-      required Function onTapOk,
+      required Function() onTapOk,
       bool? dismissible}) async {
     List<Widget> buttons = [
       AppGeneralButton(text: Texts.to.ok, onTap: onTapOk),
@@ -59,7 +59,7 @@ class AppDialogs {
   appAlertDialogWithOkCancel(
       {String? title,
       required String text,
-      required Function onTapOk,
+      required Function() onTapOk,
       bool? dismissible}) async {
     List<Widget> buttons = [
       AppGeneralButton(text: Texts.to.ok, onTap: onTapOk),
@@ -72,7 +72,7 @@ class AppDialogs {
   appAlertDialogWithOk(
       {String? title,
       required String text,
-      required Function onTapOk,
+      required Function() onTapOk,
       bool? dismissible}) async {
     List<Widget> buttons = [
       AppGeneralButton(text: Texts.to.ok, onTap: onTapOk),

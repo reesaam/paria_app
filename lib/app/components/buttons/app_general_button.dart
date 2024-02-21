@@ -19,7 +19,7 @@ class AppGeneralButton extends ElevatedButton {
   });
 
   final String text;
-  final Function onTap;
+  final Function() onTap;
   final IconData? icon;
   final IconData? leading;
   final bool? disabled;
