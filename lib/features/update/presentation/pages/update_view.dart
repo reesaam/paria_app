@@ -11,7 +11,7 @@ import '../../../../app/components/main_components/app_bar.dart';
 import '../manager/update_controller.dart';
 
 class UpdatePage extends CoreView<UpdateController> {
-  const UpdatePage({Key? key}) : super(key: key);
+  const UpdatePage({super.key});
 
   @override
   PreferredSizeWidget? get appBar =>
@@ -26,15 +26,19 @@ class UpdatePage extends CoreView<UpdateController> {
       ]);
 
   Widget widgetVersions() => Obx(() => Card(
-          child: Column(children: [
-        widgetVersion(Texts.to.updateCurrentVersion, AppInfo.appCurrentVersion),
-        AppSpaces.h10,
-        widgetVersion(
-            Texts.to.updateAvailableVersion,
-            controller.availableVersion.value == AppInfo.appCurrentVersion
-                ? Texts.to.notAvailable
-                : controller.availableVersion.value),
-      ])));
+          child: Container(
+        padding: AppPaddings.updateVersions,
+        child: Column(children: [
+          widgetVersion(
+              Texts.to.updateCurrentVersion, AppInfo.appCurrentVersion),
+          AppSpaces.h10,
+          widgetVersion(
+              Texts.to.updateAvailableVersion,
+              controller.availableVersion.value == AppInfo.appCurrentVersion
+                  ? Texts.to.notAvailable
+                  : controller.availableVersion.value),
+        ]),
+      )));
 
   Widget widgetVersion(String title, String version) => Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,7 +48,9 @@ class UpdatePage extends CoreView<UpdateController> {
       padding: AppPaddings.updateButtons,
       child: Column(children: [
         AppGeneralButton(
-            text: Texts.to.updateCheckUpdate, onTap: controller.checkUpdate),
+          text: Texts.to.updateCheckUpdate,
+          onTap: controller.checkUpdate,
+        ),
         AppGeneralButton(
             text: Texts.to.updateDownloadUpdate,
             onTap: controller.downloadUpdate,
