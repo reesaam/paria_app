@@ -14,7 +14,6 @@ import '../widgets/show_contact_form.dart';
 import 'add_edit_contact_component.dart';
 
 class ContactsController extends CoreController {
-
   static ContactsController get to => Get.find();
 
   Rx<AppContactEntitiesList> listContacts = AppContactEntitiesList(
@@ -49,8 +48,7 @@ class ContactsController extends CoreController {
 
   showContactModal(AppContactEntity contact) async =>
       await AppDialogs().appBottomDialogWithoutButton(
-          form: ShowContactFormWidget(contact: contact),
-          dismissible: true);
+          form: ShowContactFormWidget(contact: contact), dismissible: true);
 
   addContact() async {
     AppContactEntity? contact =
