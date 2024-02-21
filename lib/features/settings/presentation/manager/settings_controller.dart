@@ -57,9 +57,9 @@ class SettingsController extends CoreController {
   }
 
   functionLanguageModal() => AppDialogs().appBottomDialogWithCancel(
-      Texts.to.settingsLanguageModalSelectLanguage,
-      SettingsLanguageWidget(function: functionLanguageSelectionOnTap),
-      true);
+      title: Texts.to.settingsLanguageModalSelectLanguage,
+      form: SettingsLanguageWidget(function: functionLanguageSelectionOnTap),
+      dismissible: true);
 
   functionLanguageSelectionOnTap(int index) {
     selectedLanguage.value = AppLocalization.languages[index].getLanguage;
@@ -91,7 +91,7 @@ class SettingsController extends CoreController {
     }
 
     AppDialogs().appAlertDialogWithOkCancel(
-        Texts.to.warning, Texts.to.areYouSureDataExport, function, true);
+        title: Texts.to.warning, text: Texts.to.areYouSureDataExport, onTapOk: function, dismissible: true);
   }
 
   functionRestore() {
@@ -101,7 +101,7 @@ class SettingsController extends CoreController {
     }
 
     AppDialogs().appAlertDialogWithOkCancel(
-        Texts.to.warning, Texts.to.areYouSureDataMayLost, function, true);
+        title: Texts.to.warning, text: Texts.to.areYouSureDataMayLost, onTapOk: function, dismissible: true);
   }
 
   functionClearAllData() {
@@ -111,7 +111,7 @@ class SettingsController extends CoreController {
     }
 
     AppDialogs().appAlertDialogWithOkCancel(
-        Texts.to.warning, Texts.to.areYouSureDataWillLost, function, true);
+        title: Texts.to.warning, text: Texts.to.areYouSureDataWillLost, onTapOk: function, dismissible: true);
   }
 
   saveSettings() => saveAppData();

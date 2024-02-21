@@ -5,6 +5,7 @@ import 'package:paria_app/core/app_extensions/data_models_extensions/extension_c
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_list.dart';
 
 import '../../../../app/components/main_components/app_dialogs.dart';
+import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_page_details.dart';
@@ -48,9 +49,8 @@ class ContactsController extends CoreController {
 
   showContactModal(AppContactEntity contact) async =>
       await AppDialogs().appBottomDialogWithoutButton(
-          contact.getContactFullName,
-          ShowContactFormWidget(contact: contact),
-          true);
+          form: ShowContactFormWidget(contact: contact),
+          dismissible: true);
 
   addContact() async {
     AppContactEntity? contact =

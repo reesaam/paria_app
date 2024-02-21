@@ -49,8 +49,8 @@ class UpdateController extends CoreController {
   }
 
   checkUpdate() async {
-    AppDialogs().appBottomDialogWithoutButton(Texts.to.updateCheckingUpdate,
-        AppProgressIndicator.linear(), false);
+    AppDialogs().appBottomDialogWithoutButton(title: Texts.to.updateCheckingUpdate,
+        form: AppProgressIndicator.linear());
 
     String version = await checkAvailableVersion();
     popPage();
@@ -66,8 +66,8 @@ class UpdateController extends CoreController {
   }
 
   downloadUpdate() async {
-    AppDialogs().appBottomDialogWithoutButton(Texts.to.updateDownloading,
-        AppProgressIndicator.linear(), false);
+    AppDialogs().appBottomDialogWithoutButton(title: Texts.to.updateDownloading,
+        form: AppProgressIndicator.linear());
 
     dlDir = await getExternalStorageDirectory();
 
@@ -105,22 +105,22 @@ class UpdateController extends CoreController {
 
     AppSnackBar.show(Texts.to.updateDownloaded);
 
-    AppDialogs().appAlertDialogWithOkCancel(Texts.to.updateInstallationTitle,
-        Texts.to.updateInstallationContent, installUpdate, true);
+    AppDialogs().appAlertDialogWithOkCancel(title: Texts.to.updateInstallationTitle,
+        text: Texts.to.updateInstallationContent, onTapOk: installUpdate, dismissible: true);
   }
 
   void installUpdate() => file_plus.OpenFile.open(dlFile!.path);
 
   alertDirectoryOrFileNotFound(bool directoryError) =>
       AppDialogs().appAlertDialogWithOk(
-          directoryError
+          title: directoryError
               ? Texts.to.updateDirectoryNotFoundTitle
               : Texts.to.updateFileNotFoundTitle,
-          directoryError
+          text: directoryError
               ? Texts.to.updateDirectoryNotFoundContent
               : Texts.to.updateFileNotFoundContent,
-          popPage,
-          true);
+          onTapOk: popPage,
+          dismissible: true);
 
   checkAvailableUpdate() =>
       availableVersion.value == AppInfo.appCurrentVersion ||

@@ -16,55 +16,76 @@ class AppDialogs {
   _onTapCancel() => popPage();
 
   appBottomDialogWithoutButton(
-      String title, Widget form, bool? dismissible) async {
+      {String? title, required Widget form, bool? dismissible}) async {
     List<Widget> buttons = [];
-    await _appBottomDialogGeneral(title, form, buttons, dismissible);
+    await _appBottomDialogGeneral(
+        title: title, form: form, buttons: buttons, dismissible: dismissible);
   }
 
   appBottomDialogWithOk(
-      String title, Widget form, Function onTapOk, bool? dismissible) async {
+      {String? title,
+      required Widget form,
+      required Function onTapOk,
+      bool? dismissible}) async {
     List<Widget> buttons = [
       AppGeneralButton(text: Texts.to.ok, onTap: onTapOk)
     ];
-    await _appBottomDialogGeneral(title, form, buttons, dismissible);
+    await _appBottomDialogGeneral(
+        title: title, form: form, buttons: buttons, dismissible: dismissible);
   }
 
   appBottomDialogWithCancel(
-      String title, Widget form, bool? dismissible) async {
+      {String? title, required Widget form, bool? dismissible}) async {
     List<Widget> buttons = [
       AppGeneralButton(text: Texts.to.cancel, onTap: _onTapCancel)
     ];
-    await _appBottomDialogGeneral(title, form, buttons, dismissible);
+    await _appBottomDialogGeneral(
+        title: title, form: form, buttons: buttons, dismissible: dismissible);
   }
 
   appBottomDialogWithOkCancel(
-      String title, Widget form, Function onTapOk, bool? dismissible) async {
+      {String? title,
+      required Widget form,
+      required Function onTapOk,
+      bool? dismissible}) async {
     List<Widget> buttons = [
       AppGeneralButton(text: Texts.to.ok, onTap: onTapOk),
       AppGeneralButton(text: Texts.to.cancel, onTap: _onTapCancel),
     ];
-    await _appBottomDialogGeneral(title, form, buttons, dismissible);
+    await _appBottomDialogGeneral(
+        title: title, form: form, buttons: buttons, dismissible: dismissible);
   }
 
   appAlertDialogWithOkCancel(
-      String title, String text, Function onTapOk, bool? dismissible) async {
+      {String? title,
+      required String text,
+      required Function onTapOk,
+      bool? dismissible}) async {
     List<Widget> buttons = [
       AppGeneralButton(text: Texts.to.ok, onTap: onTapOk),
       AppGeneralButton(text: Texts.to.cancel, onTap: _onTapCancel),
     ];
-    await _appAlertDialog(title, text, buttons, dismissible);
+    await _appAlertDialog(
+        title: title, text: text, buttons: buttons, dismissible: dismissible);
   }
 
   appAlertDialogWithOk(
-      String title, String text, Function onTapOk, bool? dismissible) async {
+      {String? title,
+      required String text,
+      required Function onTapOk,
+      bool? dismissible}) async {
     List<Widget> buttons = [
       AppGeneralButton(text: Texts.to.ok, onTap: onTapOk),
     ];
-    await _appAlertDialog(title, text, buttons, dismissible);
+    await _appAlertDialog(
+        title: title, text: text, buttons: buttons, dismissible: dismissible);
   }
 
-  _appBottomDialogGeneral(String title, Widget form, List<Widget> buttons,
-          bool? dismissible) async =>
+  _appBottomDialogGeneral(
+          {String? title,
+          required Widget form,
+          required List<Widget> buttons,
+          bool? dismissible}) async =>
       await showModalBottomSheet(
           context: Get.context!,
           useSafeArea: true,
@@ -84,19 +105,19 @@ class AppDialogs {
                             Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  title.isNotEmpty
-                                      ? Column(
+                                  title == null
+                                      ? shrinkSizedBox
+                                      : Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                              Text(title,
+                                              Text(title ?? '',
                                                   style:
                                                       AppTextStyles.modalTitle),
                                               AppDividers
                                                   .generalDividerWithAppDefaultColor,
                                               AppSpaces.h20,
-                                            ])
-                                      : shrinkSizedBox,
+                                            ]),
                                   form,
                                 ]),
                             AppSpaces.h40,
@@ -118,8 +139,11 @@ class AppDialogs {
         mainAxisAlignment: MainAxisAlignment.spaceBetween, children: list);
   }
 
-  _appAlertDialog(String title, String text, List<Widget> buttons,
-          bool? dismissible) async =>
+  _appAlertDialog(
+          {String? title,
+          required String text,
+          required List<Widget> buttons,
+          bool? dismissible}) async =>
       await showDialog(
           context: Get.context!,
           useSafeArea: true,
@@ -130,10 +154,12 @@ class AppDialogs {
                 child: AlertDialog(
                   backgroundColor: AppColors.appBackground,
                   shape: AppElements.defaultAlertBorderShape,
-                  title: Column(children: [
-                    Text(title, style: AppTextStyles.dialogAlertTitle),
-                    AppDividers.generalDividerWithAppDefaultColor,
-                  ]),
+                  title: title == null
+                      ? shrinkSizedBox
+                      : Column(children: [
+                          Text(title, style: AppTextStyles.dialogAlertTitle),
+                          AppDividers.generalDividerWithAppDefaultColor,
+                        ]),
                   content: Text(text,
                       style: AppTextStyles.dialogAlertText, softWrap: true),
                   actions: [_renderButtonsAlertDialog(buttons)],

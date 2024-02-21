@@ -44,7 +44,7 @@ Future<String> checkAvailableVersion() async {
 }
 
 void appExitDialog() => AppDialogs().appAlertDialogWithOkCancel(
-    Texts.to.appExit, Texts.to.areYouSure, appExit, true);
+    title: Texts.to.appExit, text: Texts.to.areYouSure, onTapOk: appExit, dismissible: true);
 
 void appExit() {
   appLogPrint('App Exit Triggered');

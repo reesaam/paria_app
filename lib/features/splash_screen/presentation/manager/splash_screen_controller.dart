@@ -47,10 +47,9 @@ class SplashScreenController extends CoreController {
     internetStatus
         ? null
         : await AppDialogs().appAlertDialogWithOk(
-            Texts.to.connectionInternetNotAvailableTitle,
-            Texts.to.connectionInternetNotAvailableText,
-            popPage,
-            false);
+            title: Texts.to.connectionInternetNotAvailableTitle,
+            text: Texts.to.connectionInternetNotAvailableText,
+            onTapOk: popPage);
     goToNextPage();
   }
 
@@ -62,8 +61,9 @@ class SplashScreenController extends CoreController {
   }
 
   showUpdateDialog() => AppDialogs().appAlertDialogWithOkCancel(
-      Texts.to.updateNewVersion, Texts.to.updateApprove, goToUpdate, false);
-
+      title: Texts.to.updateNewVersion,
+      text: Texts.to.updateApprove,
+      onTapOk: goToUpdate);
 
   goToUpdate() {
     goToHomePage();
