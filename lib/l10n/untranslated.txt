@@ -25,7 +25,8 @@
     "contactsAddContactPhoneTitle",
     "contactsAddContactEmailTitle",
     "contactsAddContactWebLinkTitle",
-    "contactsAddEditModalErrorFirstname",
+    "contactsAddEditModalErrorFirstnameLastNameAndMobile",
+    "contactsAddEditModalErrorFirstnameLastName",
     "contactsAddEditModalErrorMobile",
     "settingsSectionStorageItemEraseContacts",
     "settingsSectionStorageItemEraseAccountsRecords"
@@ -57,7 +58,8 @@
     "contactsAddContactPhoneTitle",
     "contactsAddContactEmailTitle",
     "contactsAddContactWebLinkTitle",
-    "contactsAddEditModalErrorFirstname",
+    "contactsAddEditModalErrorFirstnameLastNameAndMobile",
+    "contactsAddEditModalErrorFirstnameLastName",
     "contactsAddEditModalErrorMobile",
     "settingsSectionStorageItemEraseContacts",
     "settingsSectionStorageItemEraseAccountsRecords"

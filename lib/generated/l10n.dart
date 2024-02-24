@@ -580,11 +580,21 @@ class S {
     );
   }
 
+  /// `Firstname or Lastname and Mobile should be entered.`
+  String get contactsAddEditModalErrorFirstnameLastNameAndMobile {
+    return Intl.message(
+      'Firstname or Lastname and Mobile should be entered.',
+      name: 'contactsAddEditModalErrorFirstnameLastNameAndMobile',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Firstname or Lastname should be entered.`
-  String get contactsAddEditModalErrorFirstname {
+  String get contactsAddEditModalErrorFirstnameLastName {
     return Intl.message(
       'Firstname or Lastname should be entered.',
-      name: 'contactsAddEditModalErrorFirstname',
+      name: 'contactsAddEditModalErrorFirstnameLastName',
       desc: '',
       args: [],
     );

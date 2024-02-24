@@ -101,12 +101,17 @@ class AppContactsAddEditContactComponent {
   }
 
   _provideContact() {
-    if (_controllerFirstName.text.isEmpty && _controllerLastName.text.isEmpty) {
-      _hasError.value = true;
+    _hasError.value = true;
+    if (_controllerFirstName.text.isEmpty &&
+        _controllerLastName.text.isEmpty &&
+        _controllerMobile.text.isEmpty) {
       AppSnackBar.showSnackBar(
-          text: Texts.to.contactsAddEditModalErrorFirstname);
+          text: Texts.to.contactsAddEditModalErrorFirstnameLastNameAndMobile);
+    } else if (_controllerFirstName.text.isEmpty &&
+        _controllerLastName.text.isEmpty) {
+      AppSnackBar.showSnackBar(
+          text: Texts.to.contactsAddEditModalErrorFirstnameLastName);
     } else if (_controllerMobile.text.isEmpty) {
-      _hasError.value = true;
       AppSnackBar.showSnackBar(text: Texts.to.contactsAddEditModalErrorMobile);
     } else {
       _hasError.value = false;

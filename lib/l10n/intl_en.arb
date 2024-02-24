@@ -64,7 +64,8 @@
     "contactsAddContactEmailTitle": "Email",
     "contactsAddContactWebLinkTitle": "Web Link",
 
-    "contactsAddEditModalErrorFirstname": "Firstname or Lastname should be entered.",
+    "contactsAddEditModalErrorFirstnameLastNameAndMobile": "Firstname or Lastname and Mobile should be entered.",
+    "contactsAddEditModalErrorFirstnameLastName": "Firstname or Lastname should be entered.",
     "contactsAddEditModalErrorMobile": "Mobile field can't be Blank",
 
     "settingsLanguageModalSelectLanguage": "Select Language",
