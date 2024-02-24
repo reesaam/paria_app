@@ -15,6 +15,7 @@ class AppTextField extends StatelessWidget {
     this.textInputType,
     this.suffixAction,
     this.editable,
+    this.hasError,
   });
 
   final TextEditingController controller;
@@ -24,6 +25,7 @@ class AppTextField extends StatelessWidget {
   final TextInputType? textInputType;
   final VoidCallback? suffixAction;
   final bool? editable;
+  final bool? hasError;
 
   Widget suffix() => InkWell(
       onTap: suffixAction, child: Icon(icon, color: AppColors.textNormalDark));
@@ -48,7 +50,7 @@ class AppTextField extends StatelessWidget {
         alignLabelWithHint: true,
         suffixIcon: suffix(),
         border: AppElements.defaultOutlineBorder,
-        enabledBorder: AppElements.defaultOutlineBorder,
+        enabledBorder: hasError == true ? AppElements. defaultOutlineBorderError : AppElements.defaultOutlineBorder,
         focusedBorder: AppElements.defaultOutlineBorderFocused,
         isDense: true,
         isCollapsed: true,

@@ -15,6 +15,7 @@ import '../../domain/entities/contact_entity/contact_entity.dart';
 
 class AppContactsAddEditContactComponent {
   AppContactEntity _providedContact = const AppContactEntity();
+  Rx<bool> _hasError = false.obs;
 
   //TextEditing Controllers
   final TextEditingController _controllerFirstName = TextEditingController();
@@ -24,45 +25,47 @@ class AppContactsAddEditContactComponent {
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerWebLink = TextEditingController();
 
-  Widget _widgetAddOrEditContactDialog() => Form(
-        child: Column(children: [
-          AppTextField(
-              controller: _controllerFirstName,
-              label: Texts.to.contactsAddContactFirstNameTitle,
-              hint: _hintGenerator(Texts.to.contactsAddContactFirstNameTitle),
-              icon: AppIcons.accounts.icon),
-          AppSpaces.h10,
-          AppTextField(
-              controller: _controllerLastName,
-              label: Texts.to.contactsAddContactLastNameTitle,
-              hint: _hintGenerator(Texts.to.contactsAddContactLastNameTitle),
-              icon: AppIcons.accounts.icon),
-          AppSpaces.h10,
-          AppTextField(
-              controller: _controllerMobile,
-              label: Texts.to.contactsAddContactMobileTitle,
-              hint: _hintGenerator(Texts.to.contactsAddContactMobileTitle),
-              icon: AppIcons.mobile.icon),
-          AppSpaces.h10,
-          AppTextField(
-              controller: _controllerPhone,
-              label: Texts.to.contactsAddContactPhoneTitle,
-              hint: _hintGenerator(Texts.to.contactsAddContactPhoneTitle),
-              icon: AppIcons.phone.icon),
-          AppSpaces.h10,
-          AppTextField(
-              controller: _controllerEmail,
-              label: Texts.to.contactsAddContactEmailTitle,
-              hint: _hintGenerator(Texts.to.contactsAddContactEmailTitle),
-              icon: AppIcons.email.icon),
-          AppSpaces.h10,
-          AppTextField(
-              controller: _controllerWebLink,
-              label: Texts.to.contactsAddContactWebLinkTitle,
-              hint: _hintGenerator(Texts.to.contactsAddContactWebLinkTitle),
-              icon: AppIcons.web.icon),
-        ]),
-      );
+  Widget _widgetAddOrEditContactDialog() => Obx(() => Form(
+          child: Column(children: [
+        AppTextField(
+            controller: _controllerFirstName,
+            label: Texts.to.contactsAddContactFirstNameTitle,
+            hint: _hintGenerator(Texts.to.contactsAddContactFirstNameTitle),
+            hasError: _hasError.value,
+            icon: AppIcons.accounts.icon),
+        AppSpaces.h10,
+        AppTextField(
+            controller: _controllerLastName,
+            label: Texts.to.contactsAddContactLastNameTitle,
+            hint: _hintGenerator(Texts.to.contactsAddContactLastNameTitle),
+            hasError: _hasError.value,
+            icon: AppIcons.accounts.icon),
+        AppSpaces.h10,
+        AppTextField(
+            controller: _controllerMobile,
+            label: Texts.to.contactsAddContactMobileTitle,
+            hint: _hintGenerator(Texts.to.contactsAddContactMobileTitle),
+            hasError: _hasError.value,
+            icon: AppIcons.mobile.icon),
+        AppSpaces.h10,
+        AppTextField(
+            controller: _controllerPhone,
+            label: Texts.to.contactsAddContactPhoneTitle,
+            hint: _hintGenerator(Texts.to.contactsAddContactPhoneTitle),
+            icon: AppIcons.phone.icon),
+        AppSpaces.h10,
+        AppTextField(
+            controller: _controllerEmail,
+            label: Texts.to.contactsAddContactEmailTitle,
+            hint: _hintGenerator(Texts.to.contactsAddContactEmailTitle),
+            icon: AppIcons.email.icon),
+        AppSpaces.h10,
+        AppTextField(
+            controller: _controllerWebLink,
+            label: Texts.to.contactsAddContactWebLinkTitle,
+            hint: _hintGenerator(Texts.to.contactsAddContactWebLinkTitle),
+            icon: AppIcons.web.icon),
+      ])));
 
   _hintGenerator(String text) => 'Enter $text';
 
@@ -90,17 +93,23 @@ class AppContactsAddEditContactComponent {
         onTapOk: _provideContact,
         dismissible: true);
 
-    _providedContact =
-        _providedContact.copyWith(id: isEdit ? contact?.id : const Uuid().v1());
+    _providedContact.isNotEmpty
+        ? _providedContact = _providedContact.copyWith(
+            id: isEdit ? contact?.id : const Uuid().v1())
+        : null;
     return _providedContact;
   }
 
   _provideContact() {
     if (_controllerFirstName.text.isEmpty && _controllerLastName.text.isEmpty) {
-      AppSnackBar.show(Texts.to.contactsAddEditModalErrorFirstname);
+      _hasError.value = true;
+      AppSnackBar.showSnackBar(
+          text: Texts.to.contactsAddEditModalErrorFirstname);
     } else if (_controllerMobile.text.isEmpty) {
-      AppSnackBar.show(Texts.to.contactsAddEditModalErrorMobile);
+      _hasError.value = true;
+      AppSnackBar.showSnackBar(text: Texts.to.contactsAddEditModalErrorMobile);
     } else {
+      _hasError.value = false;
       _providedContact = AppContactEntity(
           firstName: _controllerFirstName.text,
           lastName: _controllerLastName.text ?? '',
