@@ -18,7 +18,6 @@ import '../../../../app/components/general_widgets/app_snack_bars.dart';
 import '../../../../app/components/main_components/app_dialogs.dart';
 
 class UpdateController extends CoreController {
-
   Rx<String> availableVersion = Texts.to.notAvailable.obs;
 
   File? dlFile;
@@ -49,7 +48,8 @@ class UpdateController extends CoreController {
   }
 
   checkUpdate() async {
-    AppDialogs().appBottomDialogWithoutButton(title: Texts.to.updateCheckingUpdate,
+    AppDialogs().appBottomDialogWithoutButton(
+        title: Texts.to.updateCheckingUpdate,
         form: AppProgressIndicator.linear());
 
     String version = await checkAvailableVersion();
@@ -57,17 +57,17 @@ class UpdateController extends CoreController {
 
     if (version == AppInfo.appCurrentVersion) {
       appLogPrint('No New Version Available');
-      AppSnackBar.show(Texts.to.updateNoUpdateFound);
+      AppSnackBar.showSnackBar(text: Texts.to.updateNoUpdateFound);
     } else {
       appLogPrint('Available Version: $version');
       availableVersion.value = version;
-      AppSnackBar.show(Texts.to.updateUpdateFound);
+      AppSnackBar.showSnackBar(text: Texts.to.updateUpdateFound);
     }
   }
 
   downloadUpdate() async {
-    AppDialogs().appBottomDialogWithoutButton(title: Texts.to.updateDownloading,
-        form: AppProgressIndicator.linear());
+    AppDialogs().appBottomDialogWithoutButton(
+        title: Texts.to.updateDownloading, form: AppProgressIndicator.linear());
 
     dlDir = await getExternalStorageDirectory();
 
@@ -103,10 +103,13 @@ class UpdateController extends CoreController {
       });
     }
 
-    AppSnackBar.show(Texts.to.updateDownloaded);
+    AppSnackBar.showSnackBar(text: Texts.to.updateDownloaded);
 
-    AppDialogs().appAlertDialogWithOkCancel(title: Texts.to.updateInstallationTitle,
-        text: Texts.to.updateInstallationContent, onTapOk: installUpdate, dismissible: true);
+    AppDialogs().appAlertDialogWithOkCancel(
+        title: Texts.to.updateInstallationTitle,
+        text: Texts.to.updateInstallationContent,
+        onTapOk: installUpdate,
+        dismissible: true);
   }
 
   void installUpdate() => file_plus.OpenFile.open(dlFile!.path);

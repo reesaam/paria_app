@@ -49,8 +49,8 @@ class AppDialogs {
       required Function() onTapOk,
       bool? dismissible}) async {
     List<Widget> buttons = [
-      AppGeneralButton(text: Texts.to.ok, onTap: onTapOk),
-      AppGeneralButton(text: Texts.to.cancel, onTap: _onTapCancel),
+      AppGeneralButton(text: Texts.to.ok, onTap: () => onTapOk()),
+      AppGeneralButton(text: Texts.to.cancel, onTap: () => _onTapCancel()),
     ];
     await _appBottomDialogGeneral(
         title: title, form: form, buttons: buttons, dismissible: dismissible);

@@ -49,9 +49,7 @@ class ContactsController extends CoreController {
         await AppContactsAddEditContactComponent().call(isEdit: false);
     appLogPrint('Contact : $contact');
 
-    if(contact.isNotEmpty) {
-      listContacts.addContact(contact!);
-    }
+    contact.isEmpty ? null : listContacts.addContact(contact!);
     refresh();
   }
 
