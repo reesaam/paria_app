@@ -21,6 +21,9 @@ class AppPaddings {
   static EdgeInsets get generalAlertDialog => const EdgeInsets.all(20);
   static EdgeInsets get modalItems => const EdgeInsets.symmetric(vertical: 15);
 
+  ///
+  static EdgeInsets get snackBar => const EdgeInsets.symmetric(horizontal: 20, vertical: 20);
+
   ///SplashScreen
   static EdgeInsets get splashScreenProgressIndicator => const EdgeInsets.only(top: 200);
 
