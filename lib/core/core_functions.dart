@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/data/resources/app_enums.dart';
 
 import '../app/components/main_components/app_dialogs.dart';
 import '../data/data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
@@ -44,7 +45,10 @@ Future<String> checkAvailableVersion() async {
 }
 
 void appExitDialog() => AppDialogs().appAlertDialogWithOkCancel(
-    title: Texts.to.appExit, text: Texts.to.areYouSure, onTapOk: appExit, dismissible: true);
+    title: Texts.to.appExit,
+    text: Texts.to.areYouSure,
+    onTapOk: appExit,
+    dismissible: true);
 
 void appExit() {
   appLogPrint('App Exit Triggered');

@@ -91,7 +91,10 @@ class SettingsController extends CoreController {
     }
 
     AppDialogs().appAlertDialogWithOkCancel(
-        title: Texts.to.warning, text: Texts.to.areYouSureDataExport, onTapOk: function, dismissible: true);
+        title: Texts.to.warning,
+        text: Texts.to.areYouSureDataExport,
+        onTapOk: function,
+        dismissible: true);
   }
 
   functionRestore() {
@@ -101,18 +104,44 @@ class SettingsController extends CoreController {
     }
 
     AppDialogs().appAlertDialogWithOkCancel(
-        title: Texts.to.warning, text: Texts.to.areYouSureDataMayLost, onTapOk: function, dismissible: true);
+        title: Texts.to.warning,
+        text: Texts.to.areYouSureDataMayLost,
+        onTapOk: function,
+        dismissible: true);
   }
 
-  functionClearAllData() {
-    function() {
-      popPage();
-      clearAppData();
-    }
-
-    AppDialogs().appAlertDialogWithOkCancel(
-        title: Texts.to.warning, text: Texts.to.areYouSureDataWillLost, onTapOk: function, dismissible: true);
+  _clearContactsFunction() {
+    popPage();
+    AppLocalStorage.to.clearSpecificKey(AppStorageKeys.keyContacts);
   }
+
+  clearContacts() => AppDialogs().appAlertDialogWithOkCancel(
+      title: Texts.to.warning,
+      text: Texts.to.areYouSureDataWillLost,
+      onTapOk: _clearContactsFunction,
+      dismissible: true);
+
+  _clearAccountsRecordsFunction() {
+    popPage();
+    AppLocalStorage.to.clearSpecificKey(AppStorageKeys.keyAccounts);
+  }
+
+  clearAccountsRecords() => AppDialogs().appAlertDialogWithOkCancel(
+      title: Texts.to.warning,
+      text: Texts.to.areYouSureDataWillLost,
+      onTapOk: _clearAccountsRecordsFunction,
+      dismissible: true);
+
+  _clearAllDataFunction() {
+    popPage();
+    clearAppData();
+  }
+
+  clearAllData() => AppDialogs().appAlertDialogWithOkCancel(
+      title: Texts.to.warning,
+      text: Texts.to.areYouSureDataWillLost,
+      onTapOk: _clearAllDataFunction,
+      dismissible: true);
 
   saveSettings() => saveAppData();
 

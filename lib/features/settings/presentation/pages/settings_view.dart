@@ -107,7 +107,13 @@ class SettingsPage extends CoreView<SettingsController> {
           title: Texts.to.settingsSectionTitleStorage,
           widgets: [
             SettingsSectionItemWidget(
+                text: Texts.to.settingsSectionStorageItemEraseContacts,
+                wholeItemFunction: controller.clearContacts),
+            SettingsSectionItemWidget(
+                text: Texts.to.settingsSectionStorageItemEraseAccountsRecords,
+                wholeItemFunction: controller.clearAccountsRecords),
+            SettingsSectionItemWidget(
                 text: Texts.to.settingsSectionStorageItemEraseAllData,
-                wholeItemFunction: controller.functionClearAllData)
+                wholeItemFunction: controller.clearContacts),
           ]);
 }

@@ -730,6 +730,26 @@ class S {
     );
   }
 
+  /// `Erase All Contacts`
+  String get settingsSectionStorageItemEraseContacts {
+    return Intl.message(
+      'Erase All Contacts',
+      name: 'settingsSectionStorageItemEraseContacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Erase All Accounts Records`
+  String get settingsSectionStorageItemEraseAccountsRecords {
+    return Intl.message(
+      'Erase All Accounts Records',
+      name: 'settingsSectionStorageItemEraseAccountsRecords',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Erase All Data`
   String get settingsSectionStorageItemEraseAllData {
     return Intl.message(

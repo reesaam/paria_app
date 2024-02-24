@@ -26,7 +26,9 @@
     "contactsAddContactEmailTitle",
     "contactsAddContactWebLinkTitle",
     "contactsAddEditModalErrorFirstname",
-    "contactsAddEditModalErrorMobile"
+    "contactsAddEditModalErrorMobile",
+    "settingsSectionStorageItemEraseContacts",
+    "settingsSectionStorageItemEraseAccountsRecords"
   ],
 
   "fa": [
@@ -56,6 +58,8 @@
     "contactsAddContactEmailTitle",
     "contactsAddContactWebLinkTitle",
     "contactsAddEditModalErrorFirstname",
-    "contactsAddEditModalErrorMobile"
+    "contactsAddEditModalErrorMobile",
+    "settingsSectionStorageItemEraseContacts",
+    "settingsSectionStorageItemEraseAccountsRecords"
   ]
 }

@@ -117,8 +117,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Restore Data"),
         "settingsSectionGeneralItemDarkMode":
             MessageLookupByLibrary.simpleMessage("Dark Mode"),
+        "settingsSectionStorageItemEraseAccountsRecords":
+            MessageLookupByLibrary.simpleMessage("Erase All Accounts Records"),
         "settingsSectionStorageItemEraseAllData":
             MessageLookupByLibrary.simpleMessage("Erase All Data"),
+        "settingsSectionStorageItemEraseContacts":
+            MessageLookupByLibrary.simpleMessage("Erase All Contacts"),
         "settingsSectionTitleBackup":
             MessageLookupByLibrary.simpleMessage("Backup"),
         "settingsSectionTitleGeneral":

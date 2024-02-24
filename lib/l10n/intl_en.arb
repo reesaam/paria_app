@@ -80,6 +80,8 @@
     "settingsSectionBackupBackup": "Backup Data",
     "settingsSectionBackupRestore": "Restore Data",
     "settingsSectionTitleStorage": "Storage",
+    "settingsSectionStorageItemEraseContacts": "Erase All Contacts",
+    "settingsSectionStorageItemEraseAccountsRecords": "Erase All Accounts Records",
     "settingsSectionStorageItemEraseAllData": "Erase All Data",
 
     "updateCurrentVersion": "Current Version:",
