@@ -14,6 +14,7 @@ class AppInfo {
     '0.1.1', //Implementation on new structure
     '0.1.2', //Apply New Structure Changes on the App
     '0.2.1', //Implementation Major Changes in Major Structure
+    '0.2.2', //Contacts
   ];
 
   static String get appCurrentVersion => versions.last;

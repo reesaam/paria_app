@@ -33,8 +33,6 @@
   ],
 
   "fa": [
-    "contactsPageName",
-    "accountsPageName",
     "totalBalance",
     "homepageDateTimeTitle",
     "homepageSummaryTitle",

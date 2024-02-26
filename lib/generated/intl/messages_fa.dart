@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutPageName": MessageLookupByLibrary.simpleMessage("درباره"),
+        "accountsPageName": MessageLookupByLibrary.simpleMessage("حساب ها"),
         "adminStartPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin Start Page"),
         "adminTestPagePageName":
@@ -48,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("اتصال به اینترنت وجود ندارد"),
         "connectionInternetNotAvailableTitle":
             MessageLookupByLibrary.simpleMessage("اینترنت"),
+        "contactsPageName": MessageLookupByLibrary.simpleMessage("مخاطبین"),
         "empty": MessageLookupByLibrary.simpleMessage(""),
         "from": MessageLookupByLibrary.simpleMessage("از"),
         "homePageName": MessageLookupByLibrary.simpleMessage("خانه"),

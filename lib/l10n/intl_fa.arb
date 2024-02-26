@@ -3,8 +3,10 @@
     "languageName": "فارسی",
     "app_name": "اپلیکیشن دستیار پریا",
 
-    "homePageName": "خانه",
     "splashScreenPageName": "صفحه شروع",
+    "homePageName": "خانه",
+    "contactsPageName": "مخاطبین",
+    "accountsPageName": "حساب ها",
     "settingsPageName": "تنظیمات",
     "updatePageName": "بروزرسانی",
     "aboutPageName": "درباره",
