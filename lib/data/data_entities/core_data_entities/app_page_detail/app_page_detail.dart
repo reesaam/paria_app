@@ -12,6 +12,7 @@ part 'app_page_detail.g.dart';
 class AppPageDetail with _$AppPageDetail {
   const factory AppPageDetail({
     required final AppRoutes pageRoute,
+    final String? pageName,
     final int? bottomBarItemNumber,
     final bool? drawerPresence,
     final int? iconCode,

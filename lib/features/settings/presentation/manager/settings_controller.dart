@@ -63,6 +63,7 @@ class SettingsController extends CoreController {
 
   functionLanguageSelectionOnTap(int index) {
     selectedLanguage.value = AppLocalization.languages[index].getLanguage;
+    appSettings.changeLanguage(selectedLanguage.value);
     saveSettings();
     popPage();
     Get.updateLocale(selectedLanguage.value.getLocale);

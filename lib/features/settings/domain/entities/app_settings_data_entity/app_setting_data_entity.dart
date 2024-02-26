@@ -8,8 +8,8 @@ part 'app_setting_data_entity.g.dart';
 @freezed
 class AppSettingDataEntity with _$AppSettingDataEntity {
   const factory AppSettingDataEntity({
-    final bool? darkMode,
-    final AppLanguages? language,
+    @Default(false) bool darkMode,
+    @Default(AppLanguages.english) AppLanguages language,
   }) = _AppSettingDataEntity;
 
   factory AppSettingDataEntity.fromJson(Map<String, dynamic> json) =>

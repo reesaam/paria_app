@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 
 enum AppRoutes {
-  splashScreen('Splash Screen'),
-  homepage('HomePage'),
-  contacts('Contacts'),
-  contactsBalance('Contacts Balance'),
-  accounts('Accounts'),
-  settings('Settings'),
-  update('Update'),
-  about('About'),
-  notFound('Page Not Found'),
-  adminStartPage('Admin Start Page'),
-  adminTestPage('Admin Test Page'),
-  adminUITestPage('Admin UI Test Page');
-
-  final String pageLabel;
-  const AppRoutes(this.pageLabel);
+  splashScreen,
+  homepage,
+  contacts,
+  contactsBalance,
+  accounts,
+  settings,
+  update,
+  about,
+  notFound,
+  adminStartPage,
+  adminTestPage,
+  adminUITestPagePage,
 }
 
 enum AppBottomNavigationPages {

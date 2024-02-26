@@ -50,10 +50,14 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
               foregroundColor: AppColors.appDefaultColor,
               child: _createIcon(route).withColor(AppColors.textNormalLight)),
           icon: _createIcon(route),
-          label: route.pageLabel);
+          label: _createLabel(route));
 
   Icon _createIcon(AppRoutes route) => AppPageDetails.listPages
       .firstWhere((element) => element.pageRoute == route)
       .iconCode
       .toIcon;
+
+  String _createLabel(AppRoutes route) => AppPageDetails.listPages
+      .firstWhere((element) => element.pageRoute == route)
+      .pageName ?? '';
 }

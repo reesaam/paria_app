@@ -49,7 +49,7 @@ class AppDrawer extends Drawer {
   }
 
   Widget _bodyItem(AppPageDetail page) => ListTile(
-        title: Text(page.pageRoute.pageLabel),
+        title: Text(page.pageName ?? ''),
         leading: page.iconCode.toIcon,
         onTap: () => {popPage(), goToPage(page.pageRoute)},
       );
