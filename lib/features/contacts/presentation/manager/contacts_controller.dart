@@ -47,7 +47,7 @@ class ContactsController extends CoreController {
   addContact() async {
     AppContactEntity? contact =
         await AppContactsAddEditContactComponent().call(isEdit: false);
-    appLogPrint('Contact : $contact');
+    appLogPrint('Contact: $contact');
     appLogPrint(contact.isEmpty);
 
     contact.isEmpty ? null : listContacts.addContact(contact!);

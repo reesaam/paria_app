@@ -45,15 +45,11 @@ extension Compare on AppContactEntity {
 }
 
 extension ChecksNull on AppContactEntity? {
-  bool get isEmpty => this == null
-      ? true
-      : this?.firstName == null &&
-          this?.lastName == null &&
-          this?.mobile == null;
+  bool get isEmpty => this == null ? true : this!.isEmpty;
   bool get isNotEmpty => !isEmpty;
 }
 
 extension Checks on AppContactEntity {
-  bool get isEmpty => equalTo(const AppContactEntity());
+  bool get isEmpty => firstName == null && lastName == null && mobile == null;
   bool get isNotEmpty => !isEmpty;
 }
