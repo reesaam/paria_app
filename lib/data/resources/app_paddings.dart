@@ -38,8 +38,8 @@ class AppPaddings {
   ///Contacts
   static EdgeInsets get contactsNoContacts => const EdgeInsets.all(50);
   static EdgeInsets get contactsItem => const EdgeInsets.fromLTRB(20, 5, 0, 5);
-  static EdgeInsets get contactsShowContactItems => const EdgeInsets.fromLTRB(20, 50, 40, 20);
-  static EdgeInsets get contactsShowContactItem => const EdgeInsets.symmetric(vertical: 5);
+  static EdgeInsets get contactsShowContactItems => const EdgeInsets.fromLTRB(20, 20, 40, 20);
+  static EdgeInsets get contactsShowContactItem => const EdgeInsets.symmetric(vertical: 5, horizontal: 10);
 
   ///Accounts
   static EdgeInsets get accountsTopBar => const EdgeInsets.all(10);

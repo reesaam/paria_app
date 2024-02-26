@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paria_app/app/components/general_widgets/app_dividers.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_icon.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
@@ -20,7 +21,9 @@ class ShowContactFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Form(
-          child: Column(children: [
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
         Row(children: [
           ContactAvatar(
               contact: contact,
@@ -29,6 +32,8 @@ class ShowContactFormWidget extends StatelessWidget {
           Text(contact.getContactFullName,
               style: AppTextStyles.contactsShowContactFullName),
         ]),
+        AppSpaces.h20,
+        AppDividers.generalDivider,
         _widgetInfo(),
         _widgetAccount(),
       ]));
