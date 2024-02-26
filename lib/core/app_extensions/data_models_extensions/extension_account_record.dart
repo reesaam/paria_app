@@ -12,11 +12,7 @@ extension CompareNull on AppAccountRecordEntity? {
       ? true
       : this == null || record == null
           ? false
-          : this!.contact.equalTo(record.contact) &&
-              this!.title == record.title &&
-              this!.amount == record.amount &&
-              this!.dateTime.equalTo(record.dateTime) &&
-              this!.cleared == record.cleared;
+          : this!.id == record.id;
 }
 
 extension Compare on AppAccountRecordEntity {
@@ -24,10 +20,11 @@ extension Compare on AppAccountRecordEntity {
 }
 
 extension ChecksNull on AppAccountRecordEntity? {
-  bool get isEmpty =>
-      this == null ? true : equalTo(const AppAccountRecordEntity());
+  bool get isEmpty => this == null || this!.isEmpty;
+  bool get isNotEmpty => !isEmpty;
 }
 
 extension Checks on AppAccountRecordEntity {
-  bool get isEmpty => equalTo(const AppAccountRecordEntity());
+  bool get isEmpty => contact == null && amount == null;
+  bool get isNotEmpty => !isEmpty;
 }

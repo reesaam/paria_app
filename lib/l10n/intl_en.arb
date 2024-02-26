@@ -69,6 +69,29 @@
     "contactsAddEditModalErrorFirstnameLastName": "Firstname or Lastname should be entered.",
     "contactsAddEditModalErrorMobile": "Mobile field can't be Blank",
 
+    "accountsSummaryBalance": "Balance",
+    "accountsSummaryItemCount": "Items Count",
+    "accountsSummaryContactsCount": "Contacts Count",
+
+    "accountsAddEditRecordContact": "Contact",
+    "accountsAddEditRecordDescription": "Description",
+    "accountsAddEditRecordAmount": "Amount",
+    "accountsAddEditRecordDateTime": "Date & Time",
+
+    "accountsAddContactTitle": "Add New Record",
+    "accountsEditContactTitle": "Edit Record",
+
+    "accountsNoContacts": "No Records",
+    "accountsOptionShow": "Show Record",
+    "accountsOptionEdit": "Edit Record",
+    "accountsOptionRemove": "Remove Record",
+
+    "accountsAddEditModalErrorContactAndAmount": "Contact and Amount should be entered.",
+    "accountsAddEditModalErrorContact": "Contact must be selected",
+    "accountsAddEditModalErrorAmount": "Amount field can't be Blank",
+
+    "accountsAddRecordChooseContact": "Choose a Contact",
+
     "settingsLanguageModalSelectLanguage": "Select Language",
     "settingsAppbarMenuResetSettings": "Reset All Settings",
     "settingsSectionTitleGeneral": "General",

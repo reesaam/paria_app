@@ -23,7 +23,42 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutPageName": MessageLookupByLibrary.simpleMessage("About"),
+        "accountsAddContactTitle":
+            MessageLookupByLibrary.simpleMessage("Add New Record"),
+        "accountsAddEditModalErrorAmount": MessageLookupByLibrary.simpleMessage(
+            "Amount field can\'t be Blank"),
+        "accountsAddEditModalErrorContact":
+            MessageLookupByLibrary.simpleMessage("Contact must be selected"),
+        "accountsAddEditModalErrorContactAndAmount":
+            MessageLookupByLibrary.simpleMessage(
+                "Contact and Amount should be entered."),
+        "accountsAddEditRecordAmount":
+            MessageLookupByLibrary.simpleMessage("Amount"),
+        "accountsAddEditRecordContact":
+            MessageLookupByLibrary.simpleMessage("Contact"),
+        "accountsAddEditRecordDateTime":
+            MessageLookupByLibrary.simpleMessage("Date & Time"),
+        "accountsAddEditRecordDescription":
+            MessageLookupByLibrary.simpleMessage("Description"),
+        "accountsAddRecordChooseContact":
+            MessageLookupByLibrary.simpleMessage("Choose a Contact"),
+        "accountsEditContactTitle":
+            MessageLookupByLibrary.simpleMessage("Edit Record"),
+        "accountsNoContacts":
+            MessageLookupByLibrary.simpleMessage("No Records"),
+        "accountsOptionEdit":
+            MessageLookupByLibrary.simpleMessage("Edit Record"),
+        "accountsOptionRemove":
+            MessageLookupByLibrary.simpleMessage("Remove Record"),
+        "accountsOptionShow":
+            MessageLookupByLibrary.simpleMessage("Show Record"),
         "accountsPageName": MessageLookupByLibrary.simpleMessage("Accounts"),
+        "accountsSummaryBalance":
+            MessageLookupByLibrary.simpleMessage("Balance"),
+        "accountsSummaryContactsCount":
+            MessageLookupByLibrary.simpleMessage("Contacts Count"),
+        "accountsSummaryItemCount":
+            MessageLookupByLibrary.simpleMessage("Items Count"),
         "adminStartPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin Start Page"),
         "adminTestPagePageName":

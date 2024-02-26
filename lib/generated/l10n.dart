@@ -620,6 +620,176 @@ class S {
     );
   }
 
+  /// `Balance`
+  String get accountsSummaryBalance {
+    return Intl.message(
+      'Balance',
+      name: 'accountsSummaryBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Items Count`
+  String get accountsSummaryItemCount {
+    return Intl.message(
+      'Items Count',
+      name: 'accountsSummaryItemCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contacts Count`
+  String get accountsSummaryContactsCount {
+    return Intl.message(
+      'Contacts Count',
+      name: 'accountsSummaryContactsCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact`
+  String get accountsAddEditRecordContact {
+    return Intl.message(
+      'Contact',
+      name: 'accountsAddEditRecordContact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get accountsAddEditRecordDescription {
+    return Intl.message(
+      'Description',
+      name: 'accountsAddEditRecordDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount`
+  String get accountsAddEditRecordAmount {
+    return Intl.message(
+      'Amount',
+      name: 'accountsAddEditRecordAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date & Time`
+  String get accountsAddEditRecordDateTime {
+    return Intl.message(
+      'Date & Time',
+      name: 'accountsAddEditRecordDateTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Record`
+  String get accountsAddContactTitle {
+    return Intl.message(
+      'Add New Record',
+      name: 'accountsAddContactTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Record`
+  String get accountsEditContactTitle {
+    return Intl.message(
+      'Edit Record',
+      name: 'accountsEditContactTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Records`
+  String get accountsNoContacts {
+    return Intl.message(
+      'No Records',
+      name: 'accountsNoContacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Record`
+  String get accountsOptionShow {
+    return Intl.message(
+      'Show Record',
+      name: 'accountsOptionShow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Record`
+  String get accountsOptionEdit {
+    return Intl.message(
+      'Edit Record',
+      name: 'accountsOptionEdit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove Record`
+  String get accountsOptionRemove {
+    return Intl.message(
+      'Remove Record',
+      name: 'accountsOptionRemove',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact and Amount should be entered.`
+  String get accountsAddEditModalErrorContactAndAmount {
+    return Intl.message(
+      'Contact and Amount should be entered.',
+      name: 'accountsAddEditModalErrorContactAndAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact must be selected`
+  String get accountsAddEditModalErrorContact {
+    return Intl.message(
+      'Contact must be selected',
+      name: 'accountsAddEditModalErrorContact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount field can't be Blank`
+  String get accountsAddEditModalErrorAmount {
+    return Intl.message(
+      'Amount field can\'t be Blank',
+      name: 'accountsAddEditModalErrorAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a Contact`
+  String get accountsAddRecordChooseContact {
+    return Intl.message(
+      'Choose a Contact',
+      name: 'accountsAddRecordChooseContact',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Select Language`
   String get settingsLanguageModalSelectLanguage {
     return Intl.message(
