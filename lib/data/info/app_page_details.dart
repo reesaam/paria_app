@@ -60,6 +60,12 @@ class AppPageDetails {
     drawerPresence: true,
   );
 
+  static AppPageDetail contactsBalance = AppPageDetail(
+    pageName: Texts.to.contactsBalancePageName,
+    pageRoute: AppRoutes.contactsBalance,
+    drawerPresence: true,
+  );
+
   static AppPageDetail accounts = AppPageDetail(
     pageName: Texts.to.accountsPageName,
     pageRoute: AppRoutes.accounts,

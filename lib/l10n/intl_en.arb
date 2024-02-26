@@ -6,6 +6,7 @@
     "splashScreenPageName": "Splash Screen",
     "homePageName": "Home",
     "contactsPageName": "Contacts",
+    "contactsBalancePageName": "Contacts Balance",
     "accountsPageName": "Accounts",
     "settingsPageName": "Settings",
     "updatePageName": "Update",

@@ -100,6 +100,16 @@ class S {
     );
   }
 
+  /// `Contacts Balance`
+  String get contactsBalancePageName {
+    return Intl.message(
+      'Contacts Balance',
+      name: 'contactsBalancePageName',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Accounts`
   String get accountsPageName {
     return Intl.message(

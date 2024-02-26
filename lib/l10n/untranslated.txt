@@ -1,6 +1,7 @@
 {
   "de": [
     "contactsPageName",
+    "contactsBalancePageName",
     "accountsPageName",
     "totalBalance",
     "homepageDateTimeTitle",
@@ -33,6 +34,7 @@
   ],
 
   "fa": [
+    "contactsBalancePageName",
     "totalBalance",
     "homepageDateTimeTitle",
     "homepageSummaryTitle",
