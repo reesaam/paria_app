@@ -41,6 +41,9 @@ class AppColors {
   static Color get bottomBarSelected => textNormalDark;
   static Color get bottomBarUnselected => textNormalDark;
 
+  ///SnackBar
+  static Color get snackBarBackground => appDefaultColorSecond;
+
   ///Card
   static Color get cardBackground => appBackground;
   static Color get cardText => appDefaultColor;

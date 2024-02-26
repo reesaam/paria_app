@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../data/info/app_defaults.dart';
 import '../../../data/resources/app_colors.dart';
 import '../../../data/resources/app_paddings.dart';
 
 class AppSnackBar {
-  AppSnackBar(BuildContext context);
+  AppSnackBar._();
 
   static showSnackBar({
     required String text,
@@ -15,10 +16,10 @@ class AppSnackBar {
       message: text,
       title: title,
       padding: AppPaddings.snackBar,
-      backgroundColor: AppColors.appDefaultColorSecond,
-      snackPosition: SnackPosition.TOP,
-      animationDuration: const Duration(seconds: 1),
-      duration: const Duration(seconds: 3),
+      backgroundColor: AppColors.snackBarBackground,
+      snackPosition: appDefaultSnackPosition,
+      animationDuration: appSnackBarDefaultAnimationDuration,
+      duration: appSnackBarDefaultDuration,
       isDismissible: true,
     ).show();
   }
