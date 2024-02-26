@@ -21,9 +21,11 @@ extension Storage on AppAccountRecordEntitiesList {
 
 ///Record Functions
 extension RxRecordFunction on Rx<AppAccountRecordEntitiesList> {
-  addRecord(AppAccountRecordEntity record) => {value.addRecord(record), refresh()};
+  addRecord(AppAccountRecordEntity record) =>
+      {value.addRecord(record), refresh()};
 
-  editRecord(AppAccountRecordEntity prevRecord, AppAccountRecordEntity record) =>
+  editRecord(
+          AppAccountRecordEntity prevRecord, AppAccountRecordEntity record) =>
       {value.editRecord(prevRecord, record), refresh()};
 
   removeRecord(AppAccountRecordEntity record) =>
@@ -121,9 +123,9 @@ extension Sum on AppAccountRecordEntitiesList {
     int balance = 0;
     int count = 0;
     for (AppAccountRecordEntity record in membersList) {
-      clearedIncluded
+      clearedIncluded == true
           ? {balance += record.amount!, count++}
-          : record.cleared != true
+          : record.cleared == true
               ? null
               : {balance += record.amount!, count++};
     }
@@ -140,12 +142,10 @@ extension Contacts on AppAccountRecordEntitiesList {
   countContacts(bool clearedIncluded) {
     List<AppContactEntity> list = List<AppContactEntity>.empty(growable: true);
     for (AppAccountRecordEntity record in membersList) {
-      if (!list.any((element) =>
-          element.firstName == record.contact!.firstName &&
-          element.lastName == record.contact!.lastName)) {
+      if (!list.any((element) => element.equalTo(record.contact))) {
         clearedIncluded
             ? list.add(record.contact!)
-            : record.cleared!
+            : record.cleared == true
                 ? null
                 : list.add(record.contact!);
       }
@@ -164,7 +164,8 @@ extension RxContactRecords on Rx<AppAccountRecordEntitiesList> {
 extension ContactRecords on AppAccountRecordEntitiesList {
   List<AppAccountRecordEntity> getContactRecords(
       AppContactEntity contact, bool clearedIncluded) {
-    List<AppAccountRecordEntity> list = List<AppAccountRecordEntity>.empty(growable: true);
+    List<AppAccountRecordEntity> list =
+        List<AppAccountRecordEntity>.empty(growable: true);
     for (AppAccountRecordEntity record in membersList) {
       record.contact.equalTo(contact) && record.cleared != true
           ? list.add(record)

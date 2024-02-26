@@ -60,8 +60,8 @@ class AppColors {
   static Color get textFieldHint => _grey;
 
   ///CheckBox
-  static Color get appCheckBox => appBackground;
-  static Color get appCheckBoxTick => appDefaultColorSecond;
+  static Color get appCheckBox => appDefaultColor;
+  static Color get appCheckBoxTick => appBackground;
 
   ///Switch
   static Color get switchActive => appDefaultColorSecond;

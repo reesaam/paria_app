@@ -14,7 +14,7 @@ extension Accounts on AppContactEntity {
       if (record.contact.equalTo(this)) {
         clearedIncluded
             ? {balance += record.amount!, count++}
-            : record.cleared != true
+            : record.cleared == true
                 ? null
                 : {balance += record.amount!, count++};
       }

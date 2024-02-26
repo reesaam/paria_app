@@ -9,4 +9,5 @@ class AppSpaces {
   static Widget get w20 => const SizedBox(width: 20);
   static Widget get w30 => const SizedBox(width: 30);
   static Widget get w40 => const SizedBox(width: 40);
+  static Widget get w50 => const SizedBox(width: 50);
 }

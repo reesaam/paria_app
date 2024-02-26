@@ -25,6 +25,8 @@ class AccountsRecordsTable extends StatelessWidget {
     this.filter,
   });
 
+  final List<int> _itemsExpansionList = const [1, 2, 2, 1, 2];
+
   @override
   Widget build(BuildContext context) => Column(children: [
         _header(),
@@ -52,79 +54,89 @@ class AccountsRecordsTable extends StatelessWidget {
       child: Text(Texts.to.accountsNoContacts));
 
   _recordItem(AppAccountRecordEntity record) => GestureDetector(
-        child: Card(
-            margin: EdgeInsets.zero,
-            elevation: 0,
-            // shape: AppElements.cardTransparentOutlineBorderWithNoRadius,
-            child: Row(children: [
-              AppCheckBox(
-                  value: record.cleared == true,
-                  onChanged: (checked) => _changeRecordClearanceStatus(
-                      record: record, checked: checked)),
-              Text(
-                  record.contact!.firstName ??
-                      Texts.to.generalNotAvailableInitials,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis),
-              Text(record.title ?? Texts.to.generalNotAvailableInitials,
-                  maxLines: 1, overflow: TextOverflow.ellipsis),
-              Text(record.amount.toCurrency,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: record.amount! < 0
-                      ? AppTextStyles.accountsTableItem
-                          .copyWith(color: AppColors.error)
-                      : AppTextStyles.accountsTableItem
-                          .copyWith(color: AppColors.noError)),
-              Text(record.dateTime!.toDateFormat,
-                  maxLines: 1, overflow: TextOverflow.ellipsis),
-            ])),
-      );
+          child: Row(children: [
+        Expanded(
+          flex: _itemsExpansionList[0],
+          child: AppCheckBox(
+              value: record.cleared == true,
+              onChanged: (checked) => _changeRecordClearanceStatus(
+                  record: record, checked: checked)),
+        ),
+        Expanded(
+          flex: _itemsExpansionList[1],
+          child: Text(
+              record.contact!.firstName ?? Texts.to.generalNotAvailableInitials,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis),
+        ),
+        Expanded(
+          flex: _itemsExpansionList[2],
+          child: Text(record.title ?? Texts.to.generalNotAvailableInitials,
+              maxLines: 1, overflow: TextOverflow.ellipsis),
+        ),
+        Expanded(
+          flex: _itemsExpansionList[3],
+          child: Text(record.amount.toCurrency,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: record.amount! < 0
+                  ? AppTextStyles.accountsTableItem
+                      .copyWith(color: AppColors.error)
+                  : AppTextStyles.accountsTableItem
+                      .copyWith(color: AppColors.noError)),
+        ),
+        Expanded(
+          flex: _itemsExpansionList[4],
+          child: Text(record.dateTime!.toDateFormat,
+              maxLines: 1, overflow: TextOverflow.ellipsis),
+        ),
+      ]));
 
   bool _checkVisibility({
-    required AppAccountsFilterEntity filter,
+    required AppAccountsFilterEntity? filter,
     required AppAccountRecordEntity record,
     required bool showCleared,
   }) {
     bool filtered = false;
+    if (filter != null) {
+      //Contact
+      filter.contact == null
+          ? null
+          : filter.contact.equalTo(record.contact)
+              ? null
+              : filtered = true;
 
-    //Contact
-    filter.contact == null
-        ? null
-        : filter.contact.equalTo(record.contact)
-            ? null
-            : filtered = true;
+      //Description
+      filter.description == null || filter.description == ''
+          ? null
+          : record.title == null || record.title == ''
+              ? null
+              : filtered = !record.title!.contains(filter.description!);
 
-    //Description
-    filter.description == null || filter.description == ''
-        ? null
-        : record.title == null || record.title == ''
-            ? null
-            : filtered = !record.title!.contains(filter.description!);
+      //AmountDown
+      filter.amountDown == null
+          ? null
+          : record.amount! < filter.amountDown!
+              ? filtered = true
+              : null;
 
-    //AmountDown
-    filter.amountDown == null
-        ? null
-        : record.amount! < filter.amountDown!
-            ? filtered = true
-            : null;
+      //AmountUp
+      filter.amountUp == null
+          ? null
+          : filtered = record.amount! > filter.amountUp!;
 
-    //AmountUp
-    filter.amountUp == null
-        ? null
-        : filtered = record.amount! > filter.amountUp!;
+      //DateTimeDown
+      filter.dateTimeDown == null
+          ? false
+          : filtered = record.dateTime!.isBefore(filter.dateTimeDown!);
 
-    //DateTimeDown
-    filter.dateTimeDown == null
-        ? false
-        : filtered = record.dateTime!.isBefore(filter.dateTimeDown!);
+      //DateTimeUp
+      filtered = filter.dateTimeUp == null
+          ? false
+          : filtered = record.dateTime!.isAfter(filter.dateTimeUp!);
+    }
 
-    //DateTimeUp
-    filtered = filter.dateTimeUp == null
-        ? false
-        : filtered = record.dateTime!.isAfter(filter.dateTimeUp!);
-
-    filtered = !showCleared && record.cleared == true;
+    filtered = showCleared && record.cleared != true;
 
     appDebugPrint('Filtered: $filtered');
     return filtered;

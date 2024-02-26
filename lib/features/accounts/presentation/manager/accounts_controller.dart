@@ -20,10 +20,17 @@ class AccountsController extends CoreController {
   Rx<int> itemsCountContacts = 0.obs;
 
   Rx<bool> showCleared = false.obs;
+  Rx<bool> clearedIncluded = false.obs;
 
   @override
   void dataInit() {
     // clearAppData();
+    listRecords.value = AppAccountRecordEntitiesList().loadFromStorage;
+    itemsBalance.value =
+        listRecords.calculateSum(clearedIncluded.value).balance ?? 0;
+    itemsCount.value =
+        listRecords.calculateSum(clearedIncluded.value).count ?? 0;
+    itemsCountContacts.value = listRecords.countContacts(clearedIncluded.value);
   }
 
   @override

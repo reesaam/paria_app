@@ -21,9 +21,7 @@ class ShowContactFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Form(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
+          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
         Row(children: [
           ContactAvatar(
               contact: contact,
@@ -46,6 +44,7 @@ class ShowContactFormWidget extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         _title(Texts.to.contactsShowContactTitleInfo.withDoubleDots),
         AppSpaces.h10,
+        _widgetInfoItem(Icon(Icons.numbers), 'ID:', contact.id ?? ''),
         _widgetInfoItem(
             AppIcons.mobile,
             Texts.to.contactsShowContactItemMobile.withDoubleDots,
@@ -64,17 +63,6 @@ class ShowContactFormWidget extends StatelessWidget {
             contact.webLink ?? ''),
       ]));
 
-  Widget _widgetInfoItem(Icon icon, String title, String item) => Padding(
-      padding: AppPaddings.contactsShowContactItem,
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Row(children: [
-          icon.withSize(AppSizes.contactsShowContactIcon),
-          AppSpaces.w10,
-          Text(title, style: AppTextStyles.contactsShowContactInfoTitle)
-        ]),
-        Text(item, style: AppTextStyles.contactsShowContactInfoItem),
-      ]));
-
   Widget _widgetAccount() => Padding(
       padding: AppPaddings.contactsShowContactItems,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -86,5 +74,22 @@ class ShowContactFormWidget extends StatelessWidget {
             contact.calculateBalance(false).balance.toCurrency),
         _widgetInfoItem(AppIcons.list, Texts.to.contactsShowContactTitleRecords,
             contact.calculateBalance(false).count.toCurrency),
+      ]));
+
+  Widget _widgetInfoItem(Icon icon, String title, String item) => Padding(
+      padding: AppPaddings.contactsShowContactItem,
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Row(children: [
+          icon.withSize(AppSizes.contactsShowContactIcon),
+          AppSpaces.w10,
+          Text(title, style: AppTextStyles.contactsShowContactInfoTitle)
+        ]),
+        AppSpaces.w50,
+        Flexible(
+          child: Text(item,
+              style: AppTextStyles.contactsShowContactInfoItem,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis),
+        ),
       ]));
 }
