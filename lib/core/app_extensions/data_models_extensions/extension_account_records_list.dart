@@ -123,7 +123,7 @@ extension Sum on AppAccountRecordEntitiesList {
     for (AppAccountRecordEntity record in membersList) {
       clearedIncluded
           ? {balance += record.amount!, count++}
-          : record.cleared!
+          : record.cleared != true
               ? null
               : {balance += record.amount!, count++};
     }

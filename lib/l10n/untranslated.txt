@@ -4,6 +4,8 @@
     "contactsBalancePageName",
     "accountsPageName",
     "totalBalance",
+    "generalNotAvailable",
+    "generalNotAvailableInitials",
     "homepageDateTimeTitle",
     "homepageSummaryTitle",
     "contactsShowContactTitleInfo",
@@ -53,6 +55,8 @@
   "fa": [
     "contactsBalancePageName",
     "totalBalance",
+    "generalNotAvailable",
+    "generalNotAvailableInitials",
     "homepageDateTimeTitle",
     "homepageSummaryTitle",
     "contactsShowContactTitleInfo",

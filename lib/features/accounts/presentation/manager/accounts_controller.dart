@@ -14,10 +14,12 @@ class AccountsController extends CoreController {
   Rx<AppAccountRecordEntitiesList> listRecords =
       AppAccountRecordEntitiesList().obs;
 
-  //Summery
+  //Summary
   Rx<int> itemsBalance = 0.obs;
   Rx<int> itemsCount = 0.obs;
   Rx<int> itemsCountContacts = 0.obs;
+
+  Rx<bool> showCleared = false.obs;
 
   @override
   void dataInit() {

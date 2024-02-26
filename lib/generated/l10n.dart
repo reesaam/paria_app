@@ -370,6 +370,26 @@ class S {
     );
   }
 
+  /// `Not Available`
+  String get generalNotAvailable {
+    return Intl.message(
+      'Not Available',
+      name: 'generalNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `N/A`
+  String get generalNotAvailableInitials {
+    return Intl.message(
+      'N/A',
+      name: 'generalNotAvailableInitials',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Today`
   String get homepageDateTimeTitle {
     return Intl.message(

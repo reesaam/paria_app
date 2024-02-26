@@ -38,6 +38,9 @@
     "connectionInternetNotAvailableTitle": "Internet Connection",
     "connectionInternetNotAvailableText": "Internet Connection is not Available!",
 
+    "generalNotAvailable": "Not Available",
+    "generalNotAvailableInitials": "N/A",
+
     "homepageDateTimeTitle": "Today",
     "homepageSummaryTitle": "App Summary",
 

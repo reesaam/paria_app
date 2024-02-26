@@ -31,6 +31,7 @@ class AppElements {
   static BorderSide get cardTransparentBorderSide => BorderSide(color: AppColors.transparent, width: appDefaultBorderWidth);
   static BorderSide get defaultBorderSideFocused => BorderSide(color: AppColors.appDefaultColor, width: appDefaultBorderWidth);
   static BorderSide get defaultBorderSideDisabled => BorderSide(color: AppColors.buttonBackgroundDisabled, width: appDefaultBorderWidth);
+  static BorderSide get defaultBorderSideCheckBox => defaultBorderSide.copyWith(color: AppColors.appCheckBox);
 
   ///OutlineInputBorder
   static OutlineInputBorder get defaultOutlineBorder => OutlineInputBorder(borderRadius: defaultBorderWithLowRadius, borderSide: defaultBorderSide);

@@ -136,6 +136,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Records Count"),
         "empty": MessageLookupByLibrary.simpleMessage(""),
         "from": MessageLookupByLibrary.simpleMessage("From"),
+        "generalNotAvailable":
+            MessageLookupByLibrary.simpleMessage("Not Available"),
+        "generalNotAvailableInitials":
+            MessageLookupByLibrary.simpleMessage("N/A"),
         "homePageName": MessageLookupByLibrary.simpleMessage("Home"),
         "homepageDateTimeTitle": MessageLookupByLibrary.simpleMessage("Today"),
         "homepageSummaryTitle":

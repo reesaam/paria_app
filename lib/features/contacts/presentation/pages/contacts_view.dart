@@ -29,6 +29,7 @@ class ContactsPage extends CoreView<ContactsController> {
       icon: AppIcons.add, onPressed: controller.addContact);
 
   @override
-  Widget get body =>
-      Obx(() => ContactsTable(listContacts: controller.listContacts.value));
+  Widget get body => Obx(() => Column(children: [
+        ContactsTable(listContacts: controller.listContacts.value),
+      ]));
 }

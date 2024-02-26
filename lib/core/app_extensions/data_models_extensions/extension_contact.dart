@@ -11,11 +11,10 @@ extension Accounts on AppContactEntity {
     AppAccountRecordEntitiesList records =
         AppAccountRecordEntitiesList().loadFromStorage;
     for (AppAccountRecordEntity record in records.recordsList) {
-      if (record.contact!.firstName == firstName &&
-          record.contact!.lastName == lastName) {
+      if (record.contact.equalTo(this)) {
         clearedIncluded
             ? {balance += record.amount!, count++}
-            : record.cleared!
+            : record.cleared != true
                 ? null
                 : {balance += record.amount!, count++};
       }

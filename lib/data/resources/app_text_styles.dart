@@ -42,6 +42,9 @@ class AppTextStyles {
 
   static TextStyle get contactsChooseContact => TextStyle(fontSize: titleSize, color: AppColors.textDisabled);
 
+  ///Accounts
+  static TextStyle get accountsTableItem => TextStyle(color: AppColors.textNormalDark);
+
   ///Show Contact
   static TextStyle get contactsShowContactSectionTitle => const TextStyle(fontWeight: FontWeight.bold);
   static TextStyle get contactsShowContactFullName => TextStyle(fontSize: bigTitleSize, color: AppColors.textNormalDark);

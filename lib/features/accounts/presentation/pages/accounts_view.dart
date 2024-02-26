@@ -1,8 +1,12 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_string.dart';
 import 'package:paria_app/data/resources/app_paddings.dart';
+import 'package:paria_app/features/accounts/presentation/widgets/accounts_records_table.dart';
+import 'package:paria_app/features/accounts/presentation/widgets/accounts_summary.dart';
 
 import '../../../../app/components/main_components/app_floating_buttons.dart';
 import '../../../../core/app_localization.dart';
@@ -38,23 +42,13 @@ class AccountsPage extends CoreView<AccountsController> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _topBarSummary(),
+            AccountsSummary(
+                itemsBalance: controller.itemsBalance.value,
+                itemsCount: controller.itemsCount.value,
+                itemsCountContacts: controller.itemsCountContacts.value),
+            AccountsRecordsTable(
+              listRecords: controller.listRecords.value,
+              showCleared: controller.showCleared.value,
+            )
           ]));
-
-  Widget _topBarSummary() => Card(
-      child: Padding(
-          padding: AppPaddings.accountsTopBar,
-          child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(Texts.to.accountsSummaryBalance.withDoubleDots),
-              Text(Texts.to.accountsSummaryItemCount.withDoubleDots),
-              Text(Texts.to.accountsSummaryContactsCount.withDoubleDots),
-            ]),
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(controller.itemsBalance.value.toCurrency),
-              Text(controller.itemsCount.value.toString()),
-              Text(controller.itemsCountContacts.toString()),
-            ]),
-          ])));
 }
