@@ -3,6 +3,7 @@ import 'package:paria_app/core/app_extensions/data_models_extensions/extension_a
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_list.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
+import 'package:paria_app/data/resources/app_text_styles.dart';
 
 import '../../../../core/app_localization.dart';
 import '../../../../core/elements/core_view.dart';
@@ -75,11 +76,11 @@ class ContactsBalancePage extends CoreView<ContactsBalanceController> {
           ]);
 
   _createHeaderText(String text) =>
-      Text(text, style: TextStyle(color: AppColors.textNormalDark));
+      Text(text, style: AppTextStyles.contactsBalanceHeader);
 
   _createTotalText(String text) => Padding(
       padding: const EdgeInsets.only(left: 10),
-      child: Text(text, style: TextStyle(color: AppColors.textNormalDark)));
+      child: Text(text, style: AppTextStyles.contactsBalanceTotal));
 
   _createText(String text) =>
       Padding(padding: const EdgeInsets.only(left: 10), child: Text(text));

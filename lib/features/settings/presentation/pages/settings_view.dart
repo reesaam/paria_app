@@ -40,7 +40,7 @@ class SettingsPage extends CoreView<SettingsController> {
       ]);
 
   Widget _widgetAppbarThreeDotsButton() =>
-      AppPopupMenu(listItems: _listAppbarThreeDotsButton, lightColor: false);
+      AppPopupMenu(listItems: _listAppbarThreeDotsButton, lightColorIcon: false);
 
   List<AppPopupMenuItem> get _listAppbarThreeDotsButton => List.of([
         AppPopupMenuItem(

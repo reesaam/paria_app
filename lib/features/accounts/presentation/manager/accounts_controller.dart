@@ -128,11 +128,9 @@ class AccountsController extends CoreController {
       ? filter.clear
       : filter.value = filter.value.copyWith(cleared: true);
 
-  showPositive() => filter.value =
-      filter.value.copyWith(positives: filter.value.positives.invert);
+  showPositive() => filter.value = filter.value.copyWith(positives: true);
 
-  showNegative() => filter.value =
-      filter.value.copyWith(negatives: filter.value.negatives.invert);
+  showNegative() => filter.value = filter.value.copyWith(negatives: true);
 
   showAllRecords() => filter.clear;
 
