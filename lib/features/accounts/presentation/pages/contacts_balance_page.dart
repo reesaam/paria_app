@@ -1,18 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:paria_app/app/components/buttons/app_icon_button.dart';
-import 'package:paria_app/app/components/main_components/app_dialogs.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_list.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_list.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
-import 'package:paria_app/core/core_functions.dart';
 import 'package:paria_app/data/resources/app_colors.dart';
-import 'package:paria_app/data/resources/app_elements.dart';
-import 'package:paria_app/data/resources/app_icons.dart';
-import 'package:paria_app/data/resources/app_paddings.dart';
-import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
-import 'package:paria_app/features/contacts/domain/entities/contact_entity/contact_entity.dart';
 
 import '../../../../core/app_localization.dart';
 import '../../../../core/elements/core_view.dart';

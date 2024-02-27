@@ -1,22 +1,21 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/app/components/main_components/app_dialogs.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_record.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_list.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_accounts_filter.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_bool.dart';
-import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
-import 'package:paria_app/features/accounts/domain/entities/accounts_filter_entity/accounts_filter_entity.dart';
-import 'package:paria_app/features/accounts/presentation/widgets/add_edit_record_component.dart';
-import 'package:paria_app/features/accounts/presentation/widgets/show_account_form.dart';
 
+import '../../../../app/components/main_components/app_dialogs.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_page_details.dart';
+import '../../domain/entities/account_record_entity/account_record_entity.dart';
+import '../../domain/entities/accounts_filter_entity/accounts_filter_entity.dart';
+import '../widgets/add_edit_record_component.dart';
+import '../widgets/show_account_form.dart';
 
 class AccountsController extends CoreController {
   Rx<AppAccountRecordEntitiesList> listRecords =

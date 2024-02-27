@@ -4,16 +4,16 @@ import 'package:paria_app/core/app_extensions/data_models_extensions/extension_a
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_date_time.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
-import 'package:paria_app/core/core_functions.dart';
-import 'package:paria_app/core/core_widgets.dart';
-import 'package:paria_app/data/resources/app_colors.dart';
-import 'package:paria_app/data/resources/app_elements.dart';
-import 'package:paria_app/data/resources/app_text_styles.dart';
-import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
-import 'package:paria_app/features/accounts/domain/entities/accounts_filter_entity/accounts_filter_entity.dart';
 
 import '../../../../core/app_localization.dart';
+import '../../../../core/core_functions.dart';
+import '../../../../core/core_widgets.dart';
+import '../../../../data/resources/app_colors.dart';
+import '../../../../data/resources/app_elements.dart';
 import '../../../../data/resources/app_paddings.dart';
+import '../../../../data/resources/app_text_styles.dart';
+import '../../domain/entities/account_record_entity/account_record_entity.dart';
+import '../../domain/entities/accounts_filter_entity/accounts_filter_entity.dart';
 
 class AccountsRecordsTable extends StatelessWidget {
   final AppAccountRecordEntitiesList listRecords;

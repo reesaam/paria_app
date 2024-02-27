@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/app/components/choose_contact_component.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_record.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_date_time.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
 import 'package:uuid/uuid.dart';
 
+import '../../../../app/components/choose_contact_component.dart';
 import '../../../../app/components/general_widgets/app_snack_bars.dart';
 import '../../../../app/components/general_widgets/app_text_field.dart';
 import '../../../../app/components/main_components/app_dialogs.dart';
