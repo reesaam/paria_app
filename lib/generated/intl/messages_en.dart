@@ -59,6 +59,28 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Contacts Count"),
         "accountsSummaryItemCount":
             MessageLookupByLibrary.simpleMessage("Items Count"),
+        "accountsTableItemMenuEditRecord":
+            MessageLookupByLibrary.simpleMessage("Edit Record"),
+        "accountsTableItemMenuMarkAsCleared":
+            MessageLookupByLibrary.simpleMessage("Mark as cleared"),
+        "accountsTableItemMenuMarkAsUncleared":
+            MessageLookupByLibrary.simpleMessage("Mark as uncleared"),
+        "accountsTableItemMenuRemoveRecord":
+            MessageLookupByLibrary.simpleMessage("Remove Record"),
+        "accountsTableItemMenuShowRecord":
+            MessageLookupByLibrary.simpleMessage("Show Record"),
+        "accountsTableTitle":
+            MessageLookupByLibrary.simpleMessage("Records Table"),
+        "accountsTableTitleMenuHideCleared":
+            MessageLookupByLibrary.simpleMessage("Hide Cleared Records"),
+        "accountsTableTitleMenuShowAll":
+            MessageLookupByLibrary.simpleMessage("Show All Records"),
+        "accountsTableTitleMenuShowCleared":
+            MessageLookupByLibrary.simpleMessage("Show Cleared Records"),
+        "accountsTableTitleMenuShowNegatives":
+            MessageLookupByLibrary.simpleMessage("Show Negative Records Only"),
+        "accountsTableTitleMenuShowPositives":
+            MessageLookupByLibrary.simpleMessage("Show Positive Records Only"),
         "adminStartPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin Start Page"),
         "adminTestPagePageName":

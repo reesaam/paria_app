@@ -670,6 +670,116 @@ class S {
     );
   }
 
+  /// `Records Table`
+  String get accountsTableTitle {
+    return Intl.message(
+      'Records Table',
+      name: 'accountsTableTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Cleared Records`
+  String get accountsTableTitleMenuShowCleared {
+    return Intl.message(
+      'Show Cleared Records',
+      name: 'accountsTableTitleMenuShowCleared',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hide Cleared Records`
+  String get accountsTableTitleMenuHideCleared {
+    return Intl.message(
+      'Hide Cleared Records',
+      name: 'accountsTableTitleMenuHideCleared',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Positive Records Only`
+  String get accountsTableTitleMenuShowPositives {
+    return Intl.message(
+      'Show Positive Records Only',
+      name: 'accountsTableTitleMenuShowPositives',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Negative Records Only`
+  String get accountsTableTitleMenuShowNegatives {
+    return Intl.message(
+      'Show Negative Records Only',
+      name: 'accountsTableTitleMenuShowNegatives',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show All Records`
+  String get accountsTableTitleMenuShowAll {
+    return Intl.message(
+      'Show All Records',
+      name: 'accountsTableTitleMenuShowAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark as cleared`
+  String get accountsTableItemMenuMarkAsCleared {
+    return Intl.message(
+      'Mark as cleared',
+      name: 'accountsTableItemMenuMarkAsCleared',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark as uncleared`
+  String get accountsTableItemMenuMarkAsUncleared {
+    return Intl.message(
+      'Mark as uncleared',
+      name: 'accountsTableItemMenuMarkAsUncleared',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Record`
+  String get accountsTableItemMenuShowRecord {
+    return Intl.message(
+      'Show Record',
+      name: 'accountsTableItemMenuShowRecord',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Record`
+  String get accountsTableItemMenuEditRecord {
+    return Intl.message(
+      'Edit Record',
+      name: 'accountsTableItemMenuEditRecord',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove Record`
+  String get accountsTableItemMenuRemoveRecord {
+    return Intl.message(
+      'Remove Record',
+      name: 'accountsTableItemMenuRemoveRecord',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Contact`
   String get accountsAddEditRecordContact {
     return Intl.message(

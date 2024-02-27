@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_list.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_accounts_filter.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_date_time.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
@@ -10,136 +11,112 @@ import 'package:paria_app/data/resources/app_text_styles.dart';
 import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
 import 'package:paria_app/features/accounts/domain/entities/accounts_filter_entity/accounts_filter_entity.dart';
 
-import '../../../../app/components/general_widgets/app_check_box.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../data/resources/app_paddings.dart';
 
 class AccountsRecordsTable extends StatelessWidget {
   final AppAccountRecordEntitiesList listRecords;
   final AppAccountsFilterEntity? filter;
-  final bool showCleared;
+  final Function(AppAccountRecordEntity) onTap;
+  final Function(AppAccountRecordEntity) onLongPress;
   const AccountsRecordsTable({
     super.key,
     required this.listRecords,
-    required this.showCleared,
+    required this.onTap,
+    required this.onLongPress,
     this.filter,
   });
 
-  final List<int> _itemsExpansionList = const [1, 2, 2, 1, 2];
+  final List<int> _itemsExpansionList = const [8, 16, 4];
 
   @override
-  Widget build(BuildContext context) => Column(children: [
-        _header(),
-        _tableItems(),
-      ]);
-
-  _header() => Container();
-
-  _tableItems() => listRecords.isEmpty
-      ? _noRecords()
-      : ListView.builder(
-          shrinkWrap: true,
-          itemCount: listRecords.count,
-          itemBuilder: (context, index) => filter == null
-              ? _recordItem(listRecords.membersList[index])
-              : _checkVisibility(
-                      filter: filter!,
-                      record: listRecords.membersList[index],
-                      showCleared: showCleared)
-                  ? shrinkSizedBox
-                  : _recordItem(listRecords.membersList[index]));
+  Widget build(BuildContext context) => Padding(
+      padding: AppPaddings.accountsTable,
+      child: listRecords.isEmpty
+          ? _noRecords()
+          : ListView.builder(
+              shrinkWrap: true,
+              physics: const ScrollPhysics(),
+              itemCount: listRecords.count,
+              itemBuilder: (context, index) => filter.isEmpty
+                  ? listRecords.membersList[index].cleared == true
+                      ? shrinkSizedBox
+                      : _recordItem(listRecords.membersList[index])
+                  : _checkVisibility(
+                          filter: filter!,
+                          record: listRecords.membersList[index])
+                      ? shrinkSizedBox
+                      : _recordItem(listRecords.membersList[index])));
 
   _noRecords() => Container(
       padding: AppPaddings.accountsNoRecordText,
       child: Text(Texts.to.accountsNoContacts));
 
   _recordItem(AppAccountRecordEntity record) => GestureDetector(
-          child: Row(children: [
-        Expanded(
-          flex: _itemsExpansionList[0],
-          child: AppCheckBox(
-              value: record.cleared == true,
-              onChanged: (checked) => _changeRecordClearanceStatus(
-                  record: record, checked: checked)),
-        ),
-        Expanded(
-          flex: _itemsExpansionList[1],
-          child: Text(
-              record.contact!.firstName ?? Texts.to.generalNotAvailableInitials,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis),
-        ),
-        Expanded(
-          flex: _itemsExpansionList[2],
-          child: Text(record.title ?? Texts.to.generalNotAvailableInitials,
-              maxLines: 1, overflow: TextOverflow.ellipsis),
-        ),
-        Expanded(
-          flex: _itemsExpansionList[3],
-          child: Text(record.amount.toCurrency,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: record.amount! < 0
-                  ? AppTextStyles.accountsTableItem
-                      .copyWith(color: AppColors.error)
-                  : AppTextStyles.accountsTableItem
-                      .copyWith(color: AppColors.noError)),
-        ),
-        Expanded(
-          flex: _itemsExpansionList[4],
-          child: Text(record.dateTime!.toDateFormat,
-              maxLines: 1, overflow: TextOverflow.ellipsis),
-        ),
-      ]));
+      onLongPress: () => onLongPress(record),
+      child: Padding(
+        padding: AppPaddings.accountsTableItem,
+        child: Row(children: [
+          shrinkOneExpanded,
+          Expanded(
+            flex: _itemsExpansionList[0],
+            child: Text(
+                record.contact!.firstName ??
+                    Texts.to.generalNotAvailableInitials,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis),
+          ),
+          shrinkOneExpanded,
+          Expanded(
+            flex: _itemsExpansionList[1],
+            child: Text(record.title ?? Texts.to.generalNotAvailableInitials,
+                maxLines: 1, overflow: TextOverflow.ellipsis),
+          ),
+          shrinkOneExpanded,
+          Expanded(
+              flex: _itemsExpansionList[2],
+              child: Text(record.amount.toCurrency,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: record.amount! < 0
+                      ? AppTextStyles.accountsTableItem
+                          .copyWith(color: AppColors.error)
+                      : AppTextStyles.accountsTableItem
+                          .copyWith(color: AppColors.noError))),
+          shrinkOneExpanded,
+        ]),
+      ));
 
   bool _checkVisibility({
     required AppAccountsFilterEntity? filter,
     required AppAccountRecordEntity record,
-    required bool showCleared,
   }) {
-    bool filtered = false;
-    if (filter != null) {
-      //Contact
-      filter.contact == null
-          ? null
-          : filter.contact.equalTo(record.contact)
-              ? null
-              : filtered = true;
-
-      //Description
-      filter.description == null || filter.description == ''
-          ? null
-          : record.title == null || record.title == ''
-              ? null
-              : filtered = !record.title!.contains(filter.description!);
-
-      //AmountDown
-      filter.amountDown == null
-          ? null
-          : record.amount! < filter.amountDown!
-              ? filtered = true
-              : null;
-
-      //AmountUp
-      filter.amountUp == null
-          ? null
-          : filtered = record.amount! > filter.amountUp!;
-
-      //DateTimeDown
-      filter.dateTimeDown == null
-          ? false
-          : filtered = record.dateTime!.isBefore(filter.dateTimeDown!);
-
-      //DateTimeUp
-      filtered = filter.dateTimeUp == null
-          ? false
-          : filtered = record.dateTime!.isAfter(filter.dateTimeUp!);
+    List<bool> filterList = List<bool>.empty(growable: true);
+    if (filter.isNotEmpty) {
+      filterList.add(filter!.contact.equalTo(record.contact));
+      if (filter.description != null) {
+        filterList.add(record.title?.contains(filter.description!) ?? false);
+      }
+      filterList.add(filter.cleared != true && record.cleared == true);
+      filterList.add(filter.positives == true && record.amount! < 0);
+      filterList.add(filter.negatives == true && record.amount! > 0);
+      if (filter.amountDown != null) {
+        filterList.add(record.amount! < filter.amountDown!);
+      }
+      if (filter.amountUp != null) {
+        filterList.add(record.amount! > filter.amountUp!);
+      }
+      if (filter.dateTimeDown != null) {
+        filterList.add(record.dateTime!.isBefore(filter.dateTimeDown!));
+      }
+      if (filter.dateTimeUp != null) {
+        filterList.add(record.dateTime!.isAfter(filter.dateTimeUp!));
+      }
+      filterList.add(filter.cleared != true && record.cleared == true);
     }
 
-    filtered = showCleared && record.cleared != true;
-
-    appDebugPrint('Filtered: $filtered');
-    return filtered;
+    appDebugPrint('Filtered: ${filterList.contains(true)}');
+    return filterList.contains(true);
   }
 
   _changeRecordClearanceStatus({

@@ -8,6 +8,9 @@ part 'accounts_filter_entity.g.dart';
 @freezed
 class AppAccountsFilterEntity with _$AppAccountsFilterEntity {
   const factory AppAccountsFilterEntity({
+    final bool? cleared,
+    final bool? positives,
+    final bool? negatives,
     final AppContactEntity? contact,
     final int? amountUp,
     final int? amountDown,

@@ -1,11 +1,18 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/app/components/main_components/app_dialogs.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_record.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_list.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_accounts_filter.dart';
+import 'package:paria_app/core/app_extensions/data_types_extensions/extension_bool.dart';
 import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
+import 'package:paria_app/features/accounts/domain/entities/accounts_filter_entity/accounts_filter_entity.dart';
 import 'package:paria_app/features/accounts/presentation/widgets/add_edit_record_component.dart';
 
+import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_page_details.dart';
@@ -19,32 +26,67 @@ class AccountsController extends CoreController {
   Rx<int> itemsCount = 0.obs;
   Rx<int> itemsCountContacts = 0.obs;
 
-  Rx<bool> showCleared = false.obs;
+  Rx<bool> hasFilter = false.obs;
+  Rx<AppAccountsFilterEntity> filter = const AppAccountsFilterEntity().obs;
   Rx<bool> clearedIncluded = false.obs;
+
+  //Listeners
+  StreamSubscription? listenerListRecords;
+  StreamSubscription? listenerFilter;
+  StreamSubscription? listenerHasFilter;
+  StreamSubscription? listenerShowPositive;
+  StreamSubscription? listenerShowNegative;
 
   @override
   void dataInit() {
     // clearAppData();
     listRecords.value = AppAccountRecordEntitiesList().loadFromStorage;
-    itemsBalance.value =
-        listRecords.calculateSum(clearedIncluded.value).balance ?? 0;
-    itemsCount.value =
-        listRecords.calculateSum(clearedIncluded.value).count ?? 0;
-    itemsCountContacts.value = listRecords.countContacts(clearedIncluded.value);
   }
 
   @override
   void pageInit() {
     pageDetail = AppPageDetails.accounts;
+    listenersInit();
   }
 
   @override
-  void onInitFunction() {}
+  void onInitFunction() {
+    hasFilter.value = filter.value.isNotEmpty;
+    itemsBalance.value =
+        listRecords.calculateSum(clearedIncluded.value).balance ?? 0;
+    itemsCount.value =
+        listRecords.calculateSum(clearedIncluded.value).count ?? 0;
+    itemsCountContacts.value = listRecords.countContacts(clearedIncluded.value);
+    appDebugPrint('Has Filter: ${hasFilter.value}');
+    appDebugPrint(listRecords.count);
+    appDebugPrint(itemsBalance.value);
+    appDebugPrint(itemsCount.value);
+    appDebugPrint(itemsCountContacts.value);
+    appDebugPrint("Calculations of List Done");
+  }
 
   @override
   void onCloseFunction() {
+    listenersClose();
     saveAppData();
   }
+
+  ///Listeners
+  listenersInit() {
+    listenerListRecords = listRecords.listen((data) => onInitFunction());
+    listenerFilter = filter.listen((data) => onInitFunction());
+    listenerHasFilter = hasFilter
+        .listen((data) => hasFilter.value ? _filterModal() : filter.clear);
+  }
+
+  listenersClose() {
+    listenerListRecords?.cancel();
+    listenerFilter?.cancel();
+    listenerHasFilter?.cancel();
+  }
+
+  ///Records Manipulation
+  showRecord(AppAccountRecordEntity record) async {}
 
   addRecord() async {
     AppAccountRecordEntity? record =
@@ -72,4 +114,61 @@ class AccountsController extends CoreController {
     appDebugPrint('Record Removed: $record');
     refresh();
   }
+
+  changeClearanceStatus(AppAccountRecordEntity record) => record.cleared == true
+      ? listRecords.unClearRecord(record)
+      : listRecords.clearRecord(record);
+
+  _filterModal() {
+    appDebugPrint('filter modal');
+  }
+
+  changeShowCleared() => filter.value.cleared == true
+      ? filter.clear
+      : filter.value = filter.value.copyWith(cleared: true);
+
+  showPositive() => filter.value =
+      filter.value.copyWith(positives: filter.value.positives.invert);
+
+  showNegative() => filter.value =
+      filter.value.copyWith(negatives: filter.value.negatives.invert);
+
+  showAllRecords() => filter.clear;
+
+  itemOnLongPress(AppAccountRecordEntity record) async {
+    Widget form = Column(children: [
+      InkWell(
+          child: AppDialogs().bottomDialogFunctionalItem(record.cleared == true
+              ? Texts.to.accountsTableItemMenuMarkAsUncleared
+              : Texts.to.accountsTableItemMenuMarkAsCleared),
+          onTap: () {
+            changeClearanceStatus(record);
+            popPage();
+          }),
+      InkWell(
+          child: AppDialogs().bottomDialogFunctionalItem(
+              Texts.to.accountsTableItemMenuShowRecord),
+          onTap: () {
+            showRecord(record);
+            popPage();
+          }),
+      InkWell(
+          child: AppDialogs().bottomDialogFunctionalItem(
+              Texts.to.accountsTableItemMenuEditRecord),
+          onTap: () {
+            editRecord(record);
+            popPage();
+          }),
+      InkWell(
+          child: AppDialogs().bottomDialogFunctionalItem(
+              Texts.to.accountsTableItemMenuRemoveRecord),
+          onTap: () {
+            removeRecord(record);
+            popPage();
+          }),
+    ]);
+    await AppDialogs().appBottomDialogWithCancel(form: form, dismissible: true);
+  }
+
+  itemOnTap(AppAccountRecordEntity record) async {}
 }

@@ -81,6 +81,12 @@ class AppDialogs {
         title: title, text: text, buttons: buttons, dismissible: dismissible);
   }
 
+  bottomDialogFunctionalItem(String text) => LayoutBuilder(
+      builder: (context, constraints) => SizedBox(
+          width: constraints.maxWidth,
+          height: 50,
+          child: Text(text, style: AppTextStyles.accountsTableItemMenuItems)));
+
   _appBottomDialogGeneral(
           {String? title,
           required Widget form,

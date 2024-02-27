@@ -17,11 +17,11 @@ class AppPaddings {
   static EdgeInsets get drawerFooter => const EdgeInsets.fromLTRB(20, 10, 0, 20);
 
   ///Modals
-  static EdgeInsets get generalBottomModal => EdgeInsets.fromLTRB(20, 0, 20, Get.context!.mediaQuery.viewInsets.bottom);
+  static EdgeInsets get generalBottomModal => EdgeInsets.fromLTRB(40, 20, 40, Get.context!.mediaQuery.viewInsets.bottom);
   static EdgeInsets get generalAlertDialog => const EdgeInsets.all(20);
   static EdgeInsets get modalItems => const EdgeInsets.symmetric(vertical: 15);
 
-  ///
+  ///SnackBar
   static EdgeInsets get snackBar => const EdgeInsets.symmetric(horizontal: 20, vertical: 20);
 
   ///SplashScreen
@@ -45,6 +45,8 @@ class AppPaddings {
   static EdgeInsets get accountsTopBar => const EdgeInsets.symmetric(horizontal: 40, vertical: 10);
   static EdgeInsets get accountsSummaryCard => const EdgeInsets.symmetric(horizontal: 20, vertical: 10);
   static EdgeInsets get accountsNoRecordText => const EdgeInsets.all(40);
+  static EdgeInsets get accountsTable => const EdgeInsets.symmetric(horizontal: 10);
+  static EdgeInsets get accountsTableItem => const EdgeInsets.symmetric(horizontal: 5, vertical: 10);
   static EdgeInsets get accountsSelectContactList => const EdgeInsets.all(10);
 
   ///ListPage

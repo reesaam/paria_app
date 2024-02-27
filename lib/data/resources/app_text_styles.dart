@@ -21,7 +21,7 @@ class AppTextStyles {
   static TextStyle get textFieldHint => TextStyle(color: AppColors.textFieldHint);
 
   ///Popup Menu
-  static TextStyle get popupMenuItem => const TextStyle();
+  static TextStyle get popupMenuItem => TextStyle(color: AppColors.appDefaultColor);
 
   ///AppBar
   static TextStyle get appBarTitle => TextStyle(color: AppColors.appBarText, fontSize: bigTitleSize);
@@ -44,6 +44,7 @@ class AppTextStyles {
 
   ///Accounts
   static TextStyle get accountsTableItem => TextStyle(color: AppColors.textNormalDark);
+  static TextStyle get accountsTableItemMenuItems => TextStyle(fontSize: bigSize);
 
   ///Show Contact
   static TextStyle get contactsShowContactSectionTitle => const TextStyle(fontWeight: FontWeight.bold);

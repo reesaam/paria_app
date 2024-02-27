@@ -76,6 +76,19 @@
     "accountsSummaryItemCount": "Items Count",
     "accountsSummaryContactsCount": "Contacts Count",
 
+    "accountsTableTitle": "Records Table",
+    "accountsTableTitleMenuShowCleared": "Show Cleared Records",
+    "accountsTableTitleMenuHideCleared": "Hide Cleared Records",
+    "accountsTableTitleMenuShowPositives": "Show Positive Records Only",
+    "accountsTableTitleMenuShowNegatives": "Show Negative Records Only",
+    "accountsTableTitleMenuShowAll": "Show All Records",
+
+    "accountsTableItemMenuMarkAsCleared": "Mark as cleared",
+    "accountsTableItemMenuMarkAsUncleared": "Mark as uncleared",
+    "accountsTableItemMenuShowRecord": "Show Record",
+    "accountsTableItemMenuEditRecord": "Edit Record",
+    "accountsTableItemMenuRemoveRecord": "Remove Record",
+
     "accountsAddEditRecordContact": "Contact",
     "accountsAddEditRecordDescription": "Description",
     "accountsAddEditRecordAmount": "Amount",

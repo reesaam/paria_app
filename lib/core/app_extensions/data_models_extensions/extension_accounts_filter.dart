@@ -5,23 +5,21 @@ import '../../../../core/app_extensions/data_types_extensions/extension_date_tim
 import '../../../features/accounts/domain/entities/accounts_filter_entity/accounts_filter_entity.dart';
 
 extension CompareNull on AppAccountsFilterEntity? {
-  bool equalTo(AppAccountsFilterEntity? filter) => this == null && filter == null
-      ? true
-      : this == null || filter == null
-          ? false
-          : this!.contact.equalTo(filter.contact) &&
-              this!.description == filter.description &&
-              this!.amountUp == filter.amountUp &&
-              this!.amountDown == filter.amountDown &&
-              this!.dateTimeUp!.equalTo(filter.dateTimeUp!) &&
-              this!.dateTimeDown!.equalTo(filter.dateTimeDown!);
+  bool equalTo(AppAccountsFilterEntity? filter) =>
+      this == null && filter == null
+          ? true
+          : this == null || filter == null
+              ? false
+              : this!.equalTo(filter);
 }
 
 extension Compare on AppAccountsFilterEntity {
   bool equalTo(AppAccountsFilterEntity? filter) => filter == null
       ? false
       : contact.equalTo(filter.contact) &&
-          description == filter.description &&
+          cleared == filter.cleared &&
+          positives == filter.positives &&
+          negatives == filter.negatives &&
           amountUp == filter.amountUp &&
           amountDown == filter.amountDown &&
           dateTimeUp.equalTo(filter.dateTimeUp) &&
@@ -29,15 +27,24 @@ extension Compare on AppAccountsFilterEntity {
 }
 
 extension RxChecksNull on Rx<AppAccountsFilterEntity?> {
-  bool get isEmpty => value == null ? true : value.equalTo(const AppAccountsFilterEntity());
+  bool get isEmpty =>
+      value == null ? true : value.equalTo(const AppAccountsFilterEntity());
+  bool get isNotEmpty => !isEmpty;
 }
 
 extension RxChecks on Rx<AppAccountsFilterEntity> {
   bool get isEmpty => value.equalTo(const AppAccountsFilterEntity());
+  bool get isNotEmpty => !isEmpty;
+}
+
+extension ChecksNull on AppAccountsFilterEntity? {
+  bool get isEmpty => this == null ? true : equalTo(const AppAccountsFilterEntity());
+  bool get isNotEmpty => !isEmpty;
 }
 
 extension Checks on AppAccountsFilterEntity {
   bool get isEmpty => equalTo(const AppAccountsFilterEntity());
+  bool get isNotEmpty => !isEmpty;
 }
 
 extension RxActions on Rx<AppAccountsFilterEntity> {
