@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
+import 'package:paria_app/core/app_extensions/data_types_extensions/extension_bool.dart';
 
 import '../../../data/storage/app_local_storage.dart';
 import '../../../features/accounts/domain/entities/account_balance_entity/account_balance_entity.dart';
@@ -45,11 +46,14 @@ extension RecordFunction on AppAccountRecordEntitiesList {
   }
 
   editRecord(AppAccountRecordEntity prevRecord, AppAccountRecordEntity record) {
+    int index = recordsList.indexOf(recordsList.last);
     appDebugPrint('previous record: $prevRecord');
     appDebugPrint('current record: $record');
+    index = recordsList.indexOf(prevRecord);
     removeRecord(prevRecord);
     appDebugPrint(" List($count):$recordsList");
-    addRecord(record);
+    recordsList.insert(index, record);
+    // addRecord(record);
     appDebugPrint(" List($count):$recordsList");
     defaultSortFunction;
     saveOnStorage();
@@ -63,23 +67,13 @@ extension RecordFunction on AppAccountRecordEntitiesList {
 
 ///Clear Record
 extension RxClearRecord on Rx<AppAccountRecordEntitiesList> {
-  clearRecord(AppAccountRecordEntity record) =>
-      {value.clearRecord(record), refresh()};
-
-  unClearRecord(record) => {value.unClearRecord(record), refresh()};
+  changeStatus(AppAccountRecordEntity record) =>
+      {value.changeStatus(record), refresh()};
 }
 
-extension ClearRecord on AppAccountRecordEntitiesList {
-  clearRecord(AppAccountRecordEntity record) {
-    recordsList.remove(record);
-    recordsList.add(record.copyWith(cleared: true));
-    defaultSortFunction;
-    saveOnStorage();
-  }
-
-  unClearRecord(record) {
-    recordsList.remove(record);
-    recordsList.add(record.copyWith(cleared: false));
+extension RecordStatus on AppAccountRecordEntitiesList {
+  changeStatus(AppAccountRecordEntity record) {
+    editRecord(record, record.copyWith(cleared: record.cleared.invert));
     defaultSortFunction;
     saveOnStorage();
   }
@@ -122,7 +116,7 @@ extension SortRecords on AppAccountRecordEntitiesList {
 
   void get sortByAmountDec {
     List<AppAccountRecordEntity> records =
-    List<AppAccountRecordEntity>.empty(growable: true);
+        List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
     records.sort((a, b) => b.amount!.compareTo(a.amount!));
     recordsList = records;

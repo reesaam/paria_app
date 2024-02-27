@@ -117,9 +117,8 @@ class AccountsController extends CoreController {
     refresh();
   }
 
-  changeClearanceStatus(AppAccountRecordEntity record) => record.cleared == true
-      ? listRecords.unClearRecord(record)
-      : listRecords.clearRecord(record);
+  changeClearanceStatus(AppAccountRecordEntity record) =>
+      listRecords.changeStatus(record);
 
   _filterModal() {
     appDebugPrint('filter modal');
