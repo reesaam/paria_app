@@ -3,15 +3,16 @@ import 'package:paria_app/core/app_extensions/data_models_extensions/extension_a
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_list.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
-import 'package:paria_app/data/resources/app_colors.dart';
 
 import '../../../../core/app_localization.dart';
 import '../../../../core/elements/core_view.dart';
 import '../../../../app/components/main_components/app_bar.dart';
+import '../../../../data/resources/app_colors.dart';
+import '../../../contacts/domain/entities/contact_entity/contact_entity.dart';
 import '../manager/contacts_balance_controller.dart';
 
 class ContactsBalancePage extends CoreView<ContactsBalanceController> {
-  ContactsBalancePage({super.key});
+  const ContactsBalancePage({super.key});
 
   @override
   PreferredSizeWidget? get appBar =>
@@ -29,24 +30,28 @@ class ContactsBalancePage extends CoreView<ContactsBalanceController> {
               columns: _tableColumns(),
               rows: _tableRows())));
 
-  _tableRows() => List<DataRow>.generate(
-      controller.listContacts.count,
-      (index) => DataRow(
-              onLongPress: () => controller.itemDetailsDialog(
-                  controller.listContacts.contactsList[index]),
-              cells: [
-                DataCell(_createText(controller
-                    .listContacts.contactsList[index].getContactFullName)),
-                DataCell(_createText(controller.listContacts.contactsList[index]
-                    .calculateBalance(false)
-                    .balance
-                    .toCurrency)),
-                DataCell(_createText(controller.listRecords
-                    .getContactRecords(
-                        controller.listContacts.contactsList[index], false)
-                    .length
-                    .toString())),
-              ]));
+  _tableRows() {
+    List<AppContactEntity> contacts = controller.listContacts.contactsList;
+    List<DataRow> rows = List<DataRow>.empty(growable: true);
+    rows = List<DataRow>.generate(
+        controller.listContacts.count,
+        (index) => DataRow(
+                onLongPress: () =>
+                    controller.itemDetailsDialog(contacts[index]),
+                cells: [
+                  DataCell(_createText(contacts[index].getContactFullName)),
+                  DataCell(_createText(contacts[index]
+                      .calculateBalance(false)
+                      .balance
+                      .toCurrency)),
+                  DataCell(_createText(controller.listRecords
+                      .getContactRecords(contacts[index], false)
+                      .length
+                      .toString())),
+                ]));
+    rows.add(_total(contacts));
+    return rows;
+  }
 
   _tableColumns() => List<DataColumn>.of([
         DataColumn(
@@ -59,7 +64,23 @@ class ContactsBalancePage extends CoreView<ContactsBalanceController> {
             label: _createHeaderText(Texts.to.contactsBalanceTableHeaderCount)),
       ]);
 
-  _createHeaderText(String text) => Text(text);
+  _total(List<AppContactEntity> contacts) => DataRow(
+          color: MaterialStateProperty.all(
+              AppColors.appDefaultColorSecond.withOpacity(0.8)),
+          cells: [
+            DataCell(_createTotalText(contacts.length.toString())),
+            DataCell(_createTotalText(
+                controller.listRecords.calculateSum(false).balance.toCurrency)),
+            DataCell(_createTotalText(controller.listRecords.count.toString())),
+          ]);
 
-  _createText(String text) => Text(text);
+  _createHeaderText(String text) =>
+      Text(text, style: TextStyle(color: AppColors.textNormalDark));
+
+  _createTotalText(String text) => Padding(
+      padding: const EdgeInsets.only(left: 10),
+      child: Text(text, style: TextStyle(color: AppColors.textNormalDark)));
+
+  _createText(String text) =>
+      Padding(padding: const EdgeInsets.only(left: 10), child: Text(text));
 }

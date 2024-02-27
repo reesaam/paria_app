@@ -111,6 +111,22 @@ extension SortRecords on AppAccountRecordEntitiesList {
         .sort((a, b) => a.contact!.firstName!.compareTo(b.contact!.firstName!));
     recordsList = records;
   }
+
+  void get sortByAmountInc {
+    List<AppAccountRecordEntity> records =
+        List<AppAccountRecordEntity>.empty(growable: true);
+    records.addAll(recordsList);
+    records.sort((a, b) => a.amount!.compareTo(b.amount!));
+    recordsList = records;
+  }
+
+  void get sortByAmountDec {
+    List<AppAccountRecordEntity> records =
+    List<AppAccountRecordEntity>.empty(growable: true);
+    records.addAll(recordsList);
+    records.sort((a, b) => b.amount!.compareTo(a.amount!));
+    recordsList = records;
+  }
 }
 
 ///Sum

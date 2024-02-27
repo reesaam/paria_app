@@ -48,7 +48,7 @@ class AppPaddings {
   static EdgeInsets get accountsTable => const EdgeInsets.symmetric(horizontal: 10);
   static EdgeInsets get accountsTableItem => const EdgeInsets.symmetric(horizontal: 5, vertical: 10);
   static EdgeInsets get accountsSelectContactList => const EdgeInsets.all(10);
-  static EdgeInsets get accountsShowRecordItem => const EdgeInsets.symmetric(vertical: 5, horizontal: 10);
+  static EdgeInsets get accountsShowRecordItem => const EdgeInsets.symmetric(vertical: 10, horizontal: 10);
 
   ///Contacts Balance
   static EdgeInsets get contactsBalanceItemDetailsItem => const EdgeInsets.symmetric(vertical: 5, horizontal: 20);

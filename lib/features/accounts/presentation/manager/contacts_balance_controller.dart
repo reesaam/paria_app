@@ -39,9 +39,9 @@ class ContactsBalanceController extends CoreController {
   }
 
   itemDetailsDialog(AppContactEntity contact) async {
-    List<AppAccountRecordEntity> contactRecords =
-        listRecords.getContactRecords(contact, false);
-    contactRecords.sort((a, b) => b.amount!.compareTo(a.amount!));
+    AppAccountRecordEntitiesList contactRecords = AppAccountRecordEntitiesList(
+        recordsList: listRecords.getContactRecords(contact, false));
+    contactRecords.sortByAmountDec;
     await AppDialogs().appBottomDialogWithOk(
         dismissible: true,
         title: Texts.to.contactsBalanceItemDetailsDialogTitle,

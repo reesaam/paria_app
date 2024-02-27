@@ -25,7 +25,7 @@ class ShowAccountRecordFormWidget extends StatelessWidget {
         Text(Texts.to.accountShowRecordTitle.withDoubleDots,
             style: AppTextStyles.accountsShowRecordTitle),
         AppDividers.generalDividerWithAppDefaultColor,
-        AppSpaces.h20,
+        AppSpaces.h10,
         // _widgetInfoItem(Icon(Icons.numbers), 'ID:', record.id ?? ''),
         _widgetInfoItem(
             AppIcons.contacts,
