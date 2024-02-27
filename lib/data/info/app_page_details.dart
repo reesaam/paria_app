@@ -10,6 +10,7 @@ class AppPageDetails {
     splashScreen,
     homepage,
     contacts,
+    contactsBalance,
     accounts,
     settings,
     about,
@@ -63,7 +64,6 @@ class AppPageDetails {
   static AppPageDetail contactsBalance = AppPageDetail(
     pageName: Texts.to.contactsBalancePageName,
     pageRoute: AppRoutes.contactsBalance,
-    drawerPresence: true,
   );
 
   static AppPageDetail accounts = AppPageDetail(

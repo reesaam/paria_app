@@ -34,7 +34,7 @@ extension ContactFunction on AppContactEntitiesList {
   addContact(AppContactEntity contact) {
     List<AppContactEntity> contacts =
         List<AppContactEntity>.empty(growable: true);
-    contacts.addAll(membersList);
+    contacts.addAll(contactsList);
     contacts.add(contact);
     contactsList = contacts;
     defaultSortFunction;
@@ -59,13 +59,13 @@ extension ContactFunction on AppContactEntitiesList {
     addContact(contact);
     _editRecords(prevContact, contact);
     appLogPrint('Contact Edited');
-    appLogPrint('List($count):$membersList');
+    appLogPrint('List($count):$contactsList');
     defaultSortFunction;
     saveOnStorage();
   }
 
   removeContact(AppContactEntity contact) {
-    membersList.remove(contact);
+    contactsList.remove(contact);
     saveOnStorage();
   }
 }
@@ -83,7 +83,7 @@ extension SortContacts on AppContactEntitiesList {
   void get sortFirstName {
     List<AppContactEntity> contacts =
         List<AppContactEntity>.empty(growable: true);
-    contacts.addAll(membersList);
+    contacts.addAll(contactsList);
     contacts.sort((a, b) => a.firstName!.compareTo(b.firstName!));
     contactsList = contacts;
   }
@@ -91,15 +91,14 @@ extension SortContacts on AppContactEntitiesList {
 
 ///Details
 extension RxDetails on Rx<AppContactEntitiesList> {
-  List<AppContactEntity> get membersList => value.membersList;
+  List<AppContactEntity> get contactsList => value.contactsList;
   int get count => value.count;
   bool get isEmpty => value.isEmpty;
 }
 
 extension Details on AppContactEntitiesList {
-  List<AppContactEntity> get membersList => contactsList;
-  int get count => membersList.length;
-  bool get isEmpty => membersList.isEmpty;
+  int get count => contactsList.length;
+  bool get isEmpty => contactsList.isEmpty;
 }
 
 ///List Functions
@@ -109,7 +108,7 @@ extension RxListFunctions on Rx<AppContactEntitiesList> {
 
 extension ListFunctions on AppContactEntitiesList {
   clearContactsList() {
-    membersList.clear();
+    contactsList.clear();
     saveOnStorage();
   }
 }

@@ -67,6 +67,10 @@
     "accountsAddEditModalErrorContact",
     "accountsAddEditModalErrorAmount",
     "accountsAddRecordChooseContact",
+    "contactsBalanceTableHeaderContact",
+    "contactsBalanceTableHeaderBalance",
+    "contactsBalanceTableHeaderCount",
+    "contactsBalanceItemDetailsDialogTitle",
     "settingsSectionStorageItemEraseContacts",
     "settingsSectionStorageItemEraseAccountsRecords"
   ],
@@ -137,6 +141,10 @@
     "accountsAddEditModalErrorContact",
     "accountsAddEditModalErrorAmount",
     "accountsAddRecordChooseContact",
+    "contactsBalanceTableHeaderContact",
+    "contactsBalanceTableHeaderBalance",
+    "contactsBalanceTableHeaderCount",
+    "contactsBalanceItemDetailsDialogTitle",
     "settingsSectionStorageItemEraseContacts",
     "settingsSectionStorageItemEraseAccountsRecords"
   ]

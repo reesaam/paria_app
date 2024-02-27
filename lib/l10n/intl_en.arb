@@ -117,6 +117,11 @@
 
     "accountsAddRecordChooseContact": "Choose a Contact",
 
+    "contactsBalanceTableHeaderContact": "Contact",
+    "contactsBalanceTableHeaderBalance": "Balance",
+    "contactsBalanceTableHeaderCount": "Count",
+    "contactsBalanceItemDetailsDialogTitle": "Contact Records",
+
     "settingsLanguageModalSelectLanguage": "Select Language",
     "settingsAppbarMenuResetSettings": "Reset All Settings",
     "settingsSectionTitleGeneral": "General",

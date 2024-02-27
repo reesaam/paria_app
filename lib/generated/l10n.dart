@@ -1000,6 +1000,46 @@ class S {
     );
   }
 
+  /// `Contact`
+  String get contactsBalanceTableHeaderContact {
+    return Intl.message(
+      'Contact',
+      name: 'contactsBalanceTableHeaderContact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Balance`
+  String get contactsBalanceTableHeaderBalance {
+    return Intl.message(
+      'Balance',
+      name: 'contactsBalanceTableHeaderBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Count`
+  String get contactsBalanceTableHeaderCount {
+    return Intl.message(
+      'Count',
+      name: 'contactsBalanceTableHeaderCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Records`
+  String get contactsBalanceItemDetailsDialogTitle {
+    return Intl.message(
+      'Contact Records',
+      name: 'contactsBalanceItemDetailsDialogTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Select Language`
   String get settingsLanguageModalSelectLanguage {
     return Intl.message(

@@ -143,8 +143,16 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Firstname or Lastname and Mobile should be entered."),
         "contactsAddEditModalErrorMobile": MessageLookupByLibrary.simpleMessage(
             "Mobile field can\'t be Blank"),
+        "contactsBalanceItemDetailsDialogTitle":
+            MessageLookupByLibrary.simpleMessage("Contact Records"),
         "contactsBalancePageName":
             MessageLookupByLibrary.simpleMessage("Contacts Balance"),
+        "contactsBalanceTableHeaderBalance":
+            MessageLookupByLibrary.simpleMessage("Balance"),
+        "contactsBalanceTableHeaderContact":
+            MessageLookupByLibrary.simpleMessage("Contact"),
+        "contactsBalanceTableHeaderCount":
+            MessageLookupByLibrary.simpleMessage("Count"),
         "contactsEditContactTitle":
             MessageLookupByLibrary.simpleMessage("Edit Contact"),
         "contactsNoContacts":
