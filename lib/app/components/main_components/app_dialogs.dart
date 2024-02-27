@@ -122,7 +122,7 @@ class AppDialogs {
                                                       AppTextStyles.modalTitle),
                                               AppDividers
                                                   .generalDividerWithAppDefaultColor,
-                                              AppSpaces.h20,
+                                              AppSpaces.h10,
                                             ]),
                                   form,
                                 ]),

@@ -24,12 +24,14 @@ class AppIcons {
   static Icon get about => const Icon(Icons.info_outline_rounded);
   static Icon get update => const Icon(Icons.update_rounded);
   static Icon get profile => const Icon(Icons.account_circle_rounded);
-
-  ///Contacts
   static Icon get mobile => const Icon(Icons.phone_android);
   static Icon get phone => const Icon(Icons.phone);
   static Icon get email => const Icon(Icons.email);
   static Icon get web => const Icon(Icons.language);
+  static Icon get info => const Icon(Icons.info_outline);
+  static Icon get currency => const Icon(Icons.attach_money_rounded);
+  static Icon get dateTime => const Icon(Icons.date_range_outlined);
+  static Icon get description => const Icon(Icons.description_rounded);
 
   ///List
   static Icon get listSearch => const Icon(Icons.search_rounded);

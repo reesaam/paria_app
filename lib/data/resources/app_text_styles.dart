@@ -40,7 +40,7 @@ class AppTextStyles {
   static TextStyle get contactsNoContacts => TextStyle(fontSize: titleSize, color: AppColors.appDefaultColor);
   static TextStyle get contactsListItem => TextStyle(color: AppColors.textNormalDark, fontSize: bigSize);
 
-  static TextStyle get contactsChooseContact => TextStyle(fontSize: titleSize, color: AppColors.textDisabled);
+  static TextStyle get contactsChooseContact => TextStyle(fontSize: titleSize, color: AppColors.textNormalDark);
 
   ///Accounts
   static TextStyle get accountsTableItem => TextStyle(color: AppColors.textNormalDark);
@@ -51,6 +51,11 @@ class AppTextStyles {
   static TextStyle get contactsShowContactFullName => TextStyle(fontSize: bigTitleSize, color: AppColors.textNormalDark);
   static TextStyle get contactsShowContactInfoTitle => TextStyle(color: AppColors.textNormalDark, fontWeight: FontWeight.bold);
   static TextStyle get contactsShowContactInfoItem => TextStyle(color: AppColors.textNormalDark);
+
+  ///Accounts
+  static TextStyle get accountsShowRecordTitle => TextStyle(fontSize: bigTitleSize, color: AppColors.textNormalDark);
+  static TextStyle get accountsShowRecordInfoTitle => TextStyle(color: AppColors.textNormalDark, fontWeight: FontWeight.bold);
+  static TextStyle get accountsShowRecordInfoItem => TextStyle(color: AppColors.textNormalDark);
 
   ///Settings
   static TextStyle get settingsSectionTitle => TextStyle(fontSize: bigSize, color: AppColors.settingTitle);

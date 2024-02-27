@@ -7,6 +7,7 @@ import 'package:paria_app/core/app_extensions/data_types_extensions/extension_in
 import 'package:paria_app/core/core_functions.dart';
 import 'package:paria_app/core/core_widgets.dart';
 import 'package:paria_app/data/resources/app_colors.dart';
+import 'package:paria_app/data/resources/app_elements.dart';
 import 'package:paria_app/data/resources/app_text_styles.dart';
 import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
 import 'package:paria_app/features/accounts/domain/entities/accounts_filter_entity/accounts_filter_entity.dart';
@@ -39,39 +40,42 @@ class AccountsRecordsTable extends StatelessWidget {
               physics: const ScrollPhysics(),
               itemCount: listRecords.count,
               itemBuilder: (context, index) => filter.isEmpty
-                  ? listRecords.membersList[index].cleared == true
+                  ? listRecords.recordsList[index].cleared == true
                       ? shrinkSizedBox
-                      : _recordItem(listRecords.membersList[index])
+                      : _recordItem(listRecords.recordsList[index])
                   : _checkVisibility(
                           filter: filter!,
-                          record: listRecords.membersList[index])
+                          record: listRecords.recordsList[index])
                       ? shrinkSizedBox
-                      : _recordItem(listRecords.membersList[index])));
+                      : _recordItem(listRecords.recordsList[index])));
 
   _noRecords() => Container(
       padding: AppPaddings.accountsNoRecordText,
       child: Text(Texts.to.accountsNoContacts));
 
   _recordItem(AppAccountRecordEntity record) => GestureDetector(
+      onTap: () => onTap(record),
       onLongPress: () => onLongPress(record),
-      child: Padding(
+      child: Container(
         padding: AppPaddings.accountsTableItem,
+        decoration: AppElements.shapeBoxDecoration.copyWith(
+            color: record.cleared == true
+                ? AppColors.appDefaultColor.withOpacity(0.2)
+                : null),
         child: Row(children: [
           shrinkOneExpanded,
           Expanded(
-            flex: _itemsExpansionList[0],
-            child: Text(
-                record.contact!.firstName ??
-                    Texts.to.generalNotAvailableInitials,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis),
-          ),
+              flex: _itemsExpansionList[0],
+              child: Text(
+                  record.contact!.firstName ??
+                      Texts.to.generalNotAvailableInitials,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis)),
           shrinkOneExpanded,
           Expanded(
-            flex: _itemsExpansionList[1],
-            child: Text(record.title ?? Texts.to.generalNotAvailableInitials,
-                maxLines: 1, overflow: TextOverflow.ellipsis),
-          ),
+              flex: _itemsExpansionList[1],
+              child: Text(record.title ?? Texts.to.generalNotAvailableInitials,
+                  maxLines: 1, overflow: TextOverflow.ellipsis)),
           shrinkOneExpanded,
           Expanded(
               flex: _itemsExpansionList[2],
@@ -117,14 +121,5 @@ class AccountsRecordsTable extends StatelessWidget {
 
     appDebugPrint('Filtered: ${filterList.contains(true)}');
     return filterList.contains(true);
-  }
-
-  _changeRecordClearanceStatus({
-    required AppAccountRecordEntity record,
-    required bool? checked,
-  }) {
-    checked == true
-        ? listRecords.clearRecord(record)
-        : listRecords.unClearRecord(record);
   }
 }

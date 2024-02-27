@@ -23,6 +23,22 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutPageName": MessageLookupByLibrary.simpleMessage("About"),
+        "accountShowRecordAmount":
+            MessageLookupByLibrary.simpleMessage("Amount"),
+        "accountShowRecordCleared":
+            MessageLookupByLibrary.simpleMessage("Cleared"),
+        "accountShowRecordClearedStatus":
+            MessageLookupByLibrary.simpleMessage("Status"),
+        "accountShowRecordContact":
+            MessageLookupByLibrary.simpleMessage("Contact"),
+        "accountShowRecordDateTime":
+            MessageLookupByLibrary.simpleMessage("Date & Time"),
+        "accountShowRecordDescription":
+            MessageLookupByLibrary.simpleMessage("Description"),
+        "accountShowRecordTitle":
+            MessageLookupByLibrary.simpleMessage("Record"),
+        "accountShowRecordUncleared":
+            MessageLookupByLibrary.simpleMessage("Uncleared"),
         "accountsAddContactTitle":
             MessageLookupByLibrary.simpleMessage("Add New Record"),
         "accountsAddEditModalErrorAmount": MessageLookupByLibrary.simpleMessage(

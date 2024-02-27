@@ -44,7 +44,7 @@ class ShowContactFormWidget extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         _title(Texts.to.contactsShowContactTitleInfo.withDoubleDots),
         AppSpaces.h10,
-        _widgetInfoItem(Icon(Icons.numbers), 'ID:', contact.id ?? ''),
+        // _widgetInfoItem(Icon(Icons.numbers), 'ID:', contact.id ?? ''),
         _widgetInfoItem(
             AppIcons.mobile,
             Texts.to.contactsShowContactItemMobile.withDoubleDots,

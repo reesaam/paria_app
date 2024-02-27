@@ -73,6 +73,7 @@ class AppContactsAddEditRecordComponent {
     if (isEdit) {
       if (record == null) {
       } else {
+        _selectedContact = record.contact;
         _controllerContact.text = record.contact?.firstName ?? '';
         _controllerDescription.text = record.title ?? '';
         _controllerAmount.text = record.amount.toCurrency ?? '';

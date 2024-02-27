@@ -17,7 +17,7 @@ class AppPaddings {
   static EdgeInsets get drawerFooter => const EdgeInsets.fromLTRB(20, 10, 0, 20);
 
   ///Modals
-  static EdgeInsets get generalBottomModal => EdgeInsets.fromLTRB(40, 20, 40, Get.context!.mediaQuery.viewInsets.bottom);
+  static EdgeInsets get generalBottomModal => EdgeInsets.fromLTRB(40, 10, 40, Get.context!.mediaQuery.viewInsets.bottom);
   static EdgeInsets get generalAlertDialog => const EdgeInsets.all(20);
   static EdgeInsets get modalItems => const EdgeInsets.symmetric(vertical: 15);
 
@@ -48,6 +48,7 @@ class AppPaddings {
   static EdgeInsets get accountsTable => const EdgeInsets.symmetric(horizontal: 10);
   static EdgeInsets get accountsTableItem => const EdgeInsets.symmetric(horizontal: 5, vertical: 10);
   static EdgeInsets get accountsSelectContactList => const EdgeInsets.all(10);
+  static EdgeInsets get accountsShowRecordItem => const EdgeInsets.symmetric(vertical: 5, horizontal: 10);
 
   ///ListPage
   static EdgeInsets get listPageSearchBox => const EdgeInsets.only(bottom: 10);

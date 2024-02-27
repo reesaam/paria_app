@@ -410,6 +410,66 @@ class S {
     );
   }
 
+  /// `Add New Contact`
+  String get contactsAddContactTitle {
+    return Intl.message(
+      'Add New Contact',
+      name: 'contactsAddContactTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Contact`
+  String get contactsEditContactTitle {
+    return Intl.message(
+      'Edit Contact',
+      name: 'contactsEditContactTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Contacts`
+  String get contactsNoContacts {
+    return Intl.message(
+      'No Contacts',
+      name: 'contactsNoContacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Contact`
+  String get contactsOptionShow {
+    return Intl.message(
+      'Show Contact',
+      name: 'contactsOptionShow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Contact`
+  String get contactsOptionEdit {
+    return Intl.message(
+      'Edit Contact',
+      name: 'contactsOptionEdit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove Contact`
+  String get contactsOptionRemove {
+    return Intl.message(
+      'Remove Contact',
+      name: 'contactsOptionRemove',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Personal Info`
   String get contactsShowContactTitleInfo {
     return Intl.message(
@@ -485,66 +545,6 @@ class S {
     return Intl.message(
       'Records Count',
       name: 'contactsShowContactTitleRecords',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add New Contact`
-  String get contactsAddContactTitle {
-    return Intl.message(
-      'Add New Contact',
-      name: 'contactsAddContactTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Edit Contact`
-  String get contactsEditContactTitle {
-    return Intl.message(
-      'Edit Contact',
-      name: 'contactsEditContactTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No Contacts`
-  String get contactsNoContacts {
-    return Intl.message(
-      'No Contacts',
-      name: 'contactsNoContacts',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Show Contact`
-  String get contactsOptionShow {
-    return Intl.message(
-      'Show Contact',
-      name: 'contactsOptionShow',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Edit Contact`
-  String get contactsOptionEdit {
-    return Intl.message(
-      'Edit Contact',
-      name: 'contactsOptionEdit',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Remove Contact`
-  String get contactsOptionRemove {
-    return Intl.message(
-      'Remove Contact',
-      name: 'contactsOptionRemove',
       desc: '',
       args: [],
     );
@@ -775,6 +775,86 @@ class S {
     return Intl.message(
       'Remove Record',
       name: 'accountsTableItemMenuRemoveRecord',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Record`
+  String get accountShowRecordTitle {
+    return Intl.message(
+      'Record',
+      name: 'accountShowRecordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact`
+  String get accountShowRecordContact {
+    return Intl.message(
+      'Contact',
+      name: 'accountShowRecordContact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get accountShowRecordDescription {
+    return Intl.message(
+      'Description',
+      name: 'accountShowRecordDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount`
+  String get accountShowRecordAmount {
+    return Intl.message(
+      'Amount',
+      name: 'accountShowRecordAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date & Time`
+  String get accountShowRecordDateTime {
+    return Intl.message(
+      'Date & Time',
+      name: 'accountShowRecordDateTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Status`
+  String get accountShowRecordClearedStatus {
+    return Intl.message(
+      'Status',
+      name: 'accountShowRecordClearedStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cleared`
+  String get accountShowRecordCleared {
+    return Intl.message(
+      'Cleared',
+      name: 'accountShowRecordCleared',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Uncleared`
+  String get accountShowRecordUncleared {
+    return Intl.message(
+      'Uncleared',
+      name: 'accountShowRecordUncleared',
       desc: '',
       args: [],
     );

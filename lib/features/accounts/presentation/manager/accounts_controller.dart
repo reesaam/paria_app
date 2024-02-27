@@ -11,6 +11,7 @@ import 'package:paria_app/core/app_extensions/data_types_extensions/extension_bo
 import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
 import 'package:paria_app/features/accounts/domain/entities/accounts_filter_entity/accounts_filter_entity.dart';
 import 'package:paria_app/features/accounts/presentation/widgets/add_edit_record_component.dart';
+import 'package:paria_app/features/accounts/presentation/widgets/show_account_form.dart';
 
 import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
@@ -86,7 +87,9 @@ class AccountsController extends CoreController {
   }
 
   ///Records Manipulation
-  showRecord(AppAccountRecordEntity record) async {}
+  showRecord(AppAccountRecordEntity record) async =>
+      await AppDialogs().appBottomDialogWithoutButton(
+          form: ShowAccountRecordFormWidget(record: record), dismissible: true);
 
   addRecord() async {
     AppAccountRecordEntity? record =
@@ -142,33 +145,31 @@ class AccountsController extends CoreController {
               ? Texts.to.accountsTableItemMenuMarkAsUncleared
               : Texts.to.accountsTableItemMenuMarkAsCleared),
           onTap: () {
-            changeClearanceStatus(record);
             popPage();
+            changeClearanceStatus(record);
           }),
       InkWell(
           child: AppDialogs().bottomDialogFunctionalItem(
               Texts.to.accountsTableItemMenuShowRecord),
           onTap: () {
-            showRecord(record);
             popPage();
+            showRecord(record);
           }),
       InkWell(
           child: AppDialogs().bottomDialogFunctionalItem(
               Texts.to.accountsTableItemMenuEditRecord),
           onTap: () {
-            editRecord(record);
             popPage();
+            editRecord(record);
           }),
       InkWell(
           child: AppDialogs().bottomDialogFunctionalItem(
               Texts.to.accountsTableItemMenuRemoveRecord),
           onTap: () {
-            removeRecord(record);
             popPage();
+            removeRecord(record);
           }),
     ]);
     await AppDialogs().appBottomDialogWithCancel(form: form, dismissible: true);
   }
-
-  itemOnTap(AppAccountRecordEntity record) async {}
 }

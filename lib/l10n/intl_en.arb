@@ -44,6 +44,14 @@
     "homepageDateTimeTitle": "Today",
     "homepageSummaryTitle": "App Summary",
 
+    "contactsAddContactTitle": "Add New Contact",
+    "contactsEditContactTitle": "Edit Contact",
+
+    "contactsNoContacts": "No Contacts",
+    "contactsOptionShow": "Show Contact",
+    "contactsOptionEdit": "Edit Contact",
+    "contactsOptionRemove": "Remove Contact",
+
     "contactsShowContactTitleInfo": "Personal Info",
     "contactsShowContactItemMobile": "Mobile",
     "contactsShowContactItemPhone": "Phone",
@@ -52,14 +60,6 @@
     "contactsShowContactTitleAccount": "Account Info",
     "contactsShowContactTitleBalance": "Balance",
     "contactsShowContactTitleRecords": "Records Count",
-
-    "contactsAddContactTitle": "Add New Contact",
-    "contactsEditContactTitle": "Edit Contact",
-
-    "contactsNoContacts": "No Contacts",
-    "contactsOptionShow": "Show Contact",
-    "contactsOptionEdit": "Edit Contact",
-    "contactsOptionRemove": "Remove Contact",
 
     "contactsAddContactFirstNameTitle": "First Name",
     "contactsAddContactLastNameTitle": "Last Name",
@@ -88,6 +88,15 @@
     "accountsTableItemMenuShowRecord": "Show Record",
     "accountsTableItemMenuEditRecord": "Edit Record",
     "accountsTableItemMenuRemoveRecord": "Remove Record",
+
+    "accountShowRecordTitle": "Record",
+    "accountShowRecordContact": "Contact",
+    "accountShowRecordDescription": "Description",
+    "accountShowRecordAmount": "Amount",
+    "accountShowRecordDateTime": "Date & Time",
+    "accountShowRecordClearedStatus": "Status",
+    "accountShowRecordCleared": "Cleared",
+    "accountShowRecordUncleared": "Uncleared",
 
     "accountsAddEditRecordContact": "Contact",
     "accountsAddEditRecordDescription": "Description",

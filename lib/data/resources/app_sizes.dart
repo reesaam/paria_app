@@ -22,4 +22,7 @@ class AppSizes {
 
   ///Contacts
   static double get contactsShowContactIcon => 15;
+
+  ///Accounts
+  static double get accountsShowRecordIcon => 15;
 }

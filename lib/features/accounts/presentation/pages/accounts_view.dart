@@ -6,6 +6,7 @@ import 'package:paria_app/app/components/buttons/app_icon_button.dart';
 import 'package:paria_app/app/components/general_widgets/app_dividers.dart';
 import 'package:paria_app/app/components/general_widgets/app_popup_menu.dart';
 import 'package:paria_app/app/components/general_widgets/app_popup_menu_item.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_accounts_filter.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_bool.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_string.dart';
@@ -53,9 +54,8 @@ class AccountsPage extends CoreView<AccountsController> {
             AccountsRecordsTable(
                 listRecords: controller.listRecords.value,
                 filter: controller.filter.value,
-                onTap: (record) => controller.itemOnTap(record),
-                onLongPress: (record) =>
-                    controller.itemOnLongPress(record)),
+                onTap: (record) => controller.showRecord(record),
+                onLongPress: (record) => controller.itemOnLongPress(record)),
           ]));
 
   _summary() => Card(
@@ -82,6 +82,11 @@ class AccountsPage extends CoreView<AccountsController> {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text(Texts.to.accountsTableTitle),
           Row(children: [
+            controller.hasFilter.value
+                ? AppIconButton(
+                    icon: AppIcons.removeFilter.icon!,
+                    onPressed: () => controller.filter.clear)
+                : shrinkSizedBox,
             AppIconButton(
                 icon: controller.hasFilter.value == true
                     ? AppIcons.filter.icon!
