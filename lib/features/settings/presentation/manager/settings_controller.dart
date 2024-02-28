@@ -7,7 +7,7 @@ import '../../../../core/app_routing/routing.dart';
 import '../../../../data/info/app_info.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../data/storage/app_local_storage.dart';
-import '../../../../core/app_extensions/data_models_extensions/extension_settings.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_settings_entity.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_page_details.dart';
@@ -67,15 +67,14 @@ class SettingsController extends CoreController {
     saveSettings();
     popPage();
     Get.updateLocale(selectedLanguage.value.getLocale);
-    update();
-    refresh();
+    refreshApp();
   }
 
   functionDarkModeOnChange(bool value) {
     darkMode.value = value;
     saveSettings();
     appLogPrint('DarkMode Changed to ${darkMode.value}');
-    refresh();
+    refreshApp();
   }
 
   functionCheckUpdateAvailableVersion() async {
@@ -113,7 +112,8 @@ class SettingsController extends CoreController {
 
   _clearContactsFunction() {
     popPage();
-    AppLocalStorage.to.clearSpecificKey(AppStorageKeys.keyContacts);
+    clearAppData();
+    refreshApp();
   }
 
   clearContacts() => AppDialogs().appAlertDialogWithOkCancel(
@@ -124,7 +124,8 @@ class SettingsController extends CoreController {
 
   _clearAccountsRecordsFunction() {
     popPage();
-    AppLocalStorage.to.clearSpecificKey(AppStorageKeys.keyAccounts);
+    AppAccountRecordEntitiesList().clearRecordsList;
+    refreshApp();
   }
 
   clearAccountsRecords() => AppDialogs().appAlertDialogWithOkCancel(
@@ -136,6 +137,7 @@ class SettingsController extends CoreController {
   _clearAllDataFunction() {
     popPage();
     clearAppData();
+    refreshApp();
   }
 
   clearAllData() => AppDialogs().appAlertDialogWithOkCancel(

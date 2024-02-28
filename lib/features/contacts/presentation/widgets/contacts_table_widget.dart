@@ -6,8 +6,8 @@ import 'package:paria_app/features/contacts/presentation/manager/contacts_contro
 
 import '../../../../app/components/general_widgets/app_popup_menu.dart';
 import '../../../../app/components/general_widgets/app_popup_menu_item.dart';
-import '../../../../core/app_extensions/data_models_extensions/extension_contact.dart';
-import '../../../../core/app_extensions/data_models_extensions/extension_contacts_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_contact_entity.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../data/resources/app_elements.dart';
 import '../../../../data/resources/app_paddings.dart';

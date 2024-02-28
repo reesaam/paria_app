@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_list.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
 
 import '../../../../core/app_localization.dart';
@@ -25,7 +25,7 @@ class ContactsBalanceItemDetailForm extends StatelessWidget {
           padding: AppPaddings.contactsBalanceItemDetailsItem,
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            Text(contactRecords.recordsList[index].title ??
+            Text(contactRecords.recordsList[index].description ??
                 Texts.to.notAvailableInitials),
             Text(contactRecords.recordsList[index].amount.toCurrency)
           ])));

@@ -15,7 +15,7 @@ class LocalStorageService {
 
   bool hasData(String key) => _storage.hasData(key);
 
-  read(String key) {
+  dynamic read(String key) {
     final data = _storage.read(key);
     return data == null ? null : convert.jsonDecode(data.toString());
   }

@@ -1,4 +1,4 @@
-import '../../../../../core/app_extensions/data_models_extensions/extension_account_records_list.dart';
+import '../../../../../core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
 import '../../../features/accounts/domain/entities/account_balance_entity/account_balance_entity.dart';
 import '../../../features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
 import '../../../features/contacts/domain/entities/contact_entity/contact_entity.dart';

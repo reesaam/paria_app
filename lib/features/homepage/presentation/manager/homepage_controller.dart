@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 
-import '../../../../core/app_extensions/data_models_extensions/extension_account_records_list.dart';
-import '../../../../core/app_extensions/data_models_extensions/extension_contacts_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_date_time.dart';
 import '../../../../core/elements/core_controller.dart';
@@ -30,6 +30,7 @@ class HomePageController extends CoreController {
     // clearAppData();
     listContacts.value = AppContactEntitiesList().loadFromStorage;
     listRecords.value = AppAccountRecordEntitiesList().loadFromStorage;
+    listenersInit();
   }
 
   @override
@@ -52,6 +53,19 @@ class HomePageController extends CoreController {
   @override
   void onCloseFunction() {
     saveAppData();
+    listContacts.close();
+    listRecords.close();
+    mainDateTime.close();
+    mainTime.close();
+    mainDate.close();
+    summaryContactsCount.close();
+    summaryRecordsCount.close();
+    summaryBalanceCount.close();
+  }
+
+  listenersInit() {
+    listContacts.listen((data) => pageInit());
+    listRecords.listen((data) => pageInit());
   }
 
   void _timeUpdate() => Timer.periodic(const Duration(seconds: 1), (timer) {

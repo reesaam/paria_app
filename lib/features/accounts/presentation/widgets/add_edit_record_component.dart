@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_record.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_record_entity.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_date_time.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
 import 'package:uuid/uuid.dart';
@@ -75,7 +75,7 @@ class AppContactsAddEditRecordComponent {
       } else {
         _selectedContact = record.contact;
         _controllerContact.text = record.contact?.firstName ?? '';
-        _controllerDescription.text = record.title ?? '';
+        _controllerDescription.text = record.description ?? '';
         _controllerAmount.text = record.amount.toCurrency ?? '';
         _controllerDateTime.text =
             record.dateTime?.toLocal().toDateTimeFormat ?? '';
@@ -108,7 +108,7 @@ class AppContactsAddEditRecordComponent {
       _hasError.value = false;
       _providedRecord = AppAccountRecordEntity(
           contact: _selectedContact,
-          title: _controllerDescription.text ?? '',
+          description: _controllerDescription.text ?? '',
           amount: int.tryParse(_controllerAmount.text.replaceAll(',', '')) ?? 0,
           dateTime: _dateTime);
       popPage();

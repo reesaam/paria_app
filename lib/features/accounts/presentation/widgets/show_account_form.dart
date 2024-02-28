@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_date_time.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_icon.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
@@ -34,7 +34,7 @@ class ShowAccountRecordFormWidget extends StatelessWidget {
         _widgetInfoItem(
             AppIcons.description,
             Texts.to.accountShowRecordDescription.withDoubleDots,
-            record.title ?? ''),
+            record.description ?? ''),
         _widgetInfoItem(
             AppIcons.currency,
             Texts.to.accountShowRecordAmount.withDoubleDots,

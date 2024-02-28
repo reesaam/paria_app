@@ -2,10 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_record.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_accounts_filter.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_bool.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_record_entity.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_accounts_filter_entity.dart';
 
 import '../../../../app/components/main_components/app_dialogs.dart';
 import '../../../../core/app_localization.dart';
@@ -41,6 +40,7 @@ class AccountsController extends CoreController {
   void dataInit() {
     // clearAppData();
     listRecords.value = AppAccountRecordEntitiesList().loadFromStorage;
+    appLogPrint('${listRecords.count} Records Imported');
   }
 
   @override
@@ -97,7 +97,7 @@ class AccountsController extends CoreController {
     appLogPrint(record.isEmpty);
 
     record.isEmpty ? null : listRecords.addRecord(record!);
-    refresh();
+    refreshApp();
   }
 
   editRecord(AppAccountRecordEntity record) async {
@@ -108,13 +108,13 @@ class AccountsController extends CoreController {
     if (editedRecord.isNotEmpty) {
       listRecords.editRecord(record, editedRecord!);
     }
-    refresh();
+    refreshApp();
   }
 
   removeRecord(AppAccountRecordEntity record) {
     listRecords.removeRecord(record);
     appDebugPrint('Record Removed: $record');
-    refresh();
+    refreshApp();
   }
 
   changeClearanceStatus(AppAccountRecordEntity record) =>

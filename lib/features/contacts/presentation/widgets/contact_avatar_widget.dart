@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/app_extensions/data_models_extensions/extension_contact.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_contact_entity.dart';
 import '../../../../data/resources/app_colors.dart';
 import '../../domain/entities/contact_entity/contact_entity.dart';
 

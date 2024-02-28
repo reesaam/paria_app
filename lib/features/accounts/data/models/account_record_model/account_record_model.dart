@@ -11,7 +11,7 @@ class AppAccountRecordModel with _$AppAccountRecordModel {
     final String? id,
     final AppContactModel? contact,
     final int? amount,
-    final String? title,
+    final String? description,
     final DateTime? dateTime,
     final bool? cleared,
   }) = _AppAccountRecordModel;

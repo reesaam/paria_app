@@ -11,7 +11,7 @@ class AppAccountRecordEntity with _$AppAccountRecordEntity {
     final String? id,
     final AppContactEntity? contact,
     final int? amount,
-    final String? title,
+    final String? description,
     final DateTime? dateTime,
     final bool? cleared,
   }) = _AppAccountRecordEntity;

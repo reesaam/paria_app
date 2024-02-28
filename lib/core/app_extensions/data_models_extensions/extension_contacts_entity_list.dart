@@ -1,33 +1,45 @@
 import 'package:get/get.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_model_list.dart';
+import 'package:paria_app/features/contacts/domain/entities/contact_entity/contacts_mapper.dart';
 
-import '../../../../../core/app_extensions/data_models_extensions/extension_account_records_list.dart';
-import '../../../../../core/app_extensions/data_models_extensions/extension_contact.dart';
+import '../../../../../core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
+import '../../../../../core/app_extensions/data_models_extensions/extension_contact_entity.dart';
 import '../../../data/storage/app_local_storage.dart';
 import '../../../features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
+import '../../../features/contacts/data/models/contact_model/contact_model.dart';
 import '../../../features/contacts/domain/entities/contact_entity/contact_entity.dart';
 import '../../core_functions.dart';
 
 ///Save Storage
 extension RxStorage on Rx<AppContactEntitiesList> {
   void saveOnStorage() async => value.saveOnStorage();
+  Rx<AppContactEntitiesList> get loadFromStorage => value.loadFromStorage.obs;
 }
 
 extension Storage on AppContactEntitiesList {
-  void saveOnStorage() async => await AppLocalStorage.to.saveContacts(contacts: this);
-  AppContactEntitiesList get loadFromStorage =>
-      AppLocalStorage.to.loadContacts();
+  void saveOnStorage() async => await AppLocalStorage.to.saveContacts(
+      contacts: AppContactModelsList(
+          contactsList:
+              List.generate(count, (index) => contactsList[index].mapper)));
+
+  AppContactEntitiesList get loadFromStorage {
+    var data = AppContactModelsList().loadFromStorage;
+    return AppContactEntitiesList(
+        contactsList:
+            List.generate(data.contactsList.length, (index) => data.contactsList[index].mapper));
+  }
 }
 
 ///Contact Functions
 extension RxContactFunctions on Rx<AppContactEntitiesList> {
   addContact(AppContactEntity contact) =>
-      {value.addContact(contact), refresh()};
+      {value.addContact(contact), refreshApp()};
 
   editContact(AppContactEntity prevContact, AppContactEntity contact) =>
-      {value.editContact(prevContact, contact), refresh()};
+      {value.editContact(prevContact, contact), refreshApp()};
 
   removeContact(AppContactEntity contact) =>
-      {value.removeContact(contact), refresh()};
+      {value.removeContact(contact), refreshApp()};
 }
 
 extension ContactFunction on AppContactEntitiesList {
@@ -74,7 +86,7 @@ extension ContactFunction on AppContactEntitiesList {
 extension RxSortContacts on Rx<AppContactEntitiesList> {
   void get defaultSortFunction => sortFirstName;
 
-  void get sortFirstName => {value.sortFirstName, refresh()};
+  void get sortFirstName => value.sortFirstName;
 }
 
 extension SortContacts on AppContactEntitiesList {
@@ -103,12 +115,12 @@ extension Details on AppContactEntitiesList {
 
 ///List Functions
 extension RxListFunctions on Rx<AppContactEntitiesList> {
-  clearContactsList() => {value.clearContactsList(), refresh()};
+  clearContactsList() => {value.clearContactsList, refreshApp()};
 }
 
 extension ListFunctions on AppContactEntitiesList {
-  clearContactsList() {
-    contactsList.clear();
+  void get clearContactsList {
+    contactsList = List.empty(growable: true);
     saveOnStorage();
   }
 }

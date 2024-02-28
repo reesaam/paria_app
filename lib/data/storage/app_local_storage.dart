@@ -2,15 +2,17 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
-import 'package:paria_app/features/contacts/domain/entities/contact_entity/contact_entity.dart';
-import 'package:paria_app/features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
-
-import '../../../../core/app_extensions/data_models_extensions/extension_settings.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_model_list.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_model_list.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_settings_model.dart';
+import 'package:paria_app/data/info/app_info.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../app/functional_components/file_functions/file_functions.dart';
 import '../../core/core_functions.dart';
-import '../data_models/core_data_models/app_data/app_data.dart';
+import '../../features/accounts/data/models/account_record_model/account_record_model.dart';
+import '../../features/app_data/data/models/app_data_model/app_data_model.dart';
+import '../../features/contacts/data/models/contact_model/contact_model.dart';
+import '../../features/settings/data/models/app_settings_data_model/app_setting_data_model.dart';
 import '../resources/app_enums.dart';
 import '../resources/app_texts.dart';
 import 'app_shared_preferences.dart';
@@ -32,6 +34,7 @@ class AppLocalStorage {
       _storage.remove(key.name);
     }
     AppSharedPreferences.to.clearData();
+    loadAllData();
     appLogPrint('All App Data Cleared');
   }
 
@@ -58,12 +61,15 @@ class AppLocalStorage {
 
   ///Manage Data
   Future<void> exportData() async {
-    var settings = const AppSettingDataEntity().loadFromStorage;
-    AppData appData = AppData(
-      setting: settings,
+    AppDataModel appData = AppDataModel(
+      version: AppDataVersions.values.last,
+      appVersion: AppInfo.appCurrentVersion,
+      settings: const AppSettingDataModel().loadFromStorage,
+      contacts: await AppContactModelsList().loadFromStorage,
+      accounts: AppAccountRecordModelsList().loadFromStorage,
     );
-    var jsonData = json.encode(appData);
-    Uint8List data = jsonData.toString().toUInt8List;
+    var appDataJson = json.encode(appData);
+    Uint8List data = appDataJson.toString().toUInt8List;
     String? savedPath = await AppFileFunctions()
         .saveFile(fileName: AppTexts.settingBackupFilename, data: data);
     appLogPrint('File Path: $savedPath');
@@ -72,48 +78,57 @@ class AppLocalStorage {
 
   Future<void> importData() async {
     var appDataFile = await AppFileFunctions().pickFile();
-    AppData appData = AppData.fromJson(appDataFile);
+    AppDataModel appData = AppDataModel.fromJson(appDataFile);
     clearAppData();
-    await saveSettings(settings: appData.setting ?? const AppSettingDataEntity());
-    appLogPrint('Data Imported');
+
+    ///Filling Data Fields
+    if (appData.version == AppDataVersions.values.last) {
+      await saveSettings(settings: appData.settings ?? const AppSettingDataModel());
+      await saveContacts(contacts: appData.contacts ?? AppContactModelsList());
+      await saveAccountRecords(accountRecords: appData.accounts ?? AppAccountRecordModelsList());
+      appLogPrint('Data Imported');
+    }
+    else {
+      appLogPrint('Data Not Imported');
+    }
   }
 
-  void printData(AppData data) {
-    appLogPrint('Settings / Dark Mode: ${data.setting?.darkMode}');
-    appLogPrint('Settings / Language: ${data.setting?.language?.languageName}');
+  void printData(AppDataModel data) {
+    appLogPrint('Settings / Dark Mode: ${data.settings?.darkMode}');
+    appLogPrint('Settings / Language: ${data.settings?.language.languageName}');
   }
 
   ///Settings
-  Future<void> saveSettings({required AppSettingDataEntity settings}) async =>
+  Future<void> saveSettings({required AppSettingDataModel settings}) async =>
       await _saveFunction(settings, _keySettings);
 
-  AppSettingDataEntity loadSettings() {
+  AppSettingDataModel loadSettings() {
     var data = _loadFunction(_keySettings);
     return data == null
-        ? const AppSettingDataEntity()
-        : AppSettingDataEntity.fromJson(data);
+        ? const AppSettingDataModel()
+        : AppSettingDataModel.fromJson(data);
   }
 
   ///Contacts
-  Future<void> saveContacts({required AppContactEntitiesList contacts}) async =>
+  Future<void> saveContacts({required AppContactModelsList contacts}) async =>
       await _saveFunction(contacts, _keyContacts);
 
-  AppContactEntitiesList loadContacts() {
+  AppContactModelsList loadContacts() {
     var data = _loadFunction(_keyContacts);
     return data == null
-        ? AppContactEntitiesList()
-        : AppContactEntitiesList.fromJson(data);
+        ? AppContactModelsList()
+        : AppContactModelsList.fromJson(data);
   }
 
   ///Settings
   Future<void> saveAccountRecords(
-          {required AppAccountRecordEntitiesList accountRecords}) async =>
+          {required AppAccountRecordModelsList accountRecords}) async =>
       await _saveFunction(accountRecords, _keyAccounts);
 
-  AppAccountRecordEntitiesList loadAccountRecords() {
+  AppAccountRecordModelsList loadAccountRecords() {
     var data = _loadFunction(_keyAccounts);
     return data == null
-        ? AppAccountRecordEntitiesList()
-        : AppAccountRecordEntitiesList.fromJson(data);
+        ? AppAccountRecordModelsList()
+        : AppAccountRecordModelsList.fromJson(data);
   }
 }

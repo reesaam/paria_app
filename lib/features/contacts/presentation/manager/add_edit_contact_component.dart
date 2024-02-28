@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uuid/uuid.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
 import 'package:uuid/v1.dart';
 
 import '../../../../app/components/general_widgets/app_snack_bars.dart';

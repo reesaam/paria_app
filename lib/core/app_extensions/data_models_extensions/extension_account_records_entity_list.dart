@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_bool.dart';
+import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_mapper.dart';
 
 import '../../../data/storage/app_local_storage.dart';
+import '../../../features/accounts/data/models/account_record_model/account_record_model.dart';
 import '../../../features/accounts/domain/entities/account_balance_entity/account_balance_entity.dart';
 import '../../../features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
 import '../../../features/contacts/domain/entities/contact_entity/contact_entity.dart';
@@ -11,26 +13,34 @@ import '../../core_functions.dart';
 ///Save Storage
 extension RxStorage on Rx<AppAccountRecordEntitiesList> {
   void saveOnStorage() async => value.saveOnStorage();
+  Rx<AppAccountRecordEntitiesList> get loadFromStorage =>
+      value.loadFromStorage.obs;
 }
 
 extension Storage on AppAccountRecordEntitiesList {
-  void saveOnStorage() async =>
-      await AppLocalStorage.to.saveAccountRecords(accountRecords: this);
-  AppAccountRecordEntitiesList get loadFromStorage =>
-      AppLocalStorage.to.loadAccountRecords();
+  void saveOnStorage() async => await AppLocalStorage.to.saveAccountRecords(
+      accountRecords: AppAccountRecordModelsList(
+          recordsList:
+              List.generate(count, (index) => recordsList[index].mapper)));
+  AppAccountRecordEntitiesList get loadFromStorage {
+    var data = AppLocalStorage.to.loadAccountRecords();
+    return AppAccountRecordEntitiesList(
+        recordsList:
+            List.generate(data.recordsList.length, (index) => data.recordsList[index].mapper));
+  }
 }
 
 ///Record Functions
 extension RxRecordFunction on Rx<AppAccountRecordEntitiesList> {
   addRecord(AppAccountRecordEntity record) =>
-      {value.addRecord(record), refresh()};
+      {value.addRecord(record), refreshApp()};
 
   editRecord(
           AppAccountRecordEntity prevRecord, AppAccountRecordEntity record) =>
-      {value.editRecord(prevRecord, record), refresh()};
+      {value.editRecord(prevRecord, record), refreshApp()};
 
   removeRecord(AppAccountRecordEntity record) =>
-      {value.removeRecord(record), refresh()};
+      {value.removeRecord(record), refreshApp()};
 }
 
 extension RecordFunction on AppAccountRecordEntitiesList {
@@ -68,7 +78,7 @@ extension RecordFunction on AppAccountRecordEntitiesList {
 ///Clear Record
 extension RxClearRecord on Rx<AppAccountRecordEntitiesList> {
   changeStatus(AppAccountRecordEntity record) =>
-      {value.changeStatus(record), refresh()};
+      {value.changeStatus(record), refreshApp()};
 }
 
 extension RecordStatus on AppAccountRecordEntitiesList {
@@ -81,9 +91,9 @@ extension RecordStatus on AppAccountRecordEntitiesList {
 
 ///Sort
 extension RxSortRecords on Rx<AppAccountRecordEntitiesList> {
-  void get defaultSortFunction => {sortByContact, refresh()};
-  void get sortByDateTime => {value.sortByDateTime, refresh()};
-  void get sortByContact => {value.sortByContact, refresh()};
+  void get defaultSortFunction => {sortByContact, refreshApp()};
+  void get sortByDateTime => {value.sortByDateTime, refreshApp()};
+  void get sortByContact => {value.sortByContact, refreshApp()};
 }
 
 extension SortRecords on AppAccountRecordEntitiesList {
@@ -202,13 +212,13 @@ extension Details on AppAccountRecordEntitiesList {
 extension RxClearRecordsList on Rx<AppAccountRecordEntitiesList> {
   void get clearRecordsList {
     value.clearRecordsList;
-    refresh();
+    refreshApp();
   }
 }
 
 extension ClearRecordsList on AppAccountRecordEntitiesList {
   void get clearRecordsList {
-    recordsList.clear();
+    recordsList = List.empty(growable: true);
     saveOnStorage();
   }
 }

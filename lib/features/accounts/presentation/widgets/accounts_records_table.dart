@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_accounts_filter.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_accounts_filter_entity.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_date_time.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
 
@@ -74,7 +74,7 @@ class AccountsRecordsTable extends StatelessWidget {
           shrinkOneExpanded,
           Expanded(
               flex: _itemsExpansionList[1],
-              child: Text(record.title ?? Texts.to.generalNotAvailableInitials,
+              child: Text(record.description ?? Texts.to.generalNotAvailableInitials,
                   maxLines: 1, overflow: TextOverflow.ellipsis)),
           shrinkOneExpanded,
           Expanded(
@@ -99,7 +99,7 @@ class AccountsRecordsTable extends StatelessWidget {
     if (filter.isNotEmpty) {
       filterList.add(filter!.contact.equalTo(record.contact));
       if (filter.description != null) {
-        filterList.add(record.title?.contains(filter.description!) ?? false);
+        filterList.add(record.description?.contains(filter.description!) ?? false);
       }
       filterList.add(filter.cleared != true && record.cleared == true);
       filterList.add(filter.positives == true && record.amount! < 0);

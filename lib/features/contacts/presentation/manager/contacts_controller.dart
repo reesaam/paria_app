@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_list.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
 
 import '../../../../app/components/main_components/app_dialogs.dart';
 import '../../../../core/app_localization.dart';
@@ -51,7 +51,7 @@ class ContactsController extends CoreController {
     appLogPrint(contact.isEmpty);
 
     contact.isEmpty ? null : listContacts.addContact(contact!);
-    refresh();
+    refreshApp();
   }
 
   editContact(AppContactEntity contact) async {
@@ -61,12 +61,12 @@ class ContactsController extends CoreController {
     if (editedContact.isNotEmpty) {
       listContacts.editContact(contact, editedContact!);
     }
-    refresh();
+    refreshApp();
   }
 
   removeContact(AppContactEntity contact) {
     listContacts.removeContact(contact);
     appDebugPrint('Contact Removed: $contact');
-    refresh();
+    refreshApp();
   }
 }

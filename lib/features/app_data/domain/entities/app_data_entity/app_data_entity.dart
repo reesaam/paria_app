@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
-import '../../../../features/contacts/domain/entities/contact_entity/contact_entity.dart';
-import '../../../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
-import '../../../resources/app_enums.dart';
+import '../../../../../data/resources/app_enums.dart';
+import '../../../../accounts/domain/entities/account_record_entity/account_record_entity.dart';
+import '../../../../contacts/domain/entities/contact_entity/contact_entity.dart';
+import '../../../../settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
 
 part 'app_data_entity.freezed.dart';
 part 'app_data_entity.g.dart';

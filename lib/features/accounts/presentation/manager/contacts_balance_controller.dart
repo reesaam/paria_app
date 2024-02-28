@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_list.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
 
 import '../../../../app/components/main_components/app_dialogs.dart';
 import '../../../../core/app_localization.dart';

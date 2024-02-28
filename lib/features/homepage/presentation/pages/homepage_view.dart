@@ -31,10 +31,10 @@ class HomePage extends CoreView<HomePageController> {
       selectedIndex: controller.pageDetail.bottomBarItemNumber);
 
   @override
-  Widget get body => Column(
+  Widget get body => Obx(() => Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
-      children: [_widgetDateTime(), _widgetSummery()]);
+      children: [_widgetDateTime(), _widgetSummery()]));
 
   Widget _widgetDateTime() => Card(
           child: Stack(children: [
@@ -86,9 +86,9 @@ class HomePage extends CoreView<HomePageController> {
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text(Texts.to.contactsPageName.withDoubleDots),
-                          Text(Texts.to.accountsPageName.withDoubleDots),
-                          Text(Texts.to.totalBalance.withDoubleDots),
+                          Text(Texts.to.homepageSummaryContacts.withDoubleDots),
+                          Text(Texts.to.homepageSummaryAccountRecords.withDoubleDots),
+                          Text(Texts.to.homepageSummaryTotalBalance.withDoubleDots),
                         ]),
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

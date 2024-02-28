@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_list.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_string.dart';
 
 import '../../../data/resources/app_paddings.dart';
