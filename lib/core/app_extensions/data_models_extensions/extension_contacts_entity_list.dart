@@ -25,21 +25,19 @@ extension Storage on AppContactEntitiesList {
   AppContactEntitiesList get loadFromStorage {
     var data = AppContactModelsList().loadFromStorage;
     return AppContactEntitiesList(
-        contactsList:
-            List.generate(data.contactsList.length, (index) => data.contactsList[index].mapper));
+        contactsList: List.generate(data.contactsList.length,
+            (index) => data.contactsList[index].mapper));
   }
 }
 
 ///Contact Functions
 extension RxContactFunctions on Rx<AppContactEntitiesList> {
-  addContact(AppContactEntity contact) =>
-      {value.addContact(contact), refreshApp()};
+  addContact(AppContactEntity contact) => {value.addContact(contact), refresh()};
 
   editContact(AppContactEntity prevContact, AppContactEntity contact) =>
-      {value.editContact(prevContact, contact), refreshApp()};
+      {value.editContact(prevContact, contact), refresh()};
 
-  removeContact(AppContactEntity contact) =>
-      {value.removeContact(contact), refreshApp()};
+  removeContact(AppContactEntity contact) => {value.removeContact(contact), refresh()};
 }
 
 extension ContactFunction on AppContactEntitiesList {
@@ -84,9 +82,9 @@ extension ContactFunction on AppContactEntitiesList {
 
 ///Sort
 extension RxSortContacts on Rx<AppContactEntitiesList> {
-  void get defaultSortFunction => sortFirstName;
+  void get defaultSortFunction => {sortFirstName, refresh()};
 
-  void get sortFirstName => value.sortFirstName;
+  void get sortFirstName => {value.sortFirstName, refresh()};
 }
 
 extension SortContacts on AppContactEntitiesList {
@@ -115,7 +113,7 @@ extension Details on AppContactEntitiesList {
 
 ///List Functions
 extension RxListFunctions on Rx<AppContactEntitiesList> {
-  clearContactsList() => {value.clearContactsList, refreshApp()};
+  clearContactsList() => {value.clearContactsList, refresh()};
 }
 
 extension ListFunctions on AppContactEntitiesList {

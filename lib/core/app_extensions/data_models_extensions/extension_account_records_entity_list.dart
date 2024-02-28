@@ -25,22 +25,22 @@ extension Storage on AppAccountRecordEntitiesList {
   AppAccountRecordEntitiesList get loadFromStorage {
     var data = AppLocalStorage.to.loadAccountRecords();
     return AppAccountRecordEntitiesList(
-        recordsList:
-            List.generate(data.recordsList.length, (index) => data.recordsList[index].mapper));
+        recordsList: List.generate(data.recordsList.length,
+            (index) => data.recordsList[index].mapper));
   }
 }
 
 ///Record Functions
 extension RxRecordFunction on Rx<AppAccountRecordEntitiesList> {
   addRecord(AppAccountRecordEntity record) =>
-      {value.addRecord(record), refreshApp()};
+      {value.addRecord(record), refresh()};
 
   editRecord(
           AppAccountRecordEntity prevRecord, AppAccountRecordEntity record) =>
-      {value.editRecord(prevRecord, record), refreshApp()};
+      {value.editRecord(prevRecord, record), refresh()};
 
   removeRecord(AppAccountRecordEntity record) =>
-      {value.removeRecord(record), refreshApp()};
+      {value.removeRecord(record), refresh()};
 }
 
 extension RecordFunction on AppAccountRecordEntitiesList {
@@ -78,7 +78,7 @@ extension RecordFunction on AppAccountRecordEntitiesList {
 ///Clear Record
 extension RxClearRecord on Rx<AppAccountRecordEntitiesList> {
   changeStatus(AppAccountRecordEntity record) =>
-      {value.changeStatus(record), refreshApp()};
+      {value.changeStatus(record), refresh()};
 }
 
 extension RecordStatus on AppAccountRecordEntitiesList {
@@ -91,9 +91,9 @@ extension RecordStatus on AppAccountRecordEntitiesList {
 
 ///Sort
 extension RxSortRecords on Rx<AppAccountRecordEntitiesList> {
-  void get defaultSortFunction => {sortByContact, refreshApp()};
-  void get sortByDateTime => {value.sortByDateTime, refreshApp()};
-  void get sortByContact => {value.sortByContact, refreshApp()};
+  void get defaultSortFunction => {sortByContact, refresh()};
+  void get sortByDateTime => {value.sortByDateTime, refresh()};
+  void get sortByContact => {value.sortByContact, refresh()};
 }
 
 extension SortRecords on AppAccountRecordEntitiesList {
@@ -212,7 +212,7 @@ extension Details on AppAccountRecordEntitiesList {
 extension RxClearRecordsList on Rx<AppAccountRecordEntitiesList> {
   void get clearRecordsList {
     value.clearRecordsList;
-    refreshApp();
+    refresh();
   }
 }
 

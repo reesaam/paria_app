@@ -103,7 +103,8 @@ class AccountsController extends CoreController {
     appLogPrint(record.isEmpty);
 
     record.isEmpty ? null : listRecords.addRecord(record!);
-    refreshApp();
+    Get.reloadAll();
+    refresh();
   }
 
   editRecord(AppAccountRecordEntity record) async {
@@ -114,13 +115,15 @@ class AccountsController extends CoreController {
     if (editedRecord.isNotEmpty) {
       listRecords.editRecord(record, editedRecord!);
     }
-    refreshApp();
+    Get.reloadAll();
+    refresh();
   }
 
   removeRecord(AppAccountRecordEntity record) {
     listRecords.removeRecord(record);
     appDebugPrint('Record Removed: $record');
-    refreshApp();
+    Get.reloadAll();
+    refresh();
   }
 
   changeClearanceStatus(AppAccountRecordEntity record) =>

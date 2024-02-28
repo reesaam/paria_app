@@ -16,10 +16,6 @@ bool get isRelease => false;
 void appDebugPrint(message) => isRelease ? null : debugPrint('$message');
 void appLogPrint(message) => debugPrint('[LOG] ** $message **');
 
-void refreshApp() {
-  Get.reloadAll();
-}
-
 void popPage() {
   Get.back();
 }

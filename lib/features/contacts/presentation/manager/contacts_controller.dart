@@ -51,7 +51,8 @@ class ContactsController extends CoreController {
     appLogPrint(contact.isEmpty);
 
     contact.isEmpty ? null : listContacts.addContact(contact!);
-    refreshApp();
+    Get.reloadAll();
+    refresh();
   }
 
   editContact(AppContactEntity contact) async {
@@ -61,12 +62,14 @@ class ContactsController extends CoreController {
     if (editedContact.isNotEmpty) {
       listContacts.editContact(contact, editedContact!);
     }
-    refreshApp();
+    Get.reloadAll();
+    refresh();
   }
 
   removeContact(AppContactEntity contact) {
     listContacts.removeContact(contact);
     appDebugPrint('Contact Removed: $contact');
-    refreshApp();
+    Get.reloadAll();
+    refresh();
   }
 }

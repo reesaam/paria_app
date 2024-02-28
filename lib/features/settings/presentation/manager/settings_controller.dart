@@ -75,14 +75,18 @@ class SettingsController extends CoreController {
     saveSettings();
     popPage();
     Get.updateLocale(selectedLanguage.value.getLocale);
-    refreshApp();
+    Get.reloadAll();
+    refresh();
+    update();
   }
 
   functionDarkModeOnChange(bool value) {
     darkMode.value = value;
     saveSettings();
     appLogPrint('DarkMode Changed to ${darkMode.value}');
-    refreshApp();
+    Get.reloadAll();
+    refresh();
+    update();
   }
 
   functionCheckUpdateAvailableVersion() async {
@@ -120,8 +124,10 @@ class SettingsController extends CoreController {
 
   _clearContactsFunction() {
     popPage();
-    clearAppData();
-    refreshApp();
+    AppAccountRecordEntitiesList().clearRecordsList;
+    AppContactEntitiesList().clearContactsList;
+    Get.reloadAll();
+    refresh();
   }
 
   clearContacts() => AppDialogs().appAlertDialogWithOkCancel(
@@ -133,7 +139,8 @@ class SettingsController extends CoreController {
   _clearAccountsRecordsFunction() {
     popPage();
     AppAccountRecordEntitiesList().clearRecordsList;
-    refreshApp();
+    Get.reloadAll();
+    refresh();
   }
 
   clearAccountsRecords() => AppDialogs().appAlertDialogWithOkCancel(
@@ -145,7 +152,8 @@ class SettingsController extends CoreController {
   _clearAllDataFunction() {
     popPage();
     clearAppData();
-    refreshApp();
+    Get.reloadAll();
+    refresh();
   }
 
   clearAllData() => AppDialogs().appAlertDialogWithOkCancel(
