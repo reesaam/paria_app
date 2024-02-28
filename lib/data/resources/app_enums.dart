@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 
+enum AppDataVersions {
+  v1(1),
+  v2(2);
+
+  final int number;
+  const AppDataVersions(this.number);
+}
+
 enum AppRoutes {
   splashScreen,
   homepage,

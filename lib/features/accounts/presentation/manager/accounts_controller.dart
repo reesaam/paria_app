@@ -137,7 +137,7 @@ class AccountsController extends CoreController {
   itemOnLongPress(AppAccountRecordEntity record) async {
     Widget form = Column(children: [
       InkWell(
-          child: AppDialogs().bottomDialogFunctionalItem(record.cleared == true
+          child: AppDialogs().bottomDialogItem(record.cleared == true
               ? Texts.to.accountsTableItemMenuMarkAsUncleared
               : Texts.to.accountsTableItemMenuMarkAsCleared),
           onTap: () {
@@ -145,21 +145,21 @@ class AccountsController extends CoreController {
             changeClearanceStatus(record);
           }),
       InkWell(
-          child: AppDialogs().bottomDialogFunctionalItem(
+          child: AppDialogs().bottomDialogItem(
               Texts.to.accountsTableItemMenuShowRecord),
           onTap: () {
             popPage();
             showRecord(record);
           }),
       InkWell(
-          child: AppDialogs().bottomDialogFunctionalItem(
+          child: AppDialogs().bottomDialogItem(
               Texts.to.accountsTableItemMenuEditRecord),
           onTap: () {
             popPage();
             editRecord(record);
           }),
       InkWell(
-          child: AppDialogs().bottomDialogFunctionalItem(
+          child: AppDialogs().bottomDialogItem(
               Texts.to.accountsTableItemMenuRemoveRecord),
           onTap: () {
             popPage();

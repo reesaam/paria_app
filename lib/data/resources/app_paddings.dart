@@ -17,7 +17,7 @@ class AppPaddings {
   static EdgeInsets get drawerFooter => const EdgeInsets.fromLTRB(20, 10, 0, 20);
 
   ///Modals
-  static EdgeInsets get generalBottomModal => EdgeInsets.fromLTRB(40, 10, 40, Get.context!.mediaQuery.viewInsets.bottom);
+  static EdgeInsets get generalBottomModal => EdgeInsets.fromLTRB(20, 10, 20, Get.context!.mediaQuery.viewInsets.bottom);
   static EdgeInsets get generalAlertDialog => const EdgeInsets.all(20);
   static EdgeInsets get modalItems => const EdgeInsets.symmetric(vertical: 15);
 
@@ -38,7 +38,7 @@ class AppPaddings {
   ///Contacts
   static EdgeInsets get contactsNoContacts => const EdgeInsets.all(50);
   static EdgeInsets get contactsItem => const EdgeInsets.fromLTRB(20, 5, 0, 5);
-  static EdgeInsets get contactsShowContactItems => const EdgeInsets.fromLTRB(20, 20, 40, 20);
+  static EdgeInsets get contactsShowContactItems => const EdgeInsets.symmetric(vertical: 20, horizontal: 10);
   static EdgeInsets get contactsShowContactItem => const EdgeInsets.symmetric(vertical: 5, horizontal: 10);
 
   ///Accounts

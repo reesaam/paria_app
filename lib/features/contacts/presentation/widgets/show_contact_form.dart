@@ -86,10 +86,9 @@ class ShowContactFormWidget extends StatelessWidget {
         ]),
         AppSpaces.w50,
         Flexible(
-          child: Text(item,
-              style: AppTextStyles.contactsShowContactInfoItem,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis),
-        ),
+            child: Text(item,
+                style: AppTextStyles.contactsShowContactInfoItem,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis)),
       ]));
 }

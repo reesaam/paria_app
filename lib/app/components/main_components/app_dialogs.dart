@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/data/resources/app_icons.dart';
 
 import '../../../core/app_localization.dart';
 import '../../../core/core_functions.dart';
@@ -81,7 +82,7 @@ class AppDialogs {
         title: title, text: text, buttons: buttons, dismissible: dismissible);
   }
 
-  bottomDialogFunctionalItem(String text) => LayoutBuilder(
+  bottomDialogItem(String text) => LayoutBuilder(
       builder: (context, constraints) => SizedBox(
           width: constraints.maxWidth,
           height: 50,
@@ -101,37 +102,36 @@ class AppDialogs {
           isDismissible: dismissible ?? false,
           shape: AppElements.defaultModalBorderShape,
           builder: (context) => SingleChildScrollView(
-                child: Column(mainAxisSize: MainAxisSize.max, children: [
-                  Padding(
-                      padding: AppPaddings.generalBottomModal,
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  title == null
-                                      ? shrinkSizedBox
-                                      : Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                              Text(title ?? '',
-                                                  style:
-                                                      AppTextStyles.modalTitle),
-                                              AppDividers
-                                                  .generalDividerWithAppDefaultColor,
-                                              AppSpaces.h10,
-                                            ]),
-                                  form,
-                                ]),
-                            AppSpaces.h40,
-                            _renderButtonsBottomDialog(buttons),
-                          ])),
-                  AppSpaces.h20,
-                ]),
-              ));
+                  child: Column(mainAxisSize: MainAxisSize.max, children: [
+                Padding(
+                    padding: AppPaddings.generalBottomModal,
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                title == null
+                                    ? shrinkSizedBox
+                                    : Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                            Text(title ?? '',
+                                                style:
+                                                    AppTextStyles.modalTitle),
+                                            AppDividers
+                                                .generalDividerWithAppDefaultColor,
+                                            AppSpaces.h10,
+                                          ]),
+                                form,
+                              ]),
+                          AppSpaces.h40,
+                          _renderButtonsBottomDialog(buttons),
+                        ])),
+                AppSpaces.h20,
+              ])));
 
   Widget _renderButtonsBottomDialog(List<Widget> buttons) {
     List<Widget> list = List.empty(growable: true);
@@ -156,22 +156,23 @@ class AppDialogs {
           useRootNavigator: true,
           barrierDismissible: dismissible ?? false,
           builder: (context) => Container(
-                padding: AppPaddings.generalAlertDialog,
-                child: AlertDialog(
-                  backgroundColor: AppColors.appBackground,
-                  shape: AppElements.defaultAlertBorderShape,
-                  title: title == null
-                      ? shrinkSizedBox
-                      : Column(children: [
-                          Text(title, style: AppTextStyles.dialogAlertTitle),
-                          AppDividers.generalDividerWithAppDefaultColor,
-                        ]),
-                  content: Text(text,
-                      style: AppTextStyles.dialogAlertText, softWrap: true),
-                  actions: [_renderButtonsAlertDialog(buttons)],
-                  actionsAlignment: MainAxisAlignment.center,
-                ),
-              ));
+              padding: AppPaddings.generalAlertDialog,
+              child: AlertDialog(
+                backgroundColor: AppColors.appBackground,
+                shape: AppElements.defaultAlertBorderShape,
+                title: title == null
+                    ? shrinkSizedBox
+                    : Column(children: [
+                        Text(title, style: AppTextStyles.dialogAlertTitle),
+                        AppDividers.generalDividerWithAppDefaultColor,
+                      ]),
+                content: Text(text,
+                    style: AppTextStyles.dialogAlertText, softWrap: true),
+                actions: [_renderButtonsAlertDialog(buttons)],
+                actionsOverflowAlignment: OverflowBarAlignment.center,
+                actionsOverflowDirection: VerticalDirection.down,
+                actionsAlignment: MainAxisAlignment.center,
+              )));
 
   Widget _renderButtonsAlertDialog(List<Widget> buttons) {
     List<Widget> list = List.empty(growable: true);
@@ -179,7 +180,7 @@ class AppDialogs {
     for (int i = 0; i < length; i++) {
       list.addIf(i == 0, shrinkOneExpanded);
       list.add(
-          Expanded(flex: length > 1 ? (10 ~/ length) : 10, child: buttons[i]));
+          Expanded(flex: length > 1 ? (30 ~/ length) : 10, child: buttons[i]));
       list.add(shrinkOneExpanded);
     }
     return Row(
