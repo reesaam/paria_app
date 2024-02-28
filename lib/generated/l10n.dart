@@ -410,6 +410,36 @@ class S {
     );
   }
 
+  /// `Contacts`
+  String get homepageSummaryContacts {
+    return Intl.message(
+      'Contacts',
+      name: 'homepageSummaryContacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accounts Records`
+  String get homepageSummaryAccountRecords {
+    return Intl.message(
+      'Accounts Records',
+      name: 'homepageSummaryAccountRecords',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Balance`
+  String get homepageSummaryTotalBalance {
+    return Intl.message(
+      'Total Balance',
+      name: 'homepageSummaryTotalBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Add New Contact`
   String get contactsAddContactTitle {
     return Intl.message(

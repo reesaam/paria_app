@@ -43,6 +43,9 @@
 
     "homepageDateTimeTitle": "Today",
     "homepageSummaryTitle": "App Summary",
+    "homepageSummaryContacts": "Contacts",
+    "homepageSummaryAccountRecords": "Accounts Records",
+    "homepageSummaryTotalBalance": "Total Balance",
 
     "contactsAddContactTitle": "Add New Contact",
     "contactsEditContactTitle": "Edit Contact",

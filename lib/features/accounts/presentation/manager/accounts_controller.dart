@@ -69,6 +69,12 @@ class AccountsController extends CoreController {
   void onCloseFunction() {
     listenersClose();
     saveAppData();
+    itemsBalance.close();
+    itemsCount.close();
+    itemsCountContacts.close();
+    hasFilter.close();
+    filter.close();
+    clearedIncluded.close();
   }
 
   ///Listeners

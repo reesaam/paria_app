@@ -188,8 +188,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("N/A"),
         "homePageName": MessageLookupByLibrary.simpleMessage("Home"),
         "homepageDateTimeTitle": MessageLookupByLibrary.simpleMessage("Today"),
+        "homepageSummaryAccountRecords":
+            MessageLookupByLibrary.simpleMessage("Accounts Records"),
+        "homepageSummaryContacts":
+            MessageLookupByLibrary.simpleMessage("Contacts"),
         "homepageSummaryTitle":
             MessageLookupByLibrary.simpleMessage("App Summary"),
+        "homepageSummaryTotalBalance":
+            MessageLookupByLibrary.simpleMessage("Total Balance"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "information": MessageLookupByLibrary.simpleMessage("Information"),
         "languageName": MessageLookupByLibrary.simpleMessage("English"),
