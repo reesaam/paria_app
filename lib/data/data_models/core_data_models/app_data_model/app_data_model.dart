@@ -5,19 +5,19 @@ import '../../../../features/contacts/domain/entities/contact_entity/contact_ent
 import '../../../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
 import '../../../resources/app_enums.dart';
 
-part 'app_data_entity.freezed.dart';
-part 'app_data_entity.g.dart';
+part 'app_data_model.freezed.dart';
+part 'app_data_model.g.dart';
 
 @freezed
-class AppDataEntity with _$AppDataEntity {
-  const factory AppDataEntity({
+class AppDataModel with _$AppDataModel {
+  const factory AppDataModel({
     final AppDataVersions? version,
     final String? appVersion,
-    final AppSettingDataEntity? appSettings,
+    final AppSettingDataEntity? settings,
     final AppContactEntitiesList? contacts,
-    final AppAccountRecordEntitiesList? accounts
-  }) = _AppDataEntity;
+    final AppAccountRecordEntitiesList? accounts,
+  }) = _AppDataModel;
 
-  factory AppDataEntity.fromJson(Map<String, dynamic> json) =>
-      _$AppDataEntityFromJson(json);
+  factory AppDataModel.fromJson(Map<String, dynamic> json) =>
+      _$AppDataModelFromJson(json);
 }

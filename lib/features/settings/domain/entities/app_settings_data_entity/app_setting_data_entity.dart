@@ -10,6 +10,7 @@ class AppSettingDataEntity with _$AppSettingDataEntity {
   const factory AppSettingDataEntity({
     @Default(false) bool darkMode,
     @Default(AppLanguages.english) AppLanguages language,
+    @Default(AppCalendarTypes.christian) AppCalendarTypes calendar,
   }) = _AppSettingDataEntity;
 
   factory AppSettingDataEntity.fromJson(Map<String, dynamic> json) =>
