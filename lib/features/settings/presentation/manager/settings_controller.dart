@@ -162,7 +162,18 @@ class SettingsController extends CoreController {
       onTapOk: _clearAllDataFunction,
       dismissible: true);
 
-  saveSettings() => saveAppData();
+  _clearAllSettingsFunction() {
+    popPage();
+    const AppSettingDataEntity().clearData;
+    Get.reloadAll();
+    refresh();
+  }
 
-  resetAllSettings() => clearAppData();
+  resetAllSettings() => AppDialogs().appAlertDialogWithOkCancel(
+      title: Texts.to.warning,
+      text: Texts.to.areYouSureDataWillLost,
+      onTapOk: _clearAllSettingsFunction,
+      dismissible: true);
+
+  saveSettings() => saveAppData();
 }

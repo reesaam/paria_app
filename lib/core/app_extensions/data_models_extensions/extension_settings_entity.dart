@@ -25,7 +25,7 @@ extension RxClear on Rx<AppSettingDataEntity> {
 
 extension Clear on AppSettingDataEntity {
   AppSettingDataEntity get clearData =>
-      const AppSettingDataEntity(darkMode: false);
+      const AppSettingDataEntity();
 }
 
 extension RxLanguages on Rx<AppSettingDataEntity> {
