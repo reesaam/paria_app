@@ -13,9 +13,13 @@ class AppTextField extends StatelessWidget {
     required this.hint,
     this.icon,
     this.textInputType,
+    this.textInputAction,
     this.suffixAction,
+    this.wholeWidgetAction,
     this.editable,
     this.hasError,
+    this.maxLines,
+    this.expandable,
   });
 
   final TextEditingController controller;
@@ -23,9 +27,13 @@ class AppTextField extends StatelessWidget {
   final String hint;
   final IconData? icon;
   final TextInputType? textInputType;
+  final TextInputAction? textInputAction;
   final VoidCallback? suffixAction;
+  final VoidCallback? wholeWidgetAction;
   final bool? editable;
   final bool? hasError;
+  final int? maxLines;
+  final bool? expandable;
 
   Widget suffix() => InkWell(
       onTap: suffixAction, child: Icon(icon, color: AppColors.textNormalDark));
@@ -38,8 +46,14 @@ class AppTextField extends StatelessWidget {
       style: AppTextStyles.textFieldText,
       cursorColor: AppColors.textNormalDark,
       keyboardType: textInputType ?? TextInputType.text,
-      enableInteractiveSelection: editable == false ? false : true,
-      canRequestFocus: editable == false ? false : true,
+      textInputAction: textInputAction,
+      maxLines: maxLines,
+      expands: expandable ?? false,
+      enableInteractiveSelection:
+          editable == false || wholeWidgetAction != null ? false : true,
+      canRequestFocus:
+          editable == false || wholeWidgetAction != null ? false : true,
+      onTap: wholeWidgetAction,
       decoration: InputDecoration(
         contentPadding: AppPaddings.textFieldContent,
         labelText: label,
@@ -50,7 +64,10 @@ class AppTextField extends StatelessWidget {
         alignLabelWithHint: true,
         suffixIcon: suffix(),
         border: AppElements.defaultOutlineBorder,
-        enabledBorder: hasError == true ? AppElements. defaultOutlineBorderError : AppElements.defaultOutlineBorder,
+        enabledBorder: hasError == true
+            ? AppElements.defaultOutlineBorderError
+            : AppElements.defaultOutlineBorder,
+        disabledBorder: AppElements.defaultOutlineBorderDisabled,
         focusedBorder: AppElements.defaultOutlineBorderFocused,
         isDense: true,
         isCollapsed: true,

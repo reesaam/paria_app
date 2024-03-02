@@ -15,6 +15,7 @@ class AppGeneralButton extends ElevatedButton {
     this.icon,
     this.leading,
     this.disabled,
+    this.lightButton,
     this.stateController,
   });
 
@@ -23,6 +24,7 @@ class AppGeneralButton extends ElevatedButton {
   final IconData? icon;
   final IconData? leading;
   final bool? disabled;
+  final bool? lightButton;
   final MaterialStatesController? stateController;
 
   @override
@@ -40,12 +42,16 @@ class AppGeneralButton extends ElevatedButton {
 
   @override
   ButtonStyle? get style => ButtonStyle(
-      backgroundColor: disabled == true
+      backgroundColor: lightButton == true
           ? MaterialStateProperty.all(AppColors.appBackground)
-          : MaterialStateProperty.all(AppColors.buttonBackgroundNormal),
-      foregroundColor: disabled == true
-          ? MaterialStateProperty.all(AppColors.buttonTextDisabled)
-          : MaterialStateProperty.all(AppColors.buttonTextNormal),
+          : disabled == true
+              ? MaterialStateProperty.all(AppColors.appBackground)
+              : MaterialStateProperty.all(AppColors.buttonBackgroundNormal),
+      foregroundColor: lightButton == true
+          ? MaterialStateProperty.all(AppColors.buttonTextNormal)
+          : disabled == true
+              ? MaterialStateProperty.all(AppColors.buttonTextDisabled)
+              : MaterialStateProperty.all(AppColors.buttonTextNormal),
       side: disabled == true
           ? MaterialStateProperty.all(AppElements.defaultBorderSideDisabled)
           : MaterialStateProperty.all(AppElements.defaultBorderSideFocused),
