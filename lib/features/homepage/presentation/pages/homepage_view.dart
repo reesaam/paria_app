@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_string.dart';
+import 'package:paria_app/data/resources/app_colors.dart';
 
 import '../../../../core/app_extensions/data_types_extensions/extension_icon.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_int.dart';
@@ -32,9 +33,12 @@ class HomePage extends CoreView<HomePageController> {
 
   @override
   Widget get body => Obx(() => Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [_widgetDateTime(), _widgetSummery()]));
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _widgetDateTime(),
+            _widgetSummery(),
+          ]));
 
   Widget _widgetDateTime() => Card(
           child: Stack(children: [
@@ -48,17 +52,17 @@ class HomePage extends CoreView<HomePageController> {
             ])),
 
         ///TODO: Implement DateTime Setting Page
-        Align(
-            alignment: Alignment.topRight,
-            child: Container(
-                alignment: Alignment.center,
-                width: Get.width / 12,
-                padding: AppPaddings.homepageDateTimeCardSettingIcon,
-                child: InkWell(
-                  onTap: () {},
-                  child: AppIcons.settings.withAppDefaultColor
-                      .withSize(AppSizes.homepageSettingIcon),
-                ))),
+        // Align(
+        //     alignment: Alignment.topRight,
+        //     child: Container(
+        //         alignment: Alignment.center,
+        //         width: Get.width / 12,
+        //         padding: AppPaddings.homepageDateTimeCardSettingIcon,
+        //         child: InkWell(
+        //           onTap: () {},
+        //           child: AppIcons.settings.withAppDefaultColor
+        //               .withSize(AppSizes.homepageSettingIcon),
+        //         ))),
       ]));
 
   Widget _widgetDateTimeItem() => Row(

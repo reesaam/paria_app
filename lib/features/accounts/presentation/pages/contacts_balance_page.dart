@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
+import 'package:paria_app/data/resources/app_elements.dart';
+import 'package:paria_app/data/resources/app_paddings.dart';
 import 'package:paria_app/data/resources/app_text_styles.dart';
 
 import '../../../../core/app_localization.dart';
@@ -18,6 +21,9 @@ class ContactsBalancePage extends CoreView<ContactsBalanceController> {
   @override
   PreferredSizeWidget? get appBar =>
       AppAppBar(pageDetail: controller.pageDetail);
+
+  @override
+  EdgeInsets? get pagePadding => AppPaddings.zero;
 
   @override
   Widget get body => LayoutBuilder(

@@ -31,9 +31,6 @@ class ContactsBalanceController extends CoreController {
   }
 
   @override
-  void onInitFunction() {}
-
-  @override
   void onCloseFunction() {
     saveAppData();
   }

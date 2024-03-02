@@ -32,14 +32,14 @@ class AppContactsAddEditContactComponent {
             label: Texts.to.contactsAddContactFirstNameTitle,
             hint: _hintGenerator(Texts.to.contactsAddContactFirstNameTitle),
             hasError: _hasError.value,
-            icon: AppIcons.accounts.icon),
+            icon: AppIcons.contacts.icon),
         AppSpaces.h10,
         AppTextField(
             controller: _controllerLastName,
             label: Texts.to.contactsAddContactLastNameTitle,
             hint: _hintGenerator(Texts.to.contactsAddContactLastNameTitle),
             hasError: _hasError.value,
-            icon: AppIcons.accounts.icon),
+            icon: AppIcons.contacts.icon),
         AppSpaces.h10,
         AppTextField(
             controller: _controllerMobile,
