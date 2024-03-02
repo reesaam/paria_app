@@ -36,6 +36,7 @@ class AppElements {
   ///OutlineInputBorder
   static OutlineInputBorder get defaultOutlineBorder => OutlineInputBorder(borderRadius: defaultBorderWithLowRadius, borderSide: defaultBorderSide);
   static OutlineInputBorder get defaultOutlineBorderFocused => OutlineInputBorder(borderRadius: defaultBorderWithLowRadius, borderSide: defaultBorderSideFocused);
+  static OutlineInputBorder get defaultOutlineBorderDisabled => OutlineInputBorder(borderRadius: defaultBorderWithLowRadius, borderSide: defaultBorderSideDisabled);
   static OutlineInputBorder get defaultOutlineBorderError => OutlineInputBorder(borderRadius: defaultBorderWithLowRadius, borderSide: defaultBorderSideError);
   static OutlineInputBorder get cardTransparentOutlineBorder => OutlineInputBorder(borderRadius: defaultBorderWithLowRadius, borderSide: cardTransparentBorderSide);
   static OutlineInputBorder get cardTransparentOutlineBorderZeroRadius => OutlineInputBorder(borderRadius: defaultBorderWithNoRadius, borderSide: cardTransparentBorderSide);

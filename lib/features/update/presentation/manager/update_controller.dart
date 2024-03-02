@@ -57,11 +57,11 @@ class UpdateController extends CoreController {
 
     if (version == AppInfo.appCurrentVersion) {
       appLogPrint('No New Version Available');
-      AppSnackBar.showSnackBar(text: Texts.to.updateNoUpdateFound);
+      AppSnackBar().showSnackBar(message: Texts.to.updateNoUpdateFound);
     } else {
       appLogPrint('Available Version: $version');
       availableVersion.value = version;
-      AppSnackBar.showSnackBar(text: Texts.to.updateUpdateFound);
+      AppSnackBar().showSnackBar(message: Texts.to.updateUpdateFound);
     }
   }
 
@@ -103,7 +103,7 @@ class UpdateController extends CoreController {
       });
     }
 
-    AppSnackBar.showSnackBar(text: Texts.to.updateDownloaded);
+    AppSnackBar().showSnackBar(message: Texts.to.updateDownloaded);
 
     AppDialogs().appAlertDialogWithOkCancel(
         title: Texts.to.updateInstallationTitle,

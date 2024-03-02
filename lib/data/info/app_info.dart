@@ -17,6 +17,10 @@ class AppInfo {
     '0.1.2', //Apply New Structure Changes on the App
     '0.2.1', //Implementation Major Changes in Major Structure
     '0.2.2', //Contacts
+    '0.2.3', //Accounts
+    '0.2.4', //Entities and Models Implementation
+    '0.2.5', //Data Backup and Restore
+    '0.2.6', //
   ];
 
   static String get appCurrentVersion => versions.last;

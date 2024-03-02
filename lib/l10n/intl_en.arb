@@ -71,6 +71,9 @@
     "contactsAddContactEmailTitle": "Email",
     "contactsAddContactWebLinkTitle": "Web Link",
 
+    "contactsAddEditModalErrorNoContactsAvailable": "You don't have any Contacts,\nPlease Add a Contact first",
+    "contactsAddEditModalErrorNoContactsAvailableOnTap": "Go to Contacts",
+    "contactsAddEditModalErrorNoContactsAvailableOnTap": "Tap to Go to Contacts",
     "contactsAddEditModalErrorFirstnameLastNameAndMobile": "Firstname or Lastname and Mobile should be entered.",
     "contactsAddEditModalErrorFirstnameLastName": "Firstname or Lastname should be entered.",
     "contactsAddEditModalErrorMobile": "Mobile field can't be Blank",
@@ -105,6 +108,7 @@
     "accountsAddEditRecordDescription": "Description",
     "accountsAddEditRecordAmount": "Amount",
     "accountsAddEditRecordDateTime": "Date & Time",
+    "accountsAddEditRecordNote": "Note",
 
     "accountsAddContactTitle": "Add New Record",
     "accountsEditContactTitle": "Edit Record",

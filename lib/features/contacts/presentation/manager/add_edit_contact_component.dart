@@ -105,14 +105,14 @@ class AppContactsAddEditContactComponent {
     if (_controllerFirstName.text.isEmpty &&
         _controllerLastName.text.isEmpty &&
         _controllerMobile.text.isEmpty) {
-      AppSnackBar.showSnackBar(
-          text: Texts.to.contactsAddEditModalErrorFirstnameLastNameAndMobile);
+      AppSnackBar().showSnackBar(
+          message: Texts.to.contactsAddEditModalErrorFirstnameLastNameAndMobile);
     } else if (_controllerFirstName.text.isEmpty &&
         _controllerLastName.text.isEmpty) {
-      AppSnackBar.showSnackBar(
-          text: Texts.to.contactsAddEditModalErrorFirstnameLastName);
+      AppSnackBar().showSnackBar(
+          message: Texts.to.contactsAddEditModalErrorFirstnameLastName);
     } else if (_controllerMobile.text.isEmpty) {
-      AppSnackBar.showSnackBar(text: Texts.to.contactsAddEditModalErrorMobile);
+      AppSnackBar().showSnackBar(message: Texts.to.contactsAddEditModalErrorMobile);
     } else {
       _hasError.value = false;
       _providedContact = AppContactEntity(

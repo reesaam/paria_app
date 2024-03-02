@@ -640,6 +640,26 @@ class S {
     );
   }
 
+  /// `You don't have any Contacts,\nPlease Add a Contact first`
+  String get contactsAddEditModalErrorNoContactsAvailable {
+    return Intl.message(
+      'You don\'t have any Contacts,\nPlease Add a Contact first',
+      name: 'contactsAddEditModalErrorNoContactsAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tap to Go to Contacts`
+  String get contactsAddEditModalErrorNoContactsAvailableOnTap {
+    return Intl.message(
+      'Tap to Go to Contacts',
+      name: 'contactsAddEditModalErrorNoContactsAvailableOnTap',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Firstname or Lastname and Mobile should be entered.`
   String get contactsAddEditModalErrorFirstnameLastNameAndMobile {
     return Intl.message(
@@ -925,6 +945,16 @@ class S {
     return Intl.message(
       'Date & Time',
       name: 'accountsAddEditRecordDateTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Note`
+  String get accountsAddEditRecordNote {
+    return Intl.message(
+      'Note',
+      name: 'accountsAddEditRecordNote',
       desc: '',
       args: [],
     );

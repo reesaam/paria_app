@@ -32,6 +32,7 @@ class AppIcons {
   static Icon get currency => const Icon(Icons.attach_money_rounded);
   static Icon get dateTime => const Icon(Icons.date_range_outlined);
   static Icon get description => const Icon(Icons.description_rounded);
+  static Icon get note => const Icon(Icons.edit_note_rounded);
 
   ///List
   static Icon get listSearch => const Icon(Icons.search_rounded);

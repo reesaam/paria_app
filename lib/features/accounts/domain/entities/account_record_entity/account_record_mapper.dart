@@ -10,7 +10,8 @@ extension OnAppAccountRecordEntity on AppAccountRecordEntity {
       amount: amount,
       description: description,
       dateTime: dateTime,
-      cleared: cleared);
+      cleared: cleared,
+      note: note);
 }
 
 extension OnAppContactModel on AppAccountRecordModel {
@@ -20,7 +21,8 @@ extension OnAppContactModel on AppAccountRecordModel {
       amount: amount,
       description: description,
       dateTime: dateTime,
-      cleared: cleared);
+      cleared: cleared,
+      note: note);
 }
 
 extension OnAppAccountRecordEntityNull on AppAccountRecordEntity? {

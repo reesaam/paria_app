@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:paria_app/app/components/general_widgets/app_snack_bars.dart';
 import 'package:paria_app/core/app_routing/routing.dart';
 
 import '../../../../app/components/main_components/app_dialogs.dart';
@@ -13,7 +14,7 @@ import '../../../../data/resources/app_logos.dart';
 
 class SplashScreenController extends CoreController {
   late bool internetStatus;
-  late String availableUpdate;
+  late String availableUpdate = AppInfo.appCurrentVersion;
   late String permissionsStatus;
 
   late String logoSource;
@@ -22,20 +23,19 @@ class SplashScreenController extends CoreController {
 
   @override
   void dataInit() async {
-    // clearAppData();
-    // loadAppData();
-    // availableUpdate = await checkAvailableVersion();
-    availableUpdate = AppInfo.appCurrentVersion;
     permissionsStatus = await AppPermissions.to.checkAllPermissions();
-    appDebugPrint(availableUpdate);
-    appDebugPrint(permissionsStatus);
-    appDebugPrint('SplashScreen DataInit Finish');
+    appDebugPrint('Permission Status: $permissionsStatus}');
+    internetStatus = await ConnectionChecker.to.checkInternet();
+    internetStatus
+        ? availableUpdate = await checkAvailableVersion()
+        : AppSnackBar().showSnackBar(
+            message: Texts.to.connectionInternetNotAvailableText);
+    appDebugPrint('Available Update: $availableUpdate');
   }
 
   @override
   void pageInit() {
     pageDetail = AppPageDetails.splashScreen;
-
     logoSource = AppLogos.appAnimatedLogo;
     appName = AppInfo.appName;
     appVersion = '${Texts.to.version}: ${AppInfo.appCurrentVersion}';
@@ -43,13 +43,6 @@ class SplashScreenController extends CoreController {
 
   @override
   void onReadyFunction() async {
-    internetStatus = await ConnectionChecker.to.checkInternet();
-    internetStatus
-        ? null
-        : await AppDialogs().appAlertDialogWithOk(
-            title: Texts.to.connectionInternetNotAvailableTitle,
-            text: Texts.to.connectionInternetNotAvailableText,
-            onTapOk: popPage);
     goToNextPage();
   }
 

@@ -56,6 +56,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Date & Time"),
         "accountsAddEditRecordDescription":
             MessageLookupByLibrary.simpleMessage("Description"),
+        "accountsAddEditRecordNote":
+            MessageLookupByLibrary.simpleMessage("Note"),
         "accountsAddRecordChooseContact":
             MessageLookupByLibrary.simpleMessage("Choose a Contact"),
         "accountsEditContactTitle":
@@ -143,6 +145,11 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Firstname or Lastname and Mobile should be entered."),
         "contactsAddEditModalErrorMobile": MessageLookupByLibrary.simpleMessage(
             "Mobile field can\'t be Blank"),
+        "contactsAddEditModalErrorNoContactsAvailable":
+            MessageLookupByLibrary.simpleMessage(
+                "You don\'t have any Contacts,\nPlease Add a Contact first"),
+        "contactsAddEditModalErrorNoContactsAvailableOnTap":
+            MessageLookupByLibrary.simpleMessage("Tap to Go to Contacts"),
         "contactsBalanceItemDetailsDialogTitle":
             MessageLookupByLibrary.simpleMessage("Contact Records"),
         "contactsBalancePageName":

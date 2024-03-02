@@ -13,7 +13,7 @@ import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_page_details.dart';
 import '../../domain/entities/account_record_entity/account_record_entity.dart';
 import '../../domain/entities/accounts_filter_entity/accounts_filter_entity.dart';
-import '../widgets/add_edit_record_component.dart';
+import 'add_edit_record_component.dart';
 import '../widgets/show_account_form.dart';
 
 class AccountsController extends CoreController {
