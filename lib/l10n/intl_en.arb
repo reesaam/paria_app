@@ -47,6 +47,8 @@
     "homepageSummaryAccountRecords": "Accounts Records",
     "homepageSummaryTotalBalance": "Total Balance",
 
+    "contactsNoContact": "No Contacts",
+
     "contactsAddContactTitle": "Add New Contact",
     "contactsEditContactTitle": "Edit Contact",
 
@@ -81,6 +83,8 @@
     "accountsSummaryBalance": "Balance",
     "accountsSummaryItemCount": "Items Count",
     "accountsSummaryContactsCount": "Contacts Count",
+
+    "accountsNoRecord": "No Records Registered",
 
     "accountsTableTitle": "Records Table",
     "accountsTableTitleMenuShowCleared": "Show Cleared Records",

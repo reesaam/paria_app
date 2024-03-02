@@ -36,7 +36,7 @@ class AppPaddings {
   static EdgeInsets get homepageButtons => const EdgeInsets.fromLTRB(50, 40, 50, 0);
 
   ///Contacts
-  static EdgeInsets get contactsNoContacts => const EdgeInsets.all(50);
+  static EdgeInsets get contactsNoContacts => const EdgeInsets.only(top: 50);
   static EdgeInsets get contactsItem => const EdgeInsets.fromLTRB(20, 5, 0, 5);
   static EdgeInsets get contactsShowContactItems => const EdgeInsets.symmetric(vertical: 20, horizontal: 10);
   static EdgeInsets get contactsShowContactItem => const EdgeInsets.symmetric(vertical: 5, horizontal: 10);
@@ -44,7 +44,7 @@ class AppPaddings {
   ///Accounts
   static EdgeInsets get accountsTopBar => const EdgeInsets.symmetric(horizontal: 40, vertical: 10);
   static EdgeInsets get accountsSummaryCard => const EdgeInsets.symmetric(horizontal: 20, vertical: 10);
-  static EdgeInsets get accountsNoRecordText => const EdgeInsets.all(40);
+  static EdgeInsets get accountsNoRecordText => const EdgeInsets.only(top: 50);
   static EdgeInsets get accountsTable => const EdgeInsets.symmetric(horizontal: 10);
   static EdgeInsets get accountsTableItem => const EdgeInsets.symmetric(horizontal: 5, vertical: 10);
   static EdgeInsets get accountsSelectContactList => const EdgeInsets.all(10);

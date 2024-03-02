@@ -64,6 +64,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Edit Record"),
         "accountsNoContacts":
             MessageLookupByLibrary.simpleMessage("No Records"),
+        "accountsNoRecord":
+            MessageLookupByLibrary.simpleMessage("No Records Registered"),
         "accountsOptionEdit":
             MessageLookupByLibrary.simpleMessage("Edit Record"),
         "accountsOptionRemove":
@@ -162,6 +164,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Count"),
         "contactsEditContactTitle":
             MessageLookupByLibrary.simpleMessage("Edit Contact"),
+        "contactsNoContact":
+            MessageLookupByLibrary.simpleMessage("No Contacts"),
         "contactsNoContacts":
             MessageLookupByLibrary.simpleMessage("No Contacts"),
         "contactsOptionEdit":

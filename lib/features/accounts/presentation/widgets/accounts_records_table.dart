@@ -33,9 +33,7 @@ class AccountsRecordsTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
       padding: AppPaddings.accountsTable,
-      child: listRecords.isEmpty
-          ? _noRecords()
-          : ListView.builder(
+      child: ListView.builder(
               shrinkWrap: true,
               physics: const ScrollPhysics(),
               itemCount: listRecords.count,
@@ -48,10 +46,6 @@ class AccountsRecordsTable extends StatelessWidget {
                           record: listRecords.recordsList[index])
                       ? shrinkSizedBox
                       : _recordItem(listRecords.recordsList[index])));
-
-  _noRecords() => Container(
-      padding: AppPaddings.accountsNoRecordText,
-      child: Text(Texts.to.accountsNoContacts));
 
   _recordItem(AppAccountRecordEntity record) => GestureDetector(
       onTap: () => onTap(record),

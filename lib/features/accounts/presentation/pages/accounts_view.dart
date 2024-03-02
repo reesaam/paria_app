@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
 import 'package:paria_app/core/app_extensions/data_models_extensions/extension_accounts_filter_entity.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_bool.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
@@ -45,18 +46,20 @@ class AccountsPage extends CoreView<AccountsController> {
       icon: AppIcons.add, onPressed: controller.addRecord);
 
   @override
-  Widget get body => Obx(() => Column(
+  Widget get body => Obx(() => controller.listRecords.isEmpty
+      ? _noRecords()
+      : Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _summary(),
-            _tableHeader(),
-            AccountsRecordsTable(
-                listRecords: controller.listRecords.value,
-                filter: controller.filter.value,
-                onTap: (record) => controller.showRecord(record),
-                onLongPress: (record) => controller.itemOnLongPress(record)),
-          ]));
+              _summary(),
+              _tableHeader(),
+              AccountsRecordsTable(
+                  listRecords: controller.listRecords.value,
+                  filter: controller.filter.value,
+                  onTap: (record) => controller.showRecord(record),
+                  onLongPress: (record) => controller.itemOnLongPress(record)),
+            ]));
 
   _summary() => Card(
       child: Padding(
@@ -121,4 +124,10 @@ class AccountsPage extends CoreView<AccountsController> {
     }
     return AppPopupMenu(listItems: listItems);
   }
+
+  Widget _noRecords() => Container(
+      width: Get.width,
+      alignment: Alignment.center,
+      padding: AppPaddings.accountsNoRecordText,
+      child: Text(Texts.to.accountsNoRecord));
 }

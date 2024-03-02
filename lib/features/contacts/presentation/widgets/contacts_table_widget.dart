@@ -2,7 +2,6 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/features/contacts/presentation/manager/contacts_controller.dart';
 
 import '../../../../app/components/general_widgets/app_popup_menu.dart';
 import '../../../../app/components/general_widgets/app_popup_menu_item.dart';
@@ -14,6 +13,7 @@ import '../../../../data/resources/app_paddings.dart';
 import '../../../../data/resources/app_spaces.dart';
 import '../../../../data/resources/app_text_styles.dart';
 import '../../domain/entities/contact_entity/contact_entity.dart';
+import '../manager/contacts_controller.dart';
 import 'contact_avatar_widget.dart';
 
 class ContactsTable extends StatelessWidget {
@@ -22,10 +22,10 @@ class ContactsTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ListView.builder(
-      shrinkWrap: true,
-      itemCount: listContacts.count,
-      itemBuilder: (context, index) =>
-          _contactItem(listContacts.contactsList[index]));
+          shrinkWrap: true,
+          itemCount: listContacts.count,
+          itemBuilder: (context, index) =>
+              _contactItem(listContacts.contactsList[index]));
 
   _contactItem(AppContactEntity contact) => GestureDetector(
       onTap: () => ContactsController.to.showContactModal(contact),

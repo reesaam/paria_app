@@ -440,6 +440,16 @@ class S {
     );
   }
 
+  /// `No Contacts`
+  String get contactsNoContact {
+    return Intl.message(
+      'No Contacts',
+      name: 'contactsNoContact',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Add New Contact`
   String get contactsAddContactTitle {
     return Intl.message(
@@ -715,6 +725,16 @@ class S {
     return Intl.message(
       'Contacts Count',
       name: 'accountsSummaryContactsCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Records Registered`
+  String get accountsNoRecord {
+    return Intl.message(
+      'No Records Registered',
+      name: 'accountsNoRecord',
       desc: '',
       args: [],
     );
