@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(model) => "Sort By ${model}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutPageName": MessageLookupByLibrary.simpleMessage("About"),
@@ -245,6 +247,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Available Version:"),
         "settingsSectionTitleUpdateCurrentVersion":
             MessageLookupByLibrary.simpleMessage("Current Version:"),
+        "sortBy": m0,
         "splashScreenPageName":
             MessageLookupByLibrary.simpleMessage("Splash Screen"),
         "to": MessageLookupByLibrary.simpleMessage("To"),

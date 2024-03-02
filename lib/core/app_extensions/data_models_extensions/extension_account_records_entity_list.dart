@@ -91,45 +91,49 @@ extension RecordStatus on AppAccountRecordEntitiesList {
 
 ///Sort
 extension RxSortRecords on Rx<AppAccountRecordEntitiesList> {
-  void get defaultSortFunction => {sortByContact, refresh()};
-  void get sortByDateTime => {value.sortByDateTime, refresh()};
-  void get sortByContact => {value.sortByContact, refresh()};
+  get defaultSortFunction => {sortByContact, refresh()};
+  get sortByDateTime => {value.sortByDateTime, refresh()};
+  get sortByContact => {value.sortByContact, refresh()};
 }
 
 extension SortRecords on AppAccountRecordEntitiesList {
-  void get defaultSortFunction => sortByContact;
+  get defaultSortFunction => sortByContact;
 
-  void get sortByDateTime {
+  get sortByDateTime {
     List<AppAccountRecordEntity> records =
         List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
     records.sort((a, b) => a.dateTime!.compareTo(b.dateTime!));
     recordsList = records;
+    return recordsList.toList();
   }
 
-  void get sortByContact {
+  get sortByContact {
     List<AppAccountRecordEntity> records =
         List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
     records
         .sort((a, b) => a.contact!.firstName!.compareTo(b.contact!.firstName!));
     recordsList = records;
+    return recordsList.toList();
   }
 
-  void get sortByAmountInc {
+  get sortByAmountInc {
     List<AppAccountRecordEntity> records =
         List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
     records.sort((a, b) => a.amount!.compareTo(b.amount!));
     recordsList = records;
+    return recordsList.toList();
   }
 
-  void get sortByAmountDec {
+  get sortByAmountDec {
     List<AppAccountRecordEntity> records =
         List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
     records.sort((a, b) => b.amount!.compareTo(a.amount!));
     recordsList = records;
+    return recordsList.toList();
   }
 }
 

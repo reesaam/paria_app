@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
 import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
 
 import '../../../../core/app_localization.dart';
 import '../../../../data/resources/app_colors.dart';
 import '../../../../data/resources/app_elements.dart';
 import '../../../../data/resources/app_paddings.dart';
-import '../../domain/entities/account_record_entity/account_record_entity.dart';
+import '../../domain/entities/account_balance_entity/account_balance_entity.dart';
 
 class ContactsBalanceItemDetailForm extends StatelessWidget {
-  final AppAccountRecordEntitiesList contactRecords;
-  const ContactsBalanceItemDetailForm(
-      {super.key, required this.contactRecords});
+  final AppAccountBalanceEntity balance;
+  const ContactsBalanceItemDetailForm({super.key, required this.balance});
 
   @override
   Widget build(BuildContext context) => ListView.builder(
       shrinkWrap: true,
-      itemCount: contactRecords.count,
+      itemCount: balance.count,
       itemBuilder: (context, index) => Container(
           decoration: AppElements.shapeBoxDecoration.copyWith(
               color: index % 2 == 0
@@ -25,8 +23,8 @@ class ContactsBalanceItemDetailForm extends StatelessWidget {
           padding: AppPaddings.contactsBalanceItemDetailsItem,
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            Text(contactRecords.recordsList[index].description ??
+            Text(balance.records?[index].description ??
                 Texts.to.notAvailableInitials),
-            Text(contactRecords.recordsList[index].amount.toCurrency)
+            Text(balance.records?[index].amount.toCurrency ?? '')
           ])));
 }

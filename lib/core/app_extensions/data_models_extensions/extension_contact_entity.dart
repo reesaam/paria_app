@@ -7,20 +7,26 @@ extension Accounts on AppContactEntity {
   AppAccountBalanceEntity calculateBalance(bool clearedIncluded) {
     int balance = 0;
     int count = 0;
+    List<AppAccountRecordEntity> contactRecords =
+        List<AppAccountRecordEntity>.empty(growable: true);
 
     AppAccountRecordEntitiesList records =
         AppAccountRecordEntitiesList().loadFromStorage;
     for (AppAccountRecordEntity record in records.recordsList) {
       if (record.contact.equalTo(this)) {
         clearedIncluded
-            ? {balance += record.amount!, count++}
+            ? {balance += record.amount!, count++, contactRecords.add(record)}
             : record.cleared == true
                 ? null
-                : {balance += record.amount!, count++};
+                : {
+                    balance += record.amount!,
+                    count++,
+                    contactRecords.add(record)
+                  };
       }
     }
     return AppAccountBalanceEntity(
-        contact: this, balance: balance, count: count);
+        contact: this, balance: balance, count: count, records: contactRecords);
   }
 }
 

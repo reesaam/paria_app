@@ -14,6 +14,7 @@ import '../../../../app/components/general_widgets/app_popup_menu.dart';
 import '../../../../app/components/general_widgets/app_popup_menu_item.dart';
 import '../../../../app/components/main_components/app_floating_buttons.dart';
 import '../../../../core/app_localization.dart';
+import '../../../../core/app_routing/routing.dart';
 import '../../../../core/core_widgets.dart';
 import '../../../../core/elements/core_view.dart';
 import '../../../../app/components/main_components/app_bar.dart';
@@ -24,7 +25,6 @@ import '../../../../data/resources/app_paddings.dart';
 import '../../../../data/resources/app_spaces.dart';
 import '../manager/accounts_controller.dart';
 import '../widgets/accounts_records_table.dart';
-import '../widgets/appbar_action_widget.dart';
 
 class AccountsPage extends CoreView<AccountsController> {
   const AccountsPage({super.key});
@@ -32,7 +32,7 @@ class AccountsPage extends CoreView<AccountsController> {
   @override
   PreferredSizeWidget? get appBar => AppAppBar(
       pageDetail: controller.pageDetail,
-      barAction: const AccountsAppBarActionWidget());
+      barAction: _barActionIcon());
 
   @override
   Widget? get drawer => const AppDrawer();
@@ -60,6 +60,10 @@ class AccountsPage extends CoreView<AccountsController> {
                   onTap: (record) => controller.showRecord(record),
                   onLongPress: (record) => controller.itemOnLongPress(record)),
             ]));
+
+  _barActionIcon() => AppIconButton(
+      icon: AppIcons.list.icon!,
+      onPressed: () => goToContactsBalance());
 
   _summary() => Card(
       child: Padding(

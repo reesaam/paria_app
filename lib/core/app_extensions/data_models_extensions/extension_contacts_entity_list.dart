@@ -32,12 +32,14 @@ extension Storage on AppContactEntitiesList {
 
 ///Contact Functions
 extension RxContactFunctions on Rx<AppContactEntitiesList> {
-  addContact(AppContactEntity contact) => {value.addContact(contact), refresh()};
+  addContact(AppContactEntity contact) =>
+      {value.addContact(contact), refresh()};
 
   editContact(AppContactEntity prevContact, AppContactEntity contact) =>
       {value.editContact(prevContact, contact), refresh()};
 
-  removeContact(AppContactEntity contact) => {value.removeContact(contact), refresh()};
+  removeContact(AppContactEntity contact) =>
+      {value.removeContact(contact), refresh()};
 }
 
 extension ContactFunction on AppContactEntitiesList {
@@ -82,20 +84,30 @@ extension ContactFunction on AppContactEntitiesList {
 
 ///Sort
 extension RxSortContacts on Rx<AppContactEntitiesList> {
-  void get defaultSortFunction => {sortFirstName, refresh()};
+  get defaultSortFunction => {sortFirstName, refresh()};
 
-  void get sortFirstName => {value.sortFirstName, refresh()};
+  get sortFirstName => {value.sortByFirstName, refresh()};
 }
 
 extension SortContacts on AppContactEntitiesList {
-  void get defaultSortFunction => sortFirstName;
+  get defaultSortFunction => sortByFirstName;
 
-  void get sortFirstName {
+  get sortByFirstName {
     List<AppContactEntity> contacts =
         List<AppContactEntity>.empty(growable: true);
     contacts.addAll(contactsList);
     contacts.sort((a, b) => a.firstName!.compareTo(b.firstName!));
     contactsList = contacts;
+    return contactsList.toList();
+  }
+
+  get sortByBalance {
+    List<AppContactEntity> contacts =
+    List<AppContactEntity>.empty(growable: true);
+    contacts.addAll(contactsList);
+    contacts.sort((a, b) => b.balance!.compareTo(a.balance!));
+    contactsList = contacts;
+    return contactsList.toList();
   }
 }
 

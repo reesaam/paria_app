@@ -390,6 +390,16 @@ class S {
     );
   }
 
+  /// `Sort By {model}`
+  String sortBy(Object model) {
+    return Intl.message(
+      'Sort By $model',
+      name: 'sortBy',
+      desc: '',
+      args: [model],
+    );
+  }
+
   /// `Today`
   String get homepageDateTimeTitle {
     return Intl.message(
