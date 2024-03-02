@@ -20,37 +20,34 @@ class UpdatePage extends CoreView<UpdateController> {
   @override
   Widget get body =>
       Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        widgetVersions(),
+        _widgetVersions(),
         AppSpaces.h40,
-        widgetButtons(),
+        _widgetButtons(),
       ]);
 
-  Widget widgetVersions() => Obx(() => Card(
-          child: Container(
-        padding: AppPaddings.updateVersions,
-        child: Column(children: [
-          widgetVersion(
-              Texts.to.updateCurrentVersion, AppInfo.appCurrentVersion),
-          AppSpaces.h10,
-          widgetVersion(
-              Texts.to.updateAvailableVersion,
-              controller.availableVersion.value == AppInfo.appCurrentVersion
-                  ? Texts.to.notAvailable
-                  : controller.availableVersion.value),
-        ]),
-      )));
+  Widget _widgetVersions() => Obx(() => Card(
+      child: Container(
+          padding: AppPaddings.updateVersions,
+          child: Column(children: [
+            _widgetVersion(
+                Texts.to.updateCurrentVersion, AppInfo.appCurrentVersion),
+            AppSpaces.h10,
+            _widgetVersion(
+                Texts.to.updateAvailableVersion,
+                controller.availableVersion.value == AppInfo.appCurrentVersion
+                    ? Texts.to.notAvailable
+                    : controller.availableVersion.value),
+          ]))));
 
-  Widget widgetVersion(String title, String version) => Row(
+  Widget _widgetVersion(String title, String version) => Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [Text(title), Text(version)]);
 
-  Widget widgetButtons() => Obx(() => Padding(
+  Widget _widgetButtons() => Obx(() => Padding(
       padding: AppPaddings.updateButtons,
       child: Column(children: [
         AppGeneralButton(
-          text: Texts.to.updateCheckUpdate,
-          onTap: controller.checkUpdate,
-        ),
+            text: Texts.to.updateCheckUpdate, onTap: controller.checkUpdate),
         AppGeneralButton(
             text: Texts.to.updateDownloadUpdate,
             onTap: controller.downloadUpdate,

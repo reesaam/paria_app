@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:paria_app/data/resources/app_enums.dart';
 
+import '../app/components/general_widgets/app_snack_bars.dart';
 import '../app/components/main_components/app_dialogs.dart';
 import '../data/data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
 import '../data/storage/app_local_storage.dart';
@@ -43,6 +44,9 @@ Future<String> checkAvailableVersion() async {
   var result = await UpdateRepository.to.getAvailableVersion();
   return result.fold((l) => Texts.to.notAvailable, (r) => r);
 }
+
+noInternetConnectionSnackBar() => AppSnackBar()
+    .showSnackBar(message: Texts.to.connectionInternetNotAvailableText);
 
 void appExitDialog() => AppDialogs().appAlertDialogWithOkCancel(
     title: Texts.to.appExit,

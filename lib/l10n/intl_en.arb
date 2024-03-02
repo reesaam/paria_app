@@ -36,7 +36,7 @@
     "appExit": "App Exit",
 
     "connectionInternetNotAvailableTitle": "Internet Connection",
-    "connectionInternetNotAvailableText": "Internet Connection is not Available!",
+    "connectionInternetNotAvailableText": "Internet Connection is not Available!\nPlease Check your Connection.",
 
     "generalNotAvailable": "Not Available",
     "generalNotAvailableInitials": "N/A",

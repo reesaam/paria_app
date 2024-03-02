@@ -360,10 +360,10 @@ class S {
     );
   }
 
-  /// `Internet Connection is not Available!`
+  /// `Internet Connection is not Available!\nPlease Check your Connection.`
   String get connectionInternetNotAvailableText {
     return Intl.message(
-      'Internet Connection is not Available!',
+      'Internet Connection is not Available!\nPlease Check your Connection.',
       name: 'connectionInternetNotAvailableText',
       desc: '',
       args: [],

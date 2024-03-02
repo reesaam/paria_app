@@ -30,7 +30,7 @@ class HomePageController extends CoreController {
     // clearAppData();
     listContacts.value = AppContactEntitiesList().loadFromStorage;
     listRecords.value = AppAccountRecordEntitiesList().loadFromStorage;
-    listenersInit();
+    _listenersInit();
   }
 
   @override
@@ -63,7 +63,7 @@ class HomePageController extends CoreController {
     summaryBalanceCount.close();
   }
 
-  listenersInit() {
+  _listenersInit() {
     listContacts.listen((data) => pageInit());
     listRecords.listen((data) => pageInit());
   }

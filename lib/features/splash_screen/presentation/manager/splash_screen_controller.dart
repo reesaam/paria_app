@@ -28,8 +28,7 @@ class SplashScreenController extends CoreController {
     internetStatus = await ConnectionChecker.to.checkInternet();
     internetStatus
         ? availableUpdate = await checkAvailableVersion()
-        : AppSnackBar().showSnackBar(
-            message: Texts.to.connectionInternetNotAvailableText);
+        : noInternetConnectionSnackBar();
     appDebugPrint('Available Update: $availableUpdate');
   }
 
@@ -50,15 +49,15 @@ class SplashScreenController extends CoreController {
     await Future.delayed(const Duration(seconds: 4));
     availableUpdate == AppInfo.appCurrentVersion
         ? goToHomePage()
-        : showUpdateDialog();
+        : _showUpdateDialog();
   }
 
-  showUpdateDialog() => AppDialogs().appAlertDialogWithOkCancel(
+  _showUpdateDialog() => AppDialogs().appAlertDialogWithOkCancel(
       title: Texts.to.updateNewVersion,
       text: Texts.to.updateApprove,
-      onTapOk: goToUpdate);
+      onTapOk: _goToUpdate);
 
-  goToUpdate() {
+  _goToUpdate() {
     goToHomePage();
     goToUpdatePage();
   }

@@ -49,18 +49,16 @@ class HomePage extends CoreView<HomePageController> {
 
         ///TODO: Implement DateTime Setting Page
         Align(
-          alignment: Alignment.topRight,
-          child: Container(
-            alignment: Alignment.center,
-            width: Get.width / 12,
-            padding: AppPaddings.homepageDateTimeCardSettingIcon,
-            child: InkWell(
-              onTap: () {},
-              child: AppIcons.settings.withAppDefaultColor
+            alignment: Alignment.topRight,
+            child: Container(
+                alignment: Alignment.center,
+                width: Get.width / 12,
+                padding: AppPaddings.homepageDateTimeCardSettingIcon,
+                child: InkWell(
+                  onTap: () {},
+                  child: AppIcons.settings.withAppDefaultColor
                       .withSize(AppSizes.homepageSettingIcon),
-            ),
-          ),
-        ),
+                ))),
       ]));
 
   Widget _widgetDateTimeItem() => Row(
@@ -87,15 +85,18 @@ class HomePage extends CoreView<HomePageController> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(Texts.to.homepageSummaryContacts.withDoubleDots),
-                          Text(Texts.to.homepageSummaryAccountRecords.withDoubleDots),
-                          Text(Texts.to.homepageSummaryTotalBalance.withDoubleDots),
+                          Text(Texts
+                              .to.homepageSummaryAccountRecords.withDoubleDots),
+                          Text(Texts
+                              .to.homepageSummaryTotalBalance.withDoubleDots),
                         ]),
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(controller.summaryContactsCount.toString()),
                           Text(controller.summaryRecordsCount.toString()),
-                          Text(controller.summaryBalanceCount.value.balance.toCurrency),
+                          Text(controller
+                              .summaryBalanceCount.value.balance.toCurrency),
                         ]),
                   ])),
         ]),

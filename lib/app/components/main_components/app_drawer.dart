@@ -23,14 +23,13 @@ class AppDrawer extends Drawer {
 
   @override
   Widget? get child => SafeArea(
-        child: Column(children: [
-          header(),
-          AppDividers.generalDivider,
-          Expanded(child: body()),
-          AppDividers.generalDivider,
-          footer(),
-        ]),
-      );
+          child: Column(children: [
+        header(),
+        AppDividers.generalDivider,
+        Expanded(child: body()),
+        AppDividers.generalDivider,
+        footer(),
+      ]));
 
   Widget header() => Container(
       padding: AppPaddings.drawerHeader,

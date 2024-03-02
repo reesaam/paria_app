@@ -46,7 +46,7 @@ class AccountsController extends CoreController {
   @override
   void pageInit() {
     pageDetail = AppPageDetails.accounts;
-    listenersInit();
+    _listenersInit();
   }
 
   @override
@@ -67,7 +67,7 @@ class AccountsController extends CoreController {
 
   @override
   void onCloseFunction() {
-    listenersClose();
+    _listenersClose();
     saveAppData();
     itemsBalance.close();
     itemsCount.close();
@@ -78,14 +78,14 @@ class AccountsController extends CoreController {
   }
 
   ///Listeners
-  listenersInit() {
+  _listenersInit() {
     listenerListRecords = listRecords.listen((data) => onInitFunction());
     listenerFilter = filter.listen((data) => onInitFunction());
     listenerHasFilter = hasFilter
         .listen((data) => hasFilter.value ? _filterModal() : filter.clear);
   }
 
-  listenersClose() {
+  _listenersClose() {
     listenerListRecords?.cancel();
     listenerFilter?.cancel();
     listenerHasFilter?.cancel();
