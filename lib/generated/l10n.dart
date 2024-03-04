@@ -1200,20 +1200,20 @@ class S {
     );
   }
 
-  /// `Current Version:`
+  /// `Current Version`
   String get settingsSectionTitleUpdateCurrentVersion {
     return Intl.message(
-      'Current Version:',
+      'Current Version',
       name: 'settingsSectionTitleUpdateCurrentVersion',
       desc: '',
       args: [],
     );
   }
 
-  /// `Available Version:`
+  /// `Available Version`
   String get settingsSectionTitleUpdateAvailableVersion {
     return Intl.message(
-      'Available Version:',
+      'Available Version',
       name: 'settingsSectionTitleUpdateAvailableVersion',
       desc: '',
       args: [],
@@ -1290,20 +1290,20 @@ class S {
     );
   }
 
-  /// `Current Version:`
+  /// `Current Version`
   String get updateCurrentVersion {
     return Intl.message(
-      'Current Version:',
+      'Current Version',
       name: 'updateCurrentVersion',
       desc: '',
       args: [],
     );
   }
 
-  /// `New Available Version:`
+  /// `New Available Version`
   String get updateAvailableVersion {
     return Intl.message(
-      'New Available Version:',
+      'New Available Version',
       name: 'updateAvailableVersion',
       desc: '',
       args: [],

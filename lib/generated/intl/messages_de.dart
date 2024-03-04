@@ -20,9 +20,89 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'de';
 
+  static String m0(type) => "Sort By ${type}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutPageName": MessageLookupByLibrary.simpleMessage("About"),
+        "accountShowRecordAmount":
+            MessageLookupByLibrary.simpleMessage("Amount"),
+        "accountShowRecordCleared":
+            MessageLookupByLibrary.simpleMessage("Cleared"),
+        "accountShowRecordClearedStatus":
+            MessageLookupByLibrary.simpleMessage("Status"),
+        "accountShowRecordContact":
+            MessageLookupByLibrary.simpleMessage("Contact"),
+        "accountShowRecordDateTime":
+            MessageLookupByLibrary.simpleMessage("Date & Time"),
+        "accountShowRecordDescription":
+            MessageLookupByLibrary.simpleMessage("Description"),
+        "accountShowRecordTitle":
+            MessageLookupByLibrary.simpleMessage("Record"),
+        "accountShowRecordUncleared":
+            MessageLookupByLibrary.simpleMessage("Uncleared"),
+        "accountsAddContactTitle":
+            MessageLookupByLibrary.simpleMessage("Add New Record"),
+        "accountsAddEditModalErrorAmount": MessageLookupByLibrary.simpleMessage(
+            "Amount field can\'t be Blank"),
+        "accountsAddEditModalErrorContact":
+            MessageLookupByLibrary.simpleMessage("Contact must be selected"),
+        "accountsAddEditModalErrorContactAndAmount":
+            MessageLookupByLibrary.simpleMessage(
+                "Contact and Amount should be entered."),
+        "accountsAddEditRecordAmount":
+            MessageLookupByLibrary.simpleMessage("Amount"),
+        "accountsAddEditRecordContact":
+            MessageLookupByLibrary.simpleMessage("Contact"),
+        "accountsAddEditRecordDateTime":
+            MessageLookupByLibrary.simpleMessage("Date & Time"),
+        "accountsAddEditRecordDescription":
+            MessageLookupByLibrary.simpleMessage("Description"),
+        "accountsAddEditRecordNote":
+            MessageLookupByLibrary.simpleMessage("Note"),
+        "accountsAddRecordChooseContact":
+            MessageLookupByLibrary.simpleMessage("Choose a Contact"),
+        "accountsEditContactTitle":
+            MessageLookupByLibrary.simpleMessage("Edit Record"),
+        "accountsNoContacts":
+            MessageLookupByLibrary.simpleMessage("No Records"),
+        "accountsNoRecord":
+            MessageLookupByLibrary.simpleMessage("No Records Registered"),
+        "accountsOptionEdit":
+            MessageLookupByLibrary.simpleMessage("Edit Record"),
+        "accountsOptionRemove":
+            MessageLookupByLibrary.simpleMessage("Remove Record"),
+        "accountsOptionShow":
+            MessageLookupByLibrary.simpleMessage("Show Record"),
+        "accountsPageName": MessageLookupByLibrary.simpleMessage("Accounts"),
+        "accountsSummaryBalance":
+            MessageLookupByLibrary.simpleMessage("Balance"),
+        "accountsSummaryContactsCount":
+            MessageLookupByLibrary.simpleMessage("Contacts Count"),
+        "accountsSummaryItemCount":
+            MessageLookupByLibrary.simpleMessage("Items Count"),
+        "accountsTableItemMenuEditRecord":
+            MessageLookupByLibrary.simpleMessage("Edit Record"),
+        "accountsTableItemMenuMarkAsCleared":
+            MessageLookupByLibrary.simpleMessage("Mark as cleared"),
+        "accountsTableItemMenuMarkAsUncleared":
+            MessageLookupByLibrary.simpleMessage("Mark as uncleared"),
+        "accountsTableItemMenuRemoveRecord":
+            MessageLookupByLibrary.simpleMessage("Remove Record"),
+        "accountsTableItemMenuShowRecord":
+            MessageLookupByLibrary.simpleMessage("Show Record"),
+        "accountsTableTitle":
+            MessageLookupByLibrary.simpleMessage("Records Table"),
+        "accountsTableTitleMenuHideCleared":
+            MessageLookupByLibrary.simpleMessage("Hide Cleared Records"),
+        "accountsTableTitleMenuShowAll":
+            MessageLookupByLibrary.simpleMessage("Show All Records"),
+        "accountsTableTitleMenuShowCleared":
+            MessageLookupByLibrary.simpleMessage("Show Cleared Records"),
+        "accountsTableTitleMenuShowNegatives":
+            MessageLookupByLibrary.simpleMessage("Show Negative Records Only"),
+        "accountsTableTitleMenuShowPositives":
+            MessageLookupByLibrary.simpleMessage("Show Positive Records Only"),
         "adminStartPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin Start Page"),
         "adminTestPagePageName":
@@ -42,14 +122,92 @@ class MessageLookup extends MessageLookupByLibrary {
         "areYouSureDataWillLost": MessageLookupByLibrary.simpleMessage(
             "Are you sure?\nData will be lost with this Function."),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
-        "connectionInternetNotAvailableText":
-            MessageLookupByLibrary.simpleMessage(
-                "Internet Connection is not Available!"),
+        "connectionInternetNotAvailableText": MessageLookupByLibrary.simpleMessage(
+            "Internet Connection is not Available!\nPlease Check your Connection."),
         "connectionInternetNotAvailableTitle":
             MessageLookupByLibrary.simpleMessage("Internet Connection"),
+        "contactsAddContactEmailTitle":
+            MessageLookupByLibrary.simpleMessage("Email"),
+        "contactsAddContactFirstNameTitle":
+            MessageLookupByLibrary.simpleMessage("First Name"),
+        "contactsAddContactLastNameTitle":
+            MessageLookupByLibrary.simpleMessage("Last Name"),
+        "contactsAddContactMobileTitle":
+            MessageLookupByLibrary.simpleMessage("Mobile"),
+        "contactsAddContactPhoneTitle":
+            MessageLookupByLibrary.simpleMessage("Phone"),
+        "contactsAddContactTitle":
+            MessageLookupByLibrary.simpleMessage("Add New Contact"),
+        "contactsAddContactWebLinkTitle":
+            MessageLookupByLibrary.simpleMessage("Web Link"),
+        "contactsAddEditModalErrorFirstnameLastName":
+            MessageLookupByLibrary.simpleMessage(
+                "Firstname or Lastname should be entered."),
+        "contactsAddEditModalErrorFirstnameLastNameAndMobile":
+            MessageLookupByLibrary.simpleMessage(
+                "Firstname or Lastname and Mobile should be entered."),
+        "contactsAddEditModalErrorMobile": MessageLookupByLibrary.simpleMessage(
+            "Mobile field can\'t be Blank"),
+        "contactsAddEditModalErrorNoContactsAvailable":
+            MessageLookupByLibrary.simpleMessage(
+                "You don\'t have any Contacts,\nPlease Add a Contact first"),
+        "contactsAddEditModalErrorNoContactsAvailableOnTap":
+            MessageLookupByLibrary.simpleMessage("Tap to Go to Contacts"),
+        "contactsBalanceItemDetailsDialogTitle":
+            MessageLookupByLibrary.simpleMessage("Contact Records"),
+        "contactsBalancePageName":
+            MessageLookupByLibrary.simpleMessage("Contacts Balance"),
+        "contactsBalanceTableHeaderBalance":
+            MessageLookupByLibrary.simpleMessage("Balance"),
+        "contactsBalanceTableHeaderContact":
+            MessageLookupByLibrary.simpleMessage("Contact"),
+        "contactsBalanceTableHeaderCount":
+            MessageLookupByLibrary.simpleMessage("Count"),
+        "contactsEditContactTitle":
+            MessageLookupByLibrary.simpleMessage("Edit Contact"),
+        "contactsNoContact":
+            MessageLookupByLibrary.simpleMessage("No Contacts"),
+        "contactsNoContacts":
+            MessageLookupByLibrary.simpleMessage("No Contacts"),
+        "contactsOptionEdit":
+            MessageLookupByLibrary.simpleMessage("Edit Contact"),
+        "contactsOptionRemove":
+            MessageLookupByLibrary.simpleMessage("Remove Contact"),
+        "contactsOptionShow":
+            MessageLookupByLibrary.simpleMessage("Show Contact"),
+        "contactsPageName": MessageLookupByLibrary.simpleMessage("Contacts"),
+        "contactsShowContactItemEmail":
+            MessageLookupByLibrary.simpleMessage("Email"),
+        "contactsShowContactItemMobile":
+            MessageLookupByLibrary.simpleMessage("Mobile"),
+        "contactsShowContactItemPhone":
+            MessageLookupByLibrary.simpleMessage("Phone"),
+        "contactsShowContactItemWebLink":
+            MessageLookupByLibrary.simpleMessage("Web Link"),
+        "contactsShowContactTitleAccount":
+            MessageLookupByLibrary.simpleMessage("Account Info"),
+        "contactsShowContactTitleBalance":
+            MessageLookupByLibrary.simpleMessage("Balance"),
+        "contactsShowContactTitleInfo":
+            MessageLookupByLibrary.simpleMessage("Personal Info"),
+        "contactsShowContactTitleRecords":
+            MessageLookupByLibrary.simpleMessage("Records Count"),
         "empty": MessageLookupByLibrary.simpleMessage(""),
         "from": MessageLookupByLibrary.simpleMessage("From"),
+        "generalNotAvailable":
+            MessageLookupByLibrary.simpleMessage("Not Available"),
+        "generalNotAvailableInitials":
+            MessageLookupByLibrary.simpleMessage("N/A"),
         "homePageName": MessageLookupByLibrary.simpleMessage("Home"),
+        "homepageDateTimeTitle": MessageLookupByLibrary.simpleMessage("Today"),
+        "homepageSummaryAccountRecords":
+            MessageLookupByLibrary.simpleMessage("Accounts Records"),
+        "homepageSummaryContacts":
+            MessageLookupByLibrary.simpleMessage("Contacts"),
+        "homepageSummaryTitle":
+            MessageLookupByLibrary.simpleMessage("App Summary"),
+        "homepageSummaryTotalBalance":
+            MessageLookupByLibrary.simpleMessage("Total Balance"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "information": MessageLookupByLibrary.simpleMessage("Information"),
         "languageName": MessageLookupByLibrary.simpleMessage("Deutsch"),
@@ -67,8 +225,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Restore Data"),
         "settingsSectionGeneralItemDarkMode":
             MessageLookupByLibrary.simpleMessage("Dark Mode"),
+        "settingsSectionStorageItemEraseAccountsRecords":
+            MessageLookupByLibrary.simpleMessage("Erase All Accounts Records"),
         "settingsSectionStorageItemEraseAllData":
             MessageLookupByLibrary.simpleMessage("Erase All Data"),
+        "settingsSectionStorageItemEraseContacts":
+            MessageLookupByLibrary.simpleMessage("Erase All Contacts"),
         "settingsSectionTitleBackup":
             MessageLookupByLibrary.simpleMessage("Backup"),
         "settingsSectionTitleGeneral":
@@ -85,10 +247,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Available Version:"),
         "settingsSectionTitleUpdateCurrentVersion":
             MessageLookupByLibrary.simpleMessage("Current Version:"),
+        "sortBy": m0,
         "splashScreenPageName":
             MessageLookupByLibrary.simpleMessage("Splash Screen"),
         "to": MessageLookupByLibrary.simpleMessage("To"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
+        "totalBalance": MessageLookupByLibrary.simpleMessage("Total Balance"),
         "updateApprove": MessageLookupByLibrary.simpleMessage(
             "Do you want to download the New Version?"),
         "updateAvailableVersion":

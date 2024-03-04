@@ -43,7 +43,7 @@
 
     "sortBy": "Sort By {type}",
     "@sortBy": {
-        "type": {}
+        "type": ""
     },
 
     "homepageDateTimeTitle": "Today",
@@ -145,8 +145,8 @@
     "settingsSectionTitleGeneralCalendar": "Calendar Type",
     "settingsSectionGeneralItemDarkMode": "Dark Mode",
     "settingsSectionTitleUpdate": "Update",
-    "settingsSectionTitleUpdateCurrentVersion": "Current Version:",
-    "settingsSectionTitleUpdateAvailableVersion": "Available Version:",
+    "settingsSectionTitleUpdateCurrentVersion": "Current Version",
+    "settingsSectionTitleUpdateAvailableVersion": "Available Version",
     "settingsSectionTitleBackup": "Backup",
     "settingsSectionBackupBackup": "Backup Data",
     "settingsSectionBackupRestore": "Restore Data",
@@ -155,8 +155,8 @@
     "settingsSectionStorageItemEraseAccountsRecords": "Erase All Accounts Records",
     "settingsSectionStorageItemEraseAllData": "Erase All Data",
 
-    "updateCurrentVersion": "Current Version:",
-    "updateAvailableVersion": "New Available Version:",
+    "updateCurrentVersion": "Current Version",
+    "updateAvailableVersion": "New Available Version",
     "updateCheckUpdate": "Check Update",
     "updateDownloadUpdate": "Download Update",
     "updateNewVersion": "New Version Found",

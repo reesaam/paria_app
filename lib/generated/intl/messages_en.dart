@@ -244,9 +244,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "settingsSectionTitleUpdate":
             MessageLookupByLibrary.simpleMessage("Update"),
         "settingsSectionTitleUpdateAvailableVersion":
-            MessageLookupByLibrary.simpleMessage("Available Version:"),
+            MessageLookupByLibrary.simpleMessage("Available Version"),
         "settingsSectionTitleUpdateCurrentVersion":
-            MessageLookupByLibrary.simpleMessage("Current Version:"),
+            MessageLookupByLibrary.simpleMessage("Current Version"),
         "sortBy": m0,
         "splashScreenPageName":
             MessageLookupByLibrary.simpleMessage("Splash Screen"),
@@ -256,13 +256,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "updateApprove": MessageLookupByLibrary.simpleMessage(
             "Do you want to download the New Version?"),
         "updateAvailableVersion":
-            MessageLookupByLibrary.simpleMessage("New Available Version:"),
+            MessageLookupByLibrary.simpleMessage("New Available Version"),
         "updateCheckUpdate":
             MessageLookupByLibrary.simpleMessage("Check Update"),
         "updateCheckingUpdate": MessageLookupByLibrary.simpleMessage(
             "Checking for any Available Update ..."),
         "updateCurrentVersion":
-            MessageLookupByLibrary.simpleMessage("Current Version:"),
+            MessageLookupByLibrary.simpleMessage("Current Version"),
         "updateDirectoryNotFoundContent": MessageLookupByLibrary.simpleMessage(
             "There is not any Directory available to store Data"),
         "updateDirectoryNotFoundTitle":

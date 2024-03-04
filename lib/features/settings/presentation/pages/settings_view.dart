@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/core/app_extensions/data_types_extensions/extension_string.dart';
 
 import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
@@ -65,11 +66,11 @@ class SettingsPage extends CoreView<SettingsController> {
         title: Texts.to.settingsSectionTitleGeneral,
         widgets: [
           SettingsSectionItemWidget(
-              text: Texts.to.settingsSectionTitleGeneralLanguage,
+              text: Texts.to.settingsSectionTitleGeneralLanguage.withDoubleDots,
               leading: leadingLanguage(),
               wholeItemFunction: controller.functionLanguageModal),
           SettingsSectionItemWidget(
-              text: Texts.to.settingsSectionTitleGeneralCalendar,
+              text: Texts.to.settingsSectionTitleGeneralCalendar.withDoubleDots,
               leading: leadingCalendar()),
           SettingsSectionItemWidget(
               text: Texts.to.settingsSectionGeneralItemDarkMode,
@@ -81,10 +82,10 @@ class SettingsPage extends CoreView<SettingsController> {
           title: Texts.to.settingsSectionTitleUpdate,
           widgets: [
             SettingsSectionItemWidget(
-                text: Texts.to.settingsSectionTitleUpdateCurrentVersion,
+                text: Texts.to.settingsSectionTitleUpdateCurrentVersion.withDoubleDots,
                 leading: Text(AppInfo.appCurrentVersion)),
             SettingsSectionItemWidget(
-                text: Texts.to.settingsSectionTitleUpdateAvailableVersion,
+                text: Texts.to.settingsSectionTitleUpdateAvailableVersion.withDoubleDots,
                 leading: Text(controller.updateAvailableVersion.value ==
                         AppInfo.appCurrentVersion
                     ? Texts.to.notAvailable

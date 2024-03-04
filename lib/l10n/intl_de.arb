@@ -3,8 +3,11 @@
     "languageName": "Deutsch",
     "app_name": "Paria Assistant App",
 
-    "homePageName": "Home",
     "splashScreenPageName": "Splash Screen",
+    "homePageName": "Home",
+    "contactsPageName": "Contacts",
+    "contactsBalancePageName": "Contacts Balance",
+    "accountsPageName": "Accounts",
     "settingsPageName": "Settings",
     "updatePageName": "Update",
     "aboutPageName": "About",
@@ -22,6 +25,7 @@
     "alert": "Alert",
     "information": "Information",
     "info": "Info",
+    "totalBalance": "Total Balance",
 
     "areYouSure": "Are you sure ?",
     "areYouSureDataWillLost": "Are you sure?\nData will be lost with this Function.",
@@ -32,7 +36,107 @@
     "appExit": "App Exit",
 
     "connectionInternetNotAvailableTitle": "Internet Connection",
-    "connectionInternetNotAvailableText": "Internet Connection is not Available!",
+    "connectionInternetNotAvailableText": "Internet Connection is not Available!\nPlease Check your Connection.",
+
+    "generalNotAvailable": "Not Available",
+    "generalNotAvailableInitials": "N/A",
+
+    "sortBy": "Sort By {type}",
+    "@sortBy": {
+        "type": ""
+    },
+
+    "homepageDateTimeTitle": "Today",
+    "homepageSummaryTitle": "App Summary",
+    "homepageSummaryContacts": "Contacts",
+    "homepageSummaryAccountRecords": "Accounts Records",
+    "homepageSummaryTotalBalance": "Total Balance",
+
+    "contactsNoContact": "No Contacts",
+
+    "contactsAddContactTitle": "Add New Contact",
+    "contactsEditContactTitle": "Edit Contact",
+
+    "contactsNoContacts": "No Contacts",
+    "contactsOptionShow": "Show Contact",
+    "contactsOptionEdit": "Edit Contact",
+    "contactsOptionRemove": "Remove Contact",
+
+    "contactsShowContactTitleInfo": "Personal Info",
+    "contactsShowContactItemMobile": "Mobile",
+    "contactsShowContactItemPhone": "Phone",
+    "contactsShowContactItemEmail": "Email",
+    "contactsShowContactItemWebLink": "Web Link",
+    "contactsShowContactTitleAccount": "Account Info",
+    "contactsShowContactTitleBalance": "Balance",
+    "contactsShowContactTitleRecords": "Records Count",
+
+    "contactsAddContactFirstNameTitle": "First Name",
+    "contactsAddContactLastNameTitle": "Last Name",
+    "contactsAddContactMobileTitle": "Mobile",
+    "contactsAddContactPhoneTitle": "Phone",
+    "contactsAddContactEmailTitle": "Email",
+    "contactsAddContactWebLinkTitle": "Web Link",
+
+    "contactsAddEditModalErrorNoContactsAvailable": "You don't have any Contacts,\nPlease Add a Contact first",
+    "contactsAddEditModalErrorNoContactsAvailableOnTap": "Go to Contacts",
+    "contactsAddEditModalErrorNoContactsAvailableOnTap": "Tap to Go to Contacts",
+    "contactsAddEditModalErrorFirstnameLastNameAndMobile": "Firstname or Lastname and Mobile should be entered.",
+    "contactsAddEditModalErrorFirstnameLastName": "Firstname or Lastname should be entered.",
+    "contactsAddEditModalErrorMobile": "Mobile field can't be Blank",
+
+    "accountsSummaryBalance": "Balance",
+    "accountsSummaryItemCount": "Items Count",
+    "accountsSummaryContactsCount": "Contacts Count",
+
+    "accountsNoRecord": "No Records Registered",
+
+    "accountsTableTitle": "Records Table",
+    "accountsTableTitleMenuShowCleared": "Show Cleared Records",
+    "accountsTableTitleMenuHideCleared": "Hide Cleared Records",
+    "accountsTableTitleMenuShowPositives": "Show Positive Records Only",
+    "accountsTableTitleMenuShowNegatives": "Show Negative Records Only",
+    "accountsTableTitleMenuShowAll": "Show All Records",
+
+    "accountsTableItemMenuMarkAsCleared": "Mark as cleared",
+    "accountsTableItemMenuMarkAsUncleared": "Mark as uncleared",
+    "accountsTableItemMenuShowRecord": "Show Record",
+    "accountsTableItemMenuEditRecord": "Edit Record",
+    "accountsTableItemMenuRemoveRecord": "Remove Record",
+
+    "accountShowRecordTitle": "Record",
+    "accountShowRecordContact": "Contact",
+    "accountShowRecordDescription": "Description",
+    "accountShowRecordAmount": "Amount",
+    "accountShowRecordDateTime": "Date & Time",
+    "accountShowRecordClearedStatus": "Status",
+    "accountShowRecordCleared": "Cleared",
+    "accountShowRecordUncleared": "Uncleared",
+
+    "accountsAddEditRecordContact": "Contact",
+    "accountsAddEditRecordDescription": "Description",
+    "accountsAddEditRecordAmount": "Amount",
+    "accountsAddEditRecordDateTime": "Date & Time",
+    "accountsAddEditRecordNote": "Note",
+
+    "accountsAddContactTitle": "Add New Record",
+    "accountsEditContactTitle": "Edit Record",
+
+    "accountsNoContacts": "No Records",
+    "accountsOptionShow": "Show Record",
+    "accountsOptionEdit": "Edit Record",
+    "accountsOptionRemove": "Remove Record",
+
+    "accountsAddEditModalErrorContactAndAmount": "Contact and Amount should be entered.",
+    "accountsAddEditModalErrorContact": "Contact must be selected",
+    "accountsAddEditModalErrorAmount": "Amount field can't be Blank",
+
+    "accountsAddRecordChooseContact": "Choose a Contact",
+
+    "contactsBalanceTableHeaderContact": "Contact",
+    "contactsBalanceTableHeaderBalance": "Balance",
+    "contactsBalanceTableHeaderCount": "Count",
+    "contactsBalanceItemDetailsDialogTitle": "Contact Records",
 
     "settingsLanguageModalSelectLanguage": "Select Language",
     "settingsAppbarMenuResetSettings": "Reset All Settings",
@@ -47,6 +151,8 @@
     "settingsSectionBackupBackup": "Backup Data",
     "settingsSectionBackupRestore": "Restore Data",
     "settingsSectionTitleStorage": "Storage",
+    "settingsSectionStorageItemEraseContacts": "Erase All Contacts",
+    "settingsSectionStorageItemEraseAccountsRecords": "Erase All Accounts Records",
     "settingsSectionStorageItemEraseAllData": "Erase All Data",
 
     "updateCurrentVersion": "Current Version:",
