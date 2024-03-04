@@ -3,13 +3,12 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/data/resources/app_enums.dart';
 
 import '../app/components/general_widgets/app_snack_bars.dart';
-import '../app/components/main_components/app_dialogs.dart';
+import '../app/components/dialogs/app_alert_dialogs.dart';
 import '../data/data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
 import '../data/storage/app_local_storage.dart';
-import '../features/update/data/repositories/update_repository.dart';
+import '../features/update/domain/repositories/update_repository.dart';
 import 'app_localization.dart';
 
 bool get isRelease => false;
@@ -48,7 +47,7 @@ Future<String> checkAvailableVersion() async {
 noInternetConnectionSnackBar() => AppSnackBar()
     .showSnackBar(message: Texts.to.connectionInternetNotAvailableText);
 
-void appExitDialog() => AppDialogs().appAlertDialogWithOkCancel(
+void appExitDialog() => AppAlertDialogs().withOkCancel(
     title: Texts.to.appExit,
     text: Texts.to.areYouSure,
     onTapOk: appExit,

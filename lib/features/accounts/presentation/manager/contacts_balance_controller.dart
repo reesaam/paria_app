@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_balance_entity_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
 
-import '../../../../app/components/main_components/app_dialogs.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_account_balance_entity_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_contact_entity.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
+import '../../../../app/components/dialogs/app_bottom_dialogs.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
@@ -46,7 +46,7 @@ class ContactsBalanceController extends CoreController {
   }
 
   itemDetailsDialog(AppAccountBalanceEntity balance) async =>
-      await AppDialogs().appBottomDialogWithOk(
+      await AppBottomDialogs().withOk(
           dismissible: true,
           title: Texts.to.contactsBalanceItemDetailsDialogTitle,
           form: ContactsBalanceItemDetailForm(balance: balance),

@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_bool.dart';
-import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_mapper.dart';
 
+import '../../../../core/app_extensions/data_models_extensions/extension_contact_entity.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_bool.dart';
+import '../../../../features/accounts/domain/entities/account_record_entity/account_record_mapper.dart';
 import '../../../data/storage/app_local_storage.dart';
 import '../../../features/accounts/data/models/account_record_model/account_record_model.dart';
 import '../../../features/accounts/domain/entities/account_balance_entity/account_balance_entity.dart';

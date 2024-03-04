@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
 
+import '../../../../core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
 import '../../../../app/components/main_components/app_floating_buttons.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../core/elements/core_view.dart';

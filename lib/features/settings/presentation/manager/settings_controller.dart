@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
-import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
-import 'package:paria_app/features/contacts/domain/entities/contact_entity/contact_entity.dart';
 
+import '../../../../core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_contacts_entity_list.dart';
+import '../../../../features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
+import '../../../../features/contacts/domain/entities/contact_entity/contact_entity.dart';
+import '../../../../app/components/dialogs/app_bottom_dialogs.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_app_languages.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_locale.dart';
 import '../../../../core/app_routing/routing.dart';
@@ -16,7 +17,7 @@ import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_page_details.dart';
 import '../../../../data/resources/app_enums.dart';
-import '../../../../app/components/main_components/app_dialogs.dart';
+import '../../../../app/components/dialogs/app_alert_dialogs.dart';
 import '../../domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
 import '../widgets/settings_languages_widgets.dart';
 
@@ -64,7 +65,7 @@ class SettingsController extends CoreController {
     appSettingDataListener = appSettings.listen((data) => _fillData());
   }
 
-  functionLanguageModal() => AppDialogs().appBottomDialogWithCancel(
+  functionLanguageModal() => AppBottomDialogs().withCancel(
       title: Texts.to.settingsLanguageModalSelectLanguage,
       form: SettingsLanguageWidget(function: functionLanguageSelectionOnTap),
       dismissible: true);
@@ -102,7 +103,7 @@ class SettingsController extends CoreController {
       await AppLocalStorage().exportData();
     }
 
-    AppDialogs().appAlertDialogWithOkCancel(
+    AppAlertDialogs().withOkCancel(
         title: Texts.to.warning,
         text: Texts.to.areYouSureDataExport,
         onTapOk: function,
@@ -115,7 +116,7 @@ class SettingsController extends CoreController {
       await AppLocalStorage.to.importData();
     }
 
-    AppDialogs().appAlertDialogWithOkCancel(
+    AppAlertDialogs().withOkCancel(
         title: Texts.to.warning,
         text: Texts.to.areYouSureDataMayLost,
         onTapOk: function,
@@ -130,7 +131,7 @@ class SettingsController extends CoreController {
     refresh();
   }
 
-  clearContacts() => AppDialogs().appAlertDialogWithOkCancel(
+  clearContacts() => AppAlertDialogs().withOkCancel(
       title: Texts.to.warning,
       text: Texts.to.areYouSureDataWillLost,
       onTapOk: _clearContactsFunction,
@@ -143,7 +144,7 @@ class SettingsController extends CoreController {
     refresh();
   }
 
-  clearAccountsRecords() => AppDialogs().appAlertDialogWithOkCancel(
+  clearAccountsRecords() => AppAlertDialogs().withOkCancel(
       title: Texts.to.warning,
       text: Texts.to.areYouSureDataWillLost,
       onTapOk: _clearAccountsRecordsFunction,
@@ -156,7 +157,7 @@ class SettingsController extends CoreController {
     refresh();
   }
 
-  clearAllData() => AppDialogs().appAlertDialogWithOkCancel(
+  clearAllData() => AppAlertDialogs().withOkCancel(
       title: Texts.to.warning,
       text: Texts.to.areYouSureDataWillLost,
       onTapOk: _clearAllDataFunction,
@@ -169,7 +170,7 @@ class SettingsController extends CoreController {
     refresh();
   }
 
-  resetAllSettings() => AppDialogs().appAlertDialogWithOkCancel(
+  resetAllSettings() => AppAlertDialogs().withOkCancel(
       title: Texts.to.warning,
       text: Texts.to.areYouSureDataWillLost,
       onTapOk: _clearAllSettingsFunction,

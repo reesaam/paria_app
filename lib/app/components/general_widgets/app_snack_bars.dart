@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/app/components/buttons/app_general_button.dart';
-import 'package:paria_app/app/components/buttons/app_icon_button.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_icon.dart';
-import 'package:paria_app/core/core_widgets.dart';
-import 'package:paria_app/data/resources/app_spaces.dart';
-import 'package:paria_app/data/resources/app_text_styles.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_icon.dart';
+import '../../../core/core_widgets.dart';
 import '../../../data/info/app_defaults.dart';
 import '../../../data/resources/app_colors.dart';
 import '../../../data/resources/app_paddings.dart';
+import '../../../data/resources/app_spaces.dart';
+import '../../../data/resources/app_text_styles.dart';
+import '../buttons/app_general_button.dart';
+import '../buttons/app_icon_button.dart';
 
 class AppSnackBar {
   showSnackBar(

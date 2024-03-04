@@ -1,5 +1,3 @@
-import 'package:paria_app/data/resources/app_enums.dart';
-
 class AppInfo {
   static String get appName => 'Paria Assistant App';
   static String get appNameInitials => 'PAA';

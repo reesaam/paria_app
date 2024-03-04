@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_model_list.dart';
-import 'package:paria_app/features/contacts/domain/entities/contact_entity/contacts_mapper.dart';
 
+import '../../../../core/app_extensions/data_models_extensions/extension_contacts_model_list.dart';
+import '../../../../features/contacts/domain/entities/contact_entity/contacts_mapper.dart';
 import '../../../../../core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
 import '../../../../../core/app_extensions/data_models_extensions/extension_contact_entity.dart';
 import '../../../data/storage/app_local_storage.dart';

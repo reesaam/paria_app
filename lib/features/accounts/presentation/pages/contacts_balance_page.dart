@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_balance_entity_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
 
+import '../../../../core/app_extensions/data_models_extensions/extension_account_balance_entity_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_contact_entity.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_int.dart';
 import '../../../../app/components/general_widgets/app_popup_menu.dart';
 import '../../../../app/components/general_widgets/app_popup_menu_item.dart';
 import '../../../../core/app_localization.dart';

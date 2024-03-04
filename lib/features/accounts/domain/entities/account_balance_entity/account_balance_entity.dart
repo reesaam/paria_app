@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:paria_app/features/accounts/domain/entities/account_record_entity/account_record_entity.dart';
 
 import '../../../../contacts/domain/entities/contact_entity/contact_entity.dart';
+import '../account_record_entity/account_record_entity.dart';
 
 part 'account_balance_entity.freezed.dart';
 part 'account_balance_entity.g.dart';

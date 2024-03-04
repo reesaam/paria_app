@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uuid/uuid.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
-import 'package:uuid/v1.dart';
 
+import '../../../../core/app_extensions/data_models_extensions/extension_contact_entity.dart';
+
+import '../../../../app/components/dialogs/app_bottom_dialogs.dart';
 import '../../../../app/components/general_widgets/app_snack_bars.dart';
 import '../../../../app/components/general_widgets/app_text_field.dart';
-import '../../../../app/components/main_components/app_dialogs.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../data/resources/app_icons.dart';
@@ -87,7 +87,7 @@ class AppContactsAddEditContactComponent {
       }
     }
 
-    await AppDialogs().appBottomDialogWithOkCancel(
+    await AppBottomDialogs().withOkCancel(
         title: title,
         form: _widgetAddOrEditContactDialog(),
         onTapOk: _provideContact,

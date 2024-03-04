@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/extension_app_routes.dart';
 
+import '../../../../core/app_extensions/extension_app_routes.dart';
 import '../../data/resources/app_enums.dart';
 
 goToSplashScreenPage() => goToPage(AppRoutes.splashScreen);

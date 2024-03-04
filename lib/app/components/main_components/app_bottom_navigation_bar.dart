@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
-import 'package:paria_app/data/info/app_page_details.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_int.dart';
 import '../../../core/app_extensions/data_types_extensions/extension_icon.dart';
 import '../../../core/app_routing/routing.dart';
+import '../../../data/info/app_page_details.dart';
 import '../../../data/resources/app_colors.dart';
 import '../../../data/resources/app_enums.dart';
-import '../../../data/resources/app_icons.dart';
 
 class AppBottomNavigationBar extends StatefulWidget {
   final int? selectedIndex;

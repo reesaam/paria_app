@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../features/update/data/repositories/update_repository.dart';
+import '../../features/update/domain/repositories/update_repository.dart';
 
 class AppRepositoriesBindings extends Bindings {
   @override

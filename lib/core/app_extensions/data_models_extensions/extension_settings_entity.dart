@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:paria_app/features/settings/domain/entities/app_settings_data_entity/app_setting_data_mapper.dart';
 
+import '../../../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_mapper.dart';
 import '../../../data/resources/app_enums.dart';
 import '../../../data/storage/app_local_storage.dart';
 import '../../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';

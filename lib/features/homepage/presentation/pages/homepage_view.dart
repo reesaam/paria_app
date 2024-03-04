@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_string.dart';
-import 'package:paria_app/data/resources/app_colors.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
+import '../../../../data/resources/app_colors.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_icon.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_int.dart';
 import '../../../../core/app_localization.dart';

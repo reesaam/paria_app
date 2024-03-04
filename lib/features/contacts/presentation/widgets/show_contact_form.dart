@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:paria_app/app/components/general_widgets/app_dividers.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contact_entity.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_icon.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_string.dart';
 
+import '../../../../app/components/general_widgets/app_dividers.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_contact_entity.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_icon.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_int.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../data/resources/app_elements.dart';
 import '../../../../data/resources/app_icons.dart';

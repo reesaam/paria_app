@@ -2,12 +2,12 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_accounts_filter_entity.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_bool.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_int.dart';
-import 'package:paria_app/core/app_extensions/data_types_extensions/extension_string.dart';
 
+import '../../../../core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_accounts_filter_entity.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_bool.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_int.dart';
+import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../../../app/components/buttons/app_icon_button.dart';
 import '../../../../app/components/general_widgets/app_dividers.dart';
 import '../../../../app/components/general_widgets/app_popup_menu.dart';

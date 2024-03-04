@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_record_entity.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_accounts_filter_entity.dart';
 
-import '../../../../app/components/main_components/app_dialogs.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_account_record_entity.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_accounts_filter_entity.dart';
+import '../../../../app/components/dialogs/app_bottom_dialogs.dart';
 import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
@@ -93,7 +93,7 @@ class AccountsController extends CoreController {
 
   ///Records Manipulation
   showRecord(AppAccountRecordEntity record) async =>
-      await AppDialogs().appBottomDialogWithoutButton(
+      await AppBottomDialogs().withoutButton(
           form: ShowAccountRecordFormWidget(record: record), dismissible: true);
 
   addRecord() async {
@@ -146,7 +146,7 @@ class AccountsController extends CoreController {
   itemOnLongPress(AppAccountRecordEntity record) async {
     Widget form = Column(children: [
       InkWell(
-          child: AppDialogs().bottomDialogItem(record.cleared == true
+          child: AppBottomDialogs().dialogTappableItem(record.cleared == true
               ? Texts.to.accountsTableItemMenuMarkAsUncleared
               : Texts.to.accountsTableItemMenuMarkAsCleared),
           onTap: () {
@@ -154,27 +154,27 @@ class AccountsController extends CoreController {
             changeClearanceStatus(record);
           }),
       InkWell(
-          child: AppDialogs().bottomDialogItem(
+          child: AppBottomDialogs().dialogTappableItem(
               Texts.to.accountsTableItemMenuShowRecord),
           onTap: () {
             popPage();
             showRecord(record);
           }),
       InkWell(
-          child: AppDialogs().bottomDialogItem(
+          child: AppBottomDialogs().dialogTappableItem(
               Texts.to.accountsTableItemMenuEditRecord),
           onTap: () {
             popPage();
             editRecord(record);
           }),
       InkWell(
-          child: AppDialogs().bottomDialogItem(
+          child: AppBottomDialogs().dialogTappableItem(
               Texts.to.accountsTableItemMenuRemoveRecord),
           onTap: () {
             popPage();
             removeRecord(record);
           }),
     ]);
-    await AppDialogs().appBottomDialogWithCancel(form: form, dismissible: true);
+    await AppBottomDialogs().withCancel(form: form, dismissible: true);
   }
 }

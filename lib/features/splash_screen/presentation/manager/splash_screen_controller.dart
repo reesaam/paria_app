@@ -1,11 +1,9 @@
-import 'package:get/get.dart';
-import 'package:paria_app/app/components/general_widgets/app_snack_bars.dart';
-import 'package:paria_app/core/app_routing/routing.dart';
 
-import '../../../../app/components/main_components/app_dialogs.dart';
+import '../../../../app/components/dialogs/app_alert_dialogs.dart';
 import '../../../../app/functional_components/connectivity/connectivity.dart';
 import '../../../../app/functional_components/permissions/permissions.dart';
 import '../../../../core/app_localization.dart';
+import '../../../../core/app_routing/routing.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../core/elements/core_controller.dart';
 import '../../../../data/info/app_info.dart';
@@ -52,7 +50,7 @@ class SplashScreenController extends CoreController {
         : _showUpdateDialog();
   }
 
-  _showUpdateDialog() => AppDialogs().appAlertDialogWithOkCancel(
+  _showUpdateDialog() => AppAlertDialogs().withOkCancel(
       title: Texts.to.updateNewVersion,
       text: Texts.to.updateApprove,
       onTapOk: _goToUpdate);

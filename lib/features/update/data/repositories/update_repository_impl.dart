@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 
 import '../../../../core/network/network_exception.dart';
 import '../remote/data_sources/update_remote_data_source.dart';
-import 'update_repository.dart';
+import '../../domain/repositories/update_repository.dart';
 
 class UpdateRepositoryImpl implements UpdateRepository {
   final UpdateRemoteDataSource updateRemoteDataSource;

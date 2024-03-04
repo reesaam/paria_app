@@ -2,10 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_account_records_model_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_contacts_model_list.dart';
-import 'package:paria_app/core/app_extensions/data_models_extensions/extension_settings_model.dart';
-import 'package:paria_app/data/info/app_info.dart';
+
+import '../../../../core/app_extensions/data_models_extensions/extension_account_records_model_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_contacts_model_list.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_settings_model.dart';
+import '../../../../data/info/app_info.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
 import '../../app/functional_components/file_functions/file_functions.dart';
 import '../../core/core_functions.dart';

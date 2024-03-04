@@ -1,5 +1,4 @@
-import 'package:paria_app/features/contacts/domain/entities/contact_entity/contacts_mapper.dart';
-
+import '../../../../../features/contacts/domain/entities/contact_entity/contacts_mapper.dart';
 import '../../../data/models/accounts_filter_model/accounts_filter_model.dart';
 import 'accounts_filter_entity.dart';
 
