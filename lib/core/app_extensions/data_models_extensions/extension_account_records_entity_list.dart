@@ -103,7 +103,7 @@ extension SortRecords on AppAccountRecordEntitiesList {
     List<AppAccountRecordEntity> records =
         List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
-    records.sort((a, b) => a.dateTime!.compareTo(b.dateTime!));
+    records.sort((a, b) => a.date!.compareTo(b.date!));
     recordsList = records;
     return recordsList.toList();
   }

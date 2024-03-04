@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/app/components/date_time/app_date_time_picker.dart';
+import 'package:paria_app/core/app_extensions/data_types_extensions/extension_jalali.dart';
+import 'package:paria_app/core/app_extensions/data_types_extensions/extension_locale.dart';
+import 'package:paria_app/data/resources/app_enums.dart';
+import 'package:persian_datetime_picker/persian_datetime_picker.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../app/components/dialogs/app_bottom_dialogs.dart';
@@ -14,13 +19,14 @@ import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../data/resources/app_icons.dart';
 import '../../../../data/resources/app_spaces.dart';
+import '../../../../data/storage/app_local_storage.dart';
 import '../../../contacts/domain/entities/contact_entity/contact_entity.dart';
 import '../../domain/entities/account_record_entity/account_record_entity.dart';
 
 class AppContactsAddEditRecordComponent {
   AppAccountRecordEntity _providedRecord = const AppAccountRecordEntity();
   AppContactEntity? _selectedContact = const AppContactEntity();
-  DateTime _dateTime = DateTime.now();
+  dynamic _selectedDate;
 
   Rx<bool> _hasError = false.obs;
 
@@ -59,12 +65,12 @@ class AppContactsAddEditRecordComponent {
         AppSpaces.h10,
         AppTextField(
             controller: _controllerDateTime,
-            label: Texts.to.accountsAddEditRecordDateTime,
-            hint: _hintGenerator(Texts.to.accountsAddEditRecordDateTime),
+            label: Texts.to.accountsAddEditRecordDate,
+            hint: _hintGenerator(Texts.to.accountsAddEditRecordDate),
             icon: AppIcons.dateTime.icon,
             textInputAction: TextInputAction.next,
             editable: false,
-            suffixAction: _chooseDateTime),
+            suffixAction: _chooseDate),
         AppSpaces.h10,
         AppTextField(
             controller: _controllerNote,
@@ -90,7 +96,7 @@ class AppContactsAddEditRecordComponent {
         _controllerDescription.text = record.description ?? '';
         _controllerAmount.text = record.amount.toCurrency ?? '';
         _controllerDateTime.text =
-            record.dateTime?.toLocal().toDateTimeFormat ?? '';
+            record.date?.toLocal().toDateTimeFormat ?? '';
       }
     }
 
@@ -110,19 +116,21 @@ class AppContactsAddEditRecordComponent {
   _provideRecord() {
     _hasError.value = true;
     if (_controllerContact.text.isEmpty && _controllerAmount.text.isEmpty) {
-      AppSnackBar().showSnackBar(message: Texts.to.accountsAddEditModalErrorContact);
+      AppSnackBar()
+          .showSnackBar(message: Texts.to.accountsAddEditModalErrorContact);
     } else if (_controllerContact.text.isEmpty) {
       AppSnackBar().showSnackBar(
           message: Texts.to.contactsAddEditModalErrorFirstnameLastName);
     } else if (_controllerAmount.text.isEmpty) {
-      AppSnackBar().showSnackBar(message: Texts.to.accountsAddEditModalErrorAmount);
+      AppSnackBar()
+          .showSnackBar(message: Texts.to.accountsAddEditModalErrorAmount);
     } else {
       _hasError.value = false;
       _providedRecord = AppAccountRecordEntity(
           contact: _selectedContact,
           description: _controllerDescription.text ?? '',
           amount: int.tryParse(_controllerAmount.text.replaceAll(',', '')) ?? 0,
-          dateTime: _dateTime);
+          date: _selectedDate);
       popPage();
       appDebugPrint('AddOrEdit Record Modal Closed');
     }
@@ -133,6 +141,20 @@ class AppContactsAddEditRecordComponent {
     _controllerContact.text = _selectedContact?.getContactFullName ?? '';
   }
 
-  ///TODO: DateTime Picker Implementation
-  _chooseDateTime() async {}
+  _chooseDate() async {
+    AppCalendarTypes defaultCalendarType = AppCalendarTypes.christian;
+    // AppCalendarTypes defaultCalendarType =
+        // AppLocalStorage.to.loadSettings().language == AppLanguages.persian
+        //     ? AppCalendarTypes.jalali
+        //     : AppCalendarTypes.christian;
+    _selectedDate =
+        await AppDateTimePicker().datePicker(calendarType: defaultCalendarType);
+    if (_selectedDate != null) {
+      if (defaultCalendarType == AppCalendarTypes.christian) {
+        _controllerDateTime.text = (_selectedDate as DateTime).toDateFormat;
+      } else if (defaultCalendarType == AppCalendarTypes.jalali) {
+        _controllerDateTime.text = (_selectedDate as Jalali).toDateFormat;
+      }
+    }
+  }
 }

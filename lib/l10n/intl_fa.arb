@@ -116,7 +116,7 @@
     "accountsAddEditRecordContact": "مخاطب",
     "accountsAddEditRecordDescription": "توضیح",
     "accountsAddEditRecordAmount": "مبلغ",
-    "accountsAddEditRecordDateTime": "تاریخ",
+    "accountsAddEditRecordDate": "تاریخ",
     "accountsAddEditRecordNote": "یادداشت",
 
     "accountsAddContactTitle": "اضافه کردن رکورد جدید",

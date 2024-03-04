@@ -54,8 +54,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Amount"),
         "accountsAddEditRecordContact":
             MessageLookupByLibrary.simpleMessage("Contact"),
-        "accountsAddEditRecordDateTime":
-            MessageLookupByLibrary.simpleMessage("Date & Time"),
         "accountsAddEditRecordDescription":
             MessageLookupByLibrary.simpleMessage("Description"),
         "accountsAddEditRecordNote":

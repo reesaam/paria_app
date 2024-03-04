@@ -60,7 +60,9 @@ class SettingsController extends CoreController {
   }
 
   _fillData() {
-    darkMode.value = appSettings.value.darkMode ?? false;
+    darkMode.value = appSettings.value.darkMode;
+    selectedLanguage.value = appSettings.value.language;
+    selectedCalendar.value = appSettings.value.calendar;
     appDebugPrint('Fill Setting Data Function Applied Data');
     appSettingDataListener = appSettings.listen((data) => _fillData());
   }

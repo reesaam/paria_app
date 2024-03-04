@@ -52,7 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("مبلغ"),
         "accountsAddEditRecordContact":
             MessageLookupByLibrary.simpleMessage("مخاطب"),
-        "accountsAddEditRecordDateTime":
+        "accountsAddEditRecordDate":
             MessageLookupByLibrary.simpleMessage("تاریخ"),
         "accountsAddEditRecordDescription":
             MessageLookupByLibrary.simpleMessage("توضیح"),

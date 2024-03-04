@@ -42,7 +42,7 @@ class ShowAccountRecordFormWidget extends StatelessWidget {
         _widgetInfoItem(
             AppIcons.dateTime,
             Texts.to.accountShowRecordDateTime.withDoubleDots,
-            record.dateTime?.toLocal().toDateTimeFormat ?? ''),
+            record.date?.toDateTimeFormat ?? ''),
         _widgetInfoItem(
             AppIcons.info,
             Texts.to.accountShowRecordClearedStatus.withDoubleDots,

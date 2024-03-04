@@ -8,7 +8,7 @@ extension OnAppAccountRecordEntity on AppAccountRecordEntity {
       contact: contact.mapper,
       amount: amount,
       description: description,
-      dateTime: dateTime,
+      date: date,
       cleared: cleared,
       note: note);
 }
@@ -19,7 +19,7 @@ extension OnAppContactModel on AppAccountRecordModel {
       contact: contact.mapper,
       amount: amount,
       description: description,
-      dateTime: dateTime,
+      date: date,
       cleared: cleared,
       note: note);
 }

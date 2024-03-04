@@ -970,11 +970,11 @@ class S {
     );
   }
 
-  /// `Date & Time`
-  String get accountsAddEditRecordDateTime {
+  /// `Date`
+  String get accountsAddEditRecordDate {
     return Intl.message(
-      'Date & Time',
-      name: 'accountsAddEditRecordDateTime',
+      'Date',
+      name: 'accountsAddEditRecordDate',
       desc: '',
       args: [],
     );

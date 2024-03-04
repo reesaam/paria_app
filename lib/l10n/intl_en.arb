@@ -116,7 +116,7 @@
     "accountsAddEditRecordContact": "Contact",
     "accountsAddEditRecordDescription": "Description",
     "accountsAddEditRecordAmount": "Amount",
-    "accountsAddEditRecordDateTime": "Date & Time",
+    "accountsAddEditRecordDate": "Date",
     "accountsAddEditRecordNote": "Note",
 
     "accountsAddContactTitle": "Add New Record",

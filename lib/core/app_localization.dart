@@ -29,10 +29,10 @@ class AppLocalization {
   TextDirection defaultTextDirection = TextDirection.ltr;
 
   getDefaultLocale() =>
-      AppLocalStorage.to.loadSettings().language?.getLocale;
+      AppLocalStorage.to.loadSettings().language.getLocale;
 
   getTextDirection() =>
-      AppLocalStorage.to.loadSettings().language?.getLocale == persian
+      AppLocalStorage.to.loadSettings().language.getLocale == persian
           ? TextDirection.rtl
           : defaultTextDirection;
 }

@@ -104,10 +104,10 @@ class AccountsRecordsTable extends StatelessWidget {
         filterList.add(record.amount! > filter.amountUp!);
       }
       if (filter.dateTimeDown != null) {
-        filterList.add(record.dateTime!.isBefore(filter.dateTimeDown!));
+        filterList.add(record.date!.isBefore(filter.dateTimeDown!));
       }
       if (filter.dateTimeUp != null) {
-        filterList.add(record.dateTime!.isAfter(filter.dateTimeUp!));
+        filterList.add(record.date!.isAfter(filter.dateTimeUp!));
       }
       filterList.add(filter.cleared != true && record.cleared == true);
     }
