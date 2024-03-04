@@ -2,10 +2,13 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
+import 'package:get/get.dart';
 
 import '../../../core/core_functions.dart';
 
 class AppFileFunctions {
+  static AppFileFunctions get to => Get.find();
+
   Future<String?> saveFile({
     required String fileName,
     required data,

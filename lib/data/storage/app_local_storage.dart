@@ -71,25 +71,26 @@ class AppLocalStorage {
     );
     var appDataJson = json.encode(appData);
     Uint8List data = appDataJson.toString().toUInt8List;
-    String? savedPath = await AppFileFunctions()
+    String? savedPath = await AppFileFunctions.to
         .saveFile(fileName: AppTexts.settingBackupFilename, data: data);
     appLogPrint('File Path: $savedPath');
     appLogPrint('Backup File Exported');
   }
 
   Future<void> importData() async {
-    var appDataFile = await AppFileFunctions().pickFile();
+    var appDataFile = await AppFileFunctions.to.pickFile();
     AppDataModel appData = AppDataModel.fromJson(appDataFile);
     clearAppData();
 
     ///Filling Data Fields
     if (appData.version == AppDataVersions.values.last) {
-      await saveSettings(settings: appData.settings ?? const AppSettingDataModel());
+      await saveSettings(
+          settings: appData.settings ?? const AppSettingDataModel());
       await saveContacts(contacts: appData.contacts ?? AppContactModelsList());
-      await saveAccountRecords(accountRecords: appData.accounts ?? AppAccountRecordModelsList());
+      await saveAccountRecords(
+          accountRecords: appData.accounts ?? AppAccountRecordModelsList());
       appLogPrint('Data Imported');
-    }
-    else {
+    } else {
       appLogPrint('Data Not Imported');
     }
   }
