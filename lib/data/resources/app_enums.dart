@@ -57,3 +57,12 @@ enum AppStorageKeys {
   keyAccounts,
   keySettings,
 }
+
+enum SortType {
+  name('Name'),
+  balance('Balance'),
+  recordsCount('Records Count');
+
+  final String value;
+  const SortType(this.value);
+}

@@ -41,9 +41,9 @@
     "generalNotAvailable": "Not Available",
     "generalNotAvailableInitials": "N/A",
 
-    "sortBy": "Sort By {model}",
+    "sortBy": "Sort By {type}",
     "@sortBy": {
-        "model": "name"
+        "type": {}
     },
 
     "homepageDateTimeTitle": "Today",

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/data/resources/app_enums.dart';
 
 import '../../../../core/app_extensions/data_models_extensions/extension_account_balance_entity_list.dart';
 import '../../../../core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
@@ -96,13 +97,13 @@ class ContactsBalancePage extends CoreView<ContactsBalanceController> {
   _changeSortIcon() => AppPopupMenu(
           listItems: List<AppPopupMenuItem>.of([
         AppPopupMenuItem(
-            text: 'sortByName',
+            text: Texts.to.sortBy(SortType.name.value),
             onTapFunction: () => controller.listBalances.sortByFirstName),
         AppPopupMenuItem(
-            text: 'sortByBalance',
+            text: Texts.to.sortBy(SortType.balance.value),
             onTapFunction: () => controller.listBalances.sortByBalance),
         AppPopupMenuItem(
-            text: 'sortByRecordsCount',
+            text: Texts.to.sortBy(SortType.recordsCount.value),
             onTapFunction: () => controller.listBalances.sortByRecordsCount),
       ]));
 }

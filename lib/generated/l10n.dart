@@ -390,13 +390,13 @@ class S {
     );
   }
 
-  /// `Sort By {model}`
-  String sortBy(Object model) {
+  /// `Sort By {type}`
+  String sortBy(Object type) {
     return Intl.message(
-      'Sort By $model',
+      'Sort By $type',
       name: 'sortBy',
       desc: '',
-      args: [model],
+      args: [type],
     );
   }
 

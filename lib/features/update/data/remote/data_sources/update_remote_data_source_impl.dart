@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:get/get.dart' as get_x;
 
 import '../../../../../core/app_localization.dart';
 import '../../../../../core/core_functions.dart';
@@ -10,8 +11,8 @@ import 'update_remote_data_source.dart';
 import '../../../../../core/network/network_exception.dart';
 
 class UpdateRemoteDataSourceImpl implements UpdateRemoteDataSource {
-  final Dio dio;
-  UpdateRemoteDataSourceImpl(this.dio);
+  Dio dio = get_x.Get.find<Dio>();
+  UpdateRemoteDataSourceImpl();
 
   @override
   Future<Either<NetworkException, String>> getDownloadAddress() async{
