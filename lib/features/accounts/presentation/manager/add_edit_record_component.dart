@@ -19,14 +19,13 @@ import '../../../../core/app_localization.dart';
 import '../../../../core/core_functions.dart';
 import '../../../../data/resources/app_icons.dart';
 import '../../../../data/resources/app_spaces.dart';
-import '../../../../data/storage/app_local_storage.dart';
 import '../../../contacts/domain/entities/contact_entity/contact_entity.dart';
 import '../../domain/entities/account_record_entity/account_record_entity.dart';
 
 class AppContactsAddEditRecordComponent {
   AppAccountRecordEntity _providedRecord = const AppAccountRecordEntity();
   AppContactEntity? _selectedContact = const AppContactEntity();
-  dynamic _selectedDate;
+  DateTime? _selectedDate;
 
   Rx<bool> _hasError = false.obs;
 
@@ -143,18 +142,10 @@ class AppContactsAddEditRecordComponent {
 
   _chooseDate() async {
     AppCalendarTypes defaultCalendarType = AppCalendarTypes.christian;
-    // AppCalendarTypes defaultCalendarType =
-        // AppLocalStorage.to.loadSettings().language == AppLanguages.persian
-        //     ? AppCalendarTypes.jalali
-        //     : AppCalendarTypes.christian;
     _selectedDate =
         await AppDateTimePicker().datePicker(calendarType: defaultCalendarType);
     if (_selectedDate != null) {
-      if (defaultCalendarType == AppCalendarTypes.christian) {
-        _controllerDateTime.text = (_selectedDate as DateTime).toDateFormat;
-      } else if (defaultCalendarType == AppCalendarTypes.jalali) {
-        _controllerDateTime.text = (_selectedDate as Jalali).toDateFormat;
-      }
+      _controllerDateTime.text = _selectedDate.toDateFormat;
     }
   }
 }
