@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paria_app/data/resources/app_enums.dart';
 
 import '../../../../core/app_extensions/data_models_extensions/extension_account_records_entity_list.dart';
 import '../../../../core/app_extensions/data_models_extensions/extension_accounts_filter_entity.dart';
@@ -30,9 +31,8 @@ class AccountsPage extends CoreView<AccountsController> {
   const AccountsPage({super.key});
 
   @override
-  PreferredSizeWidget? get appBar => AppAppBar(
-      pageDetail: controller.pageDetail,
-      barAction: _barActionIcon());
+  PreferredSizeWidget? get appBar =>
+      AppAppBar(pageDetail: controller.pageDetail, barAction: _barActionIcon());
 
   @override
   Widget? get drawer => const AppDrawer();
@@ -62,8 +62,7 @@ class AccountsPage extends CoreView<AccountsController> {
             ]));
 
   _barActionIcon() => AppIconButton(
-      icon: AppIcons.list.icon!,
-      onPressed: () => goToContactsBalance());
+      icon: AppIcons.list.icon!, onPressed: () => goToContactsBalance());
 
   _summary() => Card(
       child: Padding(
@@ -89,6 +88,7 @@ class AccountsPage extends CoreView<AccountsController> {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text(Texts.to.accountsTableTitle),
           Row(children: [
+            _sortButton(),
             controller.hasFilter.value
                 ? AppIconButton(
                     icon: AppIcons.removeFilter.icon!,
@@ -103,6 +103,29 @@ class AccountsPage extends CoreView<AccountsController> {
           ]),
         ]),
         AppDividers.generalDividerWithAppDefaultColor,
+      ]));
+
+  _sortButton() => AppPopupMenu(
+      icon: AppIcons.sort,
+      listItems: List<AppPopupMenuItem>.of([
+        AppPopupMenuItem(
+            text: Texts.to.sortBy(RecordsSortType.contactAZ.value),
+            onTapFunction: () => controller.listRecords.sortByContactAZ),
+        AppPopupMenuItem(
+            text: Texts.to.sortBy(RecordsSortType.contactZA.value),
+            onTapFunction: () => controller.listRecords.sortByContactZA),
+        AppPopupMenuItem(
+            text: Texts.to.sortBy(RecordsSortType.amountInc.value),
+            onTapFunction: () => controller.listRecords.sortByAmountInc),
+        AppPopupMenuItem(
+            text: Texts.to.sortBy(RecordsSortType.amountDec.value),
+            onTapFunction: () => controller.listRecords.sortByAmountDec),
+        AppPopupMenuItem(
+            text: Texts.to.sortBy(RecordsSortType.dateInc.value),
+            onTapFunction: () => controller.listRecords.sortByDateInc),
+        AppPopupMenuItem(
+            text: Texts.to.sortBy(RecordsSortType.dateDec.value),
+            onTapFunction: () => controller.listRecords.sortByDateDec),
       ]));
 
   _tableHeaderThreeDotsButton() {

@@ -97,13 +97,22 @@ class ContactsBalancePage extends CoreView<ContactsBalanceController> {
   _changeSortIcon() => AppPopupMenu(
           listItems: List<AppPopupMenuItem>.of([
         AppPopupMenuItem(
-            text: Texts.to.sortBy(SortType.name.value),
-            onTapFunction: () => controller.listBalances.sortByFirstName),
+            text: Texts.to.sortBy(ContactsSortType.nameAZ.value),
+            onTapFunction: () => controller.listBalances.sortByFirstNameAZ),
         AppPopupMenuItem(
-            text: Texts.to.sortBy(SortType.balance.value),
-            onTapFunction: () => controller.listBalances.sortByBalance),
+            text: Texts.to.sortBy(ContactsSortType.nameZA.value),
+            onTapFunction: () => controller.listBalances.sortByFirstNameZA),
         AppPopupMenuItem(
-            text: Texts.to.sortBy(SortType.recordsCount.value),
-            onTapFunction: () => controller.listBalances.sortByRecordsCount),
+            text: Texts.to.sortBy(ContactsSortType.balanceInc.value),
+            onTapFunction: () => controller.listBalances.sortByBalanceInc),
+        AppPopupMenuItem(
+            text: Texts.to.sortBy(ContactsSortType.balanceDec.value),
+            onTapFunction: () => controller.listBalances.sortByBalanceDec),
+        AppPopupMenuItem(
+            text: Texts.to.sortBy(ContactsSortType.recordsCountInc.value),
+            onTapFunction: () => controller.listBalances.sortByRecordsCountInc),
+        AppPopupMenuItem(
+            text: Texts.to.sortBy(ContactsSortType.recordsCountDec.value),
+            onTapFunction: () => controller.listBalances.sortByRecordsCountDec),
       ]));
 }

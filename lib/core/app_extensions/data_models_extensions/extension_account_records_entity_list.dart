@@ -91,29 +91,52 @@ extension RecordStatus on AppAccountRecordEntitiesList {
 
 ///Sort
 extension RxSortRecords on Rx<AppAccountRecordEntitiesList> {
-  get defaultSortFunction => {sortByContact, refresh()};
-  get sortByDateTime => {value.sortByDateTime, refresh()};
-  get sortByContact => {value.sortByContact, refresh()};
+  get defaultSortFunction => {sortByContactAZ, refresh()};
+  get sortByContactAZ => {value.sortByContactAZ, refresh()};
+  get sortByContactZA => {value.sortByContactZA, refresh()};
+  get sortByAmountInc => {value.sortByAmountInc, refresh()};
+  get sortByAmountDec => {value.sortByAmountDec, refresh()};
+  get sortByDateInc => {value.sortByDateInc, refresh()};
+  get sortByDateDec => {value.sortByDateDec, refresh()};
 }
 
 extension SortRecords on AppAccountRecordEntitiesList {
-  get defaultSortFunction => sortByContact;
+  get defaultSortFunction => sortByContactAZ;
 
-  get sortByDateTime {
+  get sortByContactAZ {
     List<AppAccountRecordEntity> records =
         List<AppAccountRecordEntity>.empty(growable: true);
+    records.addAll(recordsList);
+    records.sort((a, b) => (a.contact!.firstName ?? a.contact!.lastName)!
+        .compareTo(b.contact!.firstName ?? b.contact!.lastName!));
+    recordsList = records;
+    return recordsList.toList();
+  }
+
+  get sortByContactZA {
+    List<AppAccountRecordEntity> records =
+        List<AppAccountRecordEntity>.empty(growable: true);
+    records.addAll(recordsList);
+    records.sort((a, b) => (b.contact!.firstName ?? b.contact!.lastName)!
+        .compareTo(a.contact!.firstName ?? a.contact!.lastName!));
+    recordsList = records;
+    return recordsList.toList();
+  }
+
+  get sortByDateInc {
+    List<AppAccountRecordEntity> records =
+    List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
     records.sort((a, b) => a.date!.compareTo(b.date!));
     recordsList = records;
     return recordsList.toList();
   }
 
-  get sortByContact {
+  get sortByDateDec {
     List<AppAccountRecordEntity> records =
         List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
-    records
-        .sort((a, b) => a.contact!.firstName!.compareTo(b.contact!.firstName!));
+    records.sort((a, b) => b.date!.compareTo(a.date!));
     recordsList = records;
     return recordsList.toList();
   }

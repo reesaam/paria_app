@@ -13,6 +13,7 @@ class AppIcons {
   static Icon get threeDots => const Icon(Icons.more_vert);
   static Icon get add => const Icon(Icons.add);
   static Icon get list => const Icon(Icons.list);
+  static Icon get sort => const Icon(Icons.sort_rounded);
   static Icon get filter => const Icon(Icons.filter_alt);
   static Icon get noFilter => const Icon(Icons.filter_alt_off);
   static Icon get removeFilter => const Icon(Icons.highlight_remove_sharp);

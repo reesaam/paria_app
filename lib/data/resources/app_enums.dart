@@ -58,11 +58,26 @@ enum AppStorageKeys {
   keySettings,
 }
 
-enum SortType {
-  name('Name'),
-  balance('Balance'),
-  recordsCount('Records Count');
+enum ContactsSortType {
+  nameAZ('Name A->Z'),
+  nameZA('Name Z->A'),
+  balanceInc('Balance Inc'),
+  balanceDec('Balance Dec'),
+  recordsCountInc('Records Count Inc'),
+  recordsCountDec('Records Count Dec');
 
   final String value;
-  const SortType(this.value);
+  const ContactsSortType(this.value);
+}
+
+enum RecordsSortType {
+  contactAZ('Contact A->Z'),
+  contactZA('Contact Z->A'),
+  amountInc('Amount Inc'),
+  amountDec('Amount Dec'),
+  dateInc('Date Inc'),
+  dateDec('Date Dec');
+
+  final String value;
+  const RecordsSortType(this.value);
 }
