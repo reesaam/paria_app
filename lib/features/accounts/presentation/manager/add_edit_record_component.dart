@@ -25,7 +25,6 @@ import '../../domain/entities/account_record_entity/account_record_entity.dart';
 class AppContactsAddEditRecordComponent {
   AppAccountRecordEntity _providedRecord = const AppAccountRecordEntity();
   AppContactEntity? _selectedContact = const AppContactEntity();
-  DateTime? _selectedDate;
 
   Rx<bool> _hasError = false.obs;
 
@@ -61,15 +60,15 @@ class AppContactsAddEditRecordComponent {
             hasError: _hasError.value,
             textInputAction: TextInputAction.next,
             icon: AppIcons.currency.icon),
-        AppSpaces.h10,
-        AppTextField(
-            controller: _controllerDateTime,
-            label: Texts.to.accountsAddEditRecordDate,
-            hint: _hintGenerator(Texts.to.accountsAddEditRecordDate),
-            icon: AppIcons.dateTime.icon,
-            textInputAction: TextInputAction.next,
-            editable: false,
-            suffixAction: _chooseDate),
+        // AppSpaces.h10,
+        // AppTextField(
+        //     controller: _controllerDateTime,
+        //     label: Texts.to.accountsAddEditRecordDate,
+        //     hint: _hintGenerator(Texts.to.accountsAddEditRecordDate),
+        //     icon: AppIcons.dateTime.icon,
+        //     textInputAction: TextInputAction.next,
+        //     editable: false,
+        //     suffixAction: _chooseDate),
         AppSpaces.h10,
         AppTextField(
             controller: _controllerNote,
@@ -129,7 +128,7 @@ class AppContactsAddEditRecordComponent {
           contact: _selectedContact,
           description: _controllerDescription.text ?? '',
           amount: int.tryParse(_controllerAmount.text.replaceAll(',', '')) ?? 0,
-          date: _selectedDate);
+          date: DateTime.now());
       popPage();
       appDebugPrint('AddOrEdit Record Modal Closed');
     }
@@ -138,14 +137,5 @@ class AppContactsAddEditRecordComponent {
   _chooseContact() async {
     _selectedContact = await ChooseContactComponent().chooseContact();
     _controllerContact.text = _selectedContact?.getContactFullName ?? '';
-  }
-
-  _chooseDate() async {
-    AppCalendarTypes defaultCalendarType = AppCalendarTypes.christian;
-    _selectedDate =
-        await AppDateTimePicker().datePicker(calendarType: defaultCalendarType);
-    if (_selectedDate != null) {
-      _controllerDateTime.text = _selectedDate.toDateFormat;
-    }
   }
 }

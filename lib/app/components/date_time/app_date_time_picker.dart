@@ -1,21 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paria_app/data/resources/app_enums.dart';
 import 'package:persian_datetime_picker/persian_datetime_picker.dart';
 
 class AppDateTimePicker {
-  Future<dynamic> datePicker({required AppCalendarTypes calendarType}) async {
-    dynamic selectedDate;
-    if (calendarType == AppCalendarTypes.christian) {
-      selectedDate = await _georgianDatePicker();
-    }
-    if (calendarType == AppCalendarTypes.jalali) {
-      selectedDate = await _persianDatePicker();
-    }
-    return selectedDate;
-  }
 
-  Future<DateTime?> _georgianDatePicker({
+  Future<DateTime?> christianDatePicker({
     DateTime? initialDate,
     DateTime? firstDate,
     DateTime? lastDate,
@@ -30,7 +19,7 @@ class AppDateTimePicker {
     );
   }
 
-  Future<Jalali?> _persianDatePicker({
+  Future<Jalali?> persianDatePicker({
     Jalali? initialDate,
     Jalali? firstDate,
     Jalali? lastDate,
