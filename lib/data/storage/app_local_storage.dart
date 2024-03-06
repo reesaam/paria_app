@@ -66,7 +66,7 @@ class AppLocalStorage {
       version: AppDataVersions.values.last,
       appVersion: AppInfo.appCurrentVersion,
       settings: const AppSettingDataModel().loadFromStorage,
-      contacts: await AppContactModelsList().loadFromStorage,
+      contacts: AppContactModelsList().loadFromStorage,
       accounts: AppAccountRecordModelsList().loadFromStorage,
     );
     var appDataJson = json.encode(appData);

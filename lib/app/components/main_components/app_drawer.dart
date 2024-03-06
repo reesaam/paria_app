@@ -60,6 +60,7 @@ class AppDrawer extends Drawer {
         AppSpaces.w20,
         InkWell(
             onTap: () => goToUpdatePage(),
-            child: Text('${Texts.to.version}: ${AppInfo.appCurrentVersion}')),
+            child: Text(
+                '${Texts.to.version}: ${AppInfo.appCurrentVersion.version}')),
       ]));
 }

@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../../../data/data_entities/core_data_entities/app_version/app_version.dart';
 import '../../../../../data/resources/app_enums.dart';
 import '../../../../accounts/domain/entities/account_record_entity/account_record_entity.dart';
 import '../../../../contacts/domain/entities/contact_entity/contact_entity.dart';
@@ -12,7 +13,7 @@ part 'app_data_entity.g.dart';
 class AppDataEntity with _$AppDataEntity {
   const factory AppDataEntity({
     final AppDataVersions? version,
-    final String? appVersion,
+    final AppVersion? appVersion,
     final AppSettingDataEntity? appSettings,
     final AppContactEntitiesList? contacts,
     final AppAccountRecordEntitiesList? accounts

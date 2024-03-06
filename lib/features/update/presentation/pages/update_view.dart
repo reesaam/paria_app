@@ -29,8 +29,8 @@ class UpdatePage extends CoreView<UpdateController> {
       child: Container(
           padding: AppPaddings.updateVersions,
           child: Column(children: [
-            _widgetVersion(
-                Texts.to.updateCurrentVersion, AppInfo.appCurrentVersion),
+            _widgetVersion(Texts.to.updateCurrentVersion,
+                AppInfo.appCurrentVersion.version),
             AppSpaces.h10,
             _widgetVersion(
                 Texts.to.updateAvailableVersion,

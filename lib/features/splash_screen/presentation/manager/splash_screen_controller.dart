@@ -1,4 +1,3 @@
-
 import '../../../../app/components/dialogs/app_alert_dialogs.dart';
 import '../../../../app/functional_components/connectivity/connectivity.dart';
 import '../../../../app/functional_components/permissions/permissions.dart';
@@ -12,7 +11,7 @@ import '../../../../data/resources/app_logos.dart';
 
 class SplashScreenController extends CoreController {
   late bool internetStatus;
-  late String availableUpdate = AppInfo.appCurrentVersion;
+  late String availableUpdate = AppInfo.appCurrentVersion.version;
   late String permissionsStatus;
 
   late String logoSource;
@@ -45,7 +44,7 @@ class SplashScreenController extends CoreController {
 
   void goToNextPage() async {
     await Future.delayed(const Duration(seconds: 4));
-    availableUpdate == AppInfo.appCurrentVersion
+    availableUpdate == AppInfo.appCurrentVersion.version
         ? goToHomePage()
         : _showUpdateDialog();
   }
