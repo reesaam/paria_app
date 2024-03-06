@@ -74,4 +74,11 @@ AppVersionsList get appVersions => AppVersionsList(
             'Changes in AppData Model and Entities',
           ],
           released: false),
+          const AppVersion(
+              version: '0.2.6',
+              changes: [
+                'Release Prepared',
+                'First release after refactoring and restructuring',
+              ],
+              released: true),
     ]));
