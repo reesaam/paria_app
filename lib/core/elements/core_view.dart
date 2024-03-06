@@ -11,8 +11,6 @@ abstract class CoreView<Controller extends CoreController>
     extends GetView<Controller> {
   const CoreView({super.key});
 
-  Future<bool> onWillPop() async => onBackButtonPressed(controller.pageDetail);
-
   ///Main Widgets
   PreferredSizeWidget? get appBar => null;
   Widget? get drawer => null;
@@ -26,8 +24,10 @@ abstract class CoreView<Controller extends CoreController>
   EdgeInsets? get pagePadding => null;
 
   @override
-  Widget build(BuildContext context) =>
-      WillPopScope(onWillPop: () => onWillPop(), child: _pageScaffold);
+  Widget build(BuildContext context) => PopScope(
+      canPop: controller.pageDetail.bottomBarItemNumber == null,
+      onPopInvoked: (didPop) => didPop == false ? appExitDialog() : null,
+      child: _pageScaffold);
 
   Widget get _pageScaffold => Scaffold(
         resizeToAvoidBottomInset: false,

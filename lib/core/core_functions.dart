@@ -26,19 +26,6 @@ void loadAppData() => AppLocalStorage.to.loadAllData();
 
 void clearAppData() => AppLocalStorage.to.clearStorage();
 
-Future<bool> onBackButtonPressed(AppPageDetail pageDetail) async {
-  bool response = true;
-  pageDetail.bottomBarItemNumber == null
-      ? null
-      : {appExitDialog(), response = false};
-  return response;
-}
-
-// Future<String> checkAvailableVersion() async => await UpdateVersionUseCase(
-//         updateRepository: UpdateRepository.to)
-//     .call()
-//     .then((value) => value.fold((l) => Texts.to.notAvailable, (r) => r));
-
 Future<String> checkAvailableVersion() async {
   var result = await UpdateRepository.to.getAvailableVersion();
   return result.fold((l) => Texts.to.notAvailable, (r) => r);
