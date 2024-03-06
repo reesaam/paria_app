@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 import '../app/components/general_widgets/app_snack_bars.dart';
 import '../app/components/dialogs/app_alert_dialogs.dart';
-import '../data/data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
 import '../data/storage/app_local_storage.dart';
 import '../features/update/domain/repositories/update_repository.dart';
 import 'app_localization.dart';

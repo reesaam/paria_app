@@ -16,6 +16,8 @@
     "version": "نسخه",
     "ok": "تایید",
     "cancel": "لغو",
+    "yes": "بله",
+    "no": "خیر",
     "notAvailable": "در دسترس نیست",
     "notAvailableInitials": "ناموجود",
     "total": "جمع",

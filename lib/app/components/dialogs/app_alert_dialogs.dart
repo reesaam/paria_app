@@ -15,14 +15,30 @@ import '../general_widgets/app_dividers.dart';
 class AppAlertDialogs {
   _onTapCancel() => popPage();
 
+  withYesNo(
+      {String? title,
+      required String text,
+      required Function() onTapYes,
+      Function()? onTapNo,
+      bool? dismissible}) async {
+    List<Widget> buttons = [
+      AppGeneralButton(text: Texts.to.yes, onTap: onTapYes),
+      AppGeneralButton(text: Texts.to.no, onTap: onTapNo ?? _onTapCancel),
+    ];
+    await _appAlertDialog(
+        title: title, text: text, buttons: buttons, dismissible: dismissible);
+  }
+
   withOkCancel(
       {String? title,
       required String text,
       required Function() onTapOk,
+      Function()? onTapCancel,
       bool? dismissible}) async {
     List<Widget> buttons = [
       AppGeneralButton(text: Texts.to.ok, onTap: onTapOk),
-      AppGeneralButton(text: Texts.to.cancel, onTap: _onTapCancel),
+      AppGeneralButton(
+          text: Texts.to.cancel, onTap: onTapCancel ?? _onTapCancel),
     ];
     await _appAlertDialog(
         title: title, text: text, buttons: buttons, dismissible: dismissible);

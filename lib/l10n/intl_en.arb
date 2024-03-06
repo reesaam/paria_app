@@ -16,6 +16,8 @@
     "version": "Version",
     "ok": "Ok",
     "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No",
     "notAvailable": "Not Available",
     "notAvailableInitials": "N/A",
     "total": "Total",

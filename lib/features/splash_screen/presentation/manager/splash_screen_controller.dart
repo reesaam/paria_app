@@ -34,7 +34,7 @@ class SplashScreenController extends CoreController {
     pageDetail = AppPageDetails.splashScreen;
     logoSource = AppLogos.appAnimatedLogo;
     appName = AppInfo.appName;
-    appVersion = '${Texts.to.version}: ${AppInfo.appCurrentVersion}';
+    appVersion = '${Texts.to.version}: ${AppInfo.appCurrentVersion.version}';
   }
 
   @override
@@ -49,10 +49,11 @@ class SplashScreenController extends CoreController {
         : _showUpdateDialog();
   }
 
-  _showUpdateDialog() => AppAlertDialogs().withOkCancel(
+  _showUpdateDialog() => AppAlertDialogs().withYesNo(
       title: Texts.to.updateNewVersion,
       text: Texts.to.updateApprove,
-      onTapOk: _goToUpdate);
+      onTapNo: goToHomePage,
+      onTapYes: _goToUpdate);
 
   _goToUpdate() {
     goToHomePage();

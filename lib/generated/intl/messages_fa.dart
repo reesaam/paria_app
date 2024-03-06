@@ -218,6 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "info": MessageLookupByLibrary.simpleMessage("اطلاعات"),
         "information": MessageLookupByLibrary.simpleMessage("اطلاعات"),
         "languageName": MessageLookupByLibrary.simpleMessage("فارسی"),
+        "no": MessageLookupByLibrary.simpleMessage("خیر"),
         "notAvailable": MessageLookupByLibrary.simpleMessage("در دسترس نیست"),
         "notAvailableInitials": MessageLookupByLibrary.simpleMessage("ناموجود"),
         "ok": MessageLookupByLibrary.simpleMessage("تایید"),
@@ -296,6 +297,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "updateUpdateFound":
             MessageLookupByLibrary.simpleMessage("نسخه جدید در دسترس است!"),
         "version": MessageLookupByLibrary.simpleMessage("نسخه"),
-        "warning": MessageLookupByLibrary.simpleMessage("هشدار")
+        "warning": MessageLookupByLibrary.simpleMessage("هشدار"),
+        "yes": MessageLookupByLibrary.simpleMessage("بله")
       };
 }

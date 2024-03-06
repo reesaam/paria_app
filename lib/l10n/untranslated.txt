@@ -1,5 +1,7 @@
 {
   "de": [
+    "yes",
+    "no",
     "accountsAddEditRecordDate",
     "aboutTitlesAppName",
     "aboutTitlesDeveloperName",

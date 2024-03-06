@@ -218,6 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "information": MessageLookupByLibrary.simpleMessage("Information"),
         "languageName": MessageLookupByLibrary.simpleMessage("English"),
+        "no": MessageLookupByLibrary.simpleMessage("No"),
         "notAvailable": MessageLookupByLibrary.simpleMessage("Not Available"),
         "notAvailableInitials": MessageLookupByLibrary.simpleMessage("N/A"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
@@ -296,6 +297,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "updateUpdateFound":
             MessageLookupByLibrary.simpleMessage("New Update is Available!"),
         "version": MessageLookupByLibrary.simpleMessage("Version"),
-        "warning": MessageLookupByLibrary.simpleMessage("Warning")
+        "warning": MessageLookupByLibrary.simpleMessage("Warning"),
+        "yes": MessageLookupByLibrary.simpleMessage("Yes")
       };
 }
