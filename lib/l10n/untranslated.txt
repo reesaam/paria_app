@@ -1,5 +1,9 @@
 {
   "de": [
-    "accountsAddEditRecordDate"
+    "accountsAddEditRecordDate",
+    "aboutTitlesAppName",
+    "aboutTitlesDeveloperName",
+    "aboutTitlesDeveloperWebsite",
+    "aboutTitlesDeveloperLinkedIn"
   ]
 }

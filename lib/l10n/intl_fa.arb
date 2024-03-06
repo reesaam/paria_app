@@ -173,6 +173,11 @@
     "updateFileNotFoundTitle": "خطای فایل!",
     "updateFileNotFoundContent": "فایل پیدا نشد",
 
+    "aboutTitlesAppName": "",
+    "aboutTitlesDeveloperName": "نام توسعه دهنده",
+    "aboutTitlesDeveloperWebsite": "وب سایت توسعه دهنده",
+    "aboutTitlesDeveloperLinkedIn": "پروفایل لینکدین توسعه دهنده",
+
     "adminStartPagePageName": "Admin Start Page",
     "adminTestPagePageName": "Admin Pages Test Page",
     "adminUITestPagePageName": "Admin UI Test Page"

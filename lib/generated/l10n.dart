@@ -1460,6 +1460,46 @@ class S {
     );
   }
 
+  /// ``
+  String get aboutTitlesAppName {
+    return Intl.message(
+      '',
+      name: 'aboutTitlesAppName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Developer Name`
+  String get aboutTitlesDeveloperName {
+    return Intl.message(
+      'Developer Name',
+      name: 'aboutTitlesDeveloperName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Developer WebSite`
+  String get aboutTitlesDeveloperWebsite {
+    return Intl.message(
+      'Developer WebSite',
+      name: 'aboutTitlesDeveloperWebsite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Developer LinkedIn Profile`
+  String get aboutTitlesDeveloperLinkedIn {
+    return Intl.message(
+      'Developer LinkedIn Profile',
+      name: 'aboutTitlesDeveloperLinkedIn',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Admin Start Page`
   String get adminStartPagePageName {
     return Intl.message(
