@@ -2,15 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/app_extensions/data_types_extensions/extension_string.dart';
-import '../../../../data/resources/app_colors.dart';
-import '../../../../core/app_extensions/data_types_extensions/extension_icon.dart';
 import '../../../../core/app_extensions/data_types_extensions/extension_int.dart';
 import '../../../../core/app_localization.dart';
-import '../../../../data/resources/app_icons.dart';
 import '../../../../data/resources/app_spaces.dart';
 import '../../../../core/elements/core_view.dart';
 import '../../../../data/resources/app_paddings.dart';
-import '../../../../data/resources/app_sizes.dart';
 import '../../../../app/components/main_components/app_bar.dart';
 import '../../../../app/components/main_components/app_bottom_navigation_bar.dart';
 import '../../../../app/components/main_components/app_drawer.dart';
@@ -73,36 +69,36 @@ class HomePage extends CoreView<HomePageController> {
             Text(controller.mainDate.value),
           ]);
 
-  ///TODO: Implement Summery
   Widget _widgetSummery() => Card(
-          child: Padding(
-        padding: AppPaddings.homepageSummeryCard,
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          Text(Texts.to.homepageSummaryTitle, style: AppTextStyles.cardTitle),
-          AppSpaces.h20,
-          Padding(
-              padding: AppPaddings.homepageSummeryCardData,
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(Texts.to.homepageSummaryContacts.withDoubleDots),
-                          Text(Texts
-                              .to.homepageSummaryAccountRecords.withDoubleDots),
-                          Text(Texts
-                              .to.homepageSummaryTotalBalance.withDoubleDots),
-                        ]),
-                    Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(controller.summaryContactsCount.toString()),
-                          Text(controller.summaryRecordsCount.toString()),
-                          Text(controller
-                              .summaryBalanceCount.value.balance.toCurrency),
-                        ]),
-                  ])),
-        ]),
-      ));
+      child: Padding(
+          padding: AppPaddings.homepageSummeryCard,
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Text(Texts.to.homepageSummaryTitle, style: AppTextStyles.cardTitle),
+            AppSpaces.h20,
+            Padding(
+                padding: AppPaddings.homepageSummeryCardData,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(Texts
+                                .to.homepageSummaryContacts.withDoubleDots),
+                            Text(Texts.to.homepageSummaryAccountRecords
+                                .withDoubleDots),
+                            Text(Texts
+                                .to.homepageSummaryTotalBalance.withDoubleDots),
+                          ]),
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(controller.summaryContactsCount.toString()),
+                            Text(controller.summaryRecordsCount.toString()),
+                            Text(controller
+                                .summaryBalanceCount.value.balance.toCurrency),
+                          ]),
+                    ])),
+          ])));
 }

@@ -10,15 +10,18 @@ class AppInfo {
     '0.0.5',
     '0.0.6', // Major Refactor
     '0.0.7', // Some Refactor / Edit Contact Correction for Edit Records / AddEdit Contact and Record Validation Messages
-    '0.1.0', //Initialization with new structure
-    '0.1.1', //Implementation on new structure
-    '0.1.2', //Apply New Structure Changes on the App
-    '0.2.1', //Implementation Major Changes in Major Structure
-    '0.2.2', //Contacts
-    '0.2.3', //Accounts
-    '0.2.4', //Entities and Models Implementation
-    '0.2.5', //Data Backup and Restore
-    '0.2.6', //
+    '0.1.0', // Initialization with new structure
+    '0.1.1', // Implementation on new structure
+    '0.1.2', // Apply New Structure Changes on the App
+    '0.2.1', // Implementation Major Changes in Structure
+    '0.2.2', // Contacts
+    '0.2.3', // Accounts
+    '0.2.4', // Entities and Models Implementation
+    '0.2.5', // Data Backup and Restore
+    '0.2.6', // ContactsBalance Page
+    '0.2.7', // Major Changes in DateTime
+    '0.2.8', // About Page
+    '0.2.9', // Release Prepared - First release after refactoring and restructuring
   ];
 
   static String get appCurrentVersion => versions.last;
@@ -28,5 +31,5 @@ class AppInfo {
   static String get subDomain => 'pariaapp';
   static String get fileName => '${AppInfo.appNameInitials}_Backup.json';
 
-  static bool get checkUpdate => false;
+  static bool get checkUpdate => true;
 }
