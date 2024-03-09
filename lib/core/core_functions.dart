@@ -10,7 +10,7 @@ import '../data/storage/app_local_storage.dart';
 import '../features/update/domain/repositories/update_repository.dart';
 import 'app_localization.dart';
 
-bool get isRelease => true;
+bool get isRelease => false;
 
 void appDebugPrint(message) => isRelease ? null : debugPrint('$message');
 void appLogPrint(message) => debugPrint('[LOG] ** $message **');
