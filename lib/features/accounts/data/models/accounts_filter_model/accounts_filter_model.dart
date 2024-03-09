@@ -19,16 +19,12 @@ class AppAccountsFilterModel with _$AppAccountsFilterModel {
     final String? description,
   }) = _AppAccountsFilterModel;
 
-  factory AppAccountsFilterModel.fromJson(Map<String, dynamic> json) =>
-      _$AppAccountsFilterModelFromJson(json);
+  factory AppAccountsFilterModel.fromJson(Map<String, dynamic> json) => _$AppAccountsFilterModelFromJson(json);
 }
 
 @unfreezed
 class AppAccountsFilterModelsList with _$AppAccountsFilterModelsList {
-  factory AppAccountsFilterModelsList({
-    @Default(<AppAccountsFilterModel>[]) List<AppAccountsFilterModel> filtersList
-  }) = _AppAccountsFilterModelsList;
+  factory AppAccountsFilterModelsList({@Default(<AppAccountsFilterModel>[]) List<AppAccountsFilterModel> filtersList}) = _AppAccountsFilterModelsList;
 
-  factory AppAccountsFilterModelsList.fromJson(Map<String, dynamic> json) =>
-      _$AppAccountsFilterModelsListFromJson(json);
+  factory AppAccountsFilterModelsList.fromJson(Map<String, dynamic> json) => _$AppAccountsFilterModelsListFromJson(json);
 }

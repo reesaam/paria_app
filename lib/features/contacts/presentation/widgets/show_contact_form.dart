@@ -23,12 +23,9 @@ class ShowContactFormWidget extends StatelessWidget {
   Widget build(BuildContext context) => Form(
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
         Row(children: [
-          ContactAvatar(
-              contact: contact,
-              size: AppElements.contactsContactAvatarMaxRadius),
+          ContactAvatar(contact: contact, size: AppElements.contactsContactAvatarMaxRadius),
           AppSpaces.w20,
-          Text(contact.getContactFullName,
-              style: AppTextStyles.contactsShowContactFullName),
+          Text(contact.getContactFullName, style: AppTextStyles.contactsShowContactFullName),
         ]),
         AppSpaces.h20,
         AppDividers.generalDivider,
@@ -36,8 +33,7 @@ class ShowContactFormWidget extends StatelessWidget {
         _widgetAccount(),
       ]));
 
-  Widget _title(String title) =>
-      Text(title, style: AppTextStyles.contactsShowContactSectionTitle);
+  Widget _title(String title) => Text(title, style: AppTextStyles.contactsShowContactSectionTitle);
 
   Widget _widgetInfo() => Padding(
       padding: AppPaddings.contactsShowContactItems,
@@ -45,22 +41,10 @@ class ShowContactFormWidget extends StatelessWidget {
         _title(Texts.to.contactsShowContactTitleInfo.withDoubleDots),
         AppSpaces.h10,
         // _widgetInfoItem(Icon(Icons.numbers), 'ID:', contact.id ?? ''),
-        _widgetInfoItem(
-            AppIcons.mobile,
-            Texts.to.contactsShowContactItemMobile.withDoubleDots,
-            contact.mobile ?? ''),
-        _widgetInfoItem(
-            AppIcons.phone,
-            Texts.to.contactsShowContactItemPhone.withDoubleDots,
-            contact.phone ?? ''),
-        _widgetInfoItem(
-            AppIcons.email,
-            Texts.to.contactsShowContactItemEmail.withDoubleDots,
-            contact.email ?? ''),
-        _widgetInfoItem(
-            AppIcons.web,
-            Texts.to.contactsShowContactItemWebLink.withDoubleDots,
-            contact.webLink ?? ''),
+        _widgetInfoItem(AppIcons.mobile, Texts.to.contactsShowContactItemMobile.withDoubleDots, contact.mobile ?? ''),
+        _widgetInfoItem(AppIcons.phone, Texts.to.contactsShowContactItemPhone.withDoubleDots, contact.phone ?? ''),
+        _widgetInfoItem(AppIcons.email, Texts.to.contactsShowContactItemEmail.withDoubleDots, contact.email ?? ''),
+        _widgetInfoItem(AppIcons.web, Texts.to.contactsShowContactItemWebLink.withDoubleDots, contact.webLink ?? ''),
       ]));
 
   Widget _widgetAccount() => Padding(
@@ -68,27 +52,15 @@ class ShowContactFormWidget extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         _title(Texts.to.contactsShowContactTitleAccount),
         AppSpaces.h10,
-        _widgetInfoItem(
-            AppIcons.accounts,
-            Texts.to.contactsShowContactTitleBalance,
-            contact.calculateBalance(false).balance.toCurrency),
-        _widgetInfoItem(AppIcons.list, Texts.to.contactsShowContactTitleRecords,
-            contact.calculateBalance(false).count.toCurrency),
+        _widgetInfoItem(AppIcons.accounts, Texts.to.contactsShowContactTitleBalance, contact.calculateBalance(false).balance.toCurrency),
+        _widgetInfoItem(AppIcons.list, Texts.to.contactsShowContactTitleRecords, contact.calculateBalance(false).count.toCurrency),
       ]));
 
   Widget _widgetInfoItem(Icon icon, String title, String item) => Padding(
       padding: AppPaddings.contactsShowContactItem,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Row(children: [
-          icon.withSize(AppSizes.contactsShowContactIcon),
-          AppSpaces.w10,
-          Text(title, style: AppTextStyles.contactsShowContactInfoTitle)
-        ]),
+        Row(children: [icon.withSize(AppSizes.contactsShowContactIcon), AppSpaces.w10, Text(title, style: AppTextStyles.contactsShowContactInfoTitle)]),
         AppSpaces.w50,
-        Flexible(
-            child: Text(item,
-                style: AppTextStyles.contactsShowContactInfoItem,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis)),
+        Flexible(child: Text(item, style: AppTextStyles.contactsShowContactInfoItem, maxLines: 1, overflow: TextOverflow.ellipsis)),
       ]));
 }

@@ -17,22 +17,13 @@ extension OnAppAccountsFilterEntity on AppAccountsFilterEntity {
 
 extension OnAppAccountsFilterModel on AppAccountsFilterModel {
   AppAccountsFilterEntity get mapper => AppAccountsFilterEntity(
-      cleared: cleared,
-      positives: positives,
-      negatives: negatives,
-      contact: contact.mapper,
-      amountUp: amountUp,
-      amountDown: amountDown,
-      dateTimeUp: dateTimeUp,
-      dateTimeDown: dateTimeDown);
+      cleared: cleared, positives: positives, negatives: negatives, contact: contact.mapper, amountUp: amountUp, amountDown: amountDown, dateTimeUp: dateTimeUp, dateTimeDown: dateTimeDown);
 }
 
 extension OnAppAccountsFilterEntityNull on AppAccountsFilterEntity? {
-  AppAccountsFilterModel get mapper =>
-      this?.mapper ?? const AppAccountsFilterModel();
+  AppAccountsFilterModel get mapper => this?.mapper ?? const AppAccountsFilterModel();
 }
 
 extension OnAppAccountsFilterModelNull on AppAccountsFilterModel? {
-  AppAccountsFilterEntity get mapper =>
-      this?.mapper ?? const AppAccountsFilterEntity();
+  AppAccountsFilterEntity get mapper => this?.mapper ?? const AppAccountsFilterEntity();
 }

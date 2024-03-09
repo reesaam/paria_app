@@ -39,12 +39,8 @@ class AppDrawer extends Drawer {
       ]));
 
   Widget body() {
-    List<AppPageDetail> drawerList = AppPageDetails.listPages
-        .where((element) => element.drawerPresence == true)
-        .toList();
-    return Column(
-        children: List.generate(
-            drawerList.length, (index) => _bodyItem(drawerList[index])));
+    List<AppPageDetail> drawerList = AppPageDetails.listPages.where((element) => element.drawerPresence == true).toList();
+    return Column(children: List.generate(drawerList.length, (index) => _bodyItem(drawerList[index])));
   }
 
   Widget _bodyItem(AppPageDetail page) => ListTile(
@@ -58,9 +54,6 @@ class AppDrawer extends Drawer {
       child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
         AppIcons.version,
         AppSpaces.w20,
-        InkWell(
-            onTap: () => goToUpdatePage(),
-            child: Text(
-                '${Texts.to.version}: ${AppInfo.appCurrentVersion.version}')),
+        InkWell(onTap: () => goToUpdatePage(), child: Text('${Texts.to.version}: ${AppInfo.appCurrentVersion.version}')),
       ]));
 }

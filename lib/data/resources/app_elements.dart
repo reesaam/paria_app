@@ -4,7 +4,6 @@ import '../info/app_defaults.dart';
 import 'app_colors.dart';
 
 class AppElements {
-
   ///Radius
   static double get radiusZero => 0;
   static double get radiusLow => 10;

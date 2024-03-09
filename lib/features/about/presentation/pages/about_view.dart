@@ -9,14 +9,9 @@ class AboutPage extends CoreView<AboutController> {
   const AboutPage({super.key});
 
   @override
-  PreferredSizeWidget? get appBar =>
-      AppAppBar(pageDetail: controller.pageDetail);
+  PreferredSizeWidget? get appBar => AppAppBar(pageDetail: controller.pageDetail);
 
   @override
-  Widget get body => Column(
-      children: List<Widget>.generate(
-          controller.listItems.length,
-          (index) => AboutSectionWidget(
-              titleText: controller.listTitles[index],
-              itemText: controller.listItems[index])));
+  Widget get body =>
+      Column(children: List<Widget>.generate(controller.listItems.length, (index) => AboutSectionWidget(titleText: controller.listTitles[index], itemText: controller.listItems[index])));
 }

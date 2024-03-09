@@ -17,35 +17,26 @@ extension RxStorage on Rx<AppContactEntitiesList> {
 }
 
 extension Storage on AppContactEntitiesList {
-  void saveOnStorage() async => await AppLocalStorage.to.saveContacts(
-      contacts: AppContactModelsList(
-          contactsList:
-              List.generate(count, (index) => contactsList[index].mapper)));
+  void saveOnStorage() async => await AppLocalStorage.to.saveContacts(contacts: AppContactModelsList(contactsList: List.generate(count, (index) => contactsList[index].mapper)));
 
   AppContactEntitiesList get loadFromStorage {
     var data = AppContactModelsList().loadFromStorage;
-    return AppContactEntitiesList(
-        contactsList: List.generate(data.contactsList.length,
-            (index) => data.contactsList[index].mapper));
+    return AppContactEntitiesList(contactsList: List.generate(data.contactsList.length, (index) => data.contactsList[index].mapper));
   }
 }
 
 ///Contact Functions
 extension RxContactFunctions on Rx<AppContactEntitiesList> {
-  addContact(AppContactEntity contact) =>
-      {value.addContact(contact), refresh()};
+  addContact(AppContactEntity contact) => {value.addContact(contact), refresh()};
 
-  editContact(AppContactEntity prevContact, AppContactEntity contact) =>
-      {value.editContact(prevContact, contact), refresh()};
+  editContact(AppContactEntity prevContact, AppContactEntity contact) => {value.editContact(prevContact, contact), refresh()};
 
-  removeContact(AppContactEntity contact) =>
-      {value.removeContact(contact), refresh()};
+  removeContact(AppContactEntity contact) => {value.removeContact(contact), refresh()};
 }
 
 extension ContactFunction on AppContactEntitiesList {
   addContact(AppContactEntity contact) {
-    List<AppContactEntity> contacts =
-        List<AppContactEntity>.empty(growable: true);
+    List<AppContactEntity> contacts = List<AppContactEntity>.empty(growable: true);
     contacts.addAll(contactsList);
     contacts.add(contact);
     contactsList = contacts;
@@ -54,8 +45,7 @@ extension ContactFunction on AppContactEntitiesList {
   }
 
   _editRecords(AppContactEntity prevContact, AppContactEntity contact) {
-    AppAccountRecordEntitiesList listRecords =
-        AppAccountRecordEntitiesList().loadFromStorage;
+    AppAccountRecordEntitiesList listRecords = AppAccountRecordEntitiesList().loadFromStorage;
     for (AppAccountRecordEntity record in listRecords.recordsList) {
       if (record.contact.equalTo(prevContact)) {
         listRecords.editRecord(record, record.copyWith(contact: contact));
@@ -93,8 +83,7 @@ extension SortContacts on AppContactEntitiesList {
   get defaultSortFunction => sortByFirstName;
 
   get sortByFirstName {
-    List<AppContactEntity> contacts =
-        List<AppContactEntity>.empty(growable: true);
+    List<AppContactEntity> contacts = List<AppContactEntity>.empty(growable: true);
     contacts.addAll(contactsList);
     contacts.sort((a, b) => a.firstName!.compareTo(b.firstName!));
     contactsList = contacts;
@@ -102,8 +91,7 @@ extension SortContacts on AppContactEntitiesList {
   }
 
   get sortByBalance {
-    List<AppContactEntity> contacts =
-    List<AppContactEntity>.empty(growable: true);
+    List<AppContactEntity> contacts = List<AppContactEntity>.empty(growable: true);
     contacts.addAll(contactsList);
     contacts.sort((a, b) => b.balance!.compareTo(a.balance!));
     contactsList = contacts;

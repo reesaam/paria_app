@@ -6,8 +6,7 @@ import '../../../../../features/update/data/remote/data_sources/update_remote_da
 import '../../../../../core/network/network_exception.dart';
 
 abstract class UpdateRemoteDataSource {
-  static UpdateRemoteDataSource get to =>
-      Get.find<UpdateRemoteDataSourceImpl>();
+  static UpdateRemoteDataSource get to => Get.find<UpdateRemoteDataSourceImpl>();
 
   Future<Either<NetworkException, String>> getDownloadAddress();
   Future<Either<NetworkException, String>> getAvailableVersion();

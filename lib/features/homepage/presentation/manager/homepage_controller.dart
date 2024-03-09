@@ -13,7 +13,6 @@ import '../../../accounts/domain/entities/account_record_entity/account_record_e
 import '../../../contacts/domain/entities/contact_entity/contact_entity.dart';
 
 class HomePageController extends CoreController {
-
   Rx<DateTime> mainDateTime = DateTime.now().obs;
   Rx<String> mainTime = ''.obs;
   Rx<String> mainDate = ''.obs;
@@ -69,8 +68,8 @@ class HomePageController extends CoreController {
   }
 
   void _timeUpdate() => Timer.periodic(const Duration(seconds: 1), (timer) {
-    mainDateTime.value = DateTime.now();
-    mainTime.value = mainDateTime.value.toDateFormat;
-    mainDate.value = mainDateTime.value.toTimeFormatWithSeconds;
-  });
+        mainDateTime.value = DateTime.now();
+        mainTime.value = mainDateTime.value.toDateFormat;
+        mainDate.value = mainDateTime.value.toTimeFormatWithSeconds;
+      });
 }

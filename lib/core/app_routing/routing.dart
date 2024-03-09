@@ -12,6 +12,4 @@ goToSettingsPage() => goToPage(AppRoutes.settings);
 goToUpdatePage() => goToPage(AppRoutes.update);
 goToAboutPage() => goToPage(AppRoutes.about);
 
-goToPage(AppRoutes route) => AppRoutes.values.contains(route)
-    ? Get.toNamed(route.route)
-    : Get.toNamed(AppRoutes.notFound.route);
+goToPage(AppRoutes route) => AppRoutes.values.contains(route) ? Get.toNamed(route.route) : Get.toNamed(AppRoutes.notFound.route);

@@ -12,8 +12,7 @@ import 'dialogs/app_bottom_dialogs.dart';
 import 'general_widgets/app_snack_bars.dart';
 
 class ChooseContactComponent {
-  final AppContactEntitiesList _listContacts =
-      AppContactEntitiesList().loadFromStorage;
+  final AppContactEntitiesList _listContacts = AppContactEntitiesList().loadFromStorage;
   AppContactEntity? _selectedContact;
 
   Widget _chooseContactItem(AppContactEntity contact) => InkWell(
@@ -21,16 +20,10 @@ class ChooseContactComponent {
       child: Container(
         alignment: Alignment.centerLeft,
         padding: AppPaddings.accountsSelectContactList,
-        child: Text(contact.getContactFullName,
-            style: AppTextStyles.contactsChooseContact),
+        child: Text(contact.getContactFullName, style: AppTextStyles.contactsChooseContact),
       ));
 
-  Widget _chooseContactForm() => Form(
-      child: Column(
-          children: List.generate(
-              _listContacts.contactsList.length,
-              (index) =>
-                  _chooseContactItem(_listContacts.contactsList[index]))));
+  Widget _chooseContactForm() => Form(child: Column(children: List.generate(_listContacts.contactsList.length, (index) => _chooseContactItem(_listContacts.contactsList[index]))));
 
   Future<AppContactEntity?> chooseContact() async {
     _listContacts.contactsList.isEmpty
@@ -41,10 +34,7 @@ class ChooseContactComponent {
             //     Texts.to.contactsAddEditModalErrorNoContactsAvailableOnTap,
             // buttonAction: goToContacts
           )
-        : await AppBottomDialogs().withCancel(
-            title: Texts.to.accountsAddRecordChooseContact.withDoubleDots,
-            form: _chooseContactForm(),
-            dismissible: true);
+        : await AppBottomDialogs().withCancel(title: Texts.to.accountsAddRecordChooseContact.withDoubleDots, form: _chooseContactForm(), dismissible: true);
     return _selectedContact;
   }
 }

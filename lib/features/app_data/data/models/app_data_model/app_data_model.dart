@@ -6,7 +6,6 @@ import '../../../../accounts/data/models/account_record_model/account_record_mod
 import '../../../../contacts/data/models/contact_model/contact_model.dart';
 import '../../../../settings/data/models/app_settings_data_model/app_setting_data_model.dart';
 
-
 part 'app_data_model.freezed.dart';
 part 'app_data_model.g.dart';
 
@@ -20,6 +19,5 @@ class AppDataModel with _$AppDataModel {
     final AppAccountRecordModelsList? accounts,
   }) = _AppDataModel;
 
-  factory AppDataModel.fromJson(Map<String, dynamic> json) =>
-      _$AppDataModelFromJson(json);
+  factory AppDataModel.fromJson(Map<String, dynamic> json) => _$AppDataModelFromJson(json);
 }

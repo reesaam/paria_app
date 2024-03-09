@@ -15,8 +15,7 @@ import '../../domain/entities/account_balance_entity/account_balance_entity.dart
 import '../widgets/contacts_balance_detail_form.dart';
 
 class ContactsBalanceController extends CoreController {
-  Rx<AppAccountBalanceEntitiesList> listBalances =
-      AppAccountBalanceEntitiesList().obs;
+  Rx<AppAccountBalanceEntitiesList> listBalances = AppAccountBalanceEntitiesList().obs;
 
   @override
   void dataInit() {
@@ -36,8 +35,7 @@ class ContactsBalanceController extends CoreController {
 
   _generateListBalances() {
     AppContactEntitiesList contacts = AppContactEntitiesList().loadFromStorage;
-    List<AppAccountBalanceEntity> balances =
-        List<AppAccountBalanceEntity>.empty(growable: true);
+    List<AppAccountBalanceEntity> balances = List<AppAccountBalanceEntity>.empty(growable: true);
     for (var contact in contacts.contactsList) {
       balances.add(contact.calculateBalance(false));
     }
@@ -46,9 +44,5 @@ class ContactsBalanceController extends CoreController {
   }
 
   itemDetailsDialog(AppAccountBalanceEntity balance) async =>
-      await AppBottomDialogs().withOk(
-          dismissible: true,
-          title: Texts.to.contactsBalanceItemDetailsDialogTitle,
-          form: ContactsBalanceItemDetailForm(balance: balance),
-          onTapOk: popPage);
+      await AppBottomDialogs().withOk(dismissible: true, title: Texts.to.contactsBalanceItemDetailsDialogTitle, form: ContactsBalanceItemDetailForm(balance: balance), onTapOk: popPage);
 }

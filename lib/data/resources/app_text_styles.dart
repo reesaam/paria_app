@@ -51,7 +51,6 @@ class AppTextStyles {
   static TextStyle get contactsShowContactInfoTitle => TextStyle(color: AppColors.textNormalDark, fontWeight: FontWeight.bold);
   static TextStyle get contactsShowContactInfoItem => TextStyle(color: AppColors.textNormalDark);
 
-
   ///Accounts
   static TextStyle get accountsTableItem => TextStyle(color: AppColors.textNormalDark);
   static TextStyle get accountsTableItemMenuItems => TextStyle(fontSize: bigSize);

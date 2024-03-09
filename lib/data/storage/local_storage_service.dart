@@ -20,9 +20,7 @@ class LocalStorageService {
     return data == null ? null : convert.jsonDecode(data.toString());
   }
 
-  Future<void> write(String key, value) async => await _storage
-      .write(key, convert.jsonEncode(value))
-      .then((value) => saveOnStorage());
+  Future<void> write(String key, value) async => await _storage.write(key, convert.jsonEncode(value)).then((value) => saveOnStorage());
 
   remove(String key) => _storage.remove(key);
 

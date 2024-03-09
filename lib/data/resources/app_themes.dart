@@ -31,8 +31,7 @@ class AppThemes {
         unselectedItemColor: AppColors.bottomBarUnselected,
       );
 
-  static get defaultTextStyle => TextStyle(
-      color: AppColors.appDefaultColor, fontSize: appDefaultFontSize);
+  static get defaultTextStyle => TextStyle(color: AppColors.appDefaultColor, fontSize: appDefaultFontSize);
 
   static get textTheme => TextTheme(
         bodyLarge: defaultTextStyle,
@@ -56,9 +55,7 @@ class AppThemes {
         disabledColor: AppColors.buttonBackgroundDisabled,
       );
 
-  static get checkBoxThemeData => CheckboxThemeData(
-      checkColor: MaterialStateProperty.all(AppColors.appCheckBoxTick),
-      fillColor: MaterialStateProperty.all(AppColors.appCheckBox));
+  static get checkBoxThemeData => CheckboxThemeData(checkColor: MaterialStateProperty.all(AppColors.appCheckBoxTick), fillColor: MaterialStateProperty.all(AppColors.appCheckBox));
 
   static get switchThemeData => const SwitchThemeData();
 

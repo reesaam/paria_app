@@ -20,51 +20,25 @@ class ShowAccountRecordFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Form(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(Texts.to.accountShowRecordTitle.withDoubleDots,
-            style: AppTextStyles.accountsShowRecordTitle),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text(Texts.to.accountShowRecordTitle.withDoubleDots, style: AppTextStyles.accountsShowRecordTitle),
         AppDividers.generalDividerWithAppDefaultColor,
         AppSpaces.h10,
         // _widgetInfoItem(Icon(Icons.numbers), 'ID:', record.id ?? ''),
-        _widgetInfoItem(
-            AppIcons.contacts,
-            Texts.to.accountShowRecordContact.withDoubleDots,
-            record.contact?.getContactFullName ?? ''),
-        _widgetInfoItem(
-            AppIcons.description,
-            Texts.to.accountShowRecordDescription.withDoubleDots,
-            record.description ?? ''),
-        _widgetInfoItem(
-            AppIcons.currency,
-            Texts.to.accountShowRecordAmount.withDoubleDots,
-            record.amount.toCurrency ?? ''),
-        _widgetInfoItem(
-            AppIcons.dateTime,
-            Texts.to.accountShowRecordDateTime.withDoubleDots,
-            record.date?.toLocal().toDateTimeFormat ?? ''),
-        _widgetInfoItem(
-            AppIcons.info,
-            Texts.to.accountShowRecordClearedStatus.withDoubleDots,
-            record.cleared == true
-                ? Texts.to.accountShowRecordCleared
-                : Texts.to.accountShowRecordUncleared),
+        _widgetInfoItem(AppIcons.contacts, Texts.to.accountShowRecordContact.withDoubleDots, record.contact?.getContactFullName ?? ''),
+        _widgetInfoItem(AppIcons.description, Texts.to.accountShowRecordDescription.withDoubleDots, record.description ?? ''),
+        _widgetInfoItem(AppIcons.currency, Texts.to.accountShowRecordAmount.withDoubleDots, record.amount.toCurrency ?? ''),
+        _widgetInfoItem(AppIcons.dateTime, Texts.to.accountShowRecordDateTime.withDoubleDots, record.date?.toLocal().toDateTimeFormat ?? ''),
+        _widgetInfoItem(AppIcons.info, Texts.to.accountShowRecordClearedStatus.withDoubleDots, record.cleared == true ? Texts.to.accountShowRecordCleared : Texts.to.accountShowRecordUncleared),
       ]));
 
   Widget _widgetInfoItem(Icon icon, String title, String item) => Padding(
       padding: AppPaddings.accountsShowRecordItem,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Row(children: [
-          icon.withSize(AppSizes.accountsShowRecordIcon),
-          AppSpaces.w10,
-          Text(title, style: AppTextStyles.accountsShowRecordInfoTitle)
-        ]),
+        Row(children: [icon.withSize(AppSizes.accountsShowRecordIcon), AppSpaces.w10, Text(title, style: AppTextStyles.accountsShowRecordInfoTitle)]),
         AppSpaces.w50,
         Flexible(
-          child: Text(item,
-              style: AppTextStyles.accountsShowRecordInfoItem,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis),
+          child: Text(item, style: AppTextStyles.accountsShowRecordInfoItem, maxLines: 1, overflow: TextOverflow.ellipsis),
         ),
       ]));
 }

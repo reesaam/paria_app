@@ -9,6 +9,5 @@ class UpdateVersionUseCase extends UseCaseNoParams<NetworkException, String> {
   UpdateVersionUseCase({required this.updateRepository});
 
   @override
-  Future<Either<NetworkException, String>> call() async =>
-      await updateRepository.getAvailableVersion();
+  Future<Either<NetworkException, String>> call() async => await updateRepository.getAvailableVersion();
 }

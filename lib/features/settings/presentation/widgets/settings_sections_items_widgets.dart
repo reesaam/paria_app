@@ -10,19 +10,15 @@ class SettingsSectionItemWidget extends StatelessWidget {
   final Widget? leading;
   final Function? wholeItemFunction;
 
-  const SettingsSectionItemWidget(
-      {super.key, required this.text, this.leading, this.wholeItemFunction});
+  const SettingsSectionItemWidget({super.key, required this.text, this.leading, this.wholeItemFunction});
 
   @override
   Widget build(BuildContext context) => InkWell(
       onTap: wholeItemFunction == null ? null : () => wholeItemFunction!(),
       child: Padding(
           padding: AppPaddings.settingsItem,
-          child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(text, style: AppTextStyles.settingsSectionItem),
-                leading ?? shrinkSizedBox,
-              ])));
+          child: Row(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Text(text, style: AppTextStyles.settingsSectionItem),
+            leading ?? shrinkSizedBox,
+          ])));
 }

@@ -13,16 +13,12 @@ class AppAccountBalanceModel with _$AppAccountBalanceModel {
     final int? count,
   }) = _AppAccountBalanceModel;
 
-  factory AppAccountBalanceModel.fromJson(Map<String, dynamic> json) =>
-      _$AppAccountBalanceModelFromJson(json);
+  factory AppAccountBalanceModel.fromJson(Map<String, dynamic> json) => _$AppAccountBalanceModelFromJson(json);
 }
 
 @unfreezed
 class AppAccountBalanceModelsList with _$AppAccountBalanceModelsList {
-  factory AppAccountBalanceModelsList({
-    @Default(<AppAccountBalanceModel>[]) List<AppAccountBalanceModel> balancesList
-  }) = _AppAccountBalanceModelsList;
+  factory AppAccountBalanceModelsList({@Default(<AppAccountBalanceModel>[]) List<AppAccountBalanceModel> balancesList}) = _AppAccountBalanceModelsList;
 
-  factory AppAccountBalanceModelsList.fromJson(Map<String, dynamic> json) =>
-      _$AppAccountBalanceModelsListFromJson(json);
+  factory AppAccountBalanceModelsList.fromJson(Map<String, dynamic> json) => _$AppAccountBalanceModelsListFromJson(json);
 }

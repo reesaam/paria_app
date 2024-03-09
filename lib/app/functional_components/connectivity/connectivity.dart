@@ -9,23 +9,13 @@ import '../../../data/info/app_defaults.dart';
 class ConnectionChecker {
   static ConnectionChecker get to => Get.find();
 
-  Future<bool> checkInternet() async => await InternetConnection()
-      .hasInternetAccess
-      .timeout(appDefaultConnectionTimeOut);
+  Future<bool> checkInternet() async => await InternetConnection().hasInternetAccess.timeout(appDefaultConnectionTimeOut);
 
-  Future<InternetStatus> checkInternetStatus() async =>
-      await InternetConnection().internetStatus;
+  Future<InternetStatus> checkInternetStatus() async => await InternetConnection().internetStatus;
 
-  internetListener({Function? function}) => InternetConnection()
-      .onStatusChange
-      .listen((status) {})
-      .onData((data) => function == null ? data : function());
+  internetListener({Function? function}) => InternetConnection().onStatusChange.listen((status) {}).onData((data) => function == null ? data : function());
 
-  Future<ConnectivityResult> checkConnection() async =>
-      await Connectivity().checkConnectivity();
+  Future<ConnectivityResult> checkConnection() async => await Connectivity().checkConnectivity();
 
-  connectionListener({Function? function}) => Connectivity()
-      .onConnectivityChanged
-      .listen((status) {})
-      .onData((data) => function == null ? data : function());
+  connectionListener({Function? function}) => Connectivity().onConnectivityChanged.listen((status) {}).onData((data) => function == null ? data : function());
 }

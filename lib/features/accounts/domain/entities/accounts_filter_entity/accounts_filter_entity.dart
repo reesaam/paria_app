@@ -19,16 +19,12 @@ class AppAccountsFilterEntity with _$AppAccountsFilterEntity {
     final String? description,
   }) = _AppAccountsFilterEntity;
 
-  factory AppAccountsFilterEntity.fromJson(Map<String, dynamic> json) =>
-      _$AppAccountsFilterEntityFromJson(json);
+  factory AppAccountsFilterEntity.fromJson(Map<String, dynamic> json) => _$AppAccountsFilterEntityFromJson(json);
 }
 
 @unfreezed
 class AppAccountsFilterEntitiesList with _$AppAccountsFilterEntitiesList {
-  factory AppAccountsFilterEntitiesList({
-    @Default(<AppAccountsFilterEntity>[]) List<AppAccountsFilterEntity> filtersList
-  }) = _AppAccountsFilterEntitiesList;
+  factory AppAccountsFilterEntitiesList({@Default(<AppAccountsFilterEntity>[]) List<AppAccountsFilterEntity> filtersList}) = _AppAccountsFilterEntitiesList;
 
-  factory AppAccountsFilterEntitiesList.fromJson(Map<String, dynamic> json) =>
-      _$AppAccountsFilterEntitiesListFromJson(json);
+  factory AppAccountsFilterEntitiesList.fromJson(Map<String, dynamic> json) => _$AppAccountsFilterEntitiesListFromJson(json);
 }

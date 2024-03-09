@@ -1,5 +1,3 @@
 class FilesFunctions {
-  Future<dynamic> importFile() async {
-
-  }
+  Future<dynamic> importFile() async {}
 }

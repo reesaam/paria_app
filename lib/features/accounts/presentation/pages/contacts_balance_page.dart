@@ -22,8 +22,7 @@ class ContactsBalancePage extends CoreView<ContactsBalanceController> {
   const ContactsBalancePage({super.key});
 
   @override
-  PreferredSizeWidget? get appBar => AppAppBar(
-      pageDetail: controller.pageDetail, barAction: _changeSortIcon());
+  PreferredSizeWidget? get appBar => AppAppBar(pageDetail: controller.pageDetail, barAction: _changeSortIcon());
 
   @override
   EdgeInsets? get pagePadding => AppPaddings.zero;
@@ -33,86 +32,50 @@ class ContactsBalancePage extends CoreView<ContactsBalanceController> {
       builder: (context, constraints) => SizedBox(
           width: constraints.maxWidth,
           child: Obx(() => DataTable(
-              showBottomBorder: true,
-              sortAscending: true,
-              headingRowColor: MaterialStateProperty.all(
-                  AppColors.appDefaultColor.withOpacity(0.2)),
-              columns: _tableColumns(),
-              rows: _tableRows()))));
+              showBottomBorder: true, sortAscending: true, headingRowColor: MaterialStateProperty.all(AppColors.appDefaultColor.withOpacity(0.2)), columns: _tableColumns(), rows: _tableRows()))));
 
   _tableRows() {
-    List<AppAccountBalanceEntity> listBalances =
-        controller.listBalances.balancesList;
+    List<AppAccountBalanceEntity> listBalances = controller.listBalances.balancesList;
     List<DataRow> rows = List<DataRow>.empty(growable: true);
     rows = List<DataRow>.generate(
         controller.listBalances.count,
-        (index) => DataRow(
-                onLongPress: () =>
-                    controller.itemDetailsDialog(listBalances[index]),
-                cells: [
-                  DataCell(_createText(
-                      listBalances[index].contact?.getContactFullName ?? '')),
-                  DataCell(_createText(listBalances[index].balance.toCurrency)),
-                  DataCell(_createText(listBalances[index].count.toString())),
-                ]));
+        (index) => DataRow(onLongPress: () => controller.itemDetailsDialog(listBalances[index]), cells: [
+              DataCell(_createText(listBalances[index].contact?.getContactFullName ?? '')),
+              DataCell(_createText(listBalances[index].balance.toCurrency)),
+              DataCell(_createText(listBalances[index].count.toString())),
+            ]));
     rows.add(_total(listBalances));
     return rows;
   }
 
   _tableColumns() => List<DataColumn>.of([
-        DataColumn(
-            label:
-                _createHeaderText(Texts.to.contactsBalanceTableHeaderContact)),
-        DataColumn(
-            label:
-                _createHeaderText(Texts.to.contactsBalanceTableHeaderBalance)),
-        DataColumn(
-            label: _createHeaderText(Texts.to.contactsBalanceTableHeaderCount)),
+        DataColumn(label: _createHeaderText(Texts.to.contactsBalanceTableHeaderContact)),
+        DataColumn(label: _createHeaderText(Texts.to.contactsBalanceTableHeaderBalance)),
+        DataColumn(label: _createHeaderText(Texts.to.contactsBalanceTableHeaderCount)),
       ]);
 
   _total(List<AppAccountBalanceEntity> balances) {
-    AppAccountRecordEntitiesList records =
-        AppAccountRecordEntitiesList().loadFromStorage;
-    return DataRow(
-        color: MaterialStateProperty.all(
-            AppColors.appDefaultColorSecond.withOpacity(0.8)),
-        cells: [
-          DataCell(_createTotalText(balances.length.toString())),
-          DataCell(
-              _createTotalText(records.calculateSum(false).balance.toCurrency)),
-          DataCell(_createTotalText(records.count.toString())),
-        ]);
+    AppAccountRecordEntitiesList records = AppAccountRecordEntitiesList().loadFromStorage;
+    return DataRow(color: MaterialStateProperty.all(AppColors.appDefaultColorSecond.withOpacity(0.8)), cells: [
+      DataCell(_createTotalText(balances.length.toString())),
+      DataCell(_createTotalText(records.calculateSum(false).balance.toCurrency)),
+      DataCell(_createTotalText(records.count.toString())),
+    ]);
   }
 
-  _createHeaderText(String text) =>
-      Text(text, style: AppTextStyles.contactsBalanceHeader);
+  _createHeaderText(String text) => Text(text, style: AppTextStyles.contactsBalanceHeader);
 
-  _createTotalText(String text) => Padding(
-      padding: const EdgeInsets.only(left: 10),
-      child: Text(text, style: AppTextStyles.contactsBalanceTotal));
+  _createTotalText(String text) => Padding(padding: const EdgeInsets.only(left: 10), child: Text(text, style: AppTextStyles.contactsBalanceTotal));
 
-  _createText(String text) =>
-      Padding(padding: const EdgeInsets.only(left: 10), child: Text(text));
+  _createText(String text) => Padding(padding: const EdgeInsets.only(left: 10), child: Text(text));
 
   _changeSortIcon() => AppPopupMenu(
           listItems: List<AppPopupMenuItem>.of([
-        AppPopupMenuItem(
-            text: Texts.to.sortBy(ContactsSortType.nameAZ.value),
-            onTapFunction: () => controller.listBalances.sortByFirstNameAZ),
-        AppPopupMenuItem(
-            text: Texts.to.sortBy(ContactsSortType.nameZA.value),
-            onTapFunction: () => controller.listBalances.sortByFirstNameZA),
-        AppPopupMenuItem(
-            text: Texts.to.sortBy(ContactsSortType.balanceInc.value),
-            onTapFunction: () => controller.listBalances.sortByBalanceInc),
-        AppPopupMenuItem(
-            text: Texts.to.sortBy(ContactsSortType.balanceDec.value),
-            onTapFunction: () => controller.listBalances.sortByBalanceDec),
-        AppPopupMenuItem(
-            text: Texts.to.sortBy(ContactsSortType.recordsCountInc.value),
-            onTapFunction: () => controller.listBalances.sortByRecordsCountInc),
-        AppPopupMenuItem(
-            text: Texts.to.sortBy(ContactsSortType.recordsCountDec.value),
-            onTapFunction: () => controller.listBalances.sortByRecordsCountDec),
+        AppPopupMenuItem(text: Texts.to.sortBy(ContactsSortType.nameAZ.value), onTapFunction: () => controller.listBalances.sortByFirstNameAZ),
+        AppPopupMenuItem(text: Texts.to.sortBy(ContactsSortType.nameZA.value), onTapFunction: () => controller.listBalances.sortByFirstNameZA),
+        AppPopupMenuItem(text: Texts.to.sortBy(ContactsSortType.balanceInc.value), onTapFunction: () => controller.listBalances.sortByBalanceInc),
+        AppPopupMenuItem(text: Texts.to.sortBy(ContactsSortType.balanceDec.value), onTapFunction: () => controller.listBalances.sortByBalanceDec),
+        AppPopupMenuItem(text: Texts.to.sortBy(ContactsSortType.recordsCountInc.value), onTapFunction: () => controller.listBalances.sortByRecordsCountInc),
+        AppPopupMenuItem(text: Texts.to.sortBy(ContactsSortType.recordsCountDec.value), onTapFunction: () => controller.listBalances.sortByRecordsCountDec),
       ]));
 }

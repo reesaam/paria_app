@@ -17,28 +17,23 @@ extension Sort on AppAccountBalanceEntitiesList {
   get defaultSortFunction => sortByFirstNameAZ;
 
   get sortByFirstNameAZ {
-    List<AppAccountBalanceEntity> balances =
-        List<AppAccountBalanceEntity>.empty(growable: true);
+    List<AppAccountBalanceEntity> balances = List<AppAccountBalanceEntity>.empty(growable: true);
     balances.addAll(balancesList);
-    balances.sort((a, b) => (a.contact!.firstName ?? a.contact!.lastName)!
-        .compareTo(b.contact!.firstName ?? b.contact!.lastName!));
+    balances.sort((a, b) => (a.contact!.firstName ?? a.contact!.lastName)!.compareTo(b.contact!.firstName ?? b.contact!.lastName!));
     balancesList = balances;
     return balancesList.toList();
   }
 
   get sortByFirstNameZA {
-    List<AppAccountBalanceEntity> balances =
-    List<AppAccountBalanceEntity>.empty(growable: true);
+    List<AppAccountBalanceEntity> balances = List<AppAccountBalanceEntity>.empty(growable: true);
     balances.addAll(balancesList);
-    balances.sort((a, b) => (b.contact!.firstName ?? b.contact!.lastName)!
-        .compareTo(a.contact!.firstName ?? a.contact!.lastName!));
+    balances.sort((a, b) => (b.contact!.firstName ?? b.contact!.lastName)!.compareTo(a.contact!.firstName ?? a.contact!.lastName!));
     balancesList = balances;
     return balancesList.toList();
   }
 
   get sortByBalanceInc {
-    List<AppAccountBalanceEntity> balances =
-    List<AppAccountBalanceEntity>.empty(growable: true);
+    List<AppAccountBalanceEntity> balances = List<AppAccountBalanceEntity>.empty(growable: true);
     balances.addAll(balancesList);
     balances.sort((a, b) => a.balance!.compareTo(b.balance!));
     balancesList = balances;
@@ -46,8 +41,7 @@ extension Sort on AppAccountBalanceEntitiesList {
   }
 
   get sortByBalanceDec {
-    List<AppAccountBalanceEntity> balances =
-        List<AppAccountBalanceEntity>.empty(growable: true);
+    List<AppAccountBalanceEntity> balances = List<AppAccountBalanceEntity>.empty(growable: true);
     balances.addAll(balancesList);
     balances.sort((a, b) => b.balance!.compareTo(a.balance!));
     balancesList = balances;
@@ -55,17 +49,15 @@ extension Sort on AppAccountBalanceEntitiesList {
   }
 
   get sortByRecordsCountInc {
-    List<AppAccountBalanceEntity> balances =
-    List<AppAccountBalanceEntity>.empty(growable: true);
+    List<AppAccountBalanceEntity> balances = List<AppAccountBalanceEntity>.empty(growable: true);
     balances.addAll(balancesList);
     balances.sort((a, b) => a.count!.compareTo(b.count!));
     balancesList = balances;
     return balancesList.toList();
   }
 
-   get sortByRecordsCountDec {
-    List<AppAccountBalanceEntity> balances =
-    List<AppAccountBalanceEntity>.empty(growable: true);
+  get sortByRecordsCountDec {
+    List<AppAccountBalanceEntity> balances = List<AppAccountBalanceEntity>.empty(growable: true);
     balances.addAll(balancesList);
     balances.sort((a, b) => b.count!.compareTo(a.count!));
     balancesList = balances;

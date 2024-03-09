@@ -9,7 +9,6 @@ import '../../features/settings/presentation/manager/settings_controller.dart';
 import '../../features/splash_screen/presentation/manager/splash_screen_controller.dart';
 import '../../features/update/presentation/manager/update_controller.dart';
 
-
 class AppBindings extends Bindings {
   @override
   void dependencies() {

@@ -36,27 +36,15 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
         onTap: (index) => _onItemTap(index),
         selectedItemColor: AppColors.bottomBarSelected,
         unselectedItemColor: AppColors.bottomBarUnselected,
-        items: List<BottomNavigationBarItem>.generate(
-            AppBottomNavigationPages.values.length,
-            (index) => _generateBottomNavigationBarItem(
-                AppBottomNavigationPages.values[index].appRoute)));
+        items: List<BottomNavigationBarItem>.generate(AppBottomNavigationPages.values.length, (index) => _generateBottomNavigationBarItem(AppBottomNavigationPages.values[index].appRoute)));
   }
 
-  BottomNavigationBarItem _generateBottomNavigationBarItem(AppRoutes route) =>
-      BottomNavigationBarItem(
-          activeIcon: CircleAvatar(
-              backgroundColor: AppColors.appDefaultColorSecond,
-              foregroundColor: AppColors.appDefaultColor,
-              child: _createIcon(route).withColor(AppColors.textNormalLight)),
-          icon: _createIcon(route),
-          label: _createLabel(route));
+  BottomNavigationBarItem _generateBottomNavigationBarItem(AppRoutes route) => BottomNavigationBarItem(
+      activeIcon: CircleAvatar(backgroundColor: AppColors.appDefaultColorSecond, foregroundColor: AppColors.appDefaultColor, child: _createIcon(route).withColor(AppColors.textNormalLight)),
+      icon: _createIcon(route),
+      label: _createLabel(route));
 
-  Icon _createIcon(AppRoutes route) => AppPageDetails.listPages
-      .firstWhere((element) => element.pageRoute == route)
-      .iconCode
-      .toIcon;
+  Icon _createIcon(AppRoutes route) => AppPageDetails.listPages.firstWhere((element) => element.pageRoute == route).iconCode.toIcon;
 
-  String _createLabel(AppRoutes route) => AppPageDetails.listPages
-      .firstWhere((element) => element.pageRoute == route)
-      .pageName ?? '';
+  String _createLabel(AppRoutes route) => AppPageDetails.listPages.firstWhere((element) => element.pageRoute == route).pageName ?? '';
 }

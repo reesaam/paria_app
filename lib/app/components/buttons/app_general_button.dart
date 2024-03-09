@@ -29,13 +29,9 @@ class AppGeneralButton extends ElevatedButton {
 
   @override
   Widget? get child => Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            icon == null ? shrinkSizedBox : Icon(icon),
-            AutoSizeText(text),
-            leading == null ? shrinkSizedBox : Icon(leading)
-          ]);
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [icon == null ? shrinkSizedBox : Icon(icon), AutoSizeText(text), leading == null ? shrinkSizedBox : Icon(leading)]);
 
   @override
   VoidCallback? get onPressed => () => disabled == true ? null : onTap();
@@ -52,17 +48,11 @@ class AppGeneralButton extends ElevatedButton {
           : disabled == true
               ? MaterialStateProperty.all(AppColors.buttonTextDisabled)
               : MaterialStateProperty.all(AppColors.buttonTextNormal),
-      side: disabled == true
-          ? MaterialStateProperty.all(AppElements.defaultBorderSideDisabled)
-          : MaterialStateProperty.all(AppElements.defaultBorderSideFocused),
-      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          AppElements.defaultBorderLowRadiusShape),
+      side: disabled == true ? MaterialStateProperty.all(AppElements.defaultBorderSideDisabled) : MaterialStateProperty.all(AppElements.defaultBorderSideFocused),
+      shape: MaterialStateProperty.all<RoundedRectangleBorder>(AppElements.defaultBorderLowRadiusShape),
       splashFactory: InkSplash.splashFactory);
 
   @override
   MaterialStatesController? get statesController =>
-      stateController ??
-      (disabled == true
-          ? MaterialStatesController(<MaterialState>{MaterialState.focused})
-          : MaterialStatesController(<MaterialState>{MaterialState.disabled}));
+      stateController ?? (disabled == true ? MaterialStatesController(<MaterialState>{MaterialState.focused}) : MaterialStatesController(<MaterialState>{MaterialState.disabled}));
 }

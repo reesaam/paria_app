@@ -13,40 +13,29 @@ import '../../core_functions.dart';
 ///Save Storage
 extension RxStorage on Rx<AppAccountRecordEntitiesList> {
   void saveOnStorage() async => value.saveOnStorage();
-  Rx<AppAccountRecordEntitiesList> get loadFromStorage =>
-      value.loadFromStorage.obs;
+  Rx<AppAccountRecordEntitiesList> get loadFromStorage => value.loadFromStorage.obs;
 }
 
 extension Storage on AppAccountRecordEntitiesList {
-  void saveOnStorage() async => await AppLocalStorage.to.saveAccountRecords(
-      accountRecords: AppAccountRecordModelsList(
-          recordsList:
-              List.generate(count, (index) => recordsList[index].mapper)));
+  void saveOnStorage() async => await AppLocalStorage.to.saveAccountRecords(accountRecords: AppAccountRecordModelsList(recordsList: List.generate(count, (index) => recordsList[index].mapper)));
   AppAccountRecordEntitiesList get loadFromStorage {
     var data = AppLocalStorage.to.loadAccountRecords();
-    return AppAccountRecordEntitiesList(
-        recordsList: List.generate(data.recordsList.length,
-            (index) => data.recordsList[index].mapper));
+    return AppAccountRecordEntitiesList(recordsList: List.generate(data.recordsList.length, (index) => data.recordsList[index].mapper));
   }
 }
 
 ///Record Functions
 extension RxRecordFunction on Rx<AppAccountRecordEntitiesList> {
-  addRecord(AppAccountRecordEntity record) =>
-      {value.addRecord(record), refresh()};
+  addRecord(AppAccountRecordEntity record) => {value.addRecord(record), refresh()};
 
-  editRecord(
-          AppAccountRecordEntity prevRecord, AppAccountRecordEntity record) =>
-      {value.editRecord(prevRecord, record), refresh()};
+  editRecord(AppAccountRecordEntity prevRecord, AppAccountRecordEntity record) => {value.editRecord(prevRecord, record), refresh()};
 
-  removeRecord(AppAccountRecordEntity record) =>
-      {value.removeRecord(record), refresh()};
+  removeRecord(AppAccountRecordEntity record) => {value.removeRecord(record), refresh()};
 }
 
 extension RecordFunction on AppAccountRecordEntitiesList {
   addRecord(AppAccountRecordEntity record) {
-    List<AppAccountRecordEntity> records =
-        List<AppAccountRecordEntity>.empty(growable: true);
+    List<AppAccountRecordEntity> records = List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
     records.add(record);
     recordsList = records;
@@ -77,8 +66,7 @@ extension RecordFunction on AppAccountRecordEntitiesList {
 
 ///Clear Record
 extension RxClearRecord on Rx<AppAccountRecordEntitiesList> {
-  changeStatus(AppAccountRecordEntity record) =>
-      {value.changeStatus(record), refresh()};
+  changeStatus(AppAccountRecordEntity record) => {value.changeStatus(record), refresh()};
 }
 
 extension RecordStatus on AppAccountRecordEntitiesList {
@@ -104,28 +92,23 @@ extension SortRecords on AppAccountRecordEntitiesList {
   get defaultSortFunction => sortByContactAZ;
 
   get sortByContactAZ {
-    List<AppAccountRecordEntity> records =
-        List<AppAccountRecordEntity>.empty(growable: true);
+    List<AppAccountRecordEntity> records = List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
-    records.sort((a, b) => (a.contact!.firstName ?? a.contact!.lastName)!
-        .compareTo(b.contact!.firstName ?? b.contact!.lastName!));
+    records.sort((a, b) => (a.contact!.firstName ?? a.contact!.lastName)!.compareTo(b.contact!.firstName ?? b.contact!.lastName!));
     recordsList = records;
     return recordsList.toList();
   }
 
   get sortByContactZA {
-    List<AppAccountRecordEntity> records =
-        List<AppAccountRecordEntity>.empty(growable: true);
+    List<AppAccountRecordEntity> records = List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
-    records.sort((a, b) => (b.contact!.firstName ?? b.contact!.lastName)!
-        .compareTo(a.contact!.firstName ?? a.contact!.lastName!));
+    records.sort((a, b) => (b.contact!.firstName ?? b.contact!.lastName)!.compareTo(a.contact!.firstName ?? a.contact!.lastName!));
     recordsList = records;
     return recordsList.toList();
   }
 
   get sortByDateInc {
-    List<AppAccountRecordEntity> records =
-    List<AppAccountRecordEntity>.empty(growable: true);
+    List<AppAccountRecordEntity> records = List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
     records.sort((a, b) => a.date!.compareTo(b.date!));
     recordsList = records;
@@ -133,8 +116,7 @@ extension SortRecords on AppAccountRecordEntitiesList {
   }
 
   get sortByDateDec {
-    List<AppAccountRecordEntity> records =
-        List<AppAccountRecordEntity>.empty(growable: true);
+    List<AppAccountRecordEntity> records = List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
     records.sort((a, b) => b.date!.compareTo(a.date!));
     recordsList = records;
@@ -142,8 +124,7 @@ extension SortRecords on AppAccountRecordEntitiesList {
   }
 
   get sortByAmountInc {
-    List<AppAccountRecordEntity> records =
-        List<AppAccountRecordEntity>.empty(growable: true);
+    List<AppAccountRecordEntity> records = List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
     records.sort((a, b) => a.amount!.compareTo(b.amount!));
     recordsList = records;
@@ -151,8 +132,7 @@ extension SortRecords on AppAccountRecordEntitiesList {
   }
 
   get sortByAmountDec {
-    List<AppAccountRecordEntity> records =
-        List<AppAccountRecordEntity>.empty(growable: true);
+    List<AppAccountRecordEntity> records = List<AppAccountRecordEntity>.empty(growable: true);
     records.addAll(recordsList);
     records.sort((a, b) => b.amount!.compareTo(a.amount!));
     recordsList = records;
@@ -162,8 +142,7 @@ extension SortRecords on AppAccountRecordEntitiesList {
 
 ///Sum
 extension RxSum on Rx<AppAccountRecordEntitiesList> {
-  AppAccountBalanceEntity calculateSum(bool clearedIncluded) =>
-      value.calculateSum(clearedIncluded);
+  AppAccountBalanceEntity calculateSum(bool clearedIncluded) => value.calculateSum(clearedIncluded);
 }
 
 extension Sum on AppAccountRecordEntitiesList {
@@ -204,20 +183,14 @@ extension Contacts on AppAccountRecordEntitiesList {
 
 ///Records' Contact
 extension RxContactRecords on Rx<AppAccountRecordEntitiesList> {
-  List<AppAccountRecordEntity> getContactRecords(
-          AppContactEntity contact, bool clearedIncluded) =>
-      value.getContactRecords(contact, clearedIncluded);
+  List<AppAccountRecordEntity> getContactRecords(AppContactEntity contact, bool clearedIncluded) => value.getContactRecords(contact, clearedIncluded);
 }
 
 extension ContactRecords on AppAccountRecordEntitiesList {
-  List<AppAccountRecordEntity> getContactRecords(
-      AppContactEntity contact, bool clearedIncluded) {
-    List<AppAccountRecordEntity> list =
-        List<AppAccountRecordEntity>.empty(growable: true);
+  List<AppAccountRecordEntity> getContactRecords(AppContactEntity contact, bool clearedIncluded) {
+    List<AppAccountRecordEntity> list = List<AppAccountRecordEntity>.empty(growable: true);
     for (AppAccountRecordEntity record in recordsList) {
-      record.contact.equalTo(contact) && record.cleared != true
-          ? list.add(record)
-          : null;
+      record.contact.equalTo(contact) && record.cleared != true ? list.add(record) : null;
     }
     return list;
   }

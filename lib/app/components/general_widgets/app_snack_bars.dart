@@ -12,39 +12,20 @@ import '../buttons/app_general_button.dart';
 import '../buttons/app_icon_button.dart';
 
 class AppSnackBar {
-  showSnackBar(
-      {required String message,
-      String? title,
-      VoidCallback? leadingAction,
-      String? leadingText,
-      VoidCallback? buttonAction,
-      Icon? leadingIcon,
-      String? buttonText}) {
+  showSnackBar({required String message, String? title, VoidCallback? leadingAction, String? leadingText, VoidCallback? buttonAction, Icon? leadingIcon, String? buttonText}) {
     GetSnackBar(
-      titleText: title == null
-          ? shrinkSizedBox
-          : Text(title, style: AppTextStyles.snackBarTitle),
-      messageText: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(message, style: AppTextStyles.snackBarMessage),
-            buttonText != null
-                ? Column(children: [
-                    AppSpaces.h20,
-                    AppGeneralButton(
-                        text: buttonText,
-                        lightButton: true,
-                        onTap: buttonAction ?? () {}),
-                  ])
-                : shrinkSizedBox
-          ]),
+      titleText: title == null ? shrinkSizedBox : Text(title, style: AppTextStyles.snackBarTitle),
+      messageText: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
+        Text(message, style: AppTextStyles.snackBarMessage),
+        buttonText != null
+            ? Column(children: [
+                AppSpaces.h20,
+                AppGeneralButton(text: buttonText, lightButton: true, onTap: buttonAction ?? () {}),
+              ])
+            : shrinkSizedBox
+      ]),
       mainButton: leadingIcon != null
-          ? CircleAvatar(
-              backgroundColor: AppColors.appBackground,
-              child: AppIconButton(
-                  icon: leadingIcon.withAppDefaultColor.icon!,
-                  onPressed: leadingAction))
+          ? CircleAvatar(backgroundColor: AppColors.appBackground, child: AppIconButton(icon: leadingIcon.withAppDefaultColor.icon!, onPressed: leadingAction))
           : leadingText != null
               ? _buttonWidget(leadingAction ?? () {}, leadingText)
               : null,
@@ -58,6 +39,5 @@ class AppSnackBar {
     ).show();
   }
 
-  Widget _buttonWidget(VoidCallback buttonFunction, String buttonText) =>
-      AppGeneralButton(text: buttonText, onTap: buttonFunction);
+  Widget _buttonWidget(VoidCallback buttonFunction, String buttonText) => AppGeneralButton(text: buttonText, onTap: buttonFunction);
 }

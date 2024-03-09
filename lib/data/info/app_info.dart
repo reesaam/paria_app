@@ -1,4 +1,3 @@
-
 import '../data_entities/core_data_entities/app_version/app_version.dart';
 import 'app_versions.dart';
 

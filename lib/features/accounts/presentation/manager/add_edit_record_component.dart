@@ -80,11 +80,8 @@ class AppContactsAddEditRecordComponent {
 
   _hintGenerator(String text) => 'Enter $text';
 
-  Future<AppAccountRecordEntity?> call(
-      {required bool isEdit, AppAccountRecordEntity? record}) async {
-    String title = isEdit
-        ? Texts.to.accountsAddContactTitle
-        : Texts.to.accountsEditContactTitle;
+  Future<AppAccountRecordEntity?> call({required bool isEdit, AppAccountRecordEntity? record}) async {
+    String title = isEdit ? Texts.to.accountsAddContactTitle : Texts.to.accountsEditContactTitle;
 
     if (isEdit) {
       if (record == null) {
@@ -93,42 +90,28 @@ class AppContactsAddEditRecordComponent {
         _controllerContact.text = record.contact?.firstName ?? '';
         _controllerDescription.text = record.description ?? '';
         _controllerAmount.text = record.amount.toCurrency ?? '';
-        _controllerDateTime.text =
-            record.date?.toLocal().toDateTimeFormat ?? '';
+        _controllerDateTime.text = record.date?.toLocal().toDateTimeFormat ?? '';
       }
     }
 
-    await AppBottomDialogs().withOkCancel(
-        title: title,
-        form: _widgetAddOrEditRecordDialog(),
-        onTapOk: _provideRecord,
-        dismissible: true);
+    await AppBottomDialogs().withOkCancel(title: title, form: _widgetAddOrEditRecordDialog(), onTapOk: _provideRecord, dismissible: true);
 
-    _providedRecord.isNotEmpty
-        ? _providedRecord = _providedRecord.copyWith(
-            id: isEdit ? record?.id : const Uuid().v1())
-        : null;
+    _providedRecord.isNotEmpty ? _providedRecord = _providedRecord.copyWith(id: isEdit ? record?.id : const Uuid().v1()) : null;
     return _providedRecord;
   }
 
   _provideRecord() {
     _hasError.value = true;
     if (_controllerContact.text.isEmpty && _controllerAmount.text.isEmpty) {
-      AppSnackBar()
-          .showSnackBar(message: Texts.to.accountsAddEditModalErrorContact);
+      AppSnackBar().showSnackBar(message: Texts.to.accountsAddEditModalErrorContact);
     } else if (_controllerContact.text.isEmpty) {
-      AppSnackBar().showSnackBar(
-          message: Texts.to.contactsAddEditModalErrorFirstnameLastName);
+      AppSnackBar().showSnackBar(message: Texts.to.contactsAddEditModalErrorFirstnameLastName);
     } else if (_controllerAmount.text.isEmpty) {
-      AppSnackBar()
-          .showSnackBar(message: Texts.to.accountsAddEditModalErrorAmount);
+      AppSnackBar().showSnackBar(message: Texts.to.accountsAddEditModalErrorAmount);
     } else {
       _hasError.value = false;
       _providedRecord = AppAccountRecordEntity(
-          contact: _selectedContact,
-          description: _controllerDescription.text ?? '',
-          amount: int.tryParse(_controllerAmount.text.replaceAll(',', '')) ?? 0,
-          date: DateTime.now());
+          contact: _selectedContact, description: _controllerDescription.text ?? '', amount: int.tryParse(_controllerAmount.text.replaceAll(',', '')) ?? 0, date: DateTime.now());
       popPage();
       appDebugPrint('AddOrEdit Record Modal Closed');
     }

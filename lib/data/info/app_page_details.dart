@@ -1,27 +1,25 @@
-
 import '../../core/app_localization.dart';
 import '../data_entities/core_data_entities/app_page_detail/app_page_detail.dart';
 import '../resources/app_enums.dart';
 import '../resources/app_icons.dart';
 
 class AppPageDetails {
-
   static List<AppPageDetail> get listPages => [
-    splashScreen,
-    homepage,
-    contacts,
-    contactsBalance,
-    accounts,
-    settings,
-    about,
-    update,
-  ];
+        splashScreen,
+        homepage,
+        contacts,
+        contactsBalance,
+        accounts,
+        settings,
+        about,
+        update,
+      ];
 
   static List<AppPageDetail> get listAdminPages => [
-    adminStartPage,
-    adminPagesTestPage,
-    adminUITestPage,
-  ];
+        adminStartPage,
+        adminPagesTestPage,
+        adminUITestPage,
+      ];
 
   ///Admin Pages
   static AppPageDetail adminStartPage = AppPageDetail(

@@ -3,21 +3,17 @@ import '../../../data/models/account_balance_model/account_balance_model.dart';
 import 'account_balance_entity.dart';
 
 extension OnAppAccountBalanceEntity on AppAccountBalanceEntity {
-  AppAccountBalanceModel get mapper => AppAccountBalanceModel(
-      contact: contact.mapper, balance: balance, count: count);
+  AppAccountBalanceModel get mapper => AppAccountBalanceModel(contact: contact.mapper, balance: balance, count: count);
 }
 
 extension OnAppAccountBalanceModel on AppAccountBalanceModel {
-  AppAccountBalanceEntity get mapper => AppAccountBalanceEntity(
-      contact: contact.mapper, balance: balance, count: count);
+  AppAccountBalanceEntity get mapper => AppAccountBalanceEntity(contact: contact.mapper, balance: balance, count: count);
 }
 
 extension OnAppAccountBalanceEntityNull on AppAccountBalanceEntity? {
-  AppAccountBalanceModel get mapper =>
-      this?.mapper ?? const AppAccountBalanceModel();
+  AppAccountBalanceModel get mapper => this?.mapper ?? const AppAccountBalanceModel();
 }
 
 extension OnAppAccountBalanceModelNull on AppAccountBalanceModel? {
-  AppAccountBalanceEntity get mapper =>
-      this?.mapper ?? const AppAccountBalanceEntity();
+  AppAccountBalanceEntity get mapper => this?.mapper ?? const AppAccountBalanceEntity();
 }

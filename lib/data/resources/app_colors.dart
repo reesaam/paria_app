@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-
   ///Basics
   static Color get transparent => Colors.transparent;
   static Color get appBackground => _white;
@@ -49,10 +48,10 @@ class AppColors {
   static Color get cardText => appDefaultColor;
 
   ///Button
-  static Color get  buttonBackgroundNormal => appDefaultColorSecond;
-  static Color get  buttonBackgroundDisabled => appDefaultDisabledColor;
-  static Color get  buttonTextNormal => textNormalDark;
-  static Color get  buttonTextDisabled => textDisabled;
+  static Color get buttonBackgroundNormal => appDefaultColorSecond;
+  static Color get buttonBackgroundDisabled => appDefaultDisabledColor;
+  static Color get buttonTextNormal => textNormalDark;
+  static Color get buttonTextDisabled => textDisabled;
 
   ///TextFields
   static Color get textFieldText => textNormalDark;

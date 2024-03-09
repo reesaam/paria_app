@@ -13,19 +13,19 @@ import '../../features/update/presentation/pages/update_view.dart';
 
 class AppPages {
   static get pages => [
-    ///Admin Pages
-    // GetPage(name: AppRoutes.adminStartPage.route, page: AdminStartPage.new),
-    // GetPage(name: AppRoutes.adminPagesTestPage.route, page: AdminPagesTestPage.new),
-    // GetPage(name: AppRoutes.adminUITestPage.route, page: AdminUITestPage.new),
+        ///Admin Pages
+        // GetPage(name: AppRoutes.adminStartPage.route, page: AdminStartPage.new),
+        // GetPage(name: AppRoutes.adminPagesTestPage.route, page: AdminPagesTestPage.new),
+        // GetPage(name: AppRoutes.adminUITestPage.route, page: AdminUITestPage.new),
 
-    ///Main App Pages
-    GetPage(name: AppRoutes.splashScreen.route, page: SplashScreenPage.new),
-    GetPage(name: AppRoutes.homepage.route, page: HomePage.new),
-    GetPage(name: AppRoutes.contacts.route, page: ContactsPage.new),
-    GetPage(name: AppRoutes.contactsBalance.route, page: ContactsBalancePage.new),
-    GetPage(name: AppRoutes.accounts.route, page: AccountsPage.new),
-    GetPage(name: AppRoutes.settings.route, page: SettingsPage.new),
-    GetPage(name: AppRoutes.update.route, page: UpdatePage.new),
-    GetPage(name: AppRoutes.about.route, page: AboutPage.new),
-  ];
+        ///Main App Pages
+        GetPage(name: AppRoutes.splashScreen.route, page: SplashScreenPage.new),
+        GetPage(name: AppRoutes.homepage.route, page: HomePage.new),
+        GetPage(name: AppRoutes.contacts.route, page: ContactsPage.new),
+        GetPage(name: AppRoutes.contactsBalance.route, page: ContactsBalancePage.new),
+        GetPage(name: AppRoutes.accounts.route, page: AccountsPage.new),
+        GetPage(name: AppRoutes.settings.route, page: SettingsPage.new),
+        GetPage(name: AppRoutes.update.route, page: UpdatePage.new),
+        GetPage(name: AppRoutes.about.route, page: AboutPage.new),
+      ];
 }

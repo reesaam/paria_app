@@ -17,28 +17,19 @@ class ContactsPage extends CoreView<ContactsController> {
   const ContactsPage({super.key});
 
   @override
-  PreferredSizeWidget? get appBar =>
-      AppAppBar(pageDetail: controller.pageDetail);
+  PreferredSizeWidget? get appBar => AppAppBar(pageDetail: controller.pageDetail);
 
   @override
   Widget? get drawer => const AppDrawer();
 
   @override
-  Widget? get bottomNavigationBar => AppBottomNavigationBar(
-      selectedIndex: controller.pageDetail.bottomBarItemNumber);
+  Widget? get bottomNavigationBar => AppBottomNavigationBar(selectedIndex: controller.pageDetail.bottomBarItemNumber);
 
   @override
-  Widget? get floatingActionButton => AppFloatingActionButtons(
-      icon: AppIcons.add, onPressed: controller.addContact);
+  Widget? get floatingActionButton => AppFloatingActionButtons(icon: AppIcons.add, onPressed: controller.addContact);
 
   @override
-  Widget get body => Obx(() => controller.listContacts.isEmpty
-      ? _noContacts()
-      : ContactsTable(listContacts: controller.listContacts.value));
+  Widget get body => Obx(() => controller.listContacts.isEmpty ? _noContacts() : ContactsTable(listContacts: controller.listContacts.value));
 
-  Widget _noContacts() => Container(
-      width: Get.width,
-      alignment: Alignment.center,
-      padding: AppPaddings.contactsNoContacts,
-      child: Text(Texts.to.contactsNoContact));
+  Widget _noContacts() => Container(width: Get.width, alignment: Alignment.center, padding: AppPaddings.contactsNoContacts, child: Text(Texts.to.contactsNoContact));
 }

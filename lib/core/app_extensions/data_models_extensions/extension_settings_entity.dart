@@ -6,17 +6,13 @@ import '../../../data/storage/app_local_storage.dart';
 import '../../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
 
 extension RxStorage on Rx<AppSettingDataEntity> {
-  void get saveOnStorage async =>
-      await AppLocalStorage.to.saveSettings(settings: value.mapper);
-  Rx<AppSettingDataEntity> get loadFromStorage =>
-      AppLocalStorage.to.loadSettings().mapper.obs;
+  void get saveOnStorage async => await AppLocalStorage.to.saveSettings(settings: value.mapper);
+  Rx<AppSettingDataEntity> get loadFromStorage => AppLocalStorage.to.loadSettings().mapper.obs;
 }
 
 extension Storage on AppSettingDataEntity {
-  void get saveOnStorage async =>
-      await AppLocalStorage.to.saveSettings(settings: mapper);
-  AppSettingDataEntity get loadFromStorage =>
-      AppLocalStorage.to.loadSettings().mapper;
+  void get saveOnStorage async => await AppLocalStorage.to.saveSettings(settings: mapper);
+  AppSettingDataEntity get loadFromStorage => AppLocalStorage.to.loadSettings().mapper;
 }
 
 extension RxClear on Rx<AppSettingDataEntity> {
@@ -24,8 +20,7 @@ extension RxClear on Rx<AppSettingDataEntity> {
 }
 
 extension Clear on AppSettingDataEntity {
-  AppSettingDataEntity get clearData =>
-      const AppSettingDataEntity();
+  AppSettingDataEntity get clearData => const AppSettingDataEntity();
 }
 
 extension RxLanguages on Rx<AppSettingDataEntity> {

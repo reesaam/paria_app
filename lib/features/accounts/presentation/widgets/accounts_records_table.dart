@@ -33,53 +33,35 @@ class AccountsRecordsTable extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
       padding: AppPaddings.accountsTable,
       child: ListView.builder(
-              shrinkWrap: true,
-              physics: const ScrollPhysics(),
-              itemCount: listRecords.count,
-              itemBuilder: (context, index) => filter.isEmpty
-                  ? listRecords.recordsList[index].cleared == true
-                      ? shrinkSizedBox
-                      : _recordItem(listRecords.recordsList[index])
-                  : _checkVisibility(
-                          filter: filter!,
-                          record: listRecords.recordsList[index])
-                      ? shrinkSizedBox
-                      : _recordItem(listRecords.recordsList[index])));
+          shrinkWrap: true,
+          physics: const ScrollPhysics(),
+          itemCount: listRecords.count,
+          itemBuilder: (context, index) => filter.isEmpty
+              ? listRecords.recordsList[index].cleared == true
+                  ? shrinkSizedBox
+                  : _recordItem(listRecords.recordsList[index])
+              : _checkVisibility(filter: filter!, record: listRecords.recordsList[index])
+                  ? shrinkSizedBox
+                  : _recordItem(listRecords.recordsList[index])));
 
   _recordItem(AppAccountRecordEntity record) => GestureDetector(
       onTap: () => onTap(record),
       onLongPress: () => onLongPress(record),
       child: Container(
         padding: AppPaddings.accountsTableItem,
-        decoration: AppElements.shapeBoxDecoration.copyWith(
-            color: record.cleared == true
-                ? AppColors.appDefaultColor.withOpacity(0.2)
-                : null),
+        decoration: AppElements.shapeBoxDecoration.copyWith(color: record.cleared == true ? AppColors.appDefaultColor.withOpacity(0.2) : null),
         child: Row(children: [
           shrinkOneExpanded,
-          Expanded(
-              flex: _itemsExpansionList[0],
-              child: Text(
-                  record.contact!.firstName ??
-                      Texts.to.generalNotAvailableInitials,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis)),
+          Expanded(flex: _itemsExpansionList[0], child: Text(record.contact!.firstName ?? Texts.to.generalNotAvailableInitials, maxLines: 1, overflow: TextOverflow.ellipsis)),
           shrinkOneExpanded,
-          Expanded(
-              flex: _itemsExpansionList[1],
-              child: Text(record.description ?? Texts.to.generalNotAvailableInitials,
-                  maxLines: 1, overflow: TextOverflow.ellipsis)),
+          Expanded(flex: _itemsExpansionList[1], child: Text(record.description ?? Texts.to.generalNotAvailableInitials, maxLines: 1, overflow: TextOverflow.ellipsis)),
           shrinkOneExpanded,
           Expanded(
               flex: _itemsExpansionList[2],
               child: Text(record.amount.toCurrency,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: record.amount! < 0
-                      ? AppTextStyles.accountsTableItem
-                          .copyWith(color: AppColors.error)
-                      : AppTextStyles.accountsTableItem
-                          .copyWith(color: AppColors.noError))),
+                  style: record.amount! < 0 ? AppTextStyles.accountsTableItem.copyWith(color: AppColors.error) : AppTextStyles.accountsTableItem.copyWith(color: AppColors.noError))),
           shrinkOneExpanded,
         ]),
       ));

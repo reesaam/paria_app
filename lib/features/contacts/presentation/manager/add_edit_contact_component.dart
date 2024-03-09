@@ -48,32 +48,17 @@ class AppContactsAddEditContactComponent {
             hasError: _hasError.value,
             icon: AppIcons.mobile.icon),
         AppSpaces.h10,
-        AppTextField(
-            controller: _controllerPhone,
-            label: Texts.to.contactsAddContactPhoneTitle,
-            hint: _hintGenerator(Texts.to.contactsAddContactPhoneTitle),
-            icon: AppIcons.phone.icon),
+        AppTextField(controller: _controllerPhone, label: Texts.to.contactsAddContactPhoneTitle, hint: _hintGenerator(Texts.to.contactsAddContactPhoneTitle), icon: AppIcons.phone.icon),
         AppSpaces.h10,
-        AppTextField(
-            controller: _controllerEmail,
-            label: Texts.to.contactsAddContactEmailTitle,
-            hint: _hintGenerator(Texts.to.contactsAddContactEmailTitle),
-            icon: AppIcons.email.icon),
+        AppTextField(controller: _controllerEmail, label: Texts.to.contactsAddContactEmailTitle, hint: _hintGenerator(Texts.to.contactsAddContactEmailTitle), icon: AppIcons.email.icon),
         AppSpaces.h10,
-        AppTextField(
-            controller: _controllerWebLink,
-            label: Texts.to.contactsAddContactWebLinkTitle,
-            hint: _hintGenerator(Texts.to.contactsAddContactWebLinkTitle),
-            icon: AppIcons.web.icon),
+        AppTextField(controller: _controllerWebLink, label: Texts.to.contactsAddContactWebLinkTitle, hint: _hintGenerator(Texts.to.contactsAddContactWebLinkTitle), icon: AppIcons.web.icon),
       ])));
 
   _hintGenerator(String text) => 'Enter $text';
 
-  Future<AppContactEntity?> call(
-      {required bool isEdit, AppContactEntity? contact}) async {
-    String title = isEdit
-        ? Texts.to.contactsAddContactTitle
-        : Texts.to.contactsEditContactTitle;
+  Future<AppContactEntity?> call({required bool isEdit, AppContactEntity? contact}) async {
+    String title = isEdit ? Texts.to.contactsAddContactTitle : Texts.to.contactsEditContactTitle;
 
     if (isEdit) {
       if (contact == null) {
@@ -87,30 +72,18 @@ class AppContactsAddEditContactComponent {
       }
     }
 
-    await AppBottomDialogs().withOkCancel(
-        title: title,
-        form: _widgetAddOrEditContactDialog(),
-        onTapOk: _provideContact,
-        dismissible: true);
+    await AppBottomDialogs().withOkCancel(title: title, form: _widgetAddOrEditContactDialog(), onTapOk: _provideContact, dismissible: true);
 
-    _providedContact.isNotEmpty
-        ? _providedContact = _providedContact.copyWith(
-            id: isEdit ? contact?.id : const Uuid().v1())
-        : null;
+    _providedContact.isNotEmpty ? _providedContact = _providedContact.copyWith(id: isEdit ? contact?.id : const Uuid().v1()) : null;
     return _providedContact;
   }
 
   _provideContact() {
     _hasError.value = true;
-    if (_controllerFirstName.text.isEmpty &&
-        _controllerLastName.text.isEmpty &&
-        _controllerMobile.text.isEmpty) {
-      AppSnackBar().showSnackBar(
-          message: Texts.to.contactsAddEditModalErrorFirstnameLastNameAndMobile);
-    } else if (_controllerFirstName.text.isEmpty &&
-        _controllerLastName.text.isEmpty) {
-      AppSnackBar().showSnackBar(
-          message: Texts.to.contactsAddEditModalErrorFirstnameLastName);
+    if (_controllerFirstName.text.isEmpty && _controllerLastName.text.isEmpty && _controllerMobile.text.isEmpty) {
+      AppSnackBar().showSnackBar(message: Texts.to.contactsAddEditModalErrorFirstnameLastNameAndMobile);
+    } else if (_controllerFirstName.text.isEmpty && _controllerLastName.text.isEmpty) {
+      AppSnackBar().showSnackBar(message: Texts.to.contactsAddEditModalErrorFirstnameLastName);
     } else if (_controllerMobile.text.isEmpty) {
       AppSnackBar().showSnackBar(message: Texts.to.contactsAddEditModalErrorMobile);
     } else {

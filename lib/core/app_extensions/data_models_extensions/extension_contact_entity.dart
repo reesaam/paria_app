@@ -7,33 +7,25 @@ extension Accounts on AppContactEntity {
   AppAccountBalanceEntity calculateBalance(bool clearedIncluded) {
     int balance = 0;
     int count = 0;
-    List<AppAccountRecordEntity> contactRecords =
-        List<AppAccountRecordEntity>.empty(growable: true);
+    List<AppAccountRecordEntity> contactRecords = List<AppAccountRecordEntity>.empty(growable: true);
 
-    AppAccountRecordEntitiesList records =
-        AppAccountRecordEntitiesList().loadFromStorage;
+    AppAccountRecordEntitiesList records = AppAccountRecordEntitiesList().loadFromStorage;
     for (AppAccountRecordEntity record in records.recordsList) {
       if (record.contact.equalTo(this)) {
         clearedIncluded
             ? {balance += record.amount!, count++, contactRecords.add(record)}
             : record.cleared == true
                 ? null
-                : {
-                    balance += record.amount!,
-                    count++,
-                    contactRecords.add(record)
-                  };
+                : {balance += record.amount!, count++, contactRecords.add(record)};
       }
     }
-    return AppAccountBalanceEntity(
-        contact: this, balance: balance, count: count, records: contactRecords);
+    return AppAccountBalanceEntity(contact: this, balance: balance, count: count, records: contactRecords);
   }
 }
 
 extension StringProviders on AppContactEntity {
   String get getContactFullName => '${firstName ?? ''} ${lastName ?? ''}';
-  String get getContactInitials =>
-      '${firstName!.isEmpty ? '' : firstName![0]}${lastName!.isEmpty ? '' : lastName![0]}';
+  String get getContactInitials => '${firstName!.isEmpty ? '' : firstName![0]}${lastName!.isEmpty ? '' : lastName![0]}';
 }
 
 extension CompareNull on AppContactEntity? {
@@ -45,8 +37,7 @@ extension CompareNull on AppContactEntity? {
 }
 
 extension Compare on AppContactEntity {
-  bool equalTo(AppContactEntity? contact) =>
-      contact == null ? false : id == contact.id;
+  bool equalTo(AppContactEntity? contact) => contact == null ? false : id == contact.id;
 }
 
 extension ChecksNull on AppContactEntity? {

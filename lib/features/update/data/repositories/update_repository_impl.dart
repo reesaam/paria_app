@@ -10,14 +10,11 @@ class UpdateRepositoryImpl extends UpdateRepository {
   UpdateRepositoryImpl();
 
   @override
-  Future<Either<NetworkException, String>> getAvailableVersion() async =>
-      updateRemoteDataSource.getAvailableVersion();
+  Future<Either<NetworkException, String>> getAvailableVersion() async => updateRemoteDataSource.getAvailableVersion();
 
   @override
-  Future<Either<NetworkException, String>> getUpdateDownloadAddress() =>
-      updateRemoteDataSource.getDownloadAddress();
+  Future<Either<NetworkException, String>> getUpdateDownloadAddress() => updateRemoteDataSource.getDownloadAddress();
 
   @override
-  Future<Either<NetworkException, File?>> updateDownload() async =>
-      updateRemoteDataSource.updateDownload();
+  Future<Either<NetworkException, File?>> updateDownload() async => updateRemoteDataSource.updateDownload();
 }

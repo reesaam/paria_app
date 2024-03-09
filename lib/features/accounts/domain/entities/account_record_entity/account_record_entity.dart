@@ -17,16 +17,12 @@ class AppAccountRecordEntity with _$AppAccountRecordEntity {
     final bool? cleared,
   }) = _AppAccountRecordEntity;
 
-  factory AppAccountRecordEntity.fromJson(Map<String, dynamic> json) =>
-      _$AppAccountRecordEntityFromJson(json);
+  factory AppAccountRecordEntity.fromJson(Map<String, dynamic> json) => _$AppAccountRecordEntityFromJson(json);
 }
 
 @unfreezed
 class AppAccountRecordEntitiesList with _$AppAccountRecordEntitiesList {
-  factory AppAccountRecordEntitiesList({
-    @Default(<AppAccountRecordEntity>[]) List<AppAccountRecordEntity> recordsList
-  }) = _AppAccountRecordEntitiesList;
+  factory AppAccountRecordEntitiesList({@Default(<AppAccountRecordEntity>[]) List<AppAccountRecordEntity> recordsList}) = _AppAccountRecordEntitiesList;
 
-  factory AppAccountRecordEntitiesList.fromJson(Map<String, dynamic> json) =>
-      _$AppAccountRecordEntitiesListFromJson(json);
+  factory AppAccountRecordEntitiesList.fromJson(Map<String, dynamic> json) => _$AppAccountRecordEntitiesListFromJson(json);
 }

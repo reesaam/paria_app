@@ -14,12 +14,10 @@ class UpdatePage extends CoreView<UpdateController> {
   const UpdatePage({super.key});
 
   @override
-  PreferredSizeWidget? get appBar =>
-      AppAppBar(pageDetail: controller.pageDetail);
+  PreferredSizeWidget? get appBar => AppAppBar(pageDetail: controller.pageDetail);
 
   @override
-  Widget get body =>
-      Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+  Widget get body => Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         _widgetVersions(),
         AppSpaces.h40,
         _widgetButtons(),
@@ -29,28 +27,17 @@ class UpdatePage extends CoreView<UpdateController> {
       child: Container(
           padding: AppPaddings.updateVersions,
           child: Column(children: [
-            _widgetVersion(Texts.to.updateCurrentVersion,
-                AppInfo.appCurrentVersion.version),
+            _widgetVersion(Texts.to.updateCurrentVersion, AppInfo.appCurrentVersion.version),
             AppSpaces.h10,
-            _widgetVersion(
-                Texts.to.updateAvailableVersion,
-                controller.availableVersion.value == AppInfo.appCurrentVersion
-                    ? Texts.to.notAvailable
-                    : controller.availableVersion.value),
+            _widgetVersion(Texts.to.updateAvailableVersion, controller.availableVersion.value == AppInfo.appCurrentVersion ? Texts.to.notAvailable : controller.availableVersion.value),
           ]))));
 
-  Widget _widgetVersion(String title, String version) => Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [Text(title), Text(version)]);
+  Widget _widgetVersion(String title, String version) => Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Text(title), Text(version)]);
 
   Widget _widgetButtons() => Obx(() => Padding(
       padding: AppPaddings.updateButtons,
       child: Column(children: [
-        AppGeneralButton(
-            text: Texts.to.updateCheckUpdate, onTap: controller.checkUpdate),
-        AppGeneralButton(
-            text: Texts.to.updateDownloadUpdate,
-            onTap: controller.downloadUpdate,
-            disabled: controller.checkAvailableUpdate()),
+        AppGeneralButton(text: Texts.to.updateCheckUpdate, onTap: controller.checkUpdate),
+        AppGeneralButton(text: Texts.to.updateDownloadUpdate, onTap: controller.downloadUpdate, disabled: controller.checkAvailableUpdate()),
       ])));
 }

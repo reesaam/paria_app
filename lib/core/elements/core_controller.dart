@@ -5,7 +5,6 @@ import '../../data/data_entities/core_data_entities/app_page_detail/app_page_det
 import '../core_functions.dart';
 
 abstract class CoreController extends GetxController {
-
   BuildContext context = Get.context!;
   late AppPageDetail pageDetail;
 

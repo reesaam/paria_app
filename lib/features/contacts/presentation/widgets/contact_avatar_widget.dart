@@ -19,8 +19,7 @@ class ContactAvatar extends CircleAvatar {
   Color? get foregroundColor => AppColors.buttonTextNormal;
 
   @override
-  Widget? get child =>
-      Padding(
+  Widget? get child => Padding(
         padding: EdgeInsets.all(maxRadius! / 4),
         child: Text(contact.getContactInitials, style: TextStyle(fontSize: size)),
       );

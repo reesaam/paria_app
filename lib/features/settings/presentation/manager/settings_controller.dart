@@ -67,10 +67,8 @@ class SettingsController extends CoreController {
     appSettingDataListener = appSettings.listen((data) => _fillData());
   }
 
-  functionLanguageModal() => AppBottomDialogs().withCancel(
-      title: Texts.to.settingsLanguageModalSelectLanguage,
-      form: SettingsLanguageWidget(function: functionLanguageSelectionOnTap),
-      dismissible: true);
+  functionLanguageModal() =>
+      AppBottomDialogs().withCancel(title: Texts.to.settingsLanguageModalSelectLanguage, form: SettingsLanguageWidget(function: functionLanguageSelectionOnTap), dismissible: true);
 
   functionLanguageSelectionOnTap(int index) {
     selectedLanguage.value = AppLocalization.languages[index].getLanguage;
@@ -105,11 +103,7 @@ class SettingsController extends CoreController {
       await AppLocalStorage().exportData();
     }
 
-    AppAlertDialogs().withOkCancel(
-        title: Texts.to.warning,
-        text: Texts.to.areYouSureDataExport,
-        onTapOk: function,
-        dismissible: true);
+    AppAlertDialogs().withOkCancel(title: Texts.to.warning, text: Texts.to.areYouSureDataExport, onTapOk: function, dismissible: true);
   }
 
   functionRestore() {
@@ -118,11 +112,7 @@ class SettingsController extends CoreController {
       await AppLocalStorage.to.importData();
     }
 
-    AppAlertDialogs().withOkCancel(
-        title: Texts.to.warning,
-        text: Texts.to.areYouSureDataMayLost,
-        onTapOk: function,
-        dismissible: true);
+    AppAlertDialogs().withOkCancel(title: Texts.to.warning, text: Texts.to.areYouSureDataMayLost, onTapOk: function, dismissible: true);
   }
 
   _clearContactsFunction() {
@@ -133,11 +123,7 @@ class SettingsController extends CoreController {
     refresh();
   }
 
-  clearContacts() => AppAlertDialogs().withOkCancel(
-      title: Texts.to.warning,
-      text: Texts.to.areYouSureDataWillLost,
-      onTapOk: _clearContactsFunction,
-      dismissible: true);
+  clearContacts() => AppAlertDialogs().withOkCancel(title: Texts.to.warning, text: Texts.to.areYouSureDataWillLost, onTapOk: _clearContactsFunction, dismissible: true);
 
   _clearAccountsRecordsFunction() {
     popPage();
@@ -146,11 +132,7 @@ class SettingsController extends CoreController {
     refresh();
   }
 
-  clearAccountsRecords() => AppAlertDialogs().withOkCancel(
-      title: Texts.to.warning,
-      text: Texts.to.areYouSureDataWillLost,
-      onTapOk: _clearAccountsRecordsFunction,
-      dismissible: true);
+  clearAccountsRecords() => AppAlertDialogs().withOkCancel(title: Texts.to.warning, text: Texts.to.areYouSureDataWillLost, onTapOk: _clearAccountsRecordsFunction, dismissible: true);
 
   _clearAllDataFunction() {
     popPage();
@@ -159,11 +141,7 @@ class SettingsController extends CoreController {
     refresh();
   }
 
-  clearAllData() => AppAlertDialogs().withOkCancel(
-      title: Texts.to.warning,
-      text: Texts.to.areYouSureDataWillLost,
-      onTapOk: _clearAllDataFunction,
-      dismissible: true);
+  clearAllData() => AppAlertDialogs().withOkCancel(title: Texts.to.warning, text: Texts.to.areYouSureDataWillLost, onTapOk: _clearAllDataFunction, dismissible: true);
 
   _clearAllSettingsFunction() {
     popPage();
@@ -172,11 +150,7 @@ class SettingsController extends CoreController {
     refresh();
   }
 
-  resetAllSettings() => AppAlertDialogs().withOkCancel(
-      title: Texts.to.warning,
-      text: Texts.to.areYouSureDataWillLost,
-      onTapOk: _clearAllSettingsFunction,
-      dismissible: true);
+  resetAllSettings() => AppAlertDialogs().withOkCancel(title: Texts.to.warning, text: Texts.to.areYouSureDataWillLost, onTapOk: _clearAllSettingsFunction, dismissible: true);
 
   saveSettings() => saveAppData();
 }

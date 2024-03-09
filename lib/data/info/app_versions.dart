@@ -13,14 +13,7 @@ AppVersionsList get appVersions => AppVersionsList(
             'Major Refactor',
           ],
           released: false),
-      const AppVersion(
-          version: '0.0.7',
-          changes: [
-            'Some Refactor',
-            'Edit Contact Correction for Edit Records',
-            'AddEdit Contact and Record Validation Messages'
-          ],
-          released: true),
+      const AppVersion(version: '0.0.7', changes: ['Some Refactor', 'Edit Contact Correction for Edit Records', 'AddEdit Contact and Record Validation Messages'], released: true),
       const AppVersion(
           version: '0.1.0',
           changes: [
@@ -55,7 +48,7 @@ AppVersionsList get appVersions => AppVersionsList(
       const AppVersion(
           version: '0.2.3',
           changes: [
-            'Entities and Models Implementation',
+            'Entities, Models and Mappers Implementation',
             'Data Backup and Restore Complete Implementation',
           ],
           released: false),
@@ -74,11 +67,11 @@ AppVersionsList get appVersions => AppVersionsList(
             'Changes in AppData Model and Entities',
           ],
           released: false),
-          const AppVersion(
-              version: '0.2.6',
-              changes: [
-                'Release Prepared',
-                'First release after refactoring and restructuring',
-              ],
-              released: true),
+      const AppVersion(
+          version: '0.2.6',
+          changes: [
+            'Release Prepared',
+            'First release after refactoring and restructuring',
+          ],
+          released: true),
     ]));

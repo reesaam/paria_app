@@ -35,8 +35,7 @@ class AppTextField extends StatelessWidget {
   final int? maxLines;
   final bool? expandable;
 
-  Widget suffix() => InkWell(
-      onTap: suffixAction, child: Icon(icon, color: AppColors.textNormalDark));
+  Widget suffix() => InkWell(onTap: suffixAction, child: Icon(icon, color: AppColors.textNormalDark));
 
   @override
   Widget build(BuildContext context) => TextField(
@@ -49,10 +48,8 @@ class AppTextField extends StatelessWidget {
       textInputAction: textInputAction,
       maxLines: maxLines,
       expands: expandable ?? false,
-      enableInteractiveSelection:
-          editable == false || wholeWidgetAction != null ? false : true,
-      canRequestFocus:
-          editable == false || wholeWidgetAction != null ? false : true,
+      enableInteractiveSelection: editable == false || wholeWidgetAction != null ? false : true,
+      canRequestFocus: editable == false || wholeWidgetAction != null ? false : true,
       onTap: wholeWidgetAction,
       decoration: InputDecoration(
         contentPadding: AppPaddings.textFieldContent,
@@ -64,9 +61,7 @@ class AppTextField extends StatelessWidget {
         alignLabelWithHint: true,
         suffixIcon: suffix(),
         border: AppElements.defaultOutlineBorder,
-        enabledBorder: hasError == true
-            ? AppElements.defaultOutlineBorderError
-            : AppElements.defaultOutlineBorder,
+        enabledBorder: hasError == true ? AppElements.defaultOutlineBorderError : AppElements.defaultOutlineBorder,
         disabledBorder: AppElements.defaultOutlineBorderDisabled,
         focusedBorder: AppElements.defaultOutlineBorderFocused,
         isDense: true,

@@ -5,12 +5,11 @@ import '../../../../core/app_extensions/data_types_extensions/extension_date_tim
 import '../../../features/accounts/domain/entities/accounts_filter_entity/accounts_filter_entity.dart';
 
 extension CompareNull on AppAccountsFilterEntity? {
-  bool equalTo(AppAccountsFilterEntity? filter) =>
-      this == null && filter == null
-          ? true
-          : this == null || filter == null
-              ? false
-              : this!.equalTo(filter);
+  bool equalTo(AppAccountsFilterEntity? filter) => this == null && filter == null
+      ? true
+      : this == null || filter == null
+          ? false
+          : this!.equalTo(filter);
 }
 
 extension Compare on AppAccountsFilterEntity {
@@ -27,8 +26,7 @@ extension Compare on AppAccountsFilterEntity {
 }
 
 extension RxChecksNull on Rx<AppAccountsFilterEntity?> {
-  bool get isEmpty =>
-      value == null ? true : value.equalTo(const AppAccountsFilterEntity());
+  bool get isEmpty => value == null ? true : value.equalTo(const AppAccountsFilterEntity());
   bool get isNotEmpty => !isEmpty;
 }
 

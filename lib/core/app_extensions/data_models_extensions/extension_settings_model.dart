@@ -9,8 +9,7 @@ extension RxStorage on Rx<AppSettingDataModel> {
 }
 
 extension Storage on AppSettingDataModel {
-  Future<void> saveOnStorage() async =>
-      await AppLocalStorage.to.saveSettings(settings: this);
+  Future<void> saveOnStorage() async => await AppLocalStorage.to.saveSettings(settings: this);
   AppSettingDataModel get loadFromStorage => AppLocalStorage.to.loadSettings();
 }
 

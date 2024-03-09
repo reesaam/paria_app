@@ -42,8 +42,7 @@ class AppLocalStorage {
   void clearSpecificKey(AppStorageKeys key) => _storage.remove(key.name);
 
   ///Core Functions
-  Future<void> _saveFunction(data, String key) async =>
-      await _storage.write(key, data);
+  Future<void> _saveFunction(data, String key) async => await _storage.write(key, data);
 
   dynamic _loadFunction(String key) {
     var data = _storage.read(key);
@@ -71,8 +70,7 @@ class AppLocalStorage {
     );
     var appDataJson = json.encode(appData);
     Uint8List data = appDataJson.toString().toUInt8List;
-    String? savedPath = await AppFileFunctions.to
-        .saveFile(fileName: AppTexts.settingBackupFilename, data: data);
+    String? savedPath = await AppFileFunctions.to.saveFile(fileName: AppTexts.settingBackupFilename, data: data);
     appLogPrint('File Path: $savedPath');
     appLogPrint('Backup File Exported');
   }
@@ -84,11 +82,9 @@ class AppLocalStorage {
 
     ///Filling Data Fields
     if (appData.version == AppDataVersions.values.last) {
-      await saveSettings(
-          settings: appData.settings ?? const AppSettingDataModel());
+      await saveSettings(settings: appData.settings ?? const AppSettingDataModel());
       await saveContacts(contacts: appData.contacts ?? AppContactModelsList());
-      await saveAccountRecords(
-          accountRecords: appData.accounts ?? AppAccountRecordModelsList());
+      await saveAccountRecords(accountRecords: appData.accounts ?? AppAccountRecordModelsList());
       appLogPrint('Data Imported');
     } else {
       appLogPrint('Data Not Imported');
@@ -101,36 +97,26 @@ class AppLocalStorage {
   }
 
   ///Settings
-  Future<void> saveSettings({required AppSettingDataModel settings}) async =>
-      await _saveFunction(settings, _keySettings);
+  Future<void> saveSettings({required AppSettingDataModel settings}) async => await _saveFunction(settings, _keySettings);
 
   AppSettingDataModel loadSettings() {
     var data = _loadFunction(_keySettings);
-    return data == null
-        ? const AppSettingDataModel()
-        : AppSettingDataModel.fromJson(data);
+    return data == null ? const AppSettingDataModel() : AppSettingDataModel.fromJson(data);
   }
 
   ///Contacts
-  Future<void> saveContacts({required AppContactModelsList contacts}) async =>
-      await _saveFunction(contacts, _keyContacts);
+  Future<void> saveContacts({required AppContactModelsList contacts}) async => await _saveFunction(contacts, _keyContacts);
 
   AppContactModelsList loadContacts() {
     var data = _loadFunction(_keyContacts);
-    return data == null
-        ? AppContactModelsList()
-        : AppContactModelsList.fromJson(data);
+    return data == null ? AppContactModelsList() : AppContactModelsList.fromJson(data);
   }
 
   ///Settings
-  Future<void> saveAccountRecords(
-          {required AppAccountRecordModelsList accountRecords}) async =>
-      await _saveFunction(accountRecords, _keyAccounts);
+  Future<void> saveAccountRecords({required AppAccountRecordModelsList accountRecords}) async => await _saveFunction(accountRecords, _keyAccounts);
 
   AppAccountRecordModelsList loadAccountRecords() {
     var data = _loadFunction(_keyAccounts);
-    return data == null
-        ? AppAccountRecordModelsList()
-        : AppAccountRecordModelsList.fromJson(data);
+    return data == null ? AppAccountRecordModelsList() : AppAccountRecordModelsList.fromJson(data);
   }
 }

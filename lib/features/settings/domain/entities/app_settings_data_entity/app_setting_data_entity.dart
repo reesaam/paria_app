@@ -13,16 +13,12 @@ class AppSettingDataEntity with _$AppSettingDataEntity {
     @Default(AppCalendarTypes.christian) AppCalendarTypes calendar,
   }) = _AppSettingDataEntity;
 
-  factory AppSettingDataEntity.fromJson(Map<String, dynamic> json) =>
-      _$AppSettingDataEntityFromJson(json);
+  factory AppSettingDataEntity.fromJson(Map<String, dynamic> json) => _$AppSettingDataEntityFromJson(json);
 }
 
 @unfreezed
 class AppSettingDataEntitiesList with _$AppSettingDataEntitiesList {
-  factory AppSettingDataEntitiesList({
-    @Default(<AppSettingDataEntity>[]) List<AppSettingDataEntity> appSettingsDataList
-  }) = _AppSettingDataEntitiesList;
+  factory AppSettingDataEntitiesList({@Default(<AppSettingDataEntity>[]) List<AppSettingDataEntity> appSettingsDataList}) = _AppSettingDataEntitiesList;
 
-  factory AppSettingDataEntitiesList.fromJson(Map<String, dynamic> json) =>
-      _$AppSettingDataEntitiesListFromJson(json);
+  factory AppSettingDataEntitiesList.fromJson(Map<String, dynamic> json) => _$AppSettingDataEntitiesListFromJson(json);
 }

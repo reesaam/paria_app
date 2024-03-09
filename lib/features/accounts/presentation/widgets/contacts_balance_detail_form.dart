@@ -16,15 +16,9 @@ class ContactsBalanceItemDetailForm extends StatelessWidget {
       shrinkWrap: true,
       itemCount: balance.count,
       itemBuilder: (context, index) => Container(
-          decoration: AppElements.shapeBoxDecoration.copyWith(
-              color: index % 2 == 0
-                  ? null
-                  : AppColors.appDefaultColor.withOpacity(0.1)),
+          decoration: AppElements.shapeBoxDecoration.copyWith(color: index % 2 == 0 ? null : AppColors.appDefaultColor.withOpacity(0.1)),
           padding: AppPaddings.contactsBalanceItemDetailsItem,
-          child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            Text(balance.records?[index].description ??
-                Texts.to.notAvailableInitials),
-            Text(balance.records?[index].amount.toCurrency ?? '')
-          ])));
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Text(balance.records?[index].description ?? Texts.to.notAvailableInitials), Text(balance.records?[index].amount.toCurrency ?? '')])));
 }

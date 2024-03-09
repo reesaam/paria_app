@@ -41,9 +41,7 @@ class UpdateController extends CoreController {
 
   @override
   void onInitFunction() {
-    downloaded
-        .listen((data) {})
-        .onData((data) => data == true ? popPage() : null);
+    downloaded.listen((data) {}).onData((data) => data == true ? popPage() : null);
   }
 
   @override
@@ -52,9 +50,7 @@ class UpdateController extends CoreController {
   }
 
   checkUpdate() async {
-    AppBottomDialogs().withoutButton(
-        title: Texts.to.updateCheckingUpdate,
-        form: AppProgressIndicator.linear());
+    AppBottomDialogs().withoutButton(title: Texts.to.updateCheckingUpdate, form: AppProgressIndicator.linear());
     bool internetStatus = await ConnectionChecker.to.checkInternet();
     popPage();
     internetStatus ? _checkUpdateFunction() : noInternetConnectionSnackBar();
@@ -68,15 +64,12 @@ class UpdateController extends CoreController {
     } else {
       appLogPrint('Available Version: $version');
       availableVersion.value = version;
-      AppSnackBar().showSnackBar(
-          message:
-              '${Texts.to.updateUpdateFound}\n${Texts.to.version.withDoubleDots} $version');
+      AppSnackBar().showSnackBar(message: '${Texts.to.updateUpdateFound}\n${Texts.to.version.withDoubleDots} $version');
     }
   }
 
   downloadUpdate() async {
-    AppBottomDialogs().withoutButton(
-        title: Texts.to.updateDownloading, form: AppProgressIndicator.linear());
+    AppBottomDialogs().withoutButton(title: Texts.to.updateDownloading, form: AppProgressIndicator.linear());
     bool internetStatus = await ConnectionChecker.to.checkInternet();
     internetStatus ? _downloadAction() : noInternetConnectionSnackBar();
   }
@@ -91,26 +84,17 @@ class UpdateController extends CoreController {
       dlFile!.existsSync() ? dlFile!.deleteSync() : null;
       downloaded.value = false;
       String downloadAddress = '';
-      final resultAddress = await UpdateDownloadAddressUseCase(
-              updateRepository: UpdateRepository.to)
-          .call();
-      resultAddress.fold((l) => showErrorDialog(message: l.message),
-          (r) => downloadAddress = r);
+      final resultAddress = await UpdateDownloadAddressUseCase(updateRepository: UpdateRepository.to).call();
+      resultAddress.fold((l) => showErrorDialog(message: l.message), (r) => downloadAddress = r);
 
       if (downloadAddress.isNotEmpty) {
-        final result =
-            await UpdateDownloadUseCase(updateRepository: UpdateRepository.to)
-                .call();
+        final result = await UpdateDownloadUseCase(updateRepository: UpdateRepository.to).call();
         result.fold((l) => showErrorDialog(message: l.message), (r) {
           dlFile = r;
           downloaded.value = true;
           appDebugPrint(dlFile?.length());
           AppSnackBar().showSnackBar(message: Texts.to.updateDownloaded);
-          AppAlertDialogs().withOkCancel(
-              title: Texts.to.updateInstallationTitle,
-              text: Texts.to.updateInstallationContent,
-              onTapOk: _installUpdate,
-              dismissible: true);
+          AppAlertDialogs().withOkCancel(title: Texts.to.updateInstallationTitle, text: Texts.to.updateInstallationContent, onTapOk: _installUpdate, dismissible: true);
         });
       }
     } else {
@@ -118,19 +102,11 @@ class UpdateController extends CoreController {
     }
   }
 
-  void _installUpdate() => dlFile == null
-      ? _alertDirectoryOrFileNotFound(false)
-      : file_plus.OpenFile.open(dlFile!.path);
+  void _installUpdate() => dlFile == null ? _alertDirectoryOrFileNotFound(false) : file_plus.OpenFile.open(dlFile!.path);
 
   _alertDirectoryOrFileNotFound(bool directoryError) => showErrorDialog(
-      title: directoryError
-          ? Texts.to.updateDirectoryNotFoundTitle
-          : Texts.to.updateFileNotFoundTitle,
-      message: directoryError
-          ? Texts.to.updateDirectoryNotFoundContent
-          : Texts.to.updateFileNotFoundContent);
+      title: directoryError ? Texts.to.updateDirectoryNotFoundTitle : Texts.to.updateFileNotFoundTitle,
+      message: directoryError ? Texts.to.updateDirectoryNotFoundContent : Texts.to.updateFileNotFoundContent);
 
-  checkAvailableUpdate() =>
-      availableVersion.value == AppInfo.appCurrentVersion ||
-      availableVersion.value == Texts.to.notAvailable;
+  checkAvailableUpdate() => availableVersion.value == AppInfo.appCurrentVersion || availableVersion.value == Texts.to.notAvailable;
 }

@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:persian_datetime_picker/persian_datetime_picker.dart';
 
 class AppDateTimePicker {
-
   Future<DateTime?> christianDatePicker({
     DateTime? initialDate,
     DateTime? firstDate,
@@ -26,10 +25,6 @@ class AppDateTimePicker {
   }) async {
     Jalali now = Jalali.now();
     return showPersianDatePicker(
-        context: Get.context!,
-        initialEntryMode: PDatePickerEntryMode.calendarOnly,
-        initialDate: initialDate ?? now,
-        firstDate: firstDate ?? now.copy(year: now.year - 5),
-        lastDate: lastDate ?? now);
+        context: Get.context!, initialEntryMode: PDatePickerEntryMode.calendarOnly, initialDate: initialDate ?? now, firstDate: firstDate ?? now.copy(year: now.year - 5), lastDate: lastDate ?? now);
   }
 }

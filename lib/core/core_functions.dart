@@ -30,14 +30,9 @@ Future<String> checkAvailableVersion() async {
   return result.fold((l) => Texts.to.notAvailable, (r) => r);
 }
 
-noInternetConnectionSnackBar() => AppSnackBar()
-    .showSnackBar(message: Texts.to.connectionInternetNotAvailableText);
+noInternetConnectionSnackBar() => AppSnackBar().showSnackBar(message: Texts.to.connectionInternetNotAvailableText);
 
-void appExitDialog() => AppAlertDialogs().withOkCancel(
-    title: Texts.to.appExit,
-    text: Texts.to.areYouSure,
-    onTapOk: appExit,
-    dismissible: true);
+void appExitDialog() => AppAlertDialogs().withOkCancel(title: Texts.to.appExit, text: Texts.to.areYouSure, onTapOk: appExit, dismissible: true);
 
 void appExit() {
   appLogPrint('App Exit Triggered');

@@ -53,8 +53,6 @@ class AppPaddings {
   ///Contacts Balance
   static EdgeInsets get contactsBalanceItemDetailsItem => const EdgeInsets.symmetric(vertical: 5, horizontal: 20);
 
-
-
   ///ListPage
   static EdgeInsets get listPageSearchBox => const EdgeInsets.only(bottom: 10);
 

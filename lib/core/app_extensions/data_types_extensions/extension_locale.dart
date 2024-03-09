@@ -6,9 +6,7 @@ import '../../../data/resources/app_texts.dart';
 import '../../app_localization.dart';
 
 extension LanguageName on Locale {
-  String get getLanguageName => this == AppLocalization.persian
-      ? AppTexts.languageNamePersian
-      : getLanguage.name.capitalizeFirst!;
+  String get getLanguageName => this == AppLocalization.persian ? AppTexts.languageNamePersian : getLanguage.name.capitalizeFirst!;
 }
 
 extension LanguageModel on Locale {

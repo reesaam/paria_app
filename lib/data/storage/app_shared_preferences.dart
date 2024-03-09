@@ -43,21 +43,15 @@ class AppSharedPreferences {
 
   void loadData() async {
     var jsonDataSettings = await _loadFunction(_keySettings);
-    AppSettingDataEntity settingsData = jsonDataSettings == null
-        ? const AppSettingDataEntity()
-        : AppSettingDataEntity.fromJson(json.decode(jsonDataSettings));
+    AppSettingDataEntity settingsData = jsonDataSettings == null ? const AppSettingDataEntity() : AppSettingDataEntity.fromJson(json.decode(jsonDataSettings));
     settingsData.saveOnStorage;
 
     var jsonDataContacts = await _loadFunction(_keyContacts);
-    AppContactEntitiesList contactsData = jsonDataContacts == null
-        ? AppContactEntitiesList()
-        : AppContactEntitiesList.fromJson(json.decode(jsonDataContacts));
+    AppContactEntitiesList contactsData = jsonDataContacts == null ? AppContactEntitiesList() : AppContactEntitiesList.fromJson(json.decode(jsonDataContacts));
     contactsData.saveOnStorage;
 
     var jsonDataAccounts = await _loadFunction(_keyAccounts);
-    AppAccountRecordEntitiesList accountsData = jsonDataAccounts == null
-        ? AppAccountRecordEntitiesList()
-        : AppAccountRecordEntitiesList.fromJson(json.decode(jsonDataAccounts));
+    AppAccountRecordEntitiesList accountsData = jsonDataAccounts == null ? AppAccountRecordEntitiesList() : AppAccountRecordEntitiesList.fromJson(json.decode(jsonDataAccounts));
     accountsData.saveOnStorage;
   }
 

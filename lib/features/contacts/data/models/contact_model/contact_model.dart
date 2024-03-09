@@ -18,8 +18,7 @@ class AppContactModel with _$AppContactModel {
     final int? balance,
   }) = _AppContactModel;
 
-  factory AppContactModel.fromJson(Map<String, dynamic> json) =>
-      _$AppContactModelFromJson(json);
+  factory AppContactModel.fromJson(Map<String, dynamic> json) => _$AppContactModelFromJson(json);
 }
 
 @unfreezed
@@ -28,6 +27,5 @@ class AppContactModelsList with _$AppContactModelsList {
     @Default(<AppContactModel>[]) List<AppContactModel> contactsList,
   }) = _AppContactModelsList;
 
-  factory AppContactModelsList.fromJson(Map<String, dynamic> json) =>
-      _$AppContactModelsListFromJson(json);
+  factory AppContactModelsList.fromJson(Map<String, dynamic> json) => _$AppContactModelsListFromJson(json);
 }

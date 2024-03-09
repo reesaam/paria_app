@@ -15,9 +15,7 @@ import 'add_edit_contact_component.dart';
 class ContactsController extends CoreController {
   static ContactsController get to => Get.find();
 
-  Rx<AppContactEntitiesList> listContacts = AppContactEntitiesList(
-          contactsList: List<AppContactEntity>.empty(growable: true))
-      .obs;
+  Rx<AppContactEntitiesList> listContacts = AppContactEntitiesList(contactsList: List<AppContactEntity>.empty(growable: true)).obs;
   AppContactEntity? selectedContact;
 
   @override
@@ -39,13 +37,10 @@ class ContactsController extends CoreController {
     listContacts.close();
   }
 
-  showContactModal(AppContactEntity contact) async =>
-      await AppBottomDialogs().withoutButton(
-          form: ShowContactFormWidget(contact: contact), dismissible: true);
+  showContactModal(AppContactEntity contact) async => await AppBottomDialogs().withoutButton(form: ShowContactFormWidget(contact: contact), dismissible: true);
 
   addContact() async {
-    AppContactEntity? contact =
-        await AppContactsAddEditContactComponent().call(isEdit: false);
+    AppContactEntity? contact = await AppContactsAddEditContactComponent().call(isEdit: false);
     appLogPrint('Contact: $contact');
     appLogPrint(contact.isEmpty);
 
@@ -55,8 +50,7 @@ class ContactsController extends CoreController {
   }
 
   editContact(AppContactEntity contact) async {
-    AppContactEntity? editedContact = await AppContactsAddEditContactComponent()
-        .call(isEdit: true, contact: contact);
+    AppContactEntity? editedContact = await AppContactsAddEditContactComponent().call(isEdit: true, contact: contact);
     appLogPrint('New Contact : $editedContact');
     if (editedContact.isNotEmpty) {
       listContacts.editContact(contact, editedContact!);

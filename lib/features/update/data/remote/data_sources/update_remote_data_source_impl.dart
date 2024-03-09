@@ -15,7 +15,7 @@ class UpdateRemoteDataSourceImpl implements UpdateRemoteDataSource {
   UpdateRemoteDataSourceImpl();
 
   @override
-  Future<Either<NetworkException, String>> getDownloadAddress() async{
+  Future<Either<NetworkException, String>> getDownloadAddress() async {
     String address = Texts.to.notAvailableInitials;
     final Response response;
     try {

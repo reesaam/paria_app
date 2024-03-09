@@ -23,9 +23,7 @@ class SplashScreenController extends CoreController {
     permissionsStatus = await AppPermissions.to.checkAllPermissions();
     appDebugPrint('Permission Status: $permissionsStatus}');
     internetStatus = await ConnectionChecker.to.checkInternet();
-    internetStatus
-        ? availableUpdate = await checkAvailableVersion()
-        : noInternetConnectionSnackBar();
+    internetStatus ? availableUpdate = await checkAvailableVersion() : noInternetConnectionSnackBar();
     appDebugPrint('Available Update: $availableUpdate');
   }
 
@@ -44,16 +42,10 @@ class SplashScreenController extends CoreController {
 
   void goToNextPage() async {
     await Future.delayed(const Duration(seconds: 4));
-    availableUpdate == AppInfo.appCurrentVersion.version
-        ? goToHomePage()
-        : _showUpdateDialog();
+    availableUpdate == AppInfo.appCurrentVersion.version ? goToHomePage() : _showUpdateDialog();
   }
 
-  _showUpdateDialog() => AppAlertDialogs().withYesNo(
-      title: Texts.to.updateNewVersion,
-      text: Texts.to.updateApprove,
-      onTapNo: goToHomePage,
-      onTapYes: _goToUpdate);
+  _showUpdateDialog() => AppAlertDialogs().withYesNo(title: Texts.to.updateNewVersion, text: Texts.to.updateApprove, onTapNo: goToHomePage, onTapYes: _goToUpdate);
 
   _goToUpdate() {
     goToHomePage();

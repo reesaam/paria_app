@@ -17,16 +17,12 @@ class AppAccountRecordModel with _$AppAccountRecordModel {
     final bool? cleared,
   }) = _AppAccountRecordModel;
 
-  factory AppAccountRecordModel.fromJson(Map<String, dynamic> json) =>
-      _$AppAccountRecordModelFromJson(json);
+  factory AppAccountRecordModel.fromJson(Map<String, dynamic> json) => _$AppAccountRecordModelFromJson(json);
 }
 
 @unfreezed
 class AppAccountRecordModelsList with _$AppAccountRecordModelsList {
-  factory AppAccountRecordModelsList({
-    @Default(<AppAccountRecordModel>[]) List<AppAccountRecordModel> recordsList
-  }) = _AppAccountRecordModelsList;
+  factory AppAccountRecordModelsList({@Default(<AppAccountRecordModel>[]) List<AppAccountRecordModel> recordsList}) = _AppAccountRecordModelsList;
 
-  factory AppAccountRecordModelsList.fromJson(Map<String, dynamic> json) =>
-      _$AppAccountRecordModelsListFromJson(json);
+  factory AppAccountRecordModelsList.fromJson(Map<String, dynamic> json) => _$AppAccountRecordModelsListFromJson(json);
 }

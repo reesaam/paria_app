@@ -18,16 +18,12 @@ class AppPageDetail with _$AppPageDetail {
     final int? iconCode,
   }) = _AppPageDetail;
 
-  factory AppPageDetail.fromJson(Map<String, dynamic> json) =>
-      _$AppPageDetailFromJson(json);
+  factory AppPageDetail.fromJson(Map<String, dynamic> json) => _$AppPageDetailFromJson(json);
 }
 
 @freezed
 class AppPageDetailsList with _$AppPageDetailsList {
-  factory AppPageDetailsList({
-    @Default(<AppPageDetail>[]) List<AppPageDetail> pageDetailsList
-  }) = _AppPageDetailsList;
+  factory AppPageDetailsList({@Default(<AppPageDetail>[]) List<AppPageDetail> pageDetailsList}) = _AppPageDetailsList;
 
-  factory AppPageDetailsList.fromJson(Map<String, dynamic> json) =>
-      _$AppPageDetailsListFromJson(json);
+  factory AppPageDetailsList.fromJson(Map<String, dynamic> json) => _$AppPageDetailsListFromJson(json);
 }

@@ -17,32 +17,26 @@ class HomePage extends CoreView<HomePageController> {
   const HomePage({super.key});
 
   @override
-  PreferredSizeWidget? get appBar =>
-      AppAppBar(pageDetail: controller.pageDetail);
+  PreferredSizeWidget? get appBar => AppAppBar(pageDetail: controller.pageDetail);
 
   @override
   Widget? get drawer => const AppDrawer();
 
   @override
-  Widget? get bottomNavigationBar => AppBottomNavigationBar(
-      selectedIndex: controller.pageDetail.bottomBarItemNumber);
+  Widget? get bottomNavigationBar => AppBottomNavigationBar(selectedIndex: controller.pageDetail.bottomBarItemNumber);
 
   @override
-  Widget get body => Obx(() => Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _widgetDateTime(),
-            _widgetSummery(),
-          ]));
+  Widget get body => Obx(() => Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, crossAxisAlignment: CrossAxisAlignment.center, children: [
+        _widgetDateTime(),
+        _widgetSummery(),
+      ]));
 
   Widget _widgetDateTime() => Card(
           child: Stack(children: [
         Padding(
             padding: AppPaddings.homepageDateTimeCard,
             child: Column(children: [
-              Text(Texts.to.homepageDateTimeTitle,
-                  style: AppTextStyles.cardTitle),
+              Text(Texts.to.homepageDateTimeTitle, style: AppTextStyles.cardTitle),
               AppSpaces.h20,
               Obx(() => _widgetDateTimeItem()),
             ])),
@@ -61,44 +55,30 @@ class HomePage extends CoreView<HomePageController> {
         //         ))),
       ]));
 
-  Widget _widgetDateTimeItem() => Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(controller.mainTime.value),
-            Text(controller.mainDate.value),
-          ]);
+  Widget _widgetDateTimeItem() => Row(mainAxisAlignment: MainAxisAlignment.spaceAround, crossAxisAlignment: CrossAxisAlignment.center, children: [
+        Text(controller.mainTime.value),
+        Text(controller.mainDate.value),
+      ]);
 
   Widget _widgetSummery() => Card(
       child: Padding(
           padding: AppPaddings.homepageSummeryCard,
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+          child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             Text(Texts.to.homepageSummaryTitle, style: AppTextStyles.cardTitle),
             AppSpaces.h20,
             Padding(
                 padding: AppPaddings.homepageSummeryCardData,
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(Texts
-                                .to.homepageSummaryContacts.withDoubleDots),
-                            Text(Texts.to.homepageSummaryAccountRecords
-                                .withDoubleDots),
-                            Text(Texts
-                                .to.homepageSummaryTotalBalance.withDoubleDots),
-                          ]),
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(controller.summaryContactsCount.toString()),
-                            Text(controller.summaryRecordsCount.toString()),
-                            Text(controller
-                                .summaryBalanceCount.value.balance.toCurrency),
-                          ]),
-                    ])),
+                child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                  Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                    Text(Texts.to.homepageSummaryContacts.withDoubleDots),
+                    Text(Texts.to.homepageSummaryAccountRecords.withDoubleDots),
+                    Text(Texts.to.homepageSummaryTotalBalance.withDoubleDots),
+                  ]),
+                  Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Text(controller.summaryContactsCount.toString()),
+                    Text(controller.summaryRecordsCount.toString()),
+                    Text(controller.summaryBalanceCount.value.balance.toCurrency),
+                  ]),
+                ])),
           ])));
 }

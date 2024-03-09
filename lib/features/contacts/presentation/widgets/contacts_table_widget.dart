@@ -21,11 +21,7 @@ class ContactsTable extends StatelessWidget {
   const ContactsTable({super.key, required this.listContacts});
 
   @override
-  Widget build(BuildContext context) => ListView.builder(
-          shrinkWrap: true,
-          itemCount: listContacts.count,
-          itemBuilder: (context, index) =>
-              _contactItem(listContacts.contactsList[index]));
+  Widget build(BuildContext context) => ListView.builder(shrinkWrap: true, itemCount: listContacts.count, itemBuilder: (context, index) => _contactItem(listContacts.contactsList[index]));
 
   _contactItem(AppContactEntity contact) => GestureDetector(
       onTap: () => ContactsController.to.showContactModal(contact),
@@ -33,31 +29,18 @@ class ContactsTable extends StatelessWidget {
           shape: AppElements.cardTransparentOutlineBorder,
           child: Padding(
               padding: AppPaddings.contactsItem,
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(children: [
-                      ContactAvatar(
-                          contact: contact,
-                          size: AppElements.contactsListAvatarMaxRadius),
-                      AppSpaces.w20,
-                      Text(contact.getContactFullName,
-                          style: AppTextStyles.contactsListItem),
-                    ]),
-                    AppPopupMenu(listItems: contactOptions(contact)),
-                  ]))));
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Row(children: [
+                  ContactAvatar(contact: contact, size: AppElements.contactsListAvatarMaxRadius),
+                  AppSpaces.w20,
+                  Text(contact.getContactFullName, style: AppTextStyles.contactsListItem),
+                ]),
+                AppPopupMenu(listItems: contactOptions(contact)),
+              ]))));
 
-  List<AppPopupMenuItem> contactOptions(AppContactEntity contact) =>
-      List<AppPopupMenuItem>.from([
-        AppPopupMenuItem(
-            text: Texts.to.contactsOptionShow,
-            onTapFunction: () =>
-                ContactsController.to.showContactModal(contact)),
-        AppPopupMenuItem(
-            text: Texts.to.contactsOptionEdit,
-            onTapFunction: () => ContactsController.to.editContact(contact)),
-        AppPopupMenuItem(
-            text: Texts.to.contactsOptionRemove,
-            onTapFunction: () => ContactsController.to.removeContact(contact)),
+  List<AppPopupMenuItem> contactOptions(AppContactEntity contact) => List<AppPopupMenuItem>.from([
+        AppPopupMenuItem(text: Texts.to.contactsOptionShow, onTapFunction: () => ContactsController.to.showContactModal(contact)),
+        AppPopupMenuItem(text: Texts.to.contactsOptionEdit, onTapFunction: () => ContactsController.to.editContact(contact)),
+        AppPopupMenuItem(text: Texts.to.contactsOptionRemove, onTapFunction: () => ContactsController.to.removeContact(contact)),
       ]);
 }
