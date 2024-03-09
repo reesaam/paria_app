@@ -33,21 +33,14 @@ class AppDrawer extends Drawer {
 
   Widget header() => Container(
       padding: AppPaddings.drawerHeader,
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-        Image.asset(AppLogos.appLogo, width: AppSizes.drawerHeaderIconWidth),
-        Text(AppInfo.appName),
-      ]));
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [Image.asset(AppLogos.appLogo, width: AppSizes.drawerHeaderIconWidth), Text(Texts.to.app_name)]));
 
   Widget body() {
     List<AppPageDetail> drawerList = AppPageDetails.listPages.where((element) => element.drawerPresence == true).toList();
     return Column(children: List.generate(drawerList.length, (index) => _bodyItem(drawerList[index])));
   }
 
-  Widget _bodyItem(AppPageDetail page) => ListTile(
-        title: Text(page.pageName ?? ''),
-        leading: page.iconCode.toIcon,
-        onTap: () => {popPage(), goToPage(page.pageRoute)},
-      );
+  Widget _bodyItem(AppPageDetail page) => ListTile(title: Text(page.pageName ?? ''), leading: page.iconCode.toIcon, onTap: () => {popPage(), goToPage(page.pageRoute)});
 
   Widget footer() => Container(
       padding: AppPaddings.drawerFooter,

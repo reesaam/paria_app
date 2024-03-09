@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 enum AppDataVersions {
   v1(1),
@@ -71,12 +72,12 @@ enum ContactsSortType {
 }
 
 enum RecordsSortType {
-  contactAZ('Contact A->Z'),
-  contactZA('Contact Z->A'),
-  amountInc('Amount Inc'),
-  amountDec('Amount Dec'),
-  dateInc('Date Inc'),
-  dateDec('Date Dec');
+  contactAZ('Contact  A->Z'),
+  contactZA('Contact  Z->A'),
+  amountInc('Amount  Inc'),
+  amountDec('Amount  Dec'),
+  dateInc('Date  Inc'),
+  dateDec('Date  Dec');
 
   final String value;
   const RecordsSortType(this.value);
