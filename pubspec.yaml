@@ -2,7 +2,7 @@ name: paria_app
 description: Paria Assistant App
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 0.1.0+1
+version: 0.2.6+1
 
 environment:
   sdk: '>=3.1.4 <4.0.0'
