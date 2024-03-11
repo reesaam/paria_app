@@ -23,40 +23,52 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutPageName": MessageLookupByLibrary.simpleMessage("درباره"),
+        "aboutTitlesAppName": MessageLookupByLibrary.simpleMessage(""),
+        "aboutTitlesDeveloperLinkedIn":
+            MessageLookupByLibrary.simpleMessage("پروفایل لینکدین توسعه دهنده"),
+        "aboutTitlesDeveloperName":
+            MessageLookupByLibrary.simpleMessage("نام توسعه دهنده"),
+        "aboutTitlesDeveloperWebsite":
+            MessageLookupByLibrary.simpleMessage("وب سایت توسعه دهنده"),
         "adminStartPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin Start Page"),
         "adminTestPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin Pages Test Page"),
         "adminUITestPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin UI Test Page"),
-        "alert": MessageLookupByLibrary.simpleMessage("هشدار"),
-        "appExit": MessageLookupByLibrary.simpleMessage("خروج"),
+        "alert": MessageLookupByLibrary.simpleMessage("پیغام"),
+        "appExit": MessageLookupByLibrary.simpleMessage("خروج از برنامه"),
         "app_name":
             MessageLookupByLibrary.simpleMessage("Base Flutter Clean GetX App"),
-        "areYouSure":
-            MessageLookupByLibrary.simpleMessage("آیا اطمینان دارید؟"),
+        "areYouSure": MessageLookupByLibrary.simpleMessage("آیا مطمئن هستید"),
         "areYouSureDataExport": MessageLookupByLibrary.simpleMessage(
-            "آیا اطمینان دارید؟\nاطلاعات خارج خواهند شد"),
+            "آیا از استخراج اطلاعات اطمینان دارید؟"),
         "areYouSureDataImport": MessageLookupByLibrary.simpleMessage(
-            "آیا اطمینان دارید؟\nاطلاعات وارد خواهند شد"),
+            "آیا از ورود اطلاعات اطمینان دارید؟"),
         "areYouSureDataMayLost": MessageLookupByLibrary.simpleMessage(
-            "آیا اطمینان دارید؟\nاطلاعات شما ممکن است از بین بروند"),
+            "آیا مطمئن هستید؟\nاطلاعات شما ممکن است از دست برود"),
         "areYouSureDataWillLost": MessageLookupByLibrary.simpleMessage(
-            "آیا اطمینان دارید؟\nاطلاعات شما از بین خواهد رفت"),
+            "آیا مطمئن هستید؟\nاطلاعات شما از بین خواهد رفت"),
         "cancel": MessageLookupByLibrary.simpleMessage("لغو"),
         "connectionInternetNotAvailableText":
-            MessageLookupByLibrary.simpleMessage("اتصال به اینترنت وجود ندارد"),
+            MessageLookupByLibrary.simpleMessage(
+                "اینترنت موجود نیست\nلطفا اتصال خود را بررسی کنید"),
         "connectionInternetNotAvailableTitle":
-            MessageLookupByLibrary.simpleMessage("اینترنت"),
+            MessageLookupByLibrary.simpleMessage("اتصال اینترنت"),
         "empty": MessageLookupByLibrary.simpleMessage(""),
         "from": MessageLookupByLibrary.simpleMessage("از"),
+        "generalNotAvailable":
+            MessageLookupByLibrary.simpleMessage("موجود نیست"),
+        "generalNotAvailableInitials":
+            MessageLookupByLibrary.simpleMessage("ناموجود"),
         "homePageName": MessageLookupByLibrary.simpleMessage("خانه"),
         "info": MessageLookupByLibrary.simpleMessage("اطلاعات"),
         "information": MessageLookupByLibrary.simpleMessage("اطلاعات"),
         "languageName": MessageLookupByLibrary.simpleMessage("فارسی"),
-        "notAvailable": MessageLookupByLibrary.simpleMessage("ناموجود"),
+        "no": MessageLookupByLibrary.simpleMessage("خیر"),
+        "notAvailable": MessageLookupByLibrary.simpleMessage("در دسترس نیست"),
         "notAvailableInitials": MessageLookupByLibrary.simpleMessage("ناموجود"),
-        "ok": MessageLookupByLibrary.simpleMessage("باشه"),
+        "ok": MessageLookupByLibrary.simpleMessage("تایید"),
         "settingsAppbarMenuResetSettings":
             MessageLookupByLibrary.simpleMessage("بازنشانی همه تنظیمات"),
         "settingsLanguageModalSelectLanguage":
@@ -90,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("صفحه شروع"),
         "to": MessageLookupByLibrary.simpleMessage("تا"),
         "total": MessageLookupByLibrary.simpleMessage("جمع"),
+        "totalBalance": MessageLookupByLibrary.simpleMessage("جمع کل"),
         "updateApprove": MessageLookupByLibrary.simpleMessage(
             "آیا میخواهید نسخه جدید را دانلود کنید؟"),
         "updateAvailableVersion":
@@ -126,6 +139,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "updateUpdateFound":
             MessageLookupByLibrary.simpleMessage("نسخه جدید در موجود است!"),
         "version": MessageLookupByLibrary.simpleMessage("نسخه"),
-        "warning": MessageLookupByLibrary.simpleMessage("توجه")
+        "warning": MessageLookupByLibrary.simpleMessage("هشدار"),
+        "yes": MessageLookupByLibrary.simpleMessage("بله")
       };
 }

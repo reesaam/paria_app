@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-
   ///Basics
   static Color get transparent => Colors.transparent;
   static Color get appBackground => _white;
   static Color get appDefaultColor => _grey;
-  static Color get appDefaultColorSecond => _persianOrange;
+  static Color get appDefaultColorSecond => _coral;
   static Color get appDefaultDisabledColor => _grey.withOpacity(0.5);
 
   ///Colors
@@ -25,7 +24,7 @@ class AppColors {
   static Color get noError => Colors.green;
 
   ///Text
-  static Color get textNormalDark => _black;
+  static Color get textNormalDark => _black.withOpacity(0.6);
   static Color get textNormalLight => _white;
   static Color get textDisabled => appDefaultDisabledColor;
 
@@ -41,15 +40,18 @@ class AppColors {
   static Color get bottomBarSelected => textNormalDark;
   static Color get bottomBarUnselected => textNormalDark;
 
+  ///SnackBar
+  static Color get snackBarBackground => appDefaultColorSecond;
+
   ///Card
   static Color get cardBackground => appBackground;
   static Color get cardText => appDefaultColor;
 
   ///Button
-  static Color get  buttonBackgroundNormal => appBackground;
-  static Color get  buttonBackgroundDisabled => appDefaultDisabledColor;
-  static Color get  buttonTextNormal => textNormalDark;
-  static Color get  buttonTextDisabled => textDisabled;
+  static Color get buttonBackgroundNormal => appDefaultColorSecond;
+  static Color get buttonBackgroundDisabled => appDefaultDisabledColor;
+  static Color get buttonTextNormal => textNormalDark;
+  static Color get buttonTextDisabled => textDisabled;
 
   ///TextFields
   static Color get textFieldText => textNormalDark;
@@ -57,8 +59,8 @@ class AppColors {
   static Color get textFieldHint => _grey;
 
   ///CheckBox
-  static Color get appCheckBox => appBackground;
-  static Color get appCheckBoxTick => appDefaultColorSecond;
+  static Color get appCheckBox => appDefaultColor;
+  static Color get appCheckBoxTick => appBackground;
 
   ///Switch
   static Color get switchActive => appDefaultColorSecond;

@@ -17,9 +17,5 @@ class SettingsLanguageWidget extends StatelessWidget {
           (index) => InkWell(
               onTap: function == null ? null : () => function!(index),
               child: LayoutBuilder(
-                  builder: (context, constraints) => Container(
-                      width: constraints.maxWidth,
-                      padding: AppPaddings.modalItems,
-                      child: Text(AppLocalization
-                          .languages[index].getLanguageName))))));
+                  builder: (context, constraints) => Container(width: constraints.maxWidth, padding: AppPaddings.modalItems, child: Text(AppLocalization.languages[index].getLanguageName))))));
 }

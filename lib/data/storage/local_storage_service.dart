@@ -1,9 +1,6 @@
 import 'dart:convert' as convert;
-import 'package:injectable/injectable.dart';
-
 import 'package:get_storage/get_storage.dart';
 
-@injectable
 class LocalStorageService {
   LocalStorageService() {
     _init();
@@ -18,14 +15,12 @@ class LocalStorageService {
 
   bool hasData(String key) => _storage.hasData(key);
 
-  read(String key) {
+  dynamic read(String key) {
     final data = _storage.read(key);
     return data == null ? null : convert.jsonDecode(data.toString());
   }
 
-  Future<void> write(String key, value) async => await _storage
-      .write(key, convert.jsonEncode(value))
-      .then((value) => saveOnStorage());
+  Future<void> write(String key, value) async => await _storage.write(key, convert.jsonEncode(value)).then((value) => saveOnStorage());
 
   remove(String key) => _storage.remove(key);
 

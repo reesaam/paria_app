@@ -11,13 +11,13 @@ class AppPopupMenuItem extends PopupMenuItem {
   });
 
   final String text;
-  final Function onTapFunction;
+  final Function() onTapFunction;
 
   @override
   Widget? get child => Text(text, style: AppTextStyles.popupMenuItem);
 
   @override
-  VoidCallback get onTap => onTapFunction();
+  VoidCallback get onTap => onTapFunction;
 
   Widget build(BuildContext context) => PopupMenuItem(child: child);
 }

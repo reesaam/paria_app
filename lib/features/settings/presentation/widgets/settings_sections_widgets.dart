@@ -7,11 +7,9 @@ import '../../../../app/components/general_widgets/app_dividers.dart';
 class SettingsSectionWidget extends StatelessWidget {
   final String title;
   final List<Widget> widgets;
-  const SettingsSectionWidget(
-      {super.key, required this.title, required this.widgets});
+  const SettingsSectionWidget({super.key, required this.title, required this.widgets});
 
-  Widget _title(String text) =>
-      Text(text, style: AppTextStyles.settingsSectionTitle);
+  Widget _title(String text) => Text(text, style: AppTextStyles.settingsSectionTitle);
 
   @override
   Widget build(BuildContext context) => Padding(

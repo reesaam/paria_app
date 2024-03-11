@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+enum AppDataVersions {
+  v1(1);
+
+  final int number;
+  const AppDataVersions(this.number);
+}
 
 enum AppRoutes {
-  splashScreen('Splash Screen'),
-  homepage('HomePage'),
-  settings('Settings'),
-  update('Update'),
-  about('About'),
-  notFound('Page Not Found'),
-  adminStartPage('Admin Start Page'),
-  adminTestPage('Admin Test Page'),
-  adminUITestPage('Admin UI Test Page');
-
-  final String pageLabel;
-  const AppRoutes(this.pageLabel);
+  splashScreen,
+  homepage,
+  settings,
+  update,
+  about,
+  notFound,
+  adminStartPage,
+  adminTestPage,
+  adminUITestPagePage,
 }
 
 enum AppBottomNavigationPages {
@@ -31,15 +36,6 @@ enum AppLanguages {
   final String languageName;
   final Locale locale;
   const AppLanguages(this.languageName, this.locale);
-}
-
-enum AppCalendarTypes {
-  christian('Christian'),
-  jalali('Jalali');
-
-  final String calendarName;
-
-  const AppCalendarTypes(this.calendarName);
 }
 
 enum AppStorageKeys {

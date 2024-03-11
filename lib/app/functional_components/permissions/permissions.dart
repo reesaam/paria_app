@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class AppPermissions {
-
   static AppPermissions get to => Get.find();
 
   AppPermissions() {
@@ -60,19 +59,14 @@ class AppPermissions {
   Future<String> checkPermission(Permission permission) async {
     late String result;
     await permission.request().then((permission) => result = permission.name);
-    return await permission
-        .request()
-        .then((permission) => result = permission.name);
+    return await permission.request().then((permission) => result = permission.name);
   }
 
   //Check list of permissions function
   Future<String> _checkPermissionsList(List<Permission> permissions) async {
     String permissionMessage = PermissionStatus.granted.name.toLowerCase();
     for (var permission in permissions) {
-      await permission.request() == PermissionStatus.granted
-          ? null
-          : permissionMessage =
-              permission.toString().toLowerCase().replaceAll(".", "");
+      await permission.request() == PermissionStatus.granted ? null : permissionMessage = permission.toString().toLowerCase().replaceAll(".", "");
     }
     return permissionMessage;
   }

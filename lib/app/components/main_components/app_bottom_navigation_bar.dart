@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/app_extensions/data_types_extensions/extension_int.dart';
 import '../../../core/app_extensions/data_types_extensions/extension_icon.dart';
 import '../../../core/app_routing/routing.dart';
+import '../../../data/info/app_page_details.dart';
 import '../../../data/resources/app_colors.dart';
 import '../../../data/resources/app_enums.dart';
-import '../../../data/resources/app_icons.dart';
 
 class AppBottomNavigationBar extends StatefulWidget {
   final int? selectedIndex;
@@ -35,35 +36,15 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
         onTap: (index) => _onItemTap(index),
         selectedItemColor: AppColors.bottomBarSelected,
         unselectedItemColor: AppColors.bottomBarUnselected,
-        items: List<BottomNavigationBarItem>.generate(
-            AppBottomNavigationPages.values.length,
-                (index) => _generateBottomNavigationBarItem(
-                AppBottomNavigationPages.values[index].appRoute)));
+        items: List<BottomNavigationBarItem>.generate(AppBottomNavigationPages.values.length, (index) => _generateBottomNavigationBarItem(AppBottomNavigationPages.values[index].appRoute)));
   }
 
-  BottomNavigationBarItem _generateBottomNavigationBarItem(AppRoutes route) =>
-      BottomNavigationBarItem(
-          activeIcon: CircleAvatar(
-              backgroundColor: AppColors.appDefaultColorSecond,
-              foregroundColor: AppColors.appDefaultColor,
-              child: _createIcon(route).withColor(AppColors.textNormalLight)),
-          icon: _createIcon(route),
-          label: _createLabel(route));
+  BottomNavigationBarItem _generateBottomNavigationBarItem(AppRoutes route) => BottomNavigationBarItem(
+      activeIcon: CircleAvatar(backgroundColor: AppColors.appDefaultColorSecond, foregroundColor: AppColors.appDefaultColor, child: _createIcon(route).withColor(AppColors.textNormalLight)),
+      icon: _createIcon(route),
+      label: _createLabel(route));
 
-  Icon _createIcon(AppRoutes route) {
-    Icon icon = const Icon(Icons.not_interested);
-    switch (route) {
-      case (AppRoutes.homepage):
-        icon = AppIcons.bottomNavigationHomepage;
-        break;
-      case (AppRoutes.settings):
-        icon = AppIcons.bottomNavigationSettings;
-        break;
-      default:
-        break;
-    }
-    return icon;
-  }
+  Icon _createIcon(AppRoutes route) => AppPageDetails.listPages.firstWhere((element) => element.pageRoute == route).iconCode.toIcon;
 
-  String _createLabel(AppRoutes route) => route.pageLabel;
+  String _createLabel(AppRoutes route) => AppPageDetails.listPages.firstWhere((element) => element.pageRoute == route).pageName ?? '';
 }

@@ -21,6 +21,7 @@ AppPageDetail _$AppPageDetailFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppPageDetail {
   AppRoutes get pageRoute => throw _privateConstructorUsedError;
+  String? get pageName => throw _privateConstructorUsedError;
   int? get bottomBarItemNumber => throw _privateConstructorUsedError;
   bool? get drawerPresence => throw _privateConstructorUsedError;
   int? get iconCode => throw _privateConstructorUsedError;
@@ -39,6 +40,7 @@ abstract class $AppPageDetailCopyWith<$Res> {
   @useResult
   $Res call(
       {AppRoutes pageRoute,
+      String? pageName,
       int? bottomBarItemNumber,
       bool? drawerPresence,
       int? iconCode});
@@ -58,6 +60,7 @@ class _$AppPageDetailCopyWithImpl<$Res, $Val extends AppPageDetail>
   @override
   $Res call({
     Object? pageRoute = null,
+    Object? pageName = freezed,
     Object? bottomBarItemNumber = freezed,
     Object? drawerPresence = freezed,
     Object? iconCode = freezed,
@@ -67,6 +70,10 @@ class _$AppPageDetailCopyWithImpl<$Res, $Val extends AppPageDetail>
           ? _value.pageRoute
           : pageRoute // ignore: cast_nullable_to_non_nullable
               as AppRoutes,
+      pageName: freezed == pageName
+          ? _value.pageName
+          : pageName // ignore: cast_nullable_to_non_nullable
+              as String?,
       bottomBarItemNumber: freezed == bottomBarItemNumber
           ? _value.bottomBarItemNumber
           : bottomBarItemNumber // ignore: cast_nullable_to_non_nullable
@@ -93,6 +100,7 @@ abstract class _$$AppPageDetailImplCopyWith<$Res>
   @useResult
   $Res call(
       {AppRoutes pageRoute,
+      String? pageName,
       int? bottomBarItemNumber,
       bool? drawerPresence,
       int? iconCode});
@@ -110,6 +118,7 @@ class __$$AppPageDetailImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? pageRoute = null,
+    Object? pageName = freezed,
     Object? bottomBarItemNumber = freezed,
     Object? drawerPresence = freezed,
     Object? iconCode = freezed,
@@ -119,6 +128,10 @@ class __$$AppPageDetailImplCopyWithImpl<$Res>
           ? _value.pageRoute
           : pageRoute // ignore: cast_nullable_to_non_nullable
               as AppRoutes,
+      pageName: freezed == pageName
+          ? _value.pageName
+          : pageName // ignore: cast_nullable_to_non_nullable
+              as String?,
       bottomBarItemNumber: freezed == bottomBarItemNumber
           ? _value.bottomBarItemNumber
           : bottomBarItemNumber // ignore: cast_nullable_to_non_nullable
@@ -140,6 +153,7 @@ class __$$AppPageDetailImplCopyWithImpl<$Res>
 class _$AppPageDetailImpl implements _AppPageDetail {
   const _$AppPageDetailImpl(
       {required this.pageRoute,
+      this.pageName,
       this.bottomBarItemNumber,
       this.drawerPresence,
       this.iconCode});
@@ -150,6 +164,8 @@ class _$AppPageDetailImpl implements _AppPageDetail {
   @override
   final AppRoutes pageRoute;
   @override
+  final String? pageName;
+  @override
   final int? bottomBarItemNumber;
   @override
   final bool? drawerPresence;
@@ -158,7 +174,7 @@ class _$AppPageDetailImpl implements _AppPageDetail {
 
   @override
   String toString() {
-    return 'AppPageDetail(pageRoute: $pageRoute, bottomBarItemNumber: $bottomBarItemNumber, drawerPresence: $drawerPresence, iconCode: $iconCode)';
+    return 'AppPageDetail(pageRoute: $pageRoute, pageName: $pageName, bottomBarItemNumber: $bottomBarItemNumber, drawerPresence: $drawerPresence, iconCode: $iconCode)';
   }
 
   @override
@@ -168,6 +184,8 @@ class _$AppPageDetailImpl implements _AppPageDetail {
             other is _$AppPageDetailImpl &&
             (identical(other.pageRoute, pageRoute) ||
                 other.pageRoute == pageRoute) &&
+            (identical(other.pageName, pageName) ||
+                other.pageName == pageName) &&
             (identical(other.bottomBarItemNumber, bottomBarItemNumber) ||
                 other.bottomBarItemNumber == bottomBarItemNumber) &&
             (identical(other.drawerPresence, drawerPresence) ||
@@ -178,8 +196,8 @@ class _$AppPageDetailImpl implements _AppPageDetail {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, pageRoute, bottomBarItemNumber, drawerPresence, iconCode);
+  int get hashCode => Object.hash(runtimeType, pageRoute, pageName,
+      bottomBarItemNumber, drawerPresence, iconCode);
 
   @JsonKey(ignore: true)
   @override
@@ -198,6 +216,7 @@ class _$AppPageDetailImpl implements _AppPageDetail {
 abstract class _AppPageDetail implements AppPageDetail {
   const factory _AppPageDetail(
       {required final AppRoutes pageRoute,
+      final String? pageName,
       final int? bottomBarItemNumber,
       final bool? drawerPresence,
       final int? iconCode}) = _$AppPageDetailImpl;
@@ -207,6 +226,8 @@ abstract class _AppPageDetail implements AppPageDetail {
 
   @override
   AppRoutes get pageRoute;
+  @override
+  String? get pageName;
   @override
   int? get bottomBarItemNumber;
   @override

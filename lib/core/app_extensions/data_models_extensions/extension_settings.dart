@@ -1,23 +1,32 @@
 import 'package:get/get.dart';
 
-import '../../../data/data_models/core_data_models/app_settings_data/app_setting_data.dart';
+import '../../../data/resources/app_enums.dart';
 import '../../../data/storage/app_local_storage.dart';
+import '../../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
+import '../../../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_mapper.dart';
 
-
-extension RxStorage on Rx<AppSettingData> {
-  void get saveOnStorage async => await AppLocalStorage.to.saveSettings(settings: value);
-  Rx<AppSettingData> get loadFromStorage => AppLocalStorage.to.loadSettings().obs;
+extension RxStorage on Rx<AppSettingDataEntity> {
+  void get saveOnStorage async => await AppLocalStorage.to.saveSettings(settings: value.mapper);
+  Rx<AppSettingDataEntity> get loadFromStorage => AppLocalStorage.to.loadSettings().mapper.obs;
 }
 
-extension Storage on AppSettingData {
-  void get saveOnStorage async => await AppLocalStorage.to.saveSettings(settings: this);
-  AppSettingData get loadFromStorage => AppLocalStorage.to.loadSettings();
+extension Storage on AppSettingDataEntity {
+  void get saveOnStorage async => await AppLocalStorage.to.saveSettings(settings: mapper);
+  AppSettingDataEntity get loadFromStorage => AppLocalStorage.to.loadSettings().mapper;
 }
 
-extension RxClear on Rx<AppSettingData> {
-  Rx<AppSettingData> get clearData => const AppSettingData(darkMode: false).obs;
+extension RxClear on Rx<AppSettingDataEntity> {
+  Rx<AppSettingDataEntity> get clearData => value.clearData.obs;
 }
 
-extension Clear on AppSettingData {
-  AppSettingData get clearData => const AppSettingData(darkMode: false);
+extension Clear on AppSettingDataEntity {
+  AppSettingDataEntity get clearData => const AppSettingDataEntity();
+}
+
+extension RxLanguages on Rx<AppSettingDataEntity> {
+  changeLanguage(AppLanguages language) => value.changeLanguage(language);
+}
+
+extension Languages on AppSettingDataEntity {
+  changeLanguage(AppLanguages lang) => copyWith(language: lang).saveOnStorage;
 }

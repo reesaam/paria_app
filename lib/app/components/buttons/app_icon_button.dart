@@ -5,11 +5,7 @@ import '../../../data/resources/app_paddings.dart';
 import '../../../data/resources/app_sizes.dart';
 
 class AppIconButton extends MaterialButton {
-  const AppIconButton(
-      {super.key,
-      required this.icon,
-      required super.onPressed,
-      this.lightColor});
+  const AppIconButton({super.key, required this.icon, required super.onPressed, this.lightColor});
 
   final IconData icon;
   final bool? lightColor;
@@ -20,11 +16,6 @@ class AppIconButton extends MaterialButton {
         height: AppSizes.iconButtonSize,
         width: AppSizes.iconButtonSize,
         child: IconButton(
-            padding: AppPaddings.zero,
-            iconSize: AppSizes.iconButtonIconSize,
-            onPressed: onPressed,
-            icon: lightColor == true
-                ? Icon(icon).withAppAppBackgroundColor
-                : Icon(icon).withAppDefaultColor));
+            padding: AppPaddings.zero, iconSize: AppSizes.iconButtonIconSize, onPressed: onPressed, icon: lightColor == true ? Icon(icon).withAppAppBackgroundColor : Icon(icon).withAppDefaultColor));
   }
 }

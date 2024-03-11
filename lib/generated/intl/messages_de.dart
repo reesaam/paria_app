@@ -23,6 +23,13 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutPageName": MessageLookupByLibrary.simpleMessage("About"),
+        "aboutTitlesAppName": MessageLookupByLibrary.simpleMessage(""),
+        "aboutTitlesDeveloperLinkedIn":
+            MessageLookupByLibrary.simpleMessage("Developer LinkedIn Profile"),
+        "aboutTitlesDeveloperName":
+            MessageLookupByLibrary.simpleMessage("Developer Name"),
+        "aboutTitlesDeveloperWebsite":
+            MessageLookupByLibrary.simpleMessage("Developer WebSite"),
         "adminStartPagePageName":
             MessageLookupByLibrary.simpleMessage("Admin Start Page"),
         "adminTestPagePageName":
@@ -43,17 +50,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "areYouSureDataWillLost": MessageLookupByLibrary.simpleMessage(
             "Are you sure?\nData will be lost with this Function."),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
-        "connectionInternetNotAvailableText":
-            MessageLookupByLibrary.simpleMessage(
-                "Internet Connection is not Available!"),
+        "connectionInternetNotAvailableText": MessageLookupByLibrary.simpleMessage(
+            "Internet Connection is not Available!\nPlease Check your Connection."),
         "connectionInternetNotAvailableTitle":
             MessageLookupByLibrary.simpleMessage("Internet Connection"),
         "empty": MessageLookupByLibrary.simpleMessage(""),
         "from": MessageLookupByLibrary.simpleMessage("From"),
+        "generalNotAvailable":
+            MessageLookupByLibrary.simpleMessage("Not Available"),
+        "generalNotAvailableInitials":
+            MessageLookupByLibrary.simpleMessage("N/A"),
         "homePageName": MessageLookupByLibrary.simpleMessage("Home"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "information": MessageLookupByLibrary.simpleMessage("Information"),
         "languageName": MessageLookupByLibrary.simpleMessage("Deutsch"),
+        "no": MessageLookupByLibrary.simpleMessage("No"),
         "notAvailable": MessageLookupByLibrary.simpleMessage("Not Available"),
         "notAvailableInitials": MessageLookupByLibrary.simpleMessage("N/A"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
@@ -90,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Splash Screen"),
         "to": MessageLookupByLibrary.simpleMessage("To"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
+        "totalBalance": MessageLookupByLibrary.simpleMessage("Total Balance"),
         "updateApprove": MessageLookupByLibrary.simpleMessage(
             "Do you want to download the New Version?"),
         "updateAvailableVersion":
@@ -126,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "updateUpdateFound":
             MessageLookupByLibrary.simpleMessage("New Update is Available!"),
         "version": MessageLookupByLibrary.simpleMessage("Version"),
-        "warning": MessageLookupByLibrary.simpleMessage("Warning")
+        "warning": MessageLookupByLibrary.simpleMessage("Warning"),
+        "yes": MessageLookupByLibrary.simpleMessage("Yes")
       };
 }

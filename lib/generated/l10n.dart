@@ -70,21 +70,21 @@ class S {
     );
   }
 
-  /// `Home`
-  String get homePageName {
-    return Intl.message(
-      'Home',
-      name: 'homePageName',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Splash Screen`
   String get splashScreenPageName {
     return Intl.message(
       'Splash Screen',
       name: 'splashScreenPageName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get homePageName {
+    return Intl.message(
+      'Home',
+      name: 'homePageName',
       desc: '',
       args: [],
     );
@@ -155,6 +155,26 @@ class S {
     return Intl.message(
       'Cancel',
       name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message(
+      'Yes',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message(
+      'No',
+      name: 'no',
       desc: '',
       args: [],
     );
@@ -250,6 +270,16 @@ class S {
     );
   }
 
+  /// `Total Balance`
+  String get totalBalance {
+    return Intl.message(
+      'Total Balance',
+      name: 'totalBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Are you sure ?`
   String get areYouSure {
     return Intl.message(
@@ -320,11 +350,31 @@ class S {
     );
   }
 
-  /// `Internet Connection is not Available!`
+  /// `Internet Connection is not Available!\nPlease Check your Connection.`
   String get connectionInternetNotAvailableText {
     return Intl.message(
-      'Internet Connection is not Available!',
+      'Internet Connection is not Available!\nPlease Check your Connection.',
       name: 'connectionInternetNotAvailableText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not Available`
+  String get generalNotAvailable {
+    return Intl.message(
+      'Not Available',
+      name: 'generalNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `N/A`
+  String get generalNotAvailableInitials {
+    return Intl.message(
+      'N/A',
+      name: 'generalNotAvailableInitials',
       desc: '',
       args: [],
     );
@@ -640,6 +690,46 @@ class S {
     );
   }
 
+  /// ``
+  String get aboutTitlesAppName {
+    return Intl.message(
+      '',
+      name: 'aboutTitlesAppName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Developer Name`
+  String get aboutTitlesDeveloperName {
+    return Intl.message(
+      'Developer Name',
+      name: 'aboutTitlesDeveloperName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Developer WebSite`
+  String get aboutTitlesDeveloperWebsite {
+    return Intl.message(
+      'Developer WebSite',
+      name: 'aboutTitlesDeveloperWebsite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Developer LinkedIn Profile`
+  String get aboutTitlesDeveloperLinkedIn {
+    return Intl.message(
+      'Developer LinkedIn Profile',
+      name: 'aboutTitlesDeveloperLinkedIn',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Admin Start Page`
   String get adminStartPagePageName {
     return Intl.message(
@@ -665,6 +755,16 @@ class S {
     return Intl.message(
       'Admin UI Test Page',
       name: 'adminUITestPagePageName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `END OF FILE`
+  String get endOfFile {
+    return Intl.message(
+      'END OF FILE',
+      name: 'endOfFile',
       desc: '',
       args: [],
     );
