@@ -20,9 +20,12 @@ AppDataEntity _$AppDataEntityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppDataEntity {
-  AppDataVersions? get version => throw _privateConstructorUsedError;
+  AppDataVersions? get appDataVersion => throw _privateConstructorUsedError;
   AppVersion? get appVersion => throw _privateConstructorUsedError;
-  AppSettingDataEntity? get appSettings => throw _privateConstructorUsedError;
+  AppSettingDataEntity? get settings => throw _privateConstructorUsedError;
+  AppContactEntitiesList? get contacts => throw _privateConstructorUsedError;
+  AppAccountRecordEntitiesList? get accounts =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,12 +40,16 @@ abstract class $AppDataEntityCopyWith<$Res> {
       _$AppDataEntityCopyWithImpl<$Res, AppDataEntity>;
   @useResult
   $Res call(
-      {AppDataVersions? version,
+      {AppDataVersions? appDataVersion,
       AppVersion? appVersion,
-      AppSettingDataEntity? appSettings});
+      AppSettingDataEntity? settings,
+      AppContactEntitiesList? contacts,
+      AppAccountRecordEntitiesList? accounts});
 
   $AppVersionCopyWith<$Res>? get appVersion;
-  $AppSettingDataEntityCopyWith<$Res>? get appSettings;
+  $AppSettingDataEntityCopyWith<$Res>? get settings;
+  $AppContactEntitiesListCopyWith<$Res>? get contacts;
+  $AppAccountRecordEntitiesListCopyWith<$Res>? get accounts;
 }
 
 /// @nodoc
@@ -58,23 +65,33 @@ class _$AppDataEntityCopyWithImpl<$Res, $Val extends AppDataEntity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = freezed,
+    Object? appDataVersion = freezed,
     Object? appVersion = freezed,
-    Object? appSettings = freezed,
+    Object? settings = freezed,
+    Object? contacts = freezed,
+    Object? accounts = freezed,
   }) {
     return _then(_value.copyWith(
-      version: freezed == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
+      appDataVersion: freezed == appDataVersion
+          ? _value.appDataVersion
+          : appDataVersion // ignore: cast_nullable_to_non_nullable
               as AppDataVersions?,
       appVersion: freezed == appVersion
           ? _value.appVersion
           : appVersion // ignore: cast_nullable_to_non_nullable
               as AppVersion?,
-      appSettings: freezed == appSettings
-          ? _value.appSettings
-          : appSettings // ignore: cast_nullable_to_non_nullable
+      settings: freezed == settings
+          ? _value.settings
+          : settings // ignore: cast_nullable_to_non_nullable
               as AppSettingDataEntity?,
+      contacts: freezed == contacts
+          ? _value.contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as AppContactEntitiesList?,
+      accounts: freezed == accounts
+          ? _value.accounts
+          : accounts // ignore: cast_nullable_to_non_nullable
+              as AppAccountRecordEntitiesList?,
     ) as $Val);
   }
 
@@ -92,13 +109,38 @@ class _$AppDataEntityCopyWithImpl<$Res, $Val extends AppDataEntity>
 
   @override
   @pragma('vm:prefer-inline')
-  $AppSettingDataEntityCopyWith<$Res>? get appSettings {
-    if (_value.appSettings == null) {
+  $AppSettingDataEntityCopyWith<$Res>? get settings {
+    if (_value.settings == null) {
       return null;
     }
 
-    return $AppSettingDataEntityCopyWith<$Res>(_value.appSettings!, (value) {
-      return _then(_value.copyWith(appSettings: value) as $Val);
+    return $AppSettingDataEntityCopyWith<$Res>(_value.settings!, (value) {
+      return _then(_value.copyWith(settings: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AppContactEntitiesListCopyWith<$Res>? get contacts {
+    if (_value.contacts == null) {
+      return null;
+    }
+
+    return $AppContactEntitiesListCopyWith<$Res>(_value.contacts!, (value) {
+      return _then(_value.copyWith(contacts: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AppAccountRecordEntitiesListCopyWith<$Res>? get accounts {
+    if (_value.accounts == null) {
+      return null;
+    }
+
+    return $AppAccountRecordEntitiesListCopyWith<$Res>(_value.accounts!,
+        (value) {
+      return _then(_value.copyWith(accounts: value) as $Val);
     });
   }
 }
@@ -112,14 +154,20 @@ abstract class _$$AppDataEntityImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AppDataVersions? version,
+      {AppDataVersions? appDataVersion,
       AppVersion? appVersion,
-      AppSettingDataEntity? appSettings});
+      AppSettingDataEntity? settings,
+      AppContactEntitiesList? contacts,
+      AppAccountRecordEntitiesList? accounts});
 
   @override
   $AppVersionCopyWith<$Res>? get appVersion;
   @override
-  $AppSettingDataEntityCopyWith<$Res>? get appSettings;
+  $AppSettingDataEntityCopyWith<$Res>? get settings;
+  @override
+  $AppContactEntitiesListCopyWith<$Res>? get contacts;
+  @override
+  $AppAccountRecordEntitiesListCopyWith<$Res>? get accounts;
 }
 
 /// @nodoc
@@ -133,23 +181,33 @@ class __$$AppDataEntityImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = freezed,
+    Object? appDataVersion = freezed,
     Object? appVersion = freezed,
-    Object? appSettings = freezed,
+    Object? settings = freezed,
+    Object? contacts = freezed,
+    Object? accounts = freezed,
   }) {
     return _then(_$AppDataEntityImpl(
-      version: freezed == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
+      appDataVersion: freezed == appDataVersion
+          ? _value.appDataVersion
+          : appDataVersion // ignore: cast_nullable_to_non_nullable
               as AppDataVersions?,
       appVersion: freezed == appVersion
           ? _value.appVersion
           : appVersion // ignore: cast_nullable_to_non_nullable
               as AppVersion?,
-      appSettings: freezed == appSettings
-          ? _value.appSettings
-          : appSettings // ignore: cast_nullable_to_non_nullable
+      settings: freezed == settings
+          ? _value.settings
+          : settings // ignore: cast_nullable_to_non_nullable
               as AppSettingDataEntity?,
+      contacts: freezed == contacts
+          ? _value.contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as AppContactEntitiesList?,
+      accounts: freezed == accounts
+          ? _value.accounts
+          : accounts // ignore: cast_nullable_to_non_nullable
+              as AppAccountRecordEntitiesList?,
     ));
   }
 }
@@ -157,21 +215,30 @@ class __$$AppDataEntityImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AppDataEntityImpl implements _AppDataEntity {
-  const _$AppDataEntityImpl({this.version, this.appVersion, this.appSettings});
+  const _$AppDataEntityImpl(
+      {this.appDataVersion,
+      this.appVersion,
+      this.settings,
+      this.contacts,
+      this.accounts});
 
   factory _$AppDataEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppDataEntityImplFromJson(json);
 
   @override
-  final AppDataVersions? version;
+  final AppDataVersions? appDataVersion;
   @override
   final AppVersion? appVersion;
   @override
-  final AppSettingDataEntity? appSettings;
+  final AppSettingDataEntity? settings;
+  @override
+  final AppContactEntitiesList? contacts;
+  @override
+  final AppAccountRecordEntitiesList? accounts;
 
   @override
   String toString() {
-    return 'AppDataEntity(version: $version, appVersion: $appVersion, appSettings: $appSettings)';
+    return 'AppDataEntity(appDataVersion: $appDataVersion, appVersion: $appVersion, settings: $settings, contacts: $contacts, accounts: $accounts)';
   }
 
   @override
@@ -179,17 +246,22 @@ class _$AppDataEntityImpl implements _AppDataEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppDataEntityImpl &&
-            (identical(other.version, version) || other.version == version) &&
+            (identical(other.appDataVersion, appDataVersion) ||
+                other.appDataVersion == appDataVersion) &&
             (identical(other.appVersion, appVersion) ||
                 other.appVersion == appVersion) &&
-            (identical(other.appSettings, appSettings) ||
-                other.appSettings == appSettings));
+            (identical(other.settings, settings) ||
+                other.settings == settings) &&
+            (identical(other.contacts, contacts) ||
+                other.contacts == contacts) &&
+            (identical(other.accounts, accounts) ||
+                other.accounts == accounts));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, version, appVersion, appSettings);
+  int get hashCode => Object.hash(
+      runtimeType, appDataVersion, appVersion, settings, contacts, accounts);
 
   @JsonKey(ignore: true)
   @override
@@ -207,19 +279,25 @@ class _$AppDataEntityImpl implements _AppDataEntity {
 
 abstract class _AppDataEntity implements AppDataEntity {
   const factory _AppDataEntity(
-      {final AppDataVersions? version,
+      {final AppDataVersions? appDataVersion,
       final AppVersion? appVersion,
-      final AppSettingDataEntity? appSettings}) = _$AppDataEntityImpl;
+      final AppSettingDataEntity? settings,
+      final AppContactEntitiesList? contacts,
+      final AppAccountRecordEntitiesList? accounts}) = _$AppDataEntityImpl;
 
   factory _AppDataEntity.fromJson(Map<String, dynamic> json) =
       _$AppDataEntityImpl.fromJson;
 
   @override
-  AppDataVersions? get version;
+  AppDataVersions? get appDataVersion;
   @override
   AppVersion? get appVersion;
   @override
-  AppSettingDataEntity? get appSettings;
+  AppSettingDataEntity? get settings;
+  @override
+  AppContactEntitiesList? get contacts;
+  @override
+  AppAccountRecordEntitiesList? get accounts;
   @override
   @JsonKey(ignore: true)
   _$$AppDataEntityImplCopyWith<_$AppDataEntityImpl> get copyWith =>

@@ -11,12 +11,13 @@ part 'app_data_entity.g.dart';
 
 @freezed
 class AppDataEntity with _$AppDataEntity {
-  const factory AppDataEntity(
-      {final AppDataVersions? version,
-      final AppVersion? appVersion,
-      final AppSettingDataEntity? appSettings,
-      final AppContactEntitiesList? contacts,
-      final AppAccountRecordEntitiesList? accounts}) = _AppDataEntity;
+  const factory AppDataEntity({
+    final AppDataVersions? appDataVersion,
+    final AppVersion? appVersion,
+    final AppSettingDataEntity? settings,
+    final AppContactEntitiesList? contacts,
+    final AppAccountRecordEntitiesList? accounts,
+  }) = _AppDataEntity;
 
   factory AppDataEntity.fromJson(Map<String, dynamic> json) => _$AppDataEntityFromJson(json);
 }

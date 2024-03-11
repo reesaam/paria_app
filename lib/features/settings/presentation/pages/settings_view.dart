@@ -60,7 +60,7 @@ class SettingsPage extends CoreView<SettingsController> {
         SettingsSectionItemWidget(text: Texts.to.settingsSectionTitleUpdateCurrentVersion.withDoubleDots, leading: Text(AppInfo.appCurrentVersion.version)),
         SettingsSectionItemWidget(
             text: Texts.to.settingsSectionTitleUpdateAvailableVersion.withDoubleDots,
-            leading: Text(controller.updateAvailableVersion.value == AppInfo.appCurrentVersion ? Texts.to.notAvailable : controller.updateAvailableVersion.value),
+            leading: Text(controller.updateAvailableVersion.value == AppInfo.appCurrentVersion.version ? Texts.to.notAvailable : controller.updateAvailableVersion.value),
             wholeItemFunction: controller.functionGoToUpdatePage),
       ]);
 

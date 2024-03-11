@@ -12,7 +12,7 @@ part 'app_data_model.g.dart';
 @freezed
 class AppDataModel with _$AppDataModel {
   const factory AppDataModel({
-    final AppDataVersions? version,
+    final AppDataVersions? appDataVersion,
     final AppVersion? appVersion,
     final AppSettingDataModel? settings,
     final AppContactModelsList? contacts,

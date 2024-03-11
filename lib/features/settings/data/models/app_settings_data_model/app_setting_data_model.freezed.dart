@@ -22,6 +22,7 @@ AppSettingDataModel _$AppSettingDataModelFromJson(Map<String, dynamic> json) {
 mixin _$AppSettingDataModel {
   bool get darkMode => throw _privateConstructorUsedError;
   AppLanguages get language => throw _privateConstructorUsedError;
+  AppCalendarTypes get calendar => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,7 @@ abstract class $AppSettingDataModelCopyWith<$Res> {
           AppSettingDataModel value, $Res Function(AppSettingDataModel) then) =
       _$AppSettingDataModelCopyWithImpl<$Res, AppSettingDataModel>;
   @useResult
-  $Res call({bool darkMode, AppLanguages language});
+  $Res call({bool darkMode, AppLanguages language, AppCalendarTypes calendar});
 }
 
 /// @nodoc
@@ -53,6 +54,7 @@ class _$AppSettingDataModelCopyWithImpl<$Res, $Val extends AppSettingDataModel>
   $Res call({
     Object? darkMode = null,
     Object? language = null,
+    Object? calendar = null,
   }) {
     return _then(_value.copyWith(
       darkMode: null == darkMode
@@ -63,6 +65,10 @@ class _$AppSettingDataModelCopyWithImpl<$Res, $Val extends AppSettingDataModel>
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as AppLanguages,
+      calendar: null == calendar
+          ? _value.calendar
+          : calendar // ignore: cast_nullable_to_non_nullable
+              as AppCalendarTypes,
     ) as $Val);
   }
 }
@@ -75,7 +81,7 @@ abstract class _$$AppSettingDataModelImplCopyWith<$Res>
       __$$AppSettingDataModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool darkMode, AppLanguages language});
+  $Res call({bool darkMode, AppLanguages language, AppCalendarTypes calendar});
 }
 
 /// @nodoc
@@ -91,6 +97,7 @@ class __$$AppSettingDataModelImplCopyWithImpl<$Res>
   $Res call({
     Object? darkMode = null,
     Object? language = null,
+    Object? calendar = null,
   }) {
     return _then(_$AppSettingDataModelImpl(
       darkMode: null == darkMode
@@ -101,6 +108,10 @@ class __$$AppSettingDataModelImplCopyWithImpl<$Res>
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as AppLanguages,
+      calendar: null == calendar
+          ? _value.calendar
+          : calendar // ignore: cast_nullable_to_non_nullable
+              as AppCalendarTypes,
     ));
   }
 }
@@ -109,7 +120,9 @@ class __$$AppSettingDataModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppSettingDataModelImpl implements _AppSettingDataModel {
   const _$AppSettingDataModelImpl(
-      {this.darkMode = false, this.language = AppLanguages.english});
+      {this.darkMode = false,
+      this.language = AppLanguages.english,
+      this.calendar = AppCalendarTypes.christian});
 
   factory _$AppSettingDataModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppSettingDataModelImplFromJson(json);
@@ -120,10 +133,13 @@ class _$AppSettingDataModelImpl implements _AppSettingDataModel {
   @override
   @JsonKey()
   final AppLanguages language;
+  @override
+  @JsonKey()
+  final AppCalendarTypes calendar;
 
   @override
   String toString() {
-    return 'AppSettingDataModel(darkMode: $darkMode, language: $language)';
+    return 'AppSettingDataModel(darkMode: $darkMode, language: $language, calendar: $calendar)';
   }
 
   @override
@@ -134,12 +150,14 @@ class _$AppSettingDataModelImpl implements _AppSettingDataModel {
             (identical(other.darkMode, darkMode) ||
                 other.darkMode == darkMode) &&
             (identical(other.language, language) ||
-                other.language == language));
+                other.language == language) &&
+            (identical(other.calendar, calendar) ||
+                other.calendar == calendar));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, darkMode, language);
+  int get hashCode => Object.hash(runtimeType, darkMode, language, calendar);
 
   @JsonKey(ignore: true)
   @override
@@ -159,7 +177,8 @@ class _$AppSettingDataModelImpl implements _AppSettingDataModel {
 abstract class _AppSettingDataModel implements AppSettingDataModel {
   const factory _AppSettingDataModel(
       {final bool darkMode,
-      final AppLanguages language}) = _$AppSettingDataModelImpl;
+      final AppLanguages language,
+      final AppCalendarTypes calendar}) = _$AppSettingDataModelImpl;
 
   factory _AppSettingDataModel.fromJson(Map<String, dynamic> json) =
       _$AppSettingDataModelImpl.fromJson;
@@ -168,6 +187,8 @@ abstract class _AppSettingDataModel implements AppSettingDataModel {
   bool get darkMode;
   @override
   AppLanguages get language;
+  @override
+  AppCalendarTypes get calendar;
   @override
   @JsonKey(ignore: true)
   _$$AppSettingDataModelImplCopyWith<_$AppSettingDataModelImpl> get copyWith =>

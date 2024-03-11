@@ -8,23 +8,35 @@ part of 'app_data_entity.dart';
 
 _$AppDataEntityImpl _$$AppDataEntityImplFromJson(Map<String, dynamic> json) =>
     _$AppDataEntityImpl(
-      version: $enumDecodeNullable(_$AppDataVersionsEnumMap, json['version']),
+      appDataVersion:
+          $enumDecodeNullable(_$AppDataVersionsEnumMap, json['appDataVersion']),
       appVersion: json['appVersion'] == null
           ? null
           : AppVersion.fromJson(json['appVersion'] as Map<String, dynamic>),
-      appSettings: json['appSettings'] == null
+      settings: json['settings'] == null
           ? null
           : AppSettingDataEntity.fromJson(
-              json['appSettings'] as Map<String, dynamic>),
+              json['settings'] as Map<String, dynamic>),
+      contacts: json['contacts'] == null
+          ? null
+          : AppContactEntitiesList.fromJson(
+              json['contacts'] as Map<String, dynamic>),
+      accounts: json['accounts'] == null
+          ? null
+          : AppAccountRecordEntitiesList.fromJson(
+              json['accounts'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppDataEntityImplToJson(_$AppDataEntityImpl instance) =>
     <String, dynamic>{
-      'version': _$AppDataVersionsEnumMap[instance.version],
+      'appDataVersion': _$AppDataVersionsEnumMap[instance.appDataVersion],
       'appVersion': instance.appVersion,
-      'appSettings': instance.appSettings,
+      'settings': instance.settings,
+      'contacts': instance.contacts,
+      'accounts': instance.accounts,
     };
 
 const _$AppDataVersionsEnumMap = {
   AppDataVersions.v1: 'v1',
+  AppDataVersions.v2: 'v2',
 };

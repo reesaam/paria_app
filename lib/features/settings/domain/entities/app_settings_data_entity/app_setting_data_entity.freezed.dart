@@ -22,6 +22,7 @@ AppSettingDataEntity _$AppSettingDataEntityFromJson(Map<String, dynamic> json) {
 mixin _$AppSettingDataEntity {
   bool get darkMode => throw _privateConstructorUsedError;
   AppLanguages get language => throw _privateConstructorUsedError;
+  AppCalendarTypes get calendar => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,7 @@ abstract class $AppSettingDataEntityCopyWith<$Res> {
           $Res Function(AppSettingDataEntity) then) =
       _$AppSettingDataEntityCopyWithImpl<$Res, AppSettingDataEntity>;
   @useResult
-  $Res call({bool darkMode, AppLanguages language});
+  $Res call({bool darkMode, AppLanguages language, AppCalendarTypes calendar});
 }
 
 /// @nodoc
@@ -54,6 +55,7 @@ class _$AppSettingDataEntityCopyWithImpl<$Res,
   $Res call({
     Object? darkMode = null,
     Object? language = null,
+    Object? calendar = null,
   }) {
     return _then(_value.copyWith(
       darkMode: null == darkMode
@@ -64,6 +66,10 @@ class _$AppSettingDataEntityCopyWithImpl<$Res,
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as AppLanguages,
+      calendar: null == calendar
+          ? _value.calendar
+          : calendar // ignore: cast_nullable_to_non_nullable
+              as AppCalendarTypes,
     ) as $Val);
   }
 }
@@ -76,7 +82,7 @@ abstract class _$$AppSettingDataEntityImplCopyWith<$Res>
       __$$AppSettingDataEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool darkMode, AppLanguages language});
+  $Res call({bool darkMode, AppLanguages language, AppCalendarTypes calendar});
 }
 
 /// @nodoc
@@ -92,6 +98,7 @@ class __$$AppSettingDataEntityImplCopyWithImpl<$Res>
   $Res call({
     Object? darkMode = null,
     Object? language = null,
+    Object? calendar = null,
   }) {
     return _then(_$AppSettingDataEntityImpl(
       darkMode: null == darkMode
@@ -102,6 +109,10 @@ class __$$AppSettingDataEntityImplCopyWithImpl<$Res>
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as AppLanguages,
+      calendar: null == calendar
+          ? _value.calendar
+          : calendar // ignore: cast_nullable_to_non_nullable
+              as AppCalendarTypes,
     ));
   }
 }
@@ -110,7 +121,9 @@ class __$$AppSettingDataEntityImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppSettingDataEntityImpl implements _AppSettingDataEntity {
   const _$AppSettingDataEntityImpl(
-      {this.darkMode = false, this.language = AppLanguages.english});
+      {this.darkMode = false,
+      this.language = AppLanguages.english,
+      this.calendar = AppCalendarTypes.christian});
 
   factory _$AppSettingDataEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppSettingDataEntityImplFromJson(json);
@@ -121,10 +134,13 @@ class _$AppSettingDataEntityImpl implements _AppSettingDataEntity {
   @override
   @JsonKey()
   final AppLanguages language;
+  @override
+  @JsonKey()
+  final AppCalendarTypes calendar;
 
   @override
   String toString() {
-    return 'AppSettingDataEntity(darkMode: $darkMode, language: $language)';
+    return 'AppSettingDataEntity(darkMode: $darkMode, language: $language, calendar: $calendar)';
   }
 
   @override
@@ -135,12 +151,14 @@ class _$AppSettingDataEntityImpl implements _AppSettingDataEntity {
             (identical(other.darkMode, darkMode) ||
                 other.darkMode == darkMode) &&
             (identical(other.language, language) ||
-                other.language == language));
+                other.language == language) &&
+            (identical(other.calendar, calendar) ||
+                other.calendar == calendar));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, darkMode, language);
+  int get hashCode => Object.hash(runtimeType, darkMode, language, calendar);
 
   @JsonKey(ignore: true)
   @override
@@ -161,7 +179,8 @@ class _$AppSettingDataEntityImpl implements _AppSettingDataEntity {
 abstract class _AppSettingDataEntity implements AppSettingDataEntity {
   const factory _AppSettingDataEntity(
       {final bool darkMode,
-      final AppLanguages language}) = _$AppSettingDataEntityImpl;
+      final AppLanguages language,
+      final AppCalendarTypes calendar}) = _$AppSettingDataEntityImpl;
 
   factory _AppSettingDataEntity.fromJson(Map<String, dynamic> json) =
       _$AppSettingDataEntityImpl.fromJson;
@@ -170,6 +189,8 @@ abstract class _AppSettingDataEntity implements AppSettingDataEntity {
   bool get darkMode;
   @override
   AppLanguages get language;
+  @override
+  AppCalendarTypes get calendar;
   @override
   @JsonKey(ignore: true)
   _$$AppSettingDataEntityImplCopyWith<_$AppSettingDataEntityImpl>

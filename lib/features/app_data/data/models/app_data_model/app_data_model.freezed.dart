@@ -20,9 +20,12 @@ AppDataModel _$AppDataModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppDataModel {
-  AppDataVersions? get version => throw _privateConstructorUsedError;
+  AppDataVersions? get appDataVersion => throw _privateConstructorUsedError;
   AppVersion? get appVersion => throw _privateConstructorUsedError;
   AppSettingDataModel? get settings => throw _privateConstructorUsedError;
+  AppContactModelsList? get contacts => throw _privateConstructorUsedError;
+  AppAccountRecordModelsList? get accounts =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,12 +40,16 @@ abstract class $AppDataModelCopyWith<$Res> {
       _$AppDataModelCopyWithImpl<$Res, AppDataModel>;
   @useResult
   $Res call(
-      {AppDataVersions? version,
+      {AppDataVersions? appDataVersion,
       AppVersion? appVersion,
-      AppSettingDataModel? settings});
+      AppSettingDataModel? settings,
+      AppContactModelsList? contacts,
+      AppAccountRecordModelsList? accounts});
 
   $AppVersionCopyWith<$Res>? get appVersion;
   $AppSettingDataModelCopyWith<$Res>? get settings;
+  $AppContactModelsListCopyWith<$Res>? get contacts;
+  $AppAccountRecordModelsListCopyWith<$Res>? get accounts;
 }
 
 /// @nodoc
@@ -58,14 +65,16 @@ class _$AppDataModelCopyWithImpl<$Res, $Val extends AppDataModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = freezed,
+    Object? appDataVersion = freezed,
     Object? appVersion = freezed,
     Object? settings = freezed,
+    Object? contacts = freezed,
+    Object? accounts = freezed,
   }) {
     return _then(_value.copyWith(
-      version: freezed == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
+      appDataVersion: freezed == appDataVersion
+          ? _value.appDataVersion
+          : appDataVersion // ignore: cast_nullable_to_non_nullable
               as AppDataVersions?,
       appVersion: freezed == appVersion
           ? _value.appVersion
@@ -75,6 +84,14 @@ class _$AppDataModelCopyWithImpl<$Res, $Val extends AppDataModel>
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as AppSettingDataModel?,
+      contacts: freezed == contacts
+          ? _value.contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as AppContactModelsList?,
+      accounts: freezed == accounts
+          ? _value.accounts
+          : accounts // ignore: cast_nullable_to_non_nullable
+              as AppAccountRecordModelsList?,
     ) as $Val);
   }
 
@@ -101,6 +118,30 @@ class _$AppDataModelCopyWithImpl<$Res, $Val extends AppDataModel>
       return _then(_value.copyWith(settings: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AppContactModelsListCopyWith<$Res>? get contacts {
+    if (_value.contacts == null) {
+      return null;
+    }
+
+    return $AppContactModelsListCopyWith<$Res>(_value.contacts!, (value) {
+      return _then(_value.copyWith(contacts: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AppAccountRecordModelsListCopyWith<$Res>? get accounts {
+    if (_value.accounts == null) {
+      return null;
+    }
+
+    return $AppAccountRecordModelsListCopyWith<$Res>(_value.accounts!, (value) {
+      return _then(_value.copyWith(accounts: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -112,14 +153,20 @@ abstract class _$$AppDataModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AppDataVersions? version,
+      {AppDataVersions? appDataVersion,
       AppVersion? appVersion,
-      AppSettingDataModel? settings});
+      AppSettingDataModel? settings,
+      AppContactModelsList? contacts,
+      AppAccountRecordModelsList? accounts});
 
   @override
   $AppVersionCopyWith<$Res>? get appVersion;
   @override
   $AppSettingDataModelCopyWith<$Res>? get settings;
+  @override
+  $AppContactModelsListCopyWith<$Res>? get contacts;
+  @override
+  $AppAccountRecordModelsListCopyWith<$Res>? get accounts;
 }
 
 /// @nodoc
@@ -133,14 +180,16 @@ class __$$AppDataModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = freezed,
+    Object? appDataVersion = freezed,
     Object? appVersion = freezed,
     Object? settings = freezed,
+    Object? contacts = freezed,
+    Object? accounts = freezed,
   }) {
     return _then(_$AppDataModelImpl(
-      version: freezed == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
+      appDataVersion: freezed == appDataVersion
+          ? _value.appDataVersion
+          : appDataVersion // ignore: cast_nullable_to_non_nullable
               as AppDataVersions?,
       appVersion: freezed == appVersion
           ? _value.appVersion
@@ -150,6 +199,14 @@ class __$$AppDataModelImplCopyWithImpl<$Res>
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as AppSettingDataModel?,
+      contacts: freezed == contacts
+          ? _value.contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as AppContactModelsList?,
+      accounts: freezed == accounts
+          ? _value.accounts
+          : accounts // ignore: cast_nullable_to_non_nullable
+              as AppAccountRecordModelsList?,
     ));
   }
 }
@@ -157,21 +214,30 @@ class __$$AppDataModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AppDataModelImpl implements _AppDataModel {
-  const _$AppDataModelImpl({this.version, this.appVersion, this.settings});
+  const _$AppDataModelImpl(
+      {this.appDataVersion,
+      this.appVersion,
+      this.settings,
+      this.contacts,
+      this.accounts});
 
   factory _$AppDataModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppDataModelImplFromJson(json);
 
   @override
-  final AppDataVersions? version;
+  final AppDataVersions? appDataVersion;
   @override
   final AppVersion? appVersion;
   @override
   final AppSettingDataModel? settings;
+  @override
+  final AppContactModelsList? contacts;
+  @override
+  final AppAccountRecordModelsList? accounts;
 
   @override
   String toString() {
-    return 'AppDataModel(version: $version, appVersion: $appVersion, settings: $settings)';
+    return 'AppDataModel(appDataVersion: $appDataVersion, appVersion: $appVersion, settings: $settings, contacts: $contacts, accounts: $accounts)';
   }
 
   @override
@@ -179,16 +245,22 @@ class _$AppDataModelImpl implements _AppDataModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppDataModelImpl &&
-            (identical(other.version, version) || other.version == version) &&
+            (identical(other.appDataVersion, appDataVersion) ||
+                other.appDataVersion == appDataVersion) &&
             (identical(other.appVersion, appVersion) ||
                 other.appVersion == appVersion) &&
             (identical(other.settings, settings) ||
-                other.settings == settings));
+                other.settings == settings) &&
+            (identical(other.contacts, contacts) ||
+                other.contacts == contacts) &&
+            (identical(other.accounts, accounts) ||
+                other.accounts == accounts));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, version, appVersion, settings);
+  int get hashCode => Object.hash(
+      runtimeType, appDataVersion, appVersion, settings, contacts, accounts);
 
   @JsonKey(ignore: true)
   @override
@@ -206,19 +278,25 @@ class _$AppDataModelImpl implements _AppDataModel {
 
 abstract class _AppDataModel implements AppDataModel {
   const factory _AppDataModel(
-      {final AppDataVersions? version,
+      {final AppDataVersions? appDataVersion,
       final AppVersion? appVersion,
-      final AppSettingDataModel? settings}) = _$AppDataModelImpl;
+      final AppSettingDataModel? settings,
+      final AppContactModelsList? contacts,
+      final AppAccountRecordModelsList? accounts}) = _$AppDataModelImpl;
 
   factory _AppDataModel.fromJson(Map<String, dynamic> json) =
       _$AppDataModelImpl.fromJson;
 
   @override
-  AppDataVersions? get version;
+  AppDataVersions? get appDataVersion;
   @override
   AppVersion? get appVersion;
   @override
   AppSettingDataModel? get settings;
+  @override
+  AppContactModelsList? get contacts;
+  @override
+  AppAccountRecordModelsList? get accounts;
   @override
   @JsonKey(ignore: true)
   _$$AppDataModelImplCopyWith<_$AppDataModelImpl> get copyWith =>

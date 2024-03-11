@@ -62,7 +62,7 @@ class AppLocalStorage {
   ///Manage Data
   Future<void> exportData() async {
     AppDataModel appData = AppDataModel(
-      version: AppDataVersions.values.last,
+      appDataVersion: AppDataVersions.values.last,
       appVersion: AppInfo.appCurrentVersion,
       settings: const AppSettingDataModel().loadFromStorage,
       contacts: AppContactModelsList().loadFromStorage,
@@ -81,7 +81,7 @@ class AppLocalStorage {
     clearAppData();
 
     ///Filling Data Fields
-    if (appData.version == AppDataVersions.values.last) {
+    if (appData.appDataVersion == AppDataVersions.values.last) {
       await saveSettings(settings: appData.settings ?? const AppSettingDataModel());
       await saveContacts(contacts: appData.contacts ?? AppContactModelsList());
       await saveAccountRecords(accountRecords: appData.accounts ?? AppAccountRecordModelsList());

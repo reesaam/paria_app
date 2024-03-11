@@ -12,6 +12,9 @@ _$AppSettingDataEntityImpl _$$AppSettingDataEntityImplFromJson(
       darkMode: json['darkMode'] as bool? ?? false,
       language: $enumDecodeNullable(_$AppLanguagesEnumMap, json['language']) ??
           AppLanguages.english,
+      calendar:
+          $enumDecodeNullable(_$AppCalendarTypesEnumMap, json['calendar']) ??
+              AppCalendarTypes.christian,
     );
 
 Map<String, dynamic> _$$AppSettingDataEntityImplToJson(
@@ -19,12 +22,18 @@ Map<String, dynamic> _$$AppSettingDataEntityImplToJson(
     <String, dynamic>{
       'darkMode': instance.darkMode,
       'language': _$AppLanguagesEnumMap[instance.language]!,
+      'calendar': _$AppCalendarTypesEnumMap[instance.calendar]!,
     };
 
 const _$AppLanguagesEnumMap = {
   AppLanguages.english: 'english',
   AppLanguages.deutsch: 'deutsch',
   AppLanguages.persian: 'persian',
+};
+
+const _$AppCalendarTypesEnumMap = {
+  AppCalendarTypes.christian: 'christian',
+  AppCalendarTypes.jalali: 'jalali',
 };
 
 _$AppSettingDataEntitiesListImpl _$$AppSettingDataEntitiesListImplFromJson(

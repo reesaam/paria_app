@@ -58,7 +58,7 @@ class UpdateController extends CoreController {
 
   _checkUpdateFunction() async {
     String version = await checkAvailableVersion();
-    if (version == AppInfo.appCurrentVersion) {
+    if (version == AppInfo.appCurrentVersion.version) {
       appLogPrint('No New Version Available');
       AppSnackBar().showSnackBar(message: Texts.to.updateNoUpdateFound);
     } else {
@@ -108,5 +108,5 @@ class UpdateController extends CoreController {
       title: directoryError ? Texts.to.updateDirectoryNotFoundTitle : Texts.to.updateFileNotFoundTitle,
       message: directoryError ? Texts.to.updateDirectoryNotFoundContent : Texts.to.updateFileNotFoundContent);
 
-  checkAvailableUpdate() => availableVersion.value == AppInfo.appCurrentVersion || availableVersion.value == Texts.to.notAvailable;
+  checkAvailableUpdate() => availableVersion.value == AppInfo.appCurrentVersion.version || availableVersion.value == Texts.to.notAvailable;
 }

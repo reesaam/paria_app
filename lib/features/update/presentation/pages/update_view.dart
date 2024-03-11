@@ -29,7 +29,7 @@ class UpdatePage extends CoreView<UpdateController> {
           child: Column(children: [
             _widgetVersion(Texts.to.updateCurrentVersion, AppInfo.appCurrentVersion.version),
             AppSpaces.h10,
-            _widgetVersion(Texts.to.updateAvailableVersion, controller.availableVersion.value == AppInfo.appCurrentVersion ? Texts.to.notAvailable : controller.availableVersion.value),
+            _widgetVersion(Texts.to.updateAvailableVersion, controller.availableVersion.value == AppInfo.appCurrentVersion.version ? Texts.to.notAvailable : controller.availableVersion.value),
           ]))));
 
   Widget _widgetVersion(String title, String version) => Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Text(title), Text(version)]);
