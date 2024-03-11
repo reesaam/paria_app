@@ -11,43 +11,33 @@ import '../../../../app/components/main_components/app_bar.dart';
 import '../manager/update_controller.dart';
 
 class UpdatePage extends CoreView<UpdateController> {
-  const UpdatePage({Key? key}) : super(key: key);
+  const UpdatePage({super.key});
 
   @override
-  PreferredSizeWidget? get appBar =>
-      AppAppBar(pageDetail: controller.pageDetail);
+  PreferredSizeWidget? get appBar => AppAppBar(pageDetail: controller.pageDetail);
 
   @override
-  Widget get body =>
-      Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        widgetVersions(),
-        AppSpaces.h40,
-        widgetButtons(),
-      ]);
+  Widget get body => Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+    _widgetVersions(),
+    AppSpaces.h40,
+    _widgetButtons(),
+  ]);
 
-  Widget widgetVersions() => Obx(() => Card(
+  Widget _widgetVersions() => Obx(() => Card(
+      child: Container(
+          padding: AppPaddings.updateVersions,
           child: Column(children: [
-        widgetVersion(Texts.to.updateCurrentVersion, AppInfo.appCurrentVersion),
-        AppSpaces.h10,
-        widgetVersion(
-            Texts.to.updateAvailableVersion,
-            controller.availableVersion.value == AppInfo.appCurrentVersion
-                ? Texts.to.notAvailable
-                : controller.availableVersion.value),
-      ])));
+            _widgetVersion(Texts.to.updateCurrentVersion, AppInfo.appCurrentVersion.version),
+            AppSpaces.h10,
+            _widgetVersion(Texts.to.updateAvailableVersion, controller.availableVersion.value == AppInfo.appCurrentVersion ? Texts.to.notAvailable : controller.availableVersion.value),
+          ]))));
 
-  Widget widgetVersion(String title, String version) => Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [Text(title), Text(version)]);
+  Widget _widgetVersion(String title, String version) => Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Text(title), Text(version)]);
 
-  Widget widgetButtons() => Obx(() => Padding(
+  Widget _widgetButtons() => Obx(() => Padding(
       padding: AppPaddings.updateButtons,
       child: Column(children: [
-        AppGeneralButton(
-            text: Texts.to.updateCheckUpdate, onTap: controller.checkUpdate),
-        AppGeneralButton(
-            text: Texts.to.updateDownloadUpdate,
-            onTap: controller.downloadUpdate,
-            disabled: controller.checkAvailableUpdate()),
+        AppGeneralButton(text: Texts.to.updateCheckUpdate, onTap: controller.checkUpdate),
+        AppGeneralButton(text: Texts.to.updateDownloadUpdate, onTap: controller.downloadUpdate, disabled: controller.checkAvailableUpdate()),
       ])));
 }

@@ -4,8 +4,7 @@ import '../../../data/resources/app_colors.dart';
 import '../../../data/resources/app_sizes.dart';
 
 class AppSwitch extends StatelessWidget {
-  const AppSwitch(
-      {super.key, required this.value, required this.onChanged, this.enabled});
+  const AppSwitch({super.key, required this.value, required this.onChanged, this.enabled});
 
   final bool? value;
   final Function? onChanged;

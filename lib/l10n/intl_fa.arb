@@ -3,36 +3,42 @@
     "languageName": "فارسی",
     "app_name": "Base Flutter Clean GetX App",
 
-    "homePageName": "خانه",
     "splashScreenPageName": "صفحه شروع",
+    "homePageName": "خانه",
     "settingsPageName": "تنظیمات",
     "updatePageName": "بروزرسانی",
     "aboutPageName": "درباره",
 
     "empty": "",
     "version": "نسخه",
-    "ok": "باشه",
+    "ok": "تایید",
     "cancel": "لغو",
-    "notAvailable": "ناموجود",
+    "yes": "بله",
+    "no": "خیر",
+    "notAvailable": "در دسترس نیست",
     "notAvailableInitials": "ناموجود",
     "total": "جمع",
     "from": "از",
     "to": "تا",
-    "warning": "توجه",
-    "alert": "هشدار",
+    "warning": "هشدار",
+    "alert": "پیغام",
     "information": "اطلاعات",
     "info": "اطلاعات",
+    "totalBalance": "جمع کل",
 
-    "areYouSure": "آیا اطمینان دارید؟",
-    "areYouSureDataWillLost": "آیا اطمینان دارید؟\nاطلاعات شما از بین خواهد رفت",
-    "areYouSureDataMayLost": "آیا اطمینان دارید؟\nاطلاعات شما ممکن است از بین بروند",
-    "areYouSureDataExport": "آیا اطمینان دارید؟\nاطلاعات خارج خواهند شد",
-    "areYouSureDataImport": "آیا اطمینان دارید؟\nاطلاعات وارد خواهند شد",
+    "areYouSure": "آیا مطمئن هستید",
+    "areYouSureDataWillLost": "آیا مطمئن هستید؟\nاطلاعات شما از بین خواهد رفت",
+    "areYouSureDataMayLost": "آیا مطمئن هستید؟\nاطلاعات شما ممکن است از دست برود",
+    "areYouSureDataExport": "آیا از استخراج اطلاعات اطمینان دارید؟",
+    "areYouSureDataImport": "آیا از ورود اطلاعات اطمینان دارید؟",
 
-    "appExit": "خروج",
+    "appExit": "خروج از برنامه",
 
-    "connectionInternetNotAvailableTitle": "اینترنت",
-    "connectionInternetNotAvailableText": "اتصال به اینترنت وجود ندارد",
+    "connectionInternetNotAvailableTitle": "اتصال اینترنت",
+    "connectionInternetNotAvailableText": "اینترنت موجود نیست\nلطفا اتصال خود را بررسی کنید",
+
+    "generalNotAvailable": "موجود نیست",
+    "generalNotAvailableInitials": "ناموجود",
 
     "settingsLanguageModalSelectLanguage": "انتخاب زبان",
     "settingsAppbarMenuResetSettings": "بازنشانی همه تنظیمات",
@@ -67,7 +73,14 @@
     "updateFileNotFoundTitle": "خطای فایل!",
     "updateFileNotFoundContent": "فایل پیدا نشد",
 
+    "aboutTitlesAppName": "",
+    "aboutTitlesDeveloperName": "نام توسعه دهنده",
+    "aboutTitlesDeveloperWebsite": "وب سایت توسعه دهنده",
+    "aboutTitlesDeveloperLinkedIn": "پروفایل لینکدین توسعه دهنده",
+
     "adminStartPagePageName": "Admin Start Page",
     "adminTestPagePageName": "Admin Pages Test Page",
-    "adminUITestPagePageName": "Admin UI Test Page"
+    "adminUITestPagePageName": "Admin UI Test Page",
+
+    "END": "END OF FILE"
 }

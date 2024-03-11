@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../core/app_extensions/data_models_extensions/extension_settings.dart';
-import '../data_models/core_data_models/app_settings_data/app_setting_data.dart';
+import '../../../../core/app_extensions/data_models_extensions/extension_settings_entity.dart';
+import '../../features/settings/domain/entities/app_settings_data_entity/app_setting_data_entity.dart';
 import '../resources/app_enums.dart';
 
 class AppSharedPreferences {
@@ -12,21 +12,26 @@ class AppSharedPreferences {
   ///Keys
   final _keySettings = AppStorageKeys.keySettings.name;
 
-  void saveData() async {
+  _saveFunction(data, String key) async {
     SharedPreferences sp = await SharedPreferences.getInstance();
+    String jsonData = json.encode(data);
+    sp.setString(key, jsonData);
+  }
 
-    AppSettingData storageSettings = const AppSettingData().loadFromStorage;
-    String jsonSettings = json.encode(storageSettings);
-    sp.setString(_keySettings, jsonSettings);
+  _loadFunction(String key) async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    String? data = sp.getString(key);
+    return data == null ? null : json.decode(data);
+  }
+
+  void saveData() async {
+    AppSettingDataEntity storageSettings = const AppSettingDataEntity().loadFromStorage;
+    _saveFunction(storageSettings, _keySettings);
   }
 
   void loadData() async {
-    SharedPreferences sp = await SharedPreferences.getInstance();
-
-    String? dataSettings = sp.getString(_keySettings);
-    AppSettingData settingsData = dataSettings == null
-        ? const AppSettingData()
-        : AppSettingData.fromJson(json.decode(dataSettings));
+    var jsonDataSettings = await _loadFunction(_keySettings);
+    AppSettingDataEntity settingsData = jsonDataSettings == null ? const AppSettingDataEntity() : AppSettingDataEntity.fromJson(json.decode(jsonDataSettings));
     settingsData.saveOnStorage;
   }
 

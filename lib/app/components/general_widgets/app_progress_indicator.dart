@@ -7,8 +7,7 @@ class AppProgressIndicator {
         indicatorColor: color,
       );
 
-  static Widget linear({Color? color, Color? backgroundColor}) =>
-      _AppProgressIndicatorLinear(
+  static Widget linear({Color? color, Color? backgroundColor}) => _AppProgressIndicatorLinear(
         indicatorColor: color,
         indicatorBackgroundColor: backgroundColor,
       );
@@ -24,8 +23,7 @@ class _AppProgressIndicatorCircular extends CircularProgressIndicator {
 }
 
 class _AppProgressIndicatorLinear extends LinearProgressIndicator {
-  const _AppProgressIndicatorLinear(
-      {this.indicatorColor, this.indicatorBackgroundColor});
+  const _AppProgressIndicatorLinear({this.indicatorColor, this.indicatorBackgroundColor});
 
   final Color? indicatorColor;
   final Color? indicatorBackgroundColor;
@@ -34,6 +32,5 @@ class _AppProgressIndicatorLinear extends LinearProgressIndicator {
   Color? get color => indicatorColor ?? AppColors.appDefaultColor;
 
   @override
-  Color? get backgroundColor =>
-      indicatorBackgroundColor ?? AppColors.appBackground;
+  Color? get backgroundColor => indicatorBackgroundColor ?? AppColors.appBackground;
 }

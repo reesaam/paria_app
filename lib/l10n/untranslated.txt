@@ -1,1 +1,9 @@
-{}
+{
+  "de": [
+    "endOfFile"
+  ],
+
+  "fa": [
+    "endOfFile"
+  ]
+}

@@ -3,8 +3,8 @@
     "languageName": "Deutsch",
     "app_name": "Base Flutter Clean GetX App",
 
+   "splashScreenPageName": "Splash Screen",
     "homePageName": "Home",
-    "splashScreenPageName": "Splash Screen",
     "settingsPageName": "Settings",
     "updatePageName": "Update",
     "aboutPageName": "About",
@@ -13,6 +13,8 @@
     "version": "Version",
     "ok": "Ok",
     "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No",
     "notAvailable": "Not Available",
     "notAvailableInitials": "N/A",
     "total": "Total",
@@ -22,6 +24,7 @@
     "alert": "Alert",
     "information": "Information",
     "info": "Info",
+    "totalBalance": "Total Balance",
 
     "areYouSure": "Are you sure ?",
     "areYouSureDataWillLost": "Are you sure?\nData will be lost with this Function.",
@@ -32,7 +35,10 @@
     "appExit": "App Exit",
 
     "connectionInternetNotAvailableTitle": "Internet Connection",
-    "connectionInternetNotAvailableText": "Internet Connection is not Available!",
+    "connectionInternetNotAvailableText": "Internet Connection is not Available!\nPlease Check your Connection.",
+
+    "generalNotAvailable": "Not Available",
+    "generalNotAvailableInitials": "N/A",
 
     "settingsLanguageModalSelectLanguage": "Select Language",
     "settingsAppbarMenuResetSettings": "Reset All Settings",
@@ -67,7 +73,14 @@
     "updateFileNotFoundTitle": "File Error!",
     "updateFileNotFoundContent": "File not found",
 
+    "aboutTitlesAppName": "",
+    "aboutTitlesDeveloperName": "Developer Name",
+    "aboutTitlesDeveloperWebsite": "Developer WebSite",
+    "aboutTitlesDeveloperLinkedIn": "Developer LinkedIn Profile",
+
     "adminStartPagePageName": "Admin Start Page",
     "adminTestPagePageName": "Admin Pages Test Page",
-    "adminUITestPagePageName": "Admin UI Test Page"
+    "adminUITestPagePageName": "Admin UI Test Page",
+
+    "END": "END OF FILE"
 }

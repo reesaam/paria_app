@@ -12,21 +12,18 @@ part 'app_page_detail.g.dart';
 class AppPageDetail with _$AppPageDetail {
   const factory AppPageDetail({
     required final AppRoutes pageRoute,
+    final String? pageName,
     final int? bottomBarItemNumber,
     final bool? drawerPresence,
     final int? iconCode,
   }) = _AppPageDetail;
 
-  factory AppPageDetail.fromJson(Map<String, dynamic> json) =>
-      _$AppPageDetailFromJson(json);
+  factory AppPageDetail.fromJson(Map<String, dynamic> json) => _$AppPageDetailFromJson(json);
 }
 
 @freezed
 class AppPageDetailsList with _$AppPageDetailsList {
-  factory AppPageDetailsList({
-    @Default(<AppPageDetail>[]) List<AppPageDetail> pageDetailsList
-  }) = _AppPageDetailsList;
+  factory AppPageDetailsList({@Default(<AppPageDetail>[]) List<AppPageDetail> pageDetailsList}) = _AppPageDetailsList;
 
-  factory AppPageDetailsList.fromJson(Map<String, dynamic> json) =>
-      _$AppPageDetailsListFromJson(json);
+  factory AppPageDetailsList.fromJson(Map<String, dynamic> json) => _$AppPageDetailsListFromJson(json);
 }

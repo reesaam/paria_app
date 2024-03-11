@@ -7,11 +7,8 @@ import '../core_functions.dart';
 import '../core_widgets.dart';
 import 'core_controller.dart';
 
-abstract class CoreView<Controller extends CoreController>
-    extends GetView<Controller> {
-  const CoreView({final Key? key}) : super(key: key);
-
-  Future<bool> onWillPop() async => onBackButtonPressed(controller.pageDetail);
+abstract class CoreView<Controller extends CoreController> extends GetView<Controller> {
+  const CoreView({super.key});
 
   ///Main Widgets
   PreferredSizeWidget? get appBar => null;
@@ -26,8 +23,7 @@ abstract class CoreView<Controller extends CoreController>
   EdgeInsets? get pagePadding => null;
 
   @override
-  Widget build(BuildContext context) =>
-      WillPopScope(onWillPop: () => onWillPop(), child: _pageScaffold);
+  Widget build(BuildContext context) => PopScope(canPop: controller.pageDetail.bottomBarItemNumber == null, onPopInvoked: (didPop) => didPop == false ? appExitDialog() : null, child: _pageScaffold);
 
   Widget get _pageScaffold => Scaffold(
         resizeToAvoidBottomInset: false,
@@ -45,13 +41,7 @@ abstract class CoreView<Controller extends CoreController>
         child: Column(children: [
           topBar == null ? shrinkSizedBox : topBar!,
           //Main Body
-          Expanded(
-              child: Padding(
-                  padding: pagePadding ?? AppPaddings.pages,
-                  child: SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      physics: const BouncingScrollPhysics(),
-                      child: body))),
+          Expanded(child: Padding(padding: pagePadding ?? AppPaddings.pages, child: SingleChildScrollView(scrollDirection: Axis.vertical, physics: const BouncingScrollPhysics(), child: body))),
           footer == null ? shrinkSizedBox : footer!,
         ]),
       );

@@ -4,7 +4,6 @@ import '../info/app_defaults.dart';
 import 'app_colors.dart';
 
 class AppElements {
-
   ///Radius
   static double get radiusZero => 0;
   static double get radiusLow => 10;
@@ -27,13 +26,17 @@ class AppElements {
 
   ///BorderSide
   static BorderSide get defaultBorderSide => BorderSide(color: AppColors.textNormalDark, width: appDefaultBorderWidth);
+  static BorderSide get defaultBorderSideError => BorderSide(color: AppColors.error, width: appDefaultBorderWidth);
   static BorderSide get cardTransparentBorderSide => BorderSide(color: AppColors.transparent, width: appDefaultBorderWidth);
   static BorderSide get defaultBorderSideFocused => BorderSide(color: AppColors.appDefaultColor, width: appDefaultBorderWidth);
   static BorderSide get defaultBorderSideDisabled => BorderSide(color: AppColors.buttonBackgroundDisabled, width: appDefaultBorderWidth);
+  static BorderSide get defaultBorderSideCheckBox => defaultBorderSide.copyWith(color: AppColors.appCheckBox);
 
   ///OutlineInputBorder
   static OutlineInputBorder get defaultOutlineBorder => OutlineInputBorder(borderRadius: defaultBorderWithLowRadius, borderSide: defaultBorderSide);
   static OutlineInputBorder get defaultOutlineBorderFocused => OutlineInputBorder(borderRadius: defaultBorderWithLowRadius, borderSide: defaultBorderSideFocused);
+  static OutlineInputBorder get defaultOutlineBorderDisabled => OutlineInputBorder(borderRadius: defaultBorderWithLowRadius, borderSide: defaultBorderSideDisabled);
+  static OutlineInputBorder get defaultOutlineBorderError => OutlineInputBorder(borderRadius: defaultBorderWithLowRadius, borderSide: defaultBorderSideError);
   static OutlineInputBorder get cardTransparentOutlineBorder => OutlineInputBorder(borderRadius: defaultBorderWithLowRadius, borderSide: cardTransparentBorderSide);
   static OutlineInputBorder get cardTransparentOutlineBorderZeroRadius => OutlineInputBorder(borderRadius: defaultBorderWithNoRadius, borderSide: cardTransparentBorderSide);
 
@@ -52,6 +55,10 @@ class AppElements {
   static RoundedRectangleBorder get defaultBorderHighRadiusShape => RoundedRectangleBorder(borderRadius: defaultBorderWithLowRadius);
   static RoundedRectangleBorder get defaultModalBorderShape => RoundedRectangleBorder(borderRadius: topBorderWithRadius);
   static RoundedRectangleBorder get defaultAlertBorderShape => RoundedRectangleBorder(borderRadius: defaultBorderWithRadius);
+
+  ///Avatars
+  static double get contactsListAvatarMaxRadius => 18;
+  static double get contactsContactAvatarMaxRadius => 30;
 
   ///Panel
   // static BoxBorder get defaultPanelBorder => Border.all(color: AppColors.panelBorder);
