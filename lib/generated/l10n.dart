@@ -1549,6 +1549,16 @@ class S {
       args: [],
     );
   }
+
+  /// ``
+  String get END_OF_FILE {
+    return Intl.message(
+      '',
+      name: 'END_OF_FILE',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

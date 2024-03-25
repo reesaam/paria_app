@@ -175,5 +175,7 @@
 
     "adminStartPagePageName": "Admin Start Page",
     "adminTestPagePageName": "Admin Pages Test Page",
-    "adminUITestPagePageName": "Admin UI Test Page"
+    "adminUITestPagePageName": "Admin UI Test Page",
+
+    "END_OF_FILE": ""
 }
